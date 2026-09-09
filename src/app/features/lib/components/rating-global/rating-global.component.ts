@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbRatingConfig } from "ngb-js";
+import { NgbRatingConfig, NGB_RATING_CONFIG } from "ngb-js/rating";
 
 export class RatingGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbRatingConfig, "max" | "readonly" | "resettable" | "tabindex">;
@@ -22,7 +22,7 @@ export class RatingGlobalComponent implements IComponentController {
     private restoreConfig() { Object.assign(this.config, this.initialConfig); }
 
     static get $name() { return "docsRatingGlobal" }
-    static get $inject() { return [NgbRatingConfig.$name] }
+    static get $inject() { return [NGB_RATING_CONFIG] }
     static get $factory(): IComponentOptions {
         return { controller: RatingGlobalComponent, controllerAs: "example", templateUrl: "./rating-global.component.html", styleUrl: "./rating-global.component.css" }
     }

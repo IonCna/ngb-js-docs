@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbTooltipConfig } from "ngb-js";
+import { NgbTooltipConfig, NGB_TOOLTIP_CONFIG } from "ngb-js/tooltip";
 
 export class TooltipGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbTooltipConfig, "container" | "openDelay" | "placement" | "triggers">;
@@ -28,7 +28,7 @@ export class TooltipGlobalComponent implements IComponentController {
     }
 
     static get $name() { return "docsTooltipGlobal" }
-    static get $inject() { return [NgbTooltipConfig.$name] }
+    static get $inject() { return [NGB_TOOLTIP_CONFIG] }
     static get $factory(): IComponentOptions {
         return { controller: TooltipGlobalComponent, controllerAs: "example", templateUrl: "./tooltip-global.component.html", styleUrl: "./tooltip-global.component.css" }
     }

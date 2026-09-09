@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbDatepicker } from "ngb-js";
+import type { NgbDatepicker } from "ngb-js/datepicker";
 
 export class DatepickerCustomMonthComponent implements IComponentController {
     public previous(datepicker: NgbDatepicker) { datepicker.navigateTo(datepicker.calendar.getPrev(datepicker.state.firstDate, "m", 1)); }

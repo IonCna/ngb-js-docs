@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbDatepickerI18n, type NgbDateStruct } from "ngb-js";
+import { NgbDatepickerI18n, type NgbDateStruct } from "ngb-js/datepicker";
 
 class SpanishDatepickerI18n extends NgbDatepickerI18n {
     private readonly months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];

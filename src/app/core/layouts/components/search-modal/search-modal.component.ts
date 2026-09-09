@@ -1,6 +1,7 @@
 import angular, { type IAugmentedJQuery, type IComponentController, type IComponentOptions } from "angular"
 import type { StateService } from "@uirouter/angularjs"
-import type { NgbActiveModal, NgbScrollSpy } from "ngb-js"
+import type { NgbActiveModal } from "ngb-js/modal";
+import type { NgbScrollSpy } from "ngb-js/scrollspy";
 import { SearchService, type SearchResult } from "@/core/services/search.service"
 
 export const SEARCH_RECENTS_STORAGE_KEY = "docs.search.recents"

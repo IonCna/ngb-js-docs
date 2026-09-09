@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbModal } from "ngb-js";
+import { NgbModal, NGB_MODAL } from "ngb-js/modal/compat";
 import { TemplateRef, ViewChild } from "ngjs-core";
 
 export class ModalDefaultComponent implements IComponentController {
@@ -17,7 +17,7 @@ export class ModalDefaultComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbModal.$name]
+        return [NGB_MODAL]
     }
 
     static get $factory(): IComponentOptions {

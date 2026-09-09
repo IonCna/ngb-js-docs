@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbActiveOffcanvas } from "ngb-js";
+import type { NgbActiveOffcanvas } from "ngb-js/offcanvas";
 
 export class OffcanvasFocusContentComponent implements IComponentController {
     public ngbActiveOffcanvas!: NgbActiveOffcanvas;

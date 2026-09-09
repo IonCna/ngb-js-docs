@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbPaginationConfig } from "ngb-js";
+import { NgbPaginationConfig, NGB_PAGINATION_CONFIG } from "ngb-js/pagination";
 
 export class PaginationGlobalComponent implements IComponentController {
     public page = 8;
@@ -50,7 +50,7 @@ export class PaginationGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbPaginationConfig.$name]
+        return [NGB_PAGINATION_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbDatepicker, NgbDateStruct } from "ngb-js";
+import type { NgbDateStruct, NgbDatepicker } from "ngb-js/datepicker";
 
 export class DatepickerKeyboardComponent implements IComponentController {
     public date: NgbDateStruct = { year: 2026, month: 8, day: 24 };

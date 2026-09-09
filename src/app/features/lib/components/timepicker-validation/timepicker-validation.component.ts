@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions, IDirective, INgModelController } from "angular";
-import type { NgbTimeStruct } from "ngb-js";
+import type { NgbTimeStruct } from "ngb-js/timepicker";
 
 export class TimepickerValidationComponent implements IComponentController {
     public time: NgbTimeStruct | null = null;

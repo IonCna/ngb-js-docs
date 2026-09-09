@@ -1,6 +1,6 @@
 import type { IComponentController, IComponentOptions } from "angular";
 import { ModalUpdatableContentComponent } from "@/features/lib/components/modal-updatable-content/modal-updatable-content.component"
-import { NgbModal } from "ngb-js";
+import { NgbModal, NGB_MODAL } from "ngb-js/modal";
 
 export class ModalUpdatableComponent implements IComponentController {
     constructor(private readonly modal: NgbModal) {}
@@ -18,7 +18,7 @@ export class ModalUpdatableComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbModal.$name]
+        return [NGB_MODAL]
     }
 
     static get $factory(): IComponentOptions {

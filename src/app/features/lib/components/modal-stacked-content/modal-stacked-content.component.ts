@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbModal, type NgbActiveModal } from "ngb-js";
+import { NgbModal, type NgbActiveModal, NGB_MODAL } from "ngb-js/modal";
 
 export class ModalStackedContentComponent implements IComponentController {
     public ngbActiveModal!: NgbActiveModal;
@@ -16,7 +16,7 @@ export class ModalStackedContentComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbModal.$name]
+        return [NGB_MODAL]
     }
 
     static get $factory(): IComponentOptions {

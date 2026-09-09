@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbDateStruct } from "ngb-js";
+import type { NgbDateStruct } from "ngb-js/datepicker";
 
 export class DisabledDatepickerComponent implements IComponentController {
     public disabled = true;

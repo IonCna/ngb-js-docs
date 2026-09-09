@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbPopover } from "ngb-js";
+import type { NgbPopover } from "ngb-js/popover";
 import type { TemplateRef } from "ngjs-core";
 
 export class PopoverContextComponent implements IComponentController {

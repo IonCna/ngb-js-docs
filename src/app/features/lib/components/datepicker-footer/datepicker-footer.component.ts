@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbDatepicker, NgbDateStruct } from "ngb-js";
+import type { NgbDateStruct, NgbDatepicker } from "ngb-js/datepicker";
 
 export class DatepickerFooterComponent implements IComponentController {
     public date: NgbDateStruct | null = null;

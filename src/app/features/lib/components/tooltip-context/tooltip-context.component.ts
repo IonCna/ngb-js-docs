@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbTooltip } from "ngb-js";
+import type { NgbTooltip } from "ngb-js/tooltip";
 import type { TemplateRef } from "ngjs-core";
 
 export class TooltipContextComponent implements IComponentController {

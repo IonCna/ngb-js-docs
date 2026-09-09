@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbDropdownConfig } from "ngb-js";
+import { NgbDropdownConfig, NGB_DROPDOWN_CONFIG } from "ngb-js/dropdown";
 
 export class DropdownGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbDropdownConfig, "autoClose" | "container" | "placement">;
@@ -27,7 +27,7 @@ export class DropdownGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbDropdownConfig.$name]
+        return [NGB_DROPDOWN_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

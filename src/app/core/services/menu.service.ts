@@ -1,6 +1,6 @@
 import {Subject} from "rxjs";
 
-import { NgbOffcanvas } from "ngb-js"
+import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas/compat"
 import { MenuComponent } from "@/core/layouts/components/menu/menu.component"
 
 export class MenuService {
@@ -39,7 +39,7 @@ export class MenuService {
     }
 
     static get $inject() {
-        return [NgbOffcanvas.$name]
+        return [NGB_OFFCANVAS]
     }
 
     static get $name() {

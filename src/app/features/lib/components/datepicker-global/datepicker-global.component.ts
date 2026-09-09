@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbDatepickerConfig, NgbInputDatepickerConfig, type NgbDateStruct } from "ngb-js";
+import { NgbDatepickerConfig, NgbInputDatepickerConfig, type NgbDateStruct } from "ngb-js/datepicker";
 
 type DatepickerDefaults = Pick<NgbDatepickerConfig, "displayMonths" | "navigation" | "outsideDays" | "showWeekNumbers" | "weekdays">;
 
@@ -20,6 +20,6 @@ export class DatepickerGlobalComponent implements IComponentController {
     private capture(config: NgbDatepickerConfig): DatepickerDefaults { return { displayMonths: config.displayMonths, navigation: config.navigation, outsideDays: config.outsideDays, showWeekNumbers: config.showWeekNumbers, weekdays: config.weekdays }; }
     private restore() { Object.assign(this.config, this.inlineDefaults); Object.assign(this.inputConfig, this.inputDefaults); }
     static get $name() { return "docsDatepickerGlobal" }
-    static get $inject() { return [NgbDatepickerConfig.$name, NgbInputDatepickerConfig.$name] }
+    static get $inject() { return ["NgbDatepickerConfig", "NgbInputDatepickerConfig"] }
     static get $factory(): IComponentOptions { return { controller: DatepickerGlobalComponent, controllerAs: "example", templateUrl: "./datepicker-global.component.html", styleUrl: "./datepicker-global.component.css" } }
 }

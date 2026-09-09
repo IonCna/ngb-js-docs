@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbNav } from "ngb-js";
+import { NgbNav } from "ngb-js/nav";
 import { ViewChild } from "ngjs-core";
 
 export class SelectingNavComponent implements IComponentController {

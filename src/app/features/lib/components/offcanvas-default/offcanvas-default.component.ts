@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbOffcanvas } from "ngb-js";
+import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
 import { TemplateRef, ViewChild } from "ngjs-core";
 
 export class OffcanvasDefaultComponent implements IComponentController {
@@ -17,7 +17,7 @@ export class OffcanvasDefaultComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbOffcanvas.$name]
+        return [NGB_OFFCANVAS]
     }
 
     static get $factory(): IComponentOptions {

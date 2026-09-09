@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbPopoverConfig } from "ngb-js";
+import { NgbPopoverConfig, NGB_POPOVER_CONFIG } from "ngb-js/popover";
 
 export class PopoverGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbPopoverConfig, "container" | "openDelay" | "placement" | "triggers">;
@@ -27,7 +27,7 @@ export class PopoverGlobalComponent implements IComponentController {
     }
 
     static get $name() { return "docsPopoverGlobal" }
-    static get $inject() { return [NgbPopoverConfig.$name] }
+    static get $inject() { return [NGB_POPOVER_CONFIG] }
     static get $factory(): IComponentOptions {
         return { controller: PopoverGlobalComponent, controllerAs: "example", templateUrl: "./popover-global.component.html", styleUrl: "./popover-global.component.css" }
     }

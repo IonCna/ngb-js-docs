@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbTimeAdapter, type NgbTimeStruct } from "ngb-js";
+import { NgbTimeAdapter, type NgbTimeStruct } from "ngb-js/timepicker";
 
 const pad = (value: number): string => value.toString().padStart(2, "0");
 

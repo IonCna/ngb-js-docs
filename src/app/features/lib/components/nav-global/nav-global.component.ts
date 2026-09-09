@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbNavConfig } from "ngb-js";
+import { NgbNavConfig, NGB_NAV_CONFIG } from "ngb-js/nav";
 
 export class NavGlobalComponent implements IComponentController {
     public activeId = "global-account";
@@ -46,7 +46,7 @@ export class NavGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbNavConfig.$name]
+        return [NGB_NAV_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

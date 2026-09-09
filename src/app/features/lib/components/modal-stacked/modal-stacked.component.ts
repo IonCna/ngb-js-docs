@@ -1,6 +1,6 @@
 import type { IComponentController, IComponentOptions } from "angular";
 import { ModalStackedContentComponent } from "@/features/lib/components/modal-stacked-content/modal-stacked-content.component"
-import { NgbModal } from "ngb-js";
+import { NgbModal, NGB_MODAL } from "ngb-js/modal";
 
 export class ModalStackedComponent implements IComponentController {
     constructor(private readonly modal: NgbModal) {}
@@ -20,7 +20,7 @@ export class ModalStackedComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbModal.$name]
+        return [NGB_MODAL]
     }
 
     static get $factory(): IComponentOptions {

@@ -1,6 +1,6 @@
 import type { IComponentController, IComponentOptions } from "angular";
 import { ModalDemoContentComponent } from "@/features/lib/components/modal-demo-content/modal-demo-content.component"
-import { NgbModal } from "ngb-js";
+import { NgbModal, NGB_MODAL } from "ngb-js/modal/compat";
 
 export class ModalComponentContentComponent implements IComponentController {
     public lastResult = "No result yet";
@@ -29,7 +29,7 @@ export class ModalComponentContentComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbModal.$name]
+        return [NGB_MODAL]
     }
 
     static get $factory(): IComponentOptions {

@@ -1,5 +1,5 @@
 import {type IAugmentedJQuery, type IComponentController, type IComponentOptions} from "angular";
-import { NgbOffcanvasRef } from "ngb-js"
+import { NgbOffcanvasRef } from "ngb-js/offcanvas/compat"
 
 type MenuModes = "desktop" | "mobile";
 

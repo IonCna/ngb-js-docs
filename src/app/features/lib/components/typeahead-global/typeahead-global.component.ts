@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbTypeaheadConfig } from "ngb-js";
+import { NgbTypeaheadConfig, NGB_TYPEAHEAD_CONFIG } from "ngb-js/typeahead";
 import { debounceTime, distinctUntilChanged, map, type OperatorFunction } from "rxjs";
 
 const STATES = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii"];
@@ -34,7 +34,7 @@ export class TypeaheadGlobalComponent implements IComponentController {
     }
 
     static get $name() { return "docsTypeaheadGlobal" }
-    static get $inject() { return [NgbTypeaheadConfig.$name] }
+    static get $inject() { return [NGB_TYPEAHEAD_CONFIG] }
     static get $factory(): IComponentOptions {
         return { controller: TypeaheadGlobalComponent, controllerAs: "example", templateUrl: "./typeahead-global.component.html", styleUrl: "./typeahead-global.component.css" }
     }

@@ -1,6 +1,6 @@
 import type { IComponentController, IComponentOptions } from "angular";
 import { OffcanvasDemoContentComponent } from "@/features/lib/components/offcanvas-demo-content/offcanvas-demo-content.component"
-import { NgbOffcanvas, NgbOffcanvasConfig } from "ngb-js";
+import { NgbOffcanvas, NgbOffcanvasConfig, NGB_OFFCANVAS, NGB_OFFCANVAS_CONFIG } from "ngb-js/offcanvas";
 
 export class OffcanvasGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<
@@ -53,7 +53,7 @@ export class OffcanvasGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbOffcanvas.$name, NgbOffcanvasConfig.$name]
+        return [NGB_OFFCANVAS, NGB_OFFCANVAS_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

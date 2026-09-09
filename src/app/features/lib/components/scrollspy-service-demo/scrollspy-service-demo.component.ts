@@ -1,5 +1,5 @@
 import type { IAugmentedJQuery, IComponentController, IComponentOptions } from "angular";
-import { NgbScrollSpyService } from "ngb-js";
+import { NgbScrollSpyService } from "ngb-js/scrollspy";
 
 export class ScrollspyServiceDemoComponent implements IComponentController {
     public readonly fragments = ["service-introduction", "service-options", "service-finish"];
@@ -47,7 +47,7 @@ export class ScrollspyServiceDemoComponent implements IComponentController {
     }
 
     static get $name() { return "docsScrollspyServiceDemo" }
-    static get $inject() { return ["$element", NgbScrollSpyService.$name] }
+    static get $inject() { return ["$element", "NgbScrollSpyService"] }
     static get $factory(): IComponentOptions {
         return {
             controller: ScrollspyServiceDemoComponent,

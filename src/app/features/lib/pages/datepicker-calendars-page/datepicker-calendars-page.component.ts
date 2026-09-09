@@ -1,18 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import {
-    NgbCalendarBuddhist,
-    NgbCalendarEthiopian,
-    NgbCalendarGregorian,
-    NgbCalendarHebrew,
-    NgbCalendarIslamicCivil,
-    NgbCalendarIslamicUmalqura,
-    NgbCalendarPersian,
-    NgbDatepickerI18n,
-    NgbDatepickerI18nAmharic,
-    NgbDatepickerI18nHebrew,
-    type NgbCalendar,
-    type NgbDateStruct,
-} from "ngb-js";
+import { NgbCalendarBuddhist, NgbCalendarEthiopian, NgbCalendarGregorian, NgbCalendarHebrew, NgbCalendarIslamicCivil, NgbCalendarIslamicUmalqura, NgbCalendarPersian, NgbDatepickerI18n, NgbDatepickerI18nAmharic, NgbDatepickerI18nHebrew, type NgbCalendar, type NgbDateStruct } from "ngb-js/datepicker";
 
 class CalendarI18n extends NgbDatepickerI18n {
     constructor(private readonly months: string[], private readonly weekdays: string[], private readonly localeName: string) { super(); }

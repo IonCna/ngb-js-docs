@@ -1,6 +1,6 @@
 import angular from 'angular'
 import router from "@uirouter/angularjs"
-import { NgbModule } from "ngb-js"
+import { NgbModule } from "ngb-js";
 import { CoreModule as NgJsCoreModule } from "ngjs-core"
 import { AppComponent } from "@/app.component"
 import { routing } from "@/app.routes"

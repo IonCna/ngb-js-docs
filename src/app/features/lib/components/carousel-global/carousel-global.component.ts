@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbCarouselConfig } from "ngb-js";
+import { NgbCarouselConfig, NGB_CAROUSEL_CONFIG } from "ngb-js/carousel";
 
 export class CarouselGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<
@@ -39,7 +39,7 @@ export class CarouselGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbCarouselConfig.$name]
+        return [NGB_CAROUSEL_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

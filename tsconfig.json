@@ -11,11 +11,12 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleDetection": "force",
     "noEmit": true,
     "paths": {
-      "@/*": ["./src/app/*", "./src/*"],
+      "@/*": ["./src/app/*", "./src/*"]
     },
     /* Linting */
     "noUnusedLocals": true,

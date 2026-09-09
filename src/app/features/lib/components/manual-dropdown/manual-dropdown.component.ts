@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbDropdown } from "ngb-js";
+import { NgbDropdown } from "ngb-js/dropdown/compat";
 import { ViewChild } from "ngjs-core";
 
 export class ManualDropdownComponent implements IComponentController {

@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbTooltip } from "ngb-js";
+import type { NgbTooltip } from "ngb-js/tooltip";
 
 export class TooltipTriggersComponent implements IComponentController {
     public manual?: NgbTooltip;

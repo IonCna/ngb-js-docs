@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbProgressbarConfig } from "ngb-js";
+import { NgbProgressbarConfig, NGB_PROGRESSBAR_CONFIG } from "ngb-js/progressbar";
 
 export class ProgressbarGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbProgressbarConfig, "animated" | "height" | "max" | "showValue" | "striped" | "textType" | "type">;
@@ -28,7 +28,7 @@ export class ProgressbarGlobalComponent implements IComponentController {
     private restoreConfig() { Object.assign(this.config, this.initialConfig); }
 
     static get $name() { return "docsProgressbarGlobal" }
-    static get $inject() { return [NgbProgressbarConfig.$name] }
+    static get $inject() { return [NGB_PROGRESSBAR_CONFIG] }
     static get $factory(): IComponentOptions {
         return { controller: ProgressbarGlobalComponent, controllerAs: "example", templateUrl: "./progressbar-global.component.html", styleUrl: "./progressbar-global.component.css" }
     }

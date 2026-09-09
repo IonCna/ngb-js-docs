@@ -1,6 +1,6 @@
 import type { IComponentController, IComponentOptions } from "angular";
 import { OffcanvasDemoContentComponent } from "@/features/lib/components/offcanvas-demo-content/offcanvas-demo-content.component"
-import { NgbOffcanvas, type NgbOffcanvasOptions } from "ngb-js";
+import { NgbOffcanvas, type NgbOffcanvasOptions, NGB_OFFCANVAS } from "ngb-js/offcanvas";
 
 export class OffcanvasOptionsComponent implements IComponentController {
     constructor(private readonly offcanvas: NgbOffcanvas) {}
@@ -46,7 +46,7 @@ export class OffcanvasOptionsComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbOffcanvas.$name]
+        return [NGB_OFFCANVAS]
     }
 
     static get $factory(): IComponentOptions {

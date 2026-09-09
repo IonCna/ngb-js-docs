@@ -1,5 +1,5 @@
 import angular, {type IComponentController, type IComponentOptions, type IDocumentService} from "angular";
-import {NgbModal} from "ngb-js"
+import { NGB_MODAL, NgbModal } from "ngb-js/modal/compat"
 import {ThemeService} from "@/core/services/theme.service"
 import {ThemeEnumConstant, type Themes} from "@/core/constants/themes.constant.ts";
 import { MenuService } from "@/core/services/menu.service"
@@ -50,7 +50,7 @@ export class HeaderComponent implements IComponentController{
             animation: false
         }).then(modalRef => {
             modalRef.result?.then(result => {
-                if(result) this.saveRecentDocument(result)
+                if(result) this.saveRecentDocument(result as any)
             }, angular.noop)
         }, angular.noop)
     }
@@ -82,7 +82,7 @@ export class HeaderComponent implements IComponentController{
 
     static get $inject() {
         return [
-            NgbModal.$name,
+            NGB_MODAL,
             ThemeService.$name,
             ThemeEnumConstant.$key,
             MenuService.$name,

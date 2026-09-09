@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { INgbCollapse } from "ngb-js";
+import type { INgbCollapse } from "ngb-js/collapse";
 import { ViewChild } from "ngjs-core";
 
 export class SimpleCollapseComponent implements IComponentController {

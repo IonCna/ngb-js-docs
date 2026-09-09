@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbCalendarGregorian, NgbDate } from "ngb-js";
+import { NgbCalendarGregorian, NgbDate } from "ngb-js/datepicker";
 
 export class RangePopupDatepickerComponent implements IComponentController {
     private readonly calendar = new NgbCalendarGregorian();

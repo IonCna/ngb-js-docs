@@ -1,4 +1,4 @@
-import type { INgbAlert } from "ngb-js";
+import type { INgbAlert } from "ngb-js/alert";
 import type { IComponentController, IComponentOptions, IPromise, ITimeoutService } from "angular";
 import { ViewChild } from "ngjs-core";
 

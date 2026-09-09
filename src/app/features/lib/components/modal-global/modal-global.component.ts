@@ -1,6 +1,6 @@
 import type { IComponentController, IComponentOptions } from "angular";
 import { ModalDemoContentComponent } from "@/features/lib/components/modal-demo-content/modal-demo-content.component"
-import { NgbModal, NgbModalConfig } from "ngb-js";
+import { NgbModal, NgbModalConfig, NGB_MODAL, NGB_MODAL_CONFIG } from "ngb-js/modal";
 
 export class ModalGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbModalConfig, "backdrop" | "centered" | "keyboard" | "size">;
@@ -56,7 +56,7 @@ export class ModalGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbModal.$name, NgbModalConfig.$name]
+        return [NGB_MODAL, NGB_MODAL_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

@@ -284,7 +284,7 @@ LibModule.component(SecondsTimepickerComponent.$name, SecondsTimepickerComponent
 LibModule.component(SpinnersTimepickerComponent.$name, SpinnersTimepickerComponent.$factory)
 LibModule.component(TimepickerCustomAdapterComponent.$name, TimepickerCustomAdapterComponent.$factory)
 LibModule.component(TimepickerCustomStepsComponent.$name, TimepickerCustomStepsComponent.$factory)
-LibModule.service(GreekTimepickerI18n.$name, GreekTimepickerI18n)
+LibModule.service("NgbTimepickerI18n", GreekTimepickerI18n)
 LibModule.component(TimepickerI18nComponent.$name, TimepickerI18nComponent.$factory)
 LibModule.component(TimepickerValidationComponent.$name, TimepickerValidationComponent.$factory)
 LibModule.directive("docsTimepickerLunchValidator", timepickerLunchValidator)

@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import type { NgbActiveModal, NgbModalUpdatableOptions } from "ngb-js";
+import type { NgbActiveModal, NgbModalUpdatableOptions } from "ngb-js/modal";
 
 export class ModalUpdatableContentComponent implements IComponentController {
     public ngbActiveModal!: NgbActiveModal;

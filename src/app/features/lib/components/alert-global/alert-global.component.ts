@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbAlertConfig } from "ngb-js";
+import { NgbAlertConfig, NGB_ALERT_CONFIG } from "ngb-js/alert/compat";
 
 export class AlertGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbAlertConfig, "animation" | "dismissible" | "type">;
@@ -27,7 +27,7 @@ export class AlertGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbAlertConfig.$name]
+        return [NGB_ALERT_CONFIG]
     }
 
     static get $factory(): IComponentOptions {

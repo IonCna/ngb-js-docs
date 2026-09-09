@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbDateAdapter, NgbDateParserFormatter, type NgbDateStruct } from "ngb-js";
+import { NgbDateAdapter, NgbDateParserFormatter, type NgbDateStruct } from "ngb-js/datepicker";
 
 class StringDateAdapter extends NgbDateAdapter<string> {
     fromModel(value: string | null): NgbDateStruct | null {

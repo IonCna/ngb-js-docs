@@ -1,5 +1,5 @@
 import type { IComponentController, IComponentOptions } from "angular";
-import { NgbAccordionConfig } from "ngb-js";
+import { NgbAccordionConfig, NGB_ACCORDION_CONFIG } from "ngb-js/accordion/compat";
 
 export class AccordionGlobalComponent implements IComponentController {
     private readonly initialConfig: Pick<NgbAccordionConfig, "animation" | "closeOthers" | "destroyOnHide">;
@@ -27,7 +27,7 @@ export class AccordionGlobalComponent implements IComponentController {
     }
 
     static get $inject() {
-        return [NgbAccordionConfig.$name]
+        return [NGB_ACCORDION_CONFIG]
     }
 
     static get $factory(): IComponentOptions {
