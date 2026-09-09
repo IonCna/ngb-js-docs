@@ -1,15 +1,7 @@
-import type {IComponentOptions} from "angular";
+import {Component} from "ngjs-core";
 
-export class AppComponent {
-    static get $factory(): IComponentOptions {
-        return {
-            controllerAs: "$",
-            controller: AppComponent,
-            template: "<ui-view></ui-view>"
-        }
-    }
-
-    static get $name() {
-        return "docsApp"
-    }
-}
+@Component({
+    selector: "app-root",
+    template: "<ui-view></ui-view>"
+})
+export class AppComponent {}

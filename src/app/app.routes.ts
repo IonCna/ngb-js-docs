@@ -1,16 +1,10 @@
-import {type StateProvider, UrlRouterProvider} from "@uirouter/angularjs";
-import { AppComponent } from "@/app.component"
+import type { Routes } from "ngjs-core/router"
 
-export const routing = (
-    $stateProvider: StateProvider,
-    $urlRouterProvider: UrlRouterProvider,
-) => {
-    $stateProvider.state("docs", {
-        abstract: true,
-        component: AppComponent.$name,
-    })
-
-    $urlRouterProvider.otherwise('/')
-}
-
-routing.$inject = ["$stateProvider", "$urlRouterProvider"]
+export const routes: Routes = [
+    {
+        path: "",
+        pathMatch: "full",
+        loadComponent: () =>
+            import("@/features/home/pages/home-page/home-page.component").then(m => m.HomePageComponent),
+    },
+]

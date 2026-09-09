@@ -1,10 +1,10 @@
-import angular from "angular";
 import { GuideModule } from "@/features/guide/guide.module"
 import { HomeModule } from "@/features/home/home.module"
 import { LibModule } from "@/features/lib/lib.module"
+import {NgModule} from "ngjs-core";
 
-export const FeaturesModule = angular.module("docs.features", [
-    GuideModule.name,
-    HomeModule.name,
-    LibModule.name,
-])
+@NgModule({
+    id: "docs.features",
+    imports: [GuideModule, HomeModule, LibModule]
+})
+export class FeaturesModule {}
