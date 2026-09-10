@@ -1,4 +1,4 @@
-import { documents } from "@/assets/documents/index.json"
+import { documents as rawDocuments } from "@/assets/documents/index.json"
 import type { Language } from "@/core/constants/language.constant"
 
 export interface SearchDocumentTranslation {
@@ -13,7 +13,4 @@ export interface SearchDocument {
     translations: Record<Language, SearchDocumentTranslation>
 }
 
-export class SearchDocumentsConstant {
-    static readonly $key = "search.documents"
-    static readonly $value = documents as SearchDocument[]
-}
+export const documents = rawDocuments as SearchDocument[]

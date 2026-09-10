@@ -1,8 +1,19 @@
+import { Component } from "ngjs-core";
 import {type IAugmentedJQuery, type IComponentController, type IComponentOptions} from "angular";
 import { NgbOffcanvasRef } from "ngb-js/offcanvas/compat"
 
 type MenuModes = "desktop" | "mobile";
 
+@Component({
+    selector: "docs-menu",
+    templateUrl: "./menu.component.html",
+    styleUrl: "./menu.component.css",
+    controllerAs: "$",
+    bindings: {
+        mode: "@",
+        ngbActiveOffcanvas: "<?",
+    },
+})
 export class MenuComponent implements IComponentController {
     public mode: MenuModes = "desktop";
     public ngbActiveOffcanvas?: NgbOffcanvasRef;

@@ -1,10 +1,8 @@
+import { Inject, Injectable } from "ngjs-core"
 import { Language } from "@/core/constants/language.constant"
-import {
-    SearchDocumentsConstant,
-    type SearchDocument,
-} from "@/core/constants/search-documents.constant"
-import { IndexingProvider } from "@/core/providers/indexing.provider"
-import { LanguageProvider } from "@/core/providers/language.provider"
+import type { SearchDocument } from "@/core/constants/search-documents.constant"
+import { tokenize } from "@/core/search-index"
+import { INDEXING, LANGUAGE, SEARCH_DOCUMENTS } from "@/core/tokens"
 
 const MAX_RESULTS = 8
 
@@ -16,19 +14,22 @@ export interface SearchResult {
     content: string
 }
 
+@Injectable({ id: "docs.search.service" })
 export class SearchService {
+    static readonly $name = "docs.search.service";
+
     private readonly documentsById: Map<string, SearchDocument>
 
     constructor(
-        private readonly index: Map<string, Set<string>>,
-        documents: SearchDocument[],
-        private readonly language: Language,
+        @Inject(INDEXING) private readonly index: Map<string, Set<string>>,
+        @Inject(SEARCH_DOCUMENTS) documents: SearchDocument[],
+        @Inject(LANGUAGE) private readonly language: Language,
     ) {
         this.documentsById = new Map(documents.map(document => [document.id, document]))
     }
 
     public search(query: string): SearchResult[] {
-        const terms = IndexingProvider.tokenize(query)
+        const terms = tokenize(query)
 
         if(terms.length !== 1) return []
 
@@ -58,17 +59,5 @@ export class SearchService {
                 content: translation.content,
             }]
         }).slice(0, MAX_RESULTS)
-    }
-
-    static get $name() {
-        return "docs.search.service"
-    }
-
-    static get $inject() {
-        return [
-            IndexingProvider.$name,
-            SearchDocumentsConstant.$key,
-            LanguageProvider.$name,
-        ]
     }
 }

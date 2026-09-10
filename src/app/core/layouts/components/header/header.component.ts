@@ -1,7 +1,9 @@
-import angular, {type IComponentController, type IComponentOptions, type IDocumentService} from "angular";
+import { Component, Inject } from "ngjs-core";
+import angular, { type IComponentController, type IDocumentService } from "angular";
 import { NGB_MODAL, NgbModal } from "ngb-js/modal/compat"
-import {ThemeService} from "@/core/services/theme.service"
-import {ThemeEnumConstant, type Themes} from "@/core/constants/themes.constant.ts";
+import { ThemeService } from "@/core/services/theme.service"
+import { type Themes } from "@/core/constants/themes.constant.ts";
+import { THEMES_ENUM } from "@/core/tokens"
 import { MenuService } from "@/core/services/menu.service"
 import {
     MAX_RECENT_DOCUMENTS,
@@ -12,16 +14,22 @@ import type { SearchResult } from "@/core/services/search.service"
 import brandLogoDarkUrl from "@/assets/brand/ngb-js-logo-dark.png"
 import brandLogoLightUrl from "@/assets/brand/ngb-js-logo-light.png"
 
-export class HeaderComponent implements IComponentController{
+@Component({
+    selector: "docs-header",
+    templateUrl: "./header.component.html",
+    styleUrl: "./header.component.css",
+    controllerAs: "$",
+})
+export class HeaderComponent implements IComponentController {
     public readonly brandLogoDarkUrl = brandLogoDarkUrl
     public readonly brandLogoLightUrl = brandLogoLightUrl
 
     constructor(
-        private modalService: NgbModal,
+        @Inject(NGB_MODAL) private modalService: NgbModal,
         public themeService: ThemeService,
-        public themes: typeof Themes,
+        @Inject(THEMES_ENUM) public themes: typeof Themes,
         public menuService: MenuService,
-        private readonly $document: IDocumentService,
+        @Inject("$document") private readonly $document: IDocumentService,
     ) {}
 
     private readonly handleSearchShortcut = (event: JQueryEventObject) => {
@@ -74,27 +82,5 @@ export class HeaderComponent implements IComponentController{
         ].slice(0, MAX_RECENT_DOCUMENTS)
 
         localStorage.setItem(SEARCH_RECENTS_STORAGE_KEY, JSON.stringify(updatedDocuments))
-    }
-
-    static get $name() {
-        return "docsHeader"
-    }
-
-    static get $inject() {
-        return [
-            NGB_MODAL,
-            ThemeService.$name,
-            ThemeEnumConstant.$key,
-            MenuService.$name,
-            "$document"
-        ]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controllerAs: "$",
-            controller: HeaderComponent,
-            templateUrl: "./header.component.html", styleUrl: "./header.component.css"
-        }
     }
 }

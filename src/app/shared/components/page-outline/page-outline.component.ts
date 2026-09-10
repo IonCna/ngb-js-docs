@@ -1,10 +1,16 @@
-import type {IComponentController, IComponentOptions} from "angular";
-import {Subject, takeUntil} from "rxjs";
-import { BootstrapUrlProvider } from "@/core/providers/bootstrap-url.provider"
-import { NgBootstrapUrlProvider } from "@/core/providers/ng-bootstrap-url.provider"
+import { Component, Inject } from "ngjs-core";
+import type { IComponentController, IComponentOptions } from "angular";
+import { Subject, takeUntil } from "rxjs";
 import { TitleService } from "@/core/services/title.service"
-import type {HeadingExternalLinks, HeadingSection} from "@/core/models/title.model"
+import { BOOTSTRAP_URL, NG_BOOTSTRAP_URL } from "@/core/tokens"
+import type { HeadingExternalLinks, HeadingSection } from "@/core/models/title.model"
 
+@Component({
+    selector: "docs-page-outline",
+    templateUrl: "./page-outline.component.html",
+    styleUrl: "./page-outline.component.css",
+    controllerAs: "$",
+})
 export class PageOutlineComponent implements IComponentController {
     private destroyRef = new Subject<void>()
     private externalLinks?: HeadingExternalLinks
@@ -14,8 +20,8 @@ export class PageOutlineComponent implements IComponentController {
 
     constructor(
         private titleService: TitleService,
-        private bootstrapUrl: string,
-        private ngBootstrapUrl: string,
+        @Inject(BOOTSTRAP_URL) private bootstrapUrl: string,
+        @Inject(NG_BOOTSTRAP_URL) private ngBootstrapUrl: string,
     ) {}
 
     get bootstrapHref() {
@@ -43,14 +49,6 @@ export class PageOutlineComponent implements IComponentController {
     $onDestroy() {
         this.destroyRef.next()
         this.destroyRef.complete()
-    }
-
-    static get $inject() {
-        return [
-            TitleService.$name,
-            BootstrapUrlProvider.$name,
-            NgBootstrapUrlProvider.$name,
-        ]
     }
 
     static get $name() {

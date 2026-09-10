@@ -1,3 +1,4 @@
+import { Component } from "ngjs-core";
 import angular, { type IAugmentedJQuery, type IComponentController, type IComponentOptions } from "angular"
 import type { StateService } from "@uirouter/angularjs"
 import type { NgbActiveModal } from "ngb-js/modal";
@@ -7,6 +8,15 @@ import { SearchService, type SearchResult } from "@/core/services/search.service
 export const SEARCH_RECENTS_STORAGE_KEY = "docs.search.recents"
 export const MAX_RECENT_DOCUMENTS = 10
 
+@Component({
+    selector: "docs-search-modal",
+    templateUrl: "./search-modal.component.html",
+    styleUrl: "./search-modal.component.css",
+    controllerAs: "$",
+    bindings: {
+        ngbActiveModal: "<",
+    },
+})
 export class SearchModalComponent implements IComponentController {
     public ngbActiveModal!: NgbActiveModal
     public query = ""

@@ -1,6 +1,11 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import {Component} from "ngjs-core";
 
-export class IntroductionPageComponent implements IComponentController {
+@Component({
+    selector: "docs-introduction-page",
+    templateUrl: "./introduction-page.component.html",
+    styleUrl: "./introduction-page.component.css"
+})
+export class IntroductionPageComponent {
     public activePackageManager = "npm"
 
     public readonly packageManagers = [
@@ -9,16 +14,4 @@ export class IntroductionPageComponent implements IComponentController {
         { id: "yarn", name: "Yarn", command: "yarn add ngb-js" },
         { id: "bun", name: "Bun", command: "bun add ngb-js" },
     ]
-
-    static get $name() {
-        return "docsIntroductionPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: IntroductionPageComponent,
-            templateUrl: "./introduction-page.component.html", styleUrl: "./introduction-page.component.css",
-            controllerAs: "$",
-        }
-    }
 }

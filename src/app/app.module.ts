@@ -12,7 +12,6 @@ import {RouterModule} from "ngjs-core/router";
 
 export const AppModule = angular.module('docs', [
     router,
-    CoreModule.name,
     NgbModule.name,
     SharedModule.name
 ])
@@ -24,6 +23,7 @@ export const AppModule = angular.module('docs', [
     imports: [
         AppModule,
         NgCoreModule,
+        CoreModule,
         FeaturesModule,
         RouterModule.forRoot(routes),
     ],

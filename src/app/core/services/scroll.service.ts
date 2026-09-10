@@ -1,8 +1,12 @@
-import type {TransitionService} from "@uirouter/angularjs";
+import { Inject, Injectable } from "ngjs-core";
+import type { TransitionService } from "@uirouter/angularjs";
 
+@Injectable({ id: "docs.scroll.service" })
 export class ScrollService {
+    static readonly $name = "docs.scroll.service";
+
     constructor(
-        private $transitionService: TransitionService
+        @Inject("$transitions") private $transitionService: TransitionService,
     ) {}
 
     observeScroll() {
@@ -16,21 +20,4 @@ export class ScrollService {
             })
         })
     }
-
-    static get $name() {
-        return "docs.scroll.service"
-    }
-
-    static get $inject() {
-        return ["$transitions"]
-    }
-}
-
-export function provideScrollObserver() {
-    const _ = (scrollService: ScrollService) => {
-        scrollService.observeScroll()
-    }
-
-    _.$inject = [ScrollService.$name]
-    return _
 }

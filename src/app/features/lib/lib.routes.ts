@@ -36,8 +36,16 @@ import { TooltipApiPageComponent } from "@/features/lib/pages/tooltip-api-page/t
 import { TooltipExamplesPageComponent } from "@/features/lib/pages/tooltip-examples-page/tooltip-examples-page.component"
 import { TypeaheadApiPageComponent } from "@/features/lib/pages/typeahead-api-page/typeahead-api-page.component"
 import { TypeaheadExamplesPageComponent } from "@/features/lib/pages/typeahead-examples-page/typeahead-examples-page.component"
+import { MenuAbstractPageComponent } from "@/core/layouts/pages/menu-abstract-page/menu-abstract-page.component"
 
 export const routing = ($stateProvider: StateProvider) => {
+    // Estado abstracto raíz del layout con menú. lib sigue en modo UI-Router crudo,
+    // así que registra acá el padre del que cuelgan todas sus rutas `docs.dashboard.*`.
+    $stateProvider.state("docs.dashboard", {
+        abstract: true,
+        component: MenuAbstractPageComponent.$name,
+    })
+
     $stateProvider.state("docs.dashboard.alert", {
         url: "/components/alert",
         redirectTo: "docs.dashboard.alert.examples",

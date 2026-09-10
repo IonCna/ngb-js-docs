@@ -1,66 +1,61 @@
-import angular from "angular";
+import { NgModule, provideAppInitializer } from "ngjs-core";
 
-import { BootstrapUrlProvider, provideBootstrapUrl } from "@/core/providers/bootstrap-url.provider"
-import { NgBootstrapUrlProvider, provideNgBootstrapUrl } from "@/core/providers/ng-bootstrap-url.provider"
-import { ThemeProvider, provideTheme } from "@/core/providers/theme.provider"
-import { LanguageProvider, provideAppLanguage } from "@/core/providers/language.provider"
-
-import { ThemeService } from "@/core/services/theme.service"
-import { ThemeConstant, ThemeEnumConstant } from "@/core/constants/themes.constant"
-import { LanguageConstant } from "@/core/constants/language.constant"
-import { SearchDocumentsConstant } from "@/core/constants/search-documents.constant"
-import {LanguageService} from "@/core/services/language.service";
-import { MenuService } from "@/core/services/menu.service"
-import { TitleService, provideTitleObserver } from "@/core/services/title.service"
-import { ScrollService, provideScrollObserver } from "@/core/services/scroll.service"
-import { SearchService } from "@/core/services/search.service"
-
-import { IndexingProvider, provideIndexingEngineData } from "@/core/providers/indexing.provider.ts"
 import { LayoutModule } from "@/core/layouts/layout.module"
 
-export const CoreModule = angular.module("docs.core", [
-    LayoutModule.name,
-])
+import { Themes } from "@/core/constants/themes.constant"
+import { documents } from "@/core/constants/search-documents.constant"
+import { buildSearchIndex } from "@/core/search-index"
+import {
+    BOOTSTRAP_URL,
+    NG_BOOTSTRAP_URL,
+    THEME,
+    LANGUAGE,
+    INDEXING,
+    SEARCH_DOCUMENTS,
+    THEMES_ENUM,
+    THEME_STORAGE_KEY,
+    LANGUAGE_STORAGE_KEY,
+    bootstrapUrlFactory,
+    ngBootstrapUrlFactory,
+    themeFactory,
+    languageFactory,
+} from "@/core/tokens"
 
-CoreModule.provider(BootstrapUrlProvider.$name, BootstrapUrlProvider)
-CoreModule.provider(NgBootstrapUrlProvider.$name, NgBootstrapUrlProvider)
+import { ThemeService } from "@/core/services/theme.service"
+import { LanguageService } from "@/core/services/language.service"
+import { MenuService } from "@/core/services/menu.service"
+import { TitleService } from "@/core/services/title.service"
+import { ScrollService } from "@/core/services/scroll.service"
+import { SearchService } from "@/core/services/search.service"
 
-// theme
-CoreModule.constant(ThemeConstant.$key, ThemeConstant.$value)
-CoreModule.constant(ThemeEnumConstant.$key, ThemeEnumConstant.$value)
-CoreModule.provider(ThemeProvider.$name, ThemeProvider)
-CoreModule.service(ThemeService.$name, ThemeService)
+@NgModule({
+    id: "docs.core",
+    imports: [LayoutModule],
+    providers: [
+        { provide: THEME_STORAGE_KEY, useValue: "theme" },
+        { provide: LANGUAGE_STORAGE_KEY, useValue: "language" },
+        { provide: THEMES_ENUM, useValue: Themes },
+        { provide: SEARCH_DOCUMENTS, useValue: documents },
 
-//lang
-CoreModule.constant(LanguageConstant.$key, LanguageConstant.$value)
-CoreModule.provider(LanguageProvider.$name, LanguageProvider)
-CoreModule.service(LanguageService.$name, LanguageService)
+        { provide: BOOTSTRAP_URL, useValue: bootstrapUrlFactory({ url: "https://getbootstrap.com", version: 5.3 }) },
+        { provide: NG_BOOTSTRAP_URL, useValue: ngBootstrapUrlFactory({ url: "https://ng-bootstrap.github.io" }) },
 
-// search
-CoreModule.constant(SearchDocumentsConstant.$key, SearchDocumentsConstant.$value)
+        { provide: THEME, useFactory: themeFactory, deps: [THEME_STORAGE_KEY] },
+        { provide: LANGUAGE, useFactory: languageFactory, deps: [LANGUAGE_STORAGE_KEY] },
+        { provide: INDEXING, useFactory: buildSearchIndex, deps: [LANGUAGE, SEARCH_DOCUMENTS] },
 
-CoreModule.service(MenuService.$name, MenuService)
-CoreModule.service(TitleService.$name, TitleService)
-CoreModule.service(ScrollService.$name, ScrollService)
-CoreModule.service(SearchService.$name, SearchService)
+        ThemeService,
+        LanguageService,
+        MenuService,
+        TitleService,
+        ScrollService,
+        SearchService,
+    ],
+})
+export class CoreModule {}
 
-CoreModule.provider(IndexingProvider.$name, IndexingProvider)
-
-CoreModule.config(provideBootstrapUrl({
-    url: "https://getbootstrap.com",
-    version: 5.3
-}))
-
-// language provider debe de procesarse antes que provideIndexingEngine, ya que el segundo
-// depende del primero
-CoreModule.config(provideAppLanguage())
-CoreModule.config(provideIndexingEngineData())
-
-CoreModule.config(provideTheme())
-
-CoreModule.config(provideNgBootstrapUrl({
-    url: "https://ng-bootstrap.github.io"
-}))
-
-CoreModule.run(provideScrollObserver())
-CoreModule.run(provideTitleObserver())
+// Traducción de los `.run()`: enganchar los observers de transición al arrancar.
+provideAppInitializer(($injector) => {
+    $injector.get<ScrollService>(ScrollService.$name).observeScroll()
+    $injector.get<TitleService>(TitleService.$name).observeRoute()
+})

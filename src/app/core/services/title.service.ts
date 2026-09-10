@@ -1,8 +1,12 @@
-import type {TransitionService} from "@uirouter/angularjs";
-import {ReplaySubject} from "rxjs";
-import type {HeadingData} from "@/core/models/title.model.ts";
+import { Inject, Injectable } from "ngjs-core";
+import type { TransitionService } from "@uirouter/angularjs";
+import { ReplaySubject } from "rxjs";
+import type { HeadingData } from "@/core/models/title.model.ts";
 
+@Injectable({ id: "docs.title.service" })
 export class TitleService {
+    static readonly $name = "docs.title.service";
+
     private _transition = new ReplaySubject<HeadingData>(undefined)
     public transition$ = this._transition.asObservable()
 
@@ -17,7 +21,7 @@ export class TitleService {
     }
 
     constructor(
-        private transitionService: TransitionService
+        @Inject("$transitions") private transitionService: TransitionService,
     ) {}
 
     public observeRoute() {
@@ -36,21 +40,4 @@ export class TitleService {
             this._transition.next(data)
         })
     }
-
-    static get $name() {
-        return "docs.title.service";
-    }
-
-    static get $inject() {
-        return ["$transitions"];
-    }
-}
-
-export function provideTitleObserver() {
-    const _ = (titleService: TitleService) => {
-        titleService.observeRoute()
-    }
-
-    _.$inject = [TitleService.$name]
-    return _
 }

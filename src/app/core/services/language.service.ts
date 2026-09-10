@@ -1,13 +1,17 @@
-import {LanguageProvider} from "@/core/providers/language.provider.ts";
-import type {Language} from "@/core/constants/language.constant.ts";
-import {BehaviorSubject, Observable} from "rxjs";
+import { Inject, Injectable } from "ngjs-core";
+import type { Language } from "@/core/constants/language.constant.ts";
+import { LANGUAGE } from "@/core/tokens";
+import { BehaviorSubject, Observable } from "rxjs";
 
+@Injectable({ id: "docs.language.service" })
 export class LanguageService {
+    static readonly $name = "docs.language.service";
+
     private _changeLang: BehaviorSubject<Language>;
     public changeLang$: Observable<Language>;
 
     constructor(
-        private language: Language,
+        @Inject(LANGUAGE) private language: Language,
     ) {
         this._changeLang = new BehaviorSubject(this.language);
         this.changeLang$ = this._changeLang.asObservable();
@@ -15,13 +19,5 @@ export class LanguageService {
 
     public selectLanguage(language: Language) {
         this._changeLang.next(language);
-    }
-
-    static get $name() {
-        return "docs.language.service";
-    }
-
-    static get $inject() {
-        return [LanguageProvider.$name];
     }
 }
