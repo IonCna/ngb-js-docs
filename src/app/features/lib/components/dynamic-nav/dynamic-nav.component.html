@@ -15,7 +15,7 @@
     ng-ref-read="ngbNav"
     active-id="example.activeId"
     class="nav-tabs">
-    <li ng-repeat="item in example.items track by item.id" ngb-nav-item="{{ item.id }}">
+    <li ng-repeat="item in example.items track by item.id" ngb-nav-item="item.id">
         <button type="button" ngb-nav-link>{{ item.title }}</button>
         <ng-template ngb-nav-content>
             <p class="pt-3 mb-0">Dynamic content for {{ item.title }}.</p>

@@ -7,7 +7,7 @@
 
 <ngb-alert
     ng-repeat="alert in example.alerts track by alert.id"
-    type="{{ alert.type }}"
+    type="alert.type"
     dismissible="true"
     animation="alert.animation"
     closed="example.close(alert.id)">

@@ -178,7 +178,7 @@
                     ng-ref-read="ngbNav">
                     <li
                         ng-repeat="manager in $.packageManagers track by manager.id"
-                        ngb-nav-item="{{ manager.id }}">
+                        ngb-nav-item="manager.id">
                         <button type="button" ngb-nav-link>{{ manager.name }}</button>
 
                         <ng-template ngb-nav-content>

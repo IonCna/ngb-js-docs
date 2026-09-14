@@ -10,16 +10,16 @@
     </button>
 </div>
 
-<ul ngb-nav ng-ref="nav" active-id="example.activeId" class="nav-tabs">
-    <li ngb-nav-item="selecting-first">
+<ul ngb-nav ng-ref="example.nav" ng-ref-read="ngbNav" active-id="example.activeId" class="nav-tabs">
+    <li ngb-nav-item="'selecting-first'">
         <button type="button" ngb-nav-link>First</button>
         <ng-template ngb-nav-content><p class="pt-3 mb-0">First tab selected.</p></ng-template>
     </li>
-    <li ngb-nav-item="selecting-second">
+    <li ngb-nav-item="'selecting-second'">
         <button type="button" ngb-nav-link>Second</button>
         <ng-template ngb-nav-content><p class="pt-3 mb-0">Second tab selected.</p></ng-template>
     </li>
-    <li ngb-nav-item="selecting-third">
+    <li ngb-nav-item="'selecting-third'">
         <button type="button" ngb-nav-link>Third</button>
         <ng-template ngb-nav-content><p class="pt-3 mb-0">Third tab selected.</p></ng-template>
     </li>

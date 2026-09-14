@@ -7,7 +7,7 @@ import { SharedModule } from "@/shared/shared.module"
 import { FeaturesModule } from "@/features/features.module"
 import {NgModule, CoreModule as NgCoreModule} from "ngjs-core";
 import { routes } from "@/app.routes"
-import {RouterModule} from "ngjs-core/router";
+import {RouterModule, withRouterConfig} from "ngjs-core/router";
 
 @NgModule({
     id: "root",
@@ -20,7 +20,11 @@ import {RouterModule} from "ngjs-core/router";
         CoreModule,
         SharedModule,
         FeaturesModule,
-        RouterModule.forRoot(routes),
+        // `lib.routes.ts` declara `title`/`tabs`/`externalLinks` en la ruta padre
+        // (`components/x`) y las rutas hoja (`examples`/`api`/...) los leen vía
+        // `ActivatedRoute.data` — necesita `'always'` (default de Angular es
+        // `'emptyOnly'`, que no hereda a través de paths no vacíos).
+        RouterModule.forRoot(routes, withRouterConfig({ paramsInheritanceStrategy: "always" })),
     ],
     bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { NgbNav } from "ngb-js/nav";
 
 @Component({
@@ -8,7 +8,6 @@ import { NgbNav } from "ngb-js/nav";
     styleUrl: "./selecting-nav.component.css",
 })
 export class SelectingNavComponent {
-    @ViewChild("nav", { read: NgbNav, static: true })
     public nav!: NgbNav;
 
     public activeId = "selecting-first";
