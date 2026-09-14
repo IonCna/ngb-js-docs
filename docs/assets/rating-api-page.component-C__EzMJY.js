@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-rating-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/rating-api-page.component-66e83297.html`,styleUrl:`./rating-api-page.component.css`})],n);export{n as RatingApiPageComponent};

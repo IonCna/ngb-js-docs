@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-toast-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/toast-api-page.component-ebdfa33b.html`,styleUrl:`./toast-api-page.component.css`})],n);export{n as ToastApiPageComponent};

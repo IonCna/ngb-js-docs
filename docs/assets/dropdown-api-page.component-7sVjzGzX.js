@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-dropdown-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/dropdown-api-page.component-05e1ae53.html`,styleUrl:`./dropdown-api-page.component.css`})],n);export{n as DropdownApiPageComponent};

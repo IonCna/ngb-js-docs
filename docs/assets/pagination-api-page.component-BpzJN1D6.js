@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-pagination-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/pagination-api-page.component-fead9c30.html`,styleUrl:`./pagination-api-page.component.css`})],n);export{n as PaginationApiPageComponent};

@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-carousel-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/carousel-api-page.component-2ba888d7.html`,styleUrl:`./carousel-api-page.component.css`})],n);export{n as CarouselApiPageComponent};

@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-alert-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/alert-api-page.component-dae18936.html`,styleUrl:`./alert-api-page.component.css`})],n);export{n as AlertApiPageComponent};
