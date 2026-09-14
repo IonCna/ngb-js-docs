@@ -1,31 +1,21 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject } from "ngjs-core";
 import { ModalUpdatableContentComponent } from "@/features/lib/components/modal-updatable-content/modal-updatable-content.component"
 import { NgbModal, NGB_MODAL } from "ngb-js/modal";
 
-export class ModalUpdatableComponent implements IComponentController {
-    constructor(private readonly modal: NgbModal) {}
+@Component({
+    selector: "docs-modal-updatable",
+    controllerAs: "example",
+    templateUrl: "./modal-updatable.component.html",
+    styleUrl: "./modal-updatable.component.css",
+})
+export class ModalUpdatableComponent {
+    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
 
     public open() {
-        this.modal.open(ModalUpdatableContentComponent.$name, {
+        this.modal.open(ModalUpdatableContentComponent, {
             ariaLabelledBy: "updatable-modal-title",
             ariaDescribedBy: "updatable-modal-description",
             size: "sm",
         });
-    }
-
-    static get $name() {
-        return "docsModalUpdatable"
-    }
-
-    static get $inject() {
-        return [NGB_MODAL]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ModalUpdatableComponent,
-            controllerAs: "example",
-            templateUrl: "./modal-updatable.component.html", styleUrl: "./modal-updatable.component.css",
-        }
     }
 }

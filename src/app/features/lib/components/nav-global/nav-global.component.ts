@@ -1,7 +1,13 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
 import { NgbNavConfig, NGB_NAV_CONFIG } from "ngb-js/nav";
 
-export class NavGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-nav-global",
+    controllerAs: "example",
+    templateUrl: "./nav-global.component.html",
+    styleUrl: "./nav-global.component.css",
+})
+export class NavGlobalComponent implements AfterViewInit, OnDestroy {
     public activeId = "global-account";
 
     private readonly initialConfig: Pick<
@@ -9,7 +15,7 @@ export class NavGlobalComponent implements IComponentController {
         "animation" | "destroyOnHide" | "keyboard" | "orientation" | "roles"
     >;
 
-    constructor(private readonly config: NgbNavConfig) {
+    constructor(@Inject(NGB_NAV_CONFIG) private readonly config: NgbNavConfig) {
         this.initialConfig = {
             animation: config.animation,
             destroyOnHide: config.destroyOnHide,
@@ -25,11 +31,11 @@ export class NavGlobalComponent implements IComponentController {
         config.roles = "tablist";
     }
 
-    public $postLink() {
+    public ngAfterViewInit() {
         this.restoreConfig();
     }
 
-    public $onDestroy() {
+    public ngOnDestroy() {
         this.restoreConfig();
     }
 
@@ -39,21 +45,5 @@ export class NavGlobalComponent implements IComponentController {
         this.config.keyboard = this.initialConfig.keyboard;
         this.config.orientation = this.initialConfig.orientation;
         this.config.roles = this.initialConfig.roles;
-    }
-
-    static get $name() {
-        return "docsNavGlobal"
-    }
-
-    static get $inject() {
-        return [NGB_NAV_CONFIG]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: NavGlobalComponent,
-            controllerAs: "example",
-            templateUrl: "./nav-global.component.html", styleUrl: "./nav-global.component.css",
-        }
     }
 }

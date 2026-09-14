@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-PqXhwIf1.js";var n=class{};n=e([t({selector:`docs-tooltip-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/tooltip-api-page.component-24c735e4.html`,styleUrl:`./tooltip-api-page.component.css`})],n);export{n as TooltipApiPageComponent};

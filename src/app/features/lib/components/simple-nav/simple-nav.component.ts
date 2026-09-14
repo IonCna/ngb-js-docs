@@ -1,17 +1,11 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class SimpleNavComponent implements IComponentController {
+@Component({
+    selector: "docs-simple-nav",
+    controllerAs: "example",
+    templateUrl: "./simple-nav.component.html",
+    styleUrl: "./simple-nav.component.css",
+})
+export class SimpleNavComponent {
     public activeId = "simple-overview";
-
-    static get $name() {
-        return "docsSimpleNav"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: SimpleNavComponent,
-            controllerAs: "example",
-            templateUrl: "./simple-nav.component.html", styleUrl: "./simple-nav.component.css",
-        }
-    }
 }

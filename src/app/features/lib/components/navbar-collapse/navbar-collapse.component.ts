@@ -1,6 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class NavbarCollapseComponent implements IComponentController {
+@Component({
+    selector: "docs-navbar-collapse",
+    controllerAs: "example",
+    templateUrl: "./navbar-collapse.component.html",
+    styleUrl: "./navbar-collapse.component.css",
+})
+export class NavbarCollapseComponent {
     public menuCollapsed = true;
 
     public toggleMenu() {
@@ -9,17 +15,5 @@ export class NavbarCollapseComponent implements IComponentController {
 
     public closeMenu() {
         this.menuCollapsed = true;
-    }
-
-    static get $name() {
-        return "docsNavbarCollapse"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: NavbarCollapseComponent,
-            controllerAs: "example",
-            templateUrl: "./navbar-collapse.component.html", styleUrl: "./navbar-collapse.component.css",
-        }
     }
 }

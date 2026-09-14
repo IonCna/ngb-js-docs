@@ -1,15 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class CarouselSimpleComponent implements IComponentController {
-    static get $name() {
-        return "docsCarouselSimple"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CarouselSimpleComponent,
-            controllerAs: "example",
-            templateUrl: "./carousel-simple.component.html", styleUrl: "./carousel-simple.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-carousel-simple",
+    controllerAs: "example",
+    templateUrl: "./carousel-simple.component.html",
+    styleUrl: "./carousel-simple.component.css",
+})
+export class CarouselSimpleComponent {}

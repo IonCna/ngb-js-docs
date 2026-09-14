@@ -1,4 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import { NgbDatepickerI18n, type NgbDateStruct } from "ngb-js/datepicker";
 
 class SpanishDatepickerI18n extends NgbDatepickerI18n {
@@ -10,9 +10,13 @@ class SpanishDatepickerI18n extends NgbDatepickerI18n {
     getDayAriaLabel(date: NgbDateStruct) { return `${date.day} de ${this.getMonthFullName(date.month)} de ${date.year}`; }
 }
 
-export class DatepickerI18nComponent implements IComponentController {
+@Component({
+    selector: "docs-datepicker-i18n",
+    controllerAs: "example",
+    templateUrl: "./datepicker-i18n.component.html",
+    styleUrl: "./datepicker-i18n.component.css",
+})
+export class DatepickerI18nComponent {
     public readonly i18n = new SpanishDatepickerI18n();
     public date: NgbDateStruct = { year: 2026, month: 8, day: 24 };
-    static get $name() { return "docsDatepickerI18n" }
-    static get $factory(): IComponentOptions { return { controller: DatepickerI18nComponent, controllerAs: "example", templateUrl: "./datepicker-i18n.component.html", styleUrl: "./datepicker-i18n.component.css" } }
 }

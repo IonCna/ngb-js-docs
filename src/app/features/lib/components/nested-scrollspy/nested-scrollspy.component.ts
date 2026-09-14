@@ -1,12 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class NestedScrollspyComponent implements IComponentController {
-    static get $name() { return "docsNestedScrollspy" }
-    static get $factory(): IComponentOptions {
-        return {
-            controller: NestedScrollspyComponent,
-            controllerAs: "example",
-            templateUrl: "./nested-scrollspy.component.html", styleUrl: "./nested-scrollspy.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-nested-scrollspy",
+    controllerAs: "example",
+    templateUrl: "./nested-scrollspy.component.html",
+    styleUrl: "./nested-scrollspy.component.css",
+})
+export class NestedScrollspyComponent {}

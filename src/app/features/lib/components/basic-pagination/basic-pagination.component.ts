@@ -1,21 +1,15 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class BasicPaginationComponent implements IComponentController {
+@Component({
+    selector: "docs-basic-pagination",
+    controllerAs: "example",
+    templateUrl: "./basic-pagination.component.html",
+    styleUrl: "./basic-pagination.component.css",
+})
+export class BasicPaginationComponent {
     public page = 4;
 
     public selectPage(page: number) {
         this.page = page;
-    }
-
-    static get $name() {
-        return "docsBasicPagination"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: BasicPaginationComponent,
-            controllerAs: "example",
-            templateUrl: "./basic-pagination.component.html", styleUrl: "./basic-pagination.component.css",
-        }
     }
 }

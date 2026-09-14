@@ -1,38 +1,32 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import carouselControlsTs from "@/features/lib/components/carousel-controls/carousel-controls.component.ts?raw"
 import carouselGlobalTs from "@/features/lib/components/carousel-global/carousel-global.component.ts?raw"
-import { CarouselControlsComponent } from "@/features/lib/components/carousel-controls/carousel-controls.component"
-import { CarouselGlobalComponent } from "@/features/lib/components/carousel-global/carousel-global.component"
-import { CarouselKeyboardComponent } from "@/features/lib/components/carousel-keyboard/carousel-keyboard.component"
-import { CarouselSimpleComponent } from "@/features/lib/components/carousel-simple/carousel-simple.component"
+import carouselSimpleHtml from "@/features/lib/components/carousel-simple/carousel-simple.component.html?raw"
+import carouselKeyboardHtml from "@/features/lib/components/carousel-keyboard/carousel-keyboard.component.html?raw"
+import carouselControlsHtml from "@/features/lib/components/carousel-controls/carousel-controls.component.html?raw"
+import carouselGlobalHtml from "@/features/lib/components/carousel-global/carousel-global.component.html?raw"
 
-export class CarouselExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-carousel-examples-page",
+    controllerAs: "$",
+    templateUrl: "./carousel-examples-page.component.html",
+    styleUrl: "./carousel-examples-page.component.css",
+})
+export class CarouselExamplesPageComponent {
     public readonly examples = {
         simple: {
-            html: CarouselSimpleComponent.$factory.templateUrl,
+            html: carouselSimpleHtml,
         },
         keyboard: {
-            html: CarouselKeyboardComponent.$factory.templateUrl,
+            html: carouselKeyboardHtml,
         },
         controls: {
-            html: CarouselControlsComponent.$factory.templateUrl,
+            html: carouselControlsHtml,
             typescript: carouselControlsTs,
         },
         global: {
-            html: CarouselGlobalComponent.$factory.templateUrl,
+            html: carouselGlobalHtml,
             typescript: carouselGlobalTs,
         },
-    }
-
-    static get $name() {
-        return "docsCarouselExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CarouselExamplesPageComponent,
-            templateUrl: "./carousel-examples-page.component.html", styleUrl: "./carousel-examples-page.component.css",
-            controllerAs: "$",
-        }
     }
 }

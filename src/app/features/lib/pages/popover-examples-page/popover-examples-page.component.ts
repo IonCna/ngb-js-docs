@@ -1,54 +1,49 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import autocloseTs from "@/features/lib/components/popover-autoclose/popover-autoclose.component.ts?raw"
+import autocloseHtml from "@/features/lib/components/popover-autoclose/popover-autoclose.component.html?raw"
 import bodyTs from "@/features/lib/components/popover-body/popover-body.component.ts?raw"
+import bodyHtml from "@/features/lib/components/popover-body/popover-body.component.html?raw"
 import contextTs from "@/features/lib/components/popover-context/popover-context.component.ts?raw"
+import contextHtml from "@/features/lib/components/popover-context/popover-context.component.html?raw"
 import customClassCss from "@/features/lib/components/popover-custom-class/popover-custom-class.component.css?raw"
 import customClassTs from "@/features/lib/components/popover-custom-class/popover-custom-class.component.ts?raw"
+import customClassHtml from "@/features/lib/components/popover-custom-class/popover-custom-class.component.html?raw"
 import customTargetTs from "@/features/lib/components/popover-custom-target/popover-custom-target.component.ts?raw"
+import customTargetHtml from "@/features/lib/components/popover-custom-target/popover-custom-target.component.html?raw"
 import delaysTs from "@/features/lib/components/popover-delays/popover-delays.component.ts?raw"
+import delaysHtml from "@/features/lib/components/popover-delays/popover-delays.component.html?raw"
 import eventsTs from "@/features/lib/components/popover-events/popover-events.component.ts?raw"
+import eventsHtml from "@/features/lib/components/popover-events/popover-events.component.html?raw"
 import globalTs from "@/features/lib/components/popover-global/popover-global.component.ts?raw"
+import globalHtml from "@/features/lib/components/popover-global/popover-global.component.html?raw"
 import manualTs from "@/features/lib/components/popover-manual-control/popover-manual-control.component.ts?raw"
+import manualHtml from "@/features/lib/components/popover-manual-control/popover-manual-control.component.html?raw"
 import placementsTs from "@/features/lib/components/popover-placements/popover-placements.component.ts?raw"
+import placementsHtml from "@/features/lib/components/popover-placements/popover-placements.component.html?raw"
 import templateTs from "@/features/lib/components/popover-template/popover-template.component.ts?raw"
+import templateHtml from "@/features/lib/components/popover-template/popover-template.component.html?raw"
 import triggersTs from "@/features/lib/components/popover-triggers/popover-triggers.component.ts?raw"
-import { PopoverAutocloseComponent } from "@/features/lib/components/popover-autoclose/popover-autoclose.component"
-import { PopoverBodyComponent } from "@/features/lib/components/popover-body/popover-body.component"
-import { PopoverContextComponent } from "@/features/lib/components/popover-context/popover-context.component"
-import { PopoverCustomClassComponent } from "@/features/lib/components/popover-custom-class/popover-custom-class.component"
-import { PopoverCustomTargetComponent } from "@/features/lib/components/popover-custom-target/popover-custom-target.component"
-import { PopoverDelaysComponent } from "@/features/lib/components/popover-delays/popover-delays.component"
-import { PopoverEventsComponent } from "@/features/lib/components/popover-events/popover-events.component"
-import { PopoverGlobalComponent } from "@/features/lib/components/popover-global/popover-global.component"
-import { PopoverManualControlComponent } from "@/features/lib/components/popover-manual-control/popover-manual-control.component"
-import { PopoverPlacementsComponent } from "@/features/lib/components/popover-placements/popover-placements.component"
-import { PopoverTemplateComponent } from "@/features/lib/components/popover-template/popover-template.component"
-import { PopoverTriggersComponent } from "@/features/lib/components/popover-triggers/popover-triggers.component"
+import triggersHtml from "@/features/lib/components/popover-triggers/popover-triggers.component.html?raw"
 
-export class PopoverExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-popover-examples-page",
+    controllerAs: "$",
+    templateUrl: "./popover-examples-page.component.html",
+    styleUrl: "./popover-examples-page.component.css",
+})
+export class PopoverExamplesPageComponent {
     public readonly examples = {
-        placements: { html: PopoverPlacementsComponent.$factory.templateUrl, typescript: placementsTs },
-        template: { html: PopoverTemplateComponent.$factory.templateUrl, typescript: templateTs },
-        triggers: { html: PopoverTriggersComponent.$factory.templateUrl, typescript: triggersTs },
-        manual: { html: PopoverManualControlComponent.$factory.templateUrl, typescript: manualTs },
-        autoclose: { html: PopoverAutocloseComponent.$factory.templateUrl, typescript: autocloseTs },
-        context: { html: PopoverContextComponent.$factory.templateUrl, typescript: contextTs },
-        customTarget: { html: PopoverCustomTargetComponent.$factory.templateUrl, typescript: customTargetTs },
-        delays: { html: PopoverDelaysComponent.$factory.templateUrl, typescript: delaysTs },
-        events: { html: PopoverEventsComponent.$factory.templateUrl, typescript: eventsTs },
-        body: { html: PopoverBodyComponent.$factory.templateUrl, typescript: bodyTs },
-        customClass: { html: PopoverCustomClassComponent.$factory.templateUrl, typescript: customClassTs, css: customClassCss },
-        global: { html: PopoverGlobalComponent.$factory.templateUrl, typescript: globalTs },
-    }
-    static get $name() {
-        return "docsPopoverExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PopoverExamplesPageComponent,
-            templateUrl: "./popover-examples-page.component.html", styleUrl: "./popover-examples-page.component.css",
-            controllerAs: "$",
-        }
+        placements: { html: placementsHtml, typescript: placementsTs },
+        template: { html: templateHtml, typescript: templateTs },
+        triggers: { html: triggersHtml, typescript: triggersTs },
+        manual: { html: manualHtml, typescript: manualTs },
+        autoclose: { html: autocloseHtml, typescript: autocloseTs },
+        context: { html: contextHtml, typescript: contextTs },
+        customTarget: { html: customTargetHtml, typescript: customTargetTs },
+        delays: { html: delaysHtml, typescript: delaysTs },
+        events: { html: eventsHtml, typescript: eventsTs },
+        body: { html: bodyHtml, typescript: bodyTs },
+        customClass: { html: customClassHtml, typescript: customClassTs, css: customClassCss },
+        global: { html: globalHtml, typescript: globalTs },
     }
 }

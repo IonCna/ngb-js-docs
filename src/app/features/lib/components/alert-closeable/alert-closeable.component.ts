@@ -1,4 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
 interface AlertExample {
     id: number;
@@ -14,7 +14,13 @@ const createAlerts = (): AlertExample[] => [
     { id: 4, type: "info", message: "This one also closes immediately.", animation: false },
 ];
 
-export class AlertCloseableComponent implements IComponentController {
+@Component({
+    selector: "docs-alert-closeable",
+    controllerAs: "example",
+    templateUrl: "./alert-closeable.component.html",
+    styleUrl: "./alert-closeable.component.css",
+})
+export class AlertCloseableComponent {
     public alerts = createAlerts();
 
     public close(id: number) {
@@ -23,17 +29,5 @@ export class AlertCloseableComponent implements IComponentController {
 
     public reset() {
         this.alerts = createAlerts();
-    }
-
-    static get $name() {
-        return "docsAlertCloseable"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AlertCloseableComponent,
-            controllerAs: "example",
-            templateUrl: "./alert-closeable.component.html", styleUrl: "./alert-closeable.component.css",
-        }
     }
 }

@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class AccordionApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsAccordionApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AccordionApiPageComponent,
-            templateUrl: "./accordion-api-page.component.html", styleUrl: "./accordion-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-accordion-api-page",
+    controllerAs: "$",
+    templateUrl: "./accordion-api-page.component.html",
+    styleUrl: "./accordion-api-page.component.css",
+})
+export class AccordionApiPageComponent {}

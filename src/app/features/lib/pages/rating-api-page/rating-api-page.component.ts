@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class RatingApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsRatingApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: RatingApiPageComponent,
-            templateUrl: "./rating-api-page.component.html", styleUrl: "./rating-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-rating-api-page",
+    controllerAs: "$",
+    templateUrl: "./rating-api-page.component.html",
+    styleUrl: "./rating-api-page.component.css",
+})
+export class RatingApiPageComponent {}

@@ -1,5 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
-import type { TemplateRef } from "ngjs-core";
+import { Component, type TemplateRef } from "ngjs-core";
 import { debounceTime, map, type OperatorFunction } from "rxjs";
 
 interface Country { name: string; flag: string; region: string }
@@ -14,7 +13,13 @@ const COUNTRIES: Country[] = [
     { name: "Spain", flag: "🇪🇸", region: "Europe" },
 ];
 
-export class TemplateResultsTypeaheadComponent implements IComponentController {
+@Component({
+    selector: "docs-template-results-typeahead",
+    controllerAs: "example",
+    templateUrl: "./template-results-typeahead.component.html",
+    styleUrl: "./template-results-typeahead.component.css",
+})
+export class TemplateResultsTypeaheadComponent {
     public model?: Country;
     public resultTemplate?: TemplateRef<unknown>;
     public readonly formatter = (country: Country): string => country.name;
@@ -22,8 +27,4 @@ export class TemplateResultsTypeaheadComponent implements IComponentController {
         debounceTime(200),
         map(term => term ? COUNTRIES.filter(country => country.name.toLowerCase().includes(term.toLowerCase())).slice(0, 8) : []),
     );
-    static get $name() { return "docsTemplateResultsTypeahead" }
-    static get $factory(): IComponentOptions {
-        return { controller: TemplateResultsTypeaheadComponent, controllerAs: "example", templateUrl: "./template-results-typeahead.component.html", styleUrl: "./template-results-typeahead.component.css" }
-    }
 }

@@ -1,21 +1,15 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class CustomPaginationComponent implements IComponentController {
+@Component({
+    selector: "docs-custom-pagination",
+    controllerAs: "example",
+    templateUrl: "./custom-pagination.component.html",
+    styleUrl: "./custom-pagination.component.css",
+})
+export class CustomPaginationComponent {
     public page = 3;
 
     public selectPage(page: number) {
         this.page = page;
-    }
-
-    static get $name() {
-        return "docsCustomPagination"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CustomPaginationComponent,
-            controllerAs: "example",
-            templateUrl: "./custom-pagination.component.html", styleUrl: "./custom-pagination.component.css",
-        }
     }
 }

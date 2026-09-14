@@ -1,18 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class KeepContentNavComponent implements IComponentController {
+@Component({
+    selector: "docs-keep-content-nav",
+    controllerAs: "example",
+    templateUrl: "./keep-content-nav.component.html",
+    styleUrl: "./keep-content-nav.component.css",
+})
+export class KeepContentNavComponent {
     public activeId = "keep-editor";
     public draft = "This value survives tab changes.";
-
-    static get $name() {
-        return "docsKeepContentNav"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: KeepContentNavComponent,
-            controllerAs: "example",
-            templateUrl: "./keep-content-nav.component.html", styleUrl: "./keep-content-nav.component.css",
-        }
-    }
 }

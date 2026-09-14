@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class OffcanvasApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsOffcanvasApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: OffcanvasApiPageComponent,
-            templateUrl: "./offcanvas-api-page.component.html", styleUrl: "./offcanvas-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-offcanvas-api-page",
+    controllerAs: "$",
+    templateUrl: "./offcanvas-api-page.component.html",
+    styleUrl: "./offcanvas-api-page.component.css",
+})
+export class OffcanvasApiPageComponent {}

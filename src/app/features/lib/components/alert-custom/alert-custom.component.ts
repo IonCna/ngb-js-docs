@@ -1,16 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class AlertCustomComponent implements IComponentController {
-    static get $name() {
-        return "docsAlertCustom"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AlertCustomComponent,
-            controllerAs: "example",
-            templateUrl: "./alert-custom.component.html",
-            styleUrl: "./alert-custom.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-alert-custom",
+    controllerAs: "example",
+    templateUrl: "./alert-custom.component.html",
+    styleUrl: "./alert-custom.component.css",
+})
+export class AlertCustomComponent {}

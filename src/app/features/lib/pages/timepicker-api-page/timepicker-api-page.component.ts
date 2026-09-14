@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class TimepickerApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsTimepickerApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: TimepickerApiPageComponent,
-            templateUrl: "./timepicker-api-page.component.html", styleUrl: "./timepicker-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-timepicker-api-page",
+    controllerAs: "$",
+    templateUrl: "./timepicker-api-page.component.html",
+    styleUrl: "./timepicker-api-page.component.css",
+})
+export class TimepickerApiPageComponent {}

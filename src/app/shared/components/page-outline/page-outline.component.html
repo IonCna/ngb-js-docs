@@ -7,7 +7,7 @@
                 class="nav-link rounded-0 px-0 py-1 text-start small"
                 type="button"
                 ng-repeat="section in $.sections track by section.id"
-                ngb-scroll-spy-item="{{ section.id }}">
+                ngb-scroll-spy-item="section.id">
                 {{ section.name }}
             </button>
         </div>

@@ -1,10 +1,16 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type OnDestroy } from "ngjs-core";
 import { NgbAlertConfig, NGB_ALERT_CONFIG } from "ngb-js/alert/compat";
 
-export class AlertGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-alert-global",
+    controllerAs: "example",
+    templateUrl: "./alert-global.component.html",
+    styleUrl: "./alert-global.component.css",
+})
+export class AlertGlobalComponent implements OnDestroy {
     private readonly initialConfig: Pick<NgbAlertConfig, "animation" | "dismissible" | "type">;
 
-    constructor(private readonly config: NgbAlertConfig) {
+    constructor(@Inject(NGB_ALERT_CONFIG) private readonly config: NgbAlertConfig) {
         this.initialConfig = {
             animation: config.animation,
             dismissible: config.dismissible,
@@ -16,25 +22,9 @@ export class AlertGlobalComponent implements IComponentController {
         config.type = "success";
     }
 
-    $onDestroy() {
+    public ngOnDestroy() {
         this.config.animation = this.initialConfig.animation;
         this.config.dismissible = this.initialConfig.dismissible;
         this.config.type = this.initialConfig.type;
-    }
-
-    static get $name() {
-        return "docsAlertGlobal"
-    }
-
-    static get $inject() {
-        return [NGB_ALERT_CONFIG]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AlertGlobalComponent,
-            controllerAs: "example",
-            templateUrl: "./alert-global.component.html", styleUrl: "./alert-global.component.css",
-        }
     }
 }

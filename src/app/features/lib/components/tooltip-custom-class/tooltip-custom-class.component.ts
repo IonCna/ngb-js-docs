@@ -1,8 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class TooltipCustomClassComponent implements IComponentController {
-    static get $name() { return "docsTooltipCustomClass" }
-    static get $factory(): IComponentOptions {
-        return { controller: TooltipCustomClassComponent, controllerAs: "example", templateUrl: "./tooltip-custom-class.component.html", styleUrl: "./tooltip-custom-class.component.css" }
-    }
-}
+@Component({
+    selector: "docs-tooltip-custom-class",
+    controllerAs: "example",
+    templateUrl: "./tooltip-custom-class.component.html",
+    styleUrl: "./tooltip-custom-class.component.css",
+})
+export class TooltipCustomClassComponent {}

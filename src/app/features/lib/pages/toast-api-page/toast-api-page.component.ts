@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class ToastApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsToastApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ToastApiPageComponent,
-            templateUrl: "./toast-api-page.component.html", styleUrl: "./toast-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-toast-api-page",
+    controllerAs: "$",
+    templateUrl: "./toast-api-page.component.html",
+    styleUrl: "./toast-api-page.component.css",
+})
+export class ToastApiPageComponent {}

@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class ScrollspyApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsScrollspyApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ScrollspyApiPageComponent,
-            templateUrl: "./scrollspy-api-page.component.html", styleUrl: "./scrollspy-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-scrollspy-api-page",
+    controllerAs: "$",
+    templateUrl: "./scrollspy-api-page.component.html",
+    styleUrl: "./scrollspy-api-page.component.css",
+})
+export class ScrollspyApiPageComponent {}

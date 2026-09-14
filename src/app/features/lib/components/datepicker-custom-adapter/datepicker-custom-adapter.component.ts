@@ -1,4 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import { NgbDateAdapter, NgbDateParserFormatter, type NgbDateStruct } from "ngb-js/datepicker";
 
 class StringDateAdapter extends NgbDateAdapter<string> {
@@ -18,10 +18,14 @@ class DotDateParserFormatter extends NgbDateParserFormatter {
     format(date: NgbDateStruct | null): string { return date ? `${String(date.day).padStart(2, "0")}.${String(date.month).padStart(2, "0")}.${date.year}` : ""; }
 }
 
-export class DatepickerCustomAdapterComponent implements IComponentController {
+@Component({
+    selector: "docs-datepicker-custom-adapter",
+    controllerAs: "example",
+    templateUrl: "./datepicker-custom-adapter.component.html",
+    styleUrl: "./datepicker-custom-adapter.component.css",
+})
+export class DatepickerCustomAdapterComponent {
     public readonly adapter = new StringDateAdapter();
     public readonly formatter = new DotDateParserFormatter();
     public date = "2026/8/24";
-    static get $name() { return "docsDatepickerCustomAdapter" }
-    static get $factory(): IComponentOptions { return { controller: DatepickerCustomAdapterComponent, controllerAs: "example", templateUrl: "./datepicker-custom-adapter.component.html", styleUrl: "./datepicker-custom-adapter.component.css" } }
 }

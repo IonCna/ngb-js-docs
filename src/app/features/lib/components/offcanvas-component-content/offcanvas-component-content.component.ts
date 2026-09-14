@@ -1,14 +1,20 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject } from "ngjs-core";
 import { OffcanvasDemoContentComponent } from "@/features/lib/components/offcanvas-demo-content/offcanvas-demo-content.component"
 import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
 
-export class OffcanvasComponentContentComponent implements IComponentController {
+@Component({
+    selector: "docs-offcanvas-component-content",
+    controllerAs: "example",
+    templateUrl: "./offcanvas-component-content.component.html",
+    styleUrl: "./offcanvas-component-content.component.css",
+})
+export class OffcanvasComponentContentComponent {
     public lastResult = "No result yet";
 
-    constructor(private readonly offcanvas: NgbOffcanvas) {}
+    constructor(@Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas) {}
 
     public async open() {
-        const offcanvasRef = await this.offcanvas.open(OffcanvasDemoContentComponent.$name);
+        const offcanvasRef = await this.offcanvas.open(OffcanvasDemoContentComponent);
 
         offcanvasRef.closed.subscribe((result) => {
             this.lastResult = `Closed with: ${result}`;
@@ -17,21 +23,5 @@ export class OffcanvasComponentContentComponent implements IComponentController 
         offcanvasRef.dismissed.subscribe((reason) => {
             this.lastResult = `Dismissed with: ${reason}`;
         });
-    }
-
-    static get $name() {
-        return "docsOffcanvasComponentContent"
-    }
-
-    static get $inject() {
-        return [NGB_OFFCANVAS]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: OffcanvasComponentContentComponent,
-            controllerAs: "example",
-            templateUrl: "./offcanvas-component-content.component.html", styleUrl: "./offcanvas-component-content.component.css",
-        }
     }
 }

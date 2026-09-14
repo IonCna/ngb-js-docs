@@ -1,4 +1,4 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import modalComponentContentTs from "@/features/lib/components/modal-component-content/modal-component-content.component.ts?raw"
 import modalDefaultTs from "@/features/lib/components/modal-default/modal-default.component.ts?raw"
 import modalDemoContentTs from "@/features/lib/components/modal-demo-content/modal-demo-content.component.ts?raw"
@@ -11,73 +11,55 @@ import modalStackedTs from "@/features/lib/components/modal-stacked/modal-stacke
 import modalStackedContentTs from "@/features/lib/components/modal-stacked-content/modal-stacked-content.component.ts?raw"
 import modalUpdatableTs from "@/features/lib/components/modal-updatable/modal-updatable.component.ts?raw"
 import modalUpdatableContentTs from "@/features/lib/components/modal-updatable-content/modal-updatable-content.component.ts?raw"
-import { ModalComponentContentComponent } from "@/features/lib/components/modal-component-content/modal-component-content.component"
-import { ModalDefaultComponent } from "@/features/lib/components/modal-default/modal-default.component"
-import { ModalDemoContentComponent } from "@/features/lib/components/modal-demo-content/modal-demo-content.component"
-import { ModalFocusComponent } from "@/features/lib/components/modal-focus/modal-focus.component"
-import { ModalFocusContentComponent } from "@/features/lib/components/modal-focus-content/modal-focus-content.component"
-import { ModalGlobalComponent } from "@/features/lib/components/modal-global/modal-global.component"
-import { ModalOptionsComponent } from "@/features/lib/components/modal-options/modal-options.component"
-import { ModalStackedComponent } from "@/features/lib/components/modal-stacked/modal-stacked.component"
-import { ModalStackedContentComponent } from "@/features/lib/components/modal-stacked-content/modal-stacked-content.component"
-import { ModalUpdatableComponent } from "@/features/lib/components/modal-updatable/modal-updatable.component"
-import { ModalUpdatableContentComponent } from "@/features/lib/components/modal-updatable-content/modal-updatable-content.component"
+import modalDefaultHtml from "@/features/lib/components/modal-default/modal-default.component.html?raw"
+import modalComponentContentHtml from "@/features/lib/components/modal-component-content/modal-component-content.component.html?raw"
+import modalDemoContentHtml from "@/features/lib/components/modal-demo-content/modal-demo-content.component.html?raw"
+import modalFocusHtml from "@/features/lib/components/modal-focus/modal-focus.component.html?raw"
+import modalFocusContentHtml from "@/features/lib/components/modal-focus-content/modal-focus-content.component.html?raw"
+import modalOptionsHtml from "@/features/lib/components/modal-options/modal-options.component.html?raw"
+import modalUpdatableHtml from "@/features/lib/components/modal-updatable/modal-updatable.component.html?raw"
+import modalUpdatableContentHtml from "@/features/lib/components/modal-updatable-content/modal-updatable-content.component.html?raw"
+import modalStackedHtml from "@/features/lib/components/modal-stacked/modal-stacked.component.html?raw"
+import modalStackedContentHtml from "@/features/lib/components/modal-stacked-content/modal-stacked-content.component.html?raw"
+import modalGlobalHtml from "@/features/lib/components/modal-global/modal-global.component.html?raw"
 
-export class ModalExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-modal-examples-page",
+    controllerAs: "$",
+    templateUrl: "./modal-examples-page.component.html",
+    styleUrl: "./modal-examples-page.component.css",
+})
+export class ModalExamplesPageComponent {
     public readonly examples = {
         defaults: {
-            html: ModalDefaultComponent.$factory.templateUrl,
+            html: modalDefaultHtml,
             typescript: modalDefaultTs,
         },
         componentContent: {
-            html: [
-                { label: "modal-component-content.component.html", url: ModalComponentContentComponent.$factory.templateUrl },
-                { label: "modal-demo-content.component.html", url: ModalDemoContentComponent.$factory.templateUrl },
-            ],
+            html: `<!-- modal-component-content.component.html -->\n${modalComponentContentHtml}\n\n<!-- modal-demo-content.component.html -->\n${modalDemoContentHtml}`,
             typescript: `${modalComponentContentTs}\n\n// modal-demo-content.component.ts\n${modalDemoContentTs}`,
         },
         focus: {
-            html: [
-                { label: "modal-focus.component.html", url: ModalFocusComponent.$factory.templateUrl },
-                { label: "modal-focus-content.component.html", url: ModalFocusContentComponent.$factory.templateUrl },
-            ],
+            html: `<!-- modal-focus.component.html -->\n${modalFocusHtml}\n\n<!-- modal-focus-content.component.html -->\n${modalFocusContentHtml}`,
             typescript: `${modalFocusTs}\n\n// modal-focus-content.component.ts\n${modalFocusContentTs}`,
         },
         options: {
-            html: ModalOptionsComponent.$factory.templateUrl,
+            html: modalOptionsHtml,
             typescript: modalOptionsTs,
             css: modalOptionsCss,
         },
         updatable: {
-            html: [
-                { label: "modal-updatable.component.html", url: ModalUpdatableComponent.$factory.templateUrl },
-                { label: "modal-updatable-content.component.html", url: ModalUpdatableContentComponent.$factory.templateUrl },
-            ],
+            html: `<!-- modal-updatable.component.html -->\n${modalUpdatableHtml}\n\n<!-- modal-updatable-content.component.html -->\n${modalUpdatableContentHtml}`,
             typescript: `${modalUpdatableTs}\n\n// modal-updatable-content.component.ts\n${modalUpdatableContentTs}`,
             css: modalOptionsCss,
         },
         stacked: {
-            html: [
-                { label: "modal-stacked.component.html", url: ModalStackedComponent.$factory.templateUrl },
-                { label: "modal-stacked-content.component.html", url: ModalStackedContentComponent.$factory.templateUrl },
-            ],
+            html: `<!-- modal-stacked.component.html -->\n${modalStackedHtml}\n\n<!-- modal-stacked-content.component.html -->\n${modalStackedContentHtml}`,
             typescript: `${modalStackedTs}\n\n// modal-stacked-content.component.ts\n${modalStackedContentTs}`,
         },
         global: {
-            html: ModalGlobalComponent.$factory.templateUrl,
+            html: modalGlobalHtml,
             typescript: modalGlobalTs,
         },
-    }
-
-    static get $name() {
-        return "docsModalExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ModalExamplesPageComponent,
-            templateUrl: "./modal-examples-page.component.html", styleUrl: "./modal-examples-page.component.css",
-            controllerAs: "$",
-        }
     }
 }

@@ -1,6 +1,5 @@
-import angular from 'angular'
 import router from "@uirouter/angularjs"
-import { NgbModule } from "ngb-js/compat";
+import { NgbModule } from "ngb-js";
 import { AppComponent } from "@/app.component"
 
 import { CoreModule } from "@/core/core.module"
@@ -10,20 +9,16 @@ import {NgModule, CoreModule as NgCoreModule} from "ngjs-core";
 import { routes } from "@/app.routes"
 import {RouterModule} from "ngjs-core/router";
 
-export const AppModule = angular.module('docs', [
-    router,
-    NgbModule.name,
-    SharedModule.name
-])
-
 @NgModule({
     id: "root",
     controllerAs: "$",
     declarations: [AppComponent],
     imports: [
-        AppModule,
+        router,
+        NgbModule,
         NgCoreModule,
         CoreModule,
+        SharedModule,
         FeaturesModule,
         RouterModule.forRoot(routes),
     ],

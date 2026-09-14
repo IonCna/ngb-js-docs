@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class NavApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsNavApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: NavApiPageComponent,
-            templateUrl: "./nav-api-page.component.html", styleUrl: "./nav-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-nav-api-page",
+    controllerAs: "$",
+    templateUrl: "./nav-api-page.component.html",
+    styleUrl: "./nav-api-page.component.css",
+})
+export class NavApiPageComponent {}

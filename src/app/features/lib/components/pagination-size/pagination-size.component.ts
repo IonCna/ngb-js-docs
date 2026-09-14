@@ -1,6 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class PaginationSizeComponent implements IComponentController {
+@Component({
+    selector: "docs-pagination-size",
+    controllerAs: "example",
+    templateUrl: "./pagination-size.component.html",
+    styleUrl: "./pagination-size.component.css",
+})
+export class PaginationSizeComponent {
     public smallPage = 2;
     public defaultPage = 2;
     public largePage = 2;
@@ -8,16 +14,4 @@ export class PaginationSizeComponent implements IComponentController {
     public selectSmallPage(page: number) { this.smallPage = page; }
     public selectDefaultPage(page: number) { this.defaultPage = page; }
     public selectLargePage(page: number) { this.largePage = page; }
-
-    static get $name() {
-        return "docsPaginationSize"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PaginationSizeComponent,
-            controllerAs: "example",
-            templateUrl: "./pagination-size.component.html", styleUrl: "./pagination-size.component.css",
-        }
-    }
 }

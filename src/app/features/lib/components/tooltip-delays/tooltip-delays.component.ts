@@ -1,8 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class TooltipDelaysComponent implements IComponentController {
-    static get $name() { return "docsTooltipDelays" }
-    static get $factory(): IComponentOptions {
-        return { controller: TooltipDelaysComponent, controllerAs: "example", templateUrl: "./tooltip-delays.component.html", styleUrl: "./tooltip-delays.component.css" }
-    }
-}
+@Component({
+    selector: "docs-tooltip-delays",
+    controllerAs: "example",
+    templateUrl: "./tooltip-delays.component.html",
+    styleUrl: "./tooltip-delays.component.css",
+})
+export class TooltipDelaysComponent {}

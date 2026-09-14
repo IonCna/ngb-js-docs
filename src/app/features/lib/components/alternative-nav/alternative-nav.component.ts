@@ -1,17 +1,11 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class AlternativeNavComponent implements IComponentController {
+@Component({
+    selector: "docs-alternative-nav",
+    controllerAs: "example",
+    templateUrl: "./alternative-nav.component.html",
+    styleUrl: "./alternative-nav.component.css",
+})
+export class AlternativeNavComponent {
     public activeId = "alternative-home";
-
-    static get $name() {
-        return "docsAlternativeNav"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AlternativeNavComponent,
-            controllerAs: "example",
-            templateUrl: "./alternative-nav.component.html", styleUrl: "./alternative-nav.component.css",
-        }
-    }
 }

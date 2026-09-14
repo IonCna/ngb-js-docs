@@ -1,10 +1,16 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
 import { NgbRatingConfig, NGB_RATING_CONFIG } from "ngb-js/rating";
 
-export class RatingGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-rating-global",
+    controllerAs: "example",
+    templateUrl: "./rating-global.component.html",
+    styleUrl: "./rating-global.component.css",
+})
+export class RatingGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbRatingConfig, "max" | "readonly" | "resettable" | "tabindex">;
 
-    constructor(private readonly config: NgbRatingConfig) {
+    constructor(@Inject(NGB_RATING_CONFIG) private readonly config: NgbRatingConfig) {
         this.initialConfig = {
             max: config.max,
             readonly: config.readonly,
@@ -17,13 +23,7 @@ export class RatingGlobalComponent implements IComponentController {
         config.tabindex = -1;
     }
 
-    public $postLink() { this.restoreConfig(); }
-    public $onDestroy() { this.restoreConfig(); }
+    public ngAfterViewInit() { this.restoreConfig(); }
+    public ngOnDestroy() { this.restoreConfig(); }
     private restoreConfig() { Object.assign(this.config, this.initialConfig); }
-
-    static get $name() { return "docsRatingGlobal" }
-    static get $inject() { return [NGB_RATING_CONFIG] }
-    static get $factory(): IComponentOptions {
-        return { controller: RatingGlobalComponent, controllerAs: "example", templateUrl: "./rating-global.component.html", styleUrl: "./rating-global.component.css" }
-    }
 }

@@ -1,10 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import type { NgbPopover } from "ngb-js/popover";
 
-export class PopoverTriggersComponent implements IComponentController {
+@Component({
+    selector: "docs-popover-triggers",
+    controllerAs: "example",
+    templateUrl: "./popover-triggers.component.html",
+    styleUrl: "./popover-triggers.component.css",
+})
+export class PopoverTriggersComponent {
     public manual?: NgbPopover;
-    static get $name() { return "docsPopoverTriggers" }
-    static get $factory(): IComponentOptions {
-        return { controller: PopoverTriggersComponent, controllerAs: "example", templateUrl: "./popover-triggers.component.html", styleUrl: "./popover-triggers.component.css" }
-    }
 }

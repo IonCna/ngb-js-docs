@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class TypeaheadApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsTypeaheadApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: TypeaheadApiPageComponent,
-            templateUrl: "./typeahead-api-page.component.html", styleUrl: "./typeahead-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-typeahead-api-page",
+    controllerAs: "$",
+    templateUrl: "./typeahead-api-page.component.html",
+    styleUrl: "./typeahead-api-page.component.css",
+})
+export class TypeaheadApiPageComponent {}

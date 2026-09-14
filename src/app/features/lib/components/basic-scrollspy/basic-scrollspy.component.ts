@@ -1,12 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class BasicScrollspyComponent implements IComponentController {
-    static get $name() { return "docsBasicScrollspy" }
-    static get $factory(): IComponentOptions {
-        return {
-            controller: BasicScrollspyComponent,
-            controllerAs: "example",
-            templateUrl: "./basic-scrollspy.component.html", styleUrl: "./basic-scrollspy.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-basic-scrollspy",
+    controllerAs: "example",
+    templateUrl: "./basic-scrollspy.component.html",
+    styleUrl: "./basic-scrollspy.component.css",
+})
+export class BasicScrollspyComponent {}

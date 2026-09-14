@@ -1,25 +1,23 @@
-import type { IComponentController, IComponentOptions, ITimeoutService } from "angular";
+import { Component } from "ngjs-core";
 
-export class PreventAutohideToastComponent implements IComponentController {
+@Component({
+    selector: "docs-prevent-autohide-toast",
+    controllerAs: "example",
+    templateUrl: "./prevent-autohide-toast.component.html",
+    styleUrl: "./prevent-autohide-toast.component.css",
+})
+export class PreventAutohideToastComponent {
     public visible = false;
     public autohide = true;
-
-    constructor(private readonly $timeout: ITimeoutService) {}
 
     public show(): void {
         this.visible = false;
         this.autohide = true;
-        this.$timeout(() => this.visible = true);
+        setTimeout(() => this.visible = true);
     }
 
     public hide(): void {
         this.visible = false;
         this.autohide = true;
-    }
-
-    static get $name() { return "docsPreventAutohideToast" }
-    static get $inject() { return ["$timeout"] }
-    static get $factory(): IComponentOptions {
-        return { controller: PreventAutohideToastComponent, controllerAs: "example", templateUrl: "./prevent-autohide-toast.component.html", styleUrl: "./prevent-autohide-toast.component.css" }
     }
 }

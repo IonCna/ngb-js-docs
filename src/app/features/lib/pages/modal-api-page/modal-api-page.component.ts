@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class ModalApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsModalApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ModalApiPageComponent,
-            templateUrl: "./modal-api-page.component.html", styleUrl: "./modal-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-modal-api-page",
+    controllerAs: "$",
+    templateUrl: "./modal-api-page.component.html",
+    styleUrl: "./modal-api-page.component.css",
+})
+export class ModalApiPageComponent {}

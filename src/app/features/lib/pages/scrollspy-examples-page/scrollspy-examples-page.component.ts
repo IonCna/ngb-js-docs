@@ -1,28 +1,23 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import serviceTs from "@/features/lib/components/scrollspy-service-demo/scrollspy-service-demo.component.ts?raw"
-import { BasicScrollspyComponent } from "@/features/lib/components/basic-scrollspy/basic-scrollspy.component"
-import { NavbarScrollspyComponent } from "@/features/lib/components/navbar-scrollspy/navbar-scrollspy.component"
-import { NestedScrollspyComponent } from "@/features/lib/components/nested-scrollspy/nested-scrollspy.component"
-import { ScrollspyMenuItemsComponent } from "@/features/lib/components/scrollspy-menu-items/scrollspy-menu-items.component"
-import { ScrollspyServiceDemoComponent } from "@/features/lib/components/scrollspy-service-demo/scrollspy-service-demo.component"
+import serviceHtml from "@/features/lib/components/scrollspy-service-demo/scrollspy-service-demo.component.html?raw"
+import basicHtml from "@/features/lib/components/basic-scrollspy/basic-scrollspy.component.html?raw"
+import navbarHtml from "@/features/lib/components/navbar-scrollspy/navbar-scrollspy.component.html?raw"
+import nestedHtml from "@/features/lib/components/nested-scrollspy/nested-scrollspy.component.html?raw"
+import menuItemsHtml from "@/features/lib/components/scrollspy-menu-items/scrollspy-menu-items.component.html?raw"
 
-export class ScrollspyExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-scrollspy-examples-page",
+    controllerAs: "$",
+    templateUrl: "./scrollspy-examples-page.component.html",
+    styleUrl: "./scrollspy-examples-page.component.css",
+})
+export class ScrollspyExamplesPageComponent {
     public readonly examples = {
-        basic: { html: BasicScrollspyComponent.$factory.templateUrl },
-        menuItems: { html: ScrollspyMenuItemsComponent.$factory.templateUrl },
-        nested: { html: NestedScrollspyComponent.$factory.templateUrl },
-        navbar: { html: NavbarScrollspyComponent.$factory.templateUrl },
-        service: { html: ScrollspyServiceDemoComponent.$factory.templateUrl, typescript: serviceTs },
-    }
-    static get $name() {
-        return "docsScrollspyExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ScrollspyExamplesPageComponent,
-            templateUrl: "./scrollspy-examples-page.component.html", styleUrl: "./scrollspy-examples-page.component.css",
-            controllerAs: "$",
-        }
+        basic: { html: basicHtml },
+        menuItems: { html: menuItemsHtml },
+        nested: { html: nestedHtml },
+        navbar: { html: navbarHtml },
+        service: { html: serviceHtml, typescript: serviceTs },
     }
 }

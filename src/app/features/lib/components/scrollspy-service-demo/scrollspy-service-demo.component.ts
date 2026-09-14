@@ -1,23 +1,29 @@
-import type { IAugmentedJQuery, IComponentController, IComponentOptions } from "angular";
+import { Component, ElementRef, type OnDestroy } from "ngjs-core";
 import { NgbScrollSpyService } from "ngb-js/scrollspy";
 
-export class ScrollspyServiceDemoComponent implements IComponentController {
+@Component({
+    selector: "docs-scrollspy-service-demo",
+    controllerAs: "example",
+    templateUrl: "./scrollspy-service-demo.component.html",
+    styleUrl: "./scrollspy-service-demo.component.css",
+})
+export class ScrollspyServiceDemoComponent implements OnDestroy {
     public readonly fragments = ["service-introduction", "service-options", "service-finish"];
     public running = false;
     public observingFinish = true;
     private root?: HTMLElement;
 
     constructor(
-        private readonly $element: IAugmentedJQuery,
+        private readonly elementRef: ElementRef<HTMLElement>,
         public readonly scrollSpy: NgbScrollSpyService,
     ) {}
 
-    public $postLink(): void {
-        this.root = this.$element[0].querySelector<HTMLElement>("[data-service-scrollspy]") ?? undefined;
+    public ngAfterViewInit(): void {
+        this.root = this.elementRef.nativeElement.querySelector<HTMLElement>("[data-service-scrollspy]") ?? undefined;
         this.start();
     }
 
-    public $onDestroy(): void {
+    public ngOnDestroy(): void {
         this.scrollSpy.stop();
     }
 
@@ -44,15 +50,5 @@ export class ScrollspyServiceDemoComponent implements IComponentController {
             this.scrollSpy.observe("service-finish");
         }
         this.observingFinish = !this.observingFinish;
-    }
-
-    static get $name() { return "docsScrollspyServiceDemo" }
-    static get $inject() { return ["$element", "NgbScrollSpyService"] }
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ScrollspyServiceDemoComponent,
-            controllerAs: "example",
-            templateUrl: "./scrollspy-service-demo.component.html", styleUrl: "./scrollspy-service-demo.component.css",
-        }
     }
 }

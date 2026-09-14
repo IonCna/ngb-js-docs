@@ -1,17 +1,13 @@
-import angular from "angular";
-import { Inject, Injectable } from "ngjs-core";
+import { DOCUMENT, Inject, Injectable } from "ngjs-core";
 import { Themes } from "@/core/constants/themes.constant";
 import { THEME, THEME_STORAGE_KEY } from "@/core/tokens";
 
 @Injectable({ id: "docs.theme.service" })
 export class ThemeService {
-    static readonly $name = "docs.theme.service";
-
-    private _element = angular.element(document.documentElement);
-
     constructor(
         @Inject(THEME) private _currentTheme: Themes,
         @Inject(THEME_STORAGE_KEY) private readonly themeStorageKey: string,
+        @Inject(DOCUMENT) private readonly document: Document,
     ) {
         this._applyTheme(this._currentTheme)
     }
@@ -32,7 +28,7 @@ export class ThemeService {
     private _applyTheme(theme: Themes) {
         this._currentTheme = theme;
 
-        this._element.attr('data-bs-theme', this._currentTheme);
+        this.document.documentElement.setAttribute("data-bs-theme", this._currentTheme);
         this.saveInLocalStorage(this._currentTheme)
     }
 

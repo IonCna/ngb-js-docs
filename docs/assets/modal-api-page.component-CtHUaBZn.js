@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-PqXhwIf1.js";var n=class{};n=e([t({selector:`docs-modal-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/modal-api-page.component-9f730e34.html`,styleUrl:`./modal-api-page.component.css`})],n);export{n as ModalApiPageComponent};

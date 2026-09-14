@@ -1,8 +1,13 @@
-import type { IComponentController, IComponentOptions } from "angular";
 import type { INgbCollapse } from "ngb-js/collapse";
-import { ViewChild } from "ngjs-core";
+import { Component, ViewChild } from "ngjs-core";
 
-export class SimpleCollapseComponent implements IComponentController {
+@Component({
+    selector: "docs-simple-collapse",
+    controllerAs: "example",
+    templateUrl: "./simple-collapse.component.html",
+    styleUrl: "./simple-collapse.component.css",
+})
+export class SimpleCollapseComponent {
     @ViewChild("collapse", { static: true })
     private collapse!: INgbCollapse;
 
@@ -14,17 +19,5 @@ export class SimpleCollapseComponent implements IComponentController {
 
     public toggleWithBinding() {
         this.collapsed = !this.collapsed;
-    }
-
-    static get $name() {
-        return "docsSimpleCollapse"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: SimpleCollapseComponent,
-            controllerAs: "example",
-            templateUrl: "./simple-collapse.component.html", styleUrl: "./simple-collapse.component.css",
-        }
     }
 }

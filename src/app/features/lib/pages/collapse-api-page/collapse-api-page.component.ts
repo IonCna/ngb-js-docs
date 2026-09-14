@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class CollapseApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsCollapseApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CollapseApiPageComponent,
-            templateUrl: "./collapse-api-page.component.html", styleUrl: "./collapse-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-collapse-api-page",
+    controllerAs: "$",
+    templateUrl: "./collapse-api-page.component.html",
+    styleUrl: "./collapse-api-page.component.css",
+})
+export class CollapseApiPageComponent {}

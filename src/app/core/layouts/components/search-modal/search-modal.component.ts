@@ -1,8 +1,6 @@
-import { Component } from "ngjs-core";
-import angular, { type IAugmentedJQuery, type IComponentController, type IComponentOptions } from "angular"
-import type { StateService } from "@uirouter/angularjs"
+import { Component, ElementRef, Input, type AfterViewInit, type OnInit } from "ngjs-core";
+import { Router } from "ngjs-core/router";
 import type { NgbActiveModal } from "ngb-js/modal";
-import type { NgbScrollSpy } from "ngb-js/scrollspy";
 import { SearchService, type SearchResult } from "@/core/services/search.service"
 
 export const SEARCH_RECENTS_STORAGE_KEY = "docs.search.recents"
@@ -12,13 +10,9 @@ export const MAX_RECENT_DOCUMENTS = 10
     selector: "docs-search-modal",
     templateUrl: "./search-modal.component.html",
     styleUrl: "./search-modal.component.css",
-    controllerAs: "$",
-    bindings: {
-        ngbActiveModal: "<",
-    },
 })
-export class SearchModalComponent implements IComponentController {
-    public ngbActiveModal!: NgbActiveModal
+export class SearchModalComponent implements OnInit, AfterViewInit {
+    @Input() ngbActiveModal!: NgbActiveModal
     public query = ""
     public results: SearchResult[] = []
     public recentDocuments: SearchResult[] = []
@@ -26,17 +20,17 @@ export class SearchModalComponent implements IComponentController {
 
     constructor(
         private readonly searchService: SearchService,
-        private readonly $element: IAugmentedJQuery,
-        private readonly $state: StateService,
+        private readonly elementRef: ElementRef<HTMLElement>,
+        private readonly router: Router,
     ) {}
 
-    public $onInit() {
+    public ngOnInit() {
         this.recentDocuments = this.getRecentDocuments()
         this.activeDocumentId = this.recentDocuments[0]?.id
     }
 
-    public $postLink() {
-        this.$element.addClass("h-100 d-flex flex-column overflow-hidden")
+    public ngAfterViewInit() {
+        this.elementRef.nativeElement.classList.add("h-100", "d-flex", "flex-column", "overflow-hidden")
     }
 
     public search() {
@@ -70,7 +64,7 @@ export class SearchModalComponent implements IComponentController {
 
         this.activeDocumentId = documents[nextIndex].id
         requestAnimationFrame(() => {
-            this.$element[0].querySelector(".list-group-item.active")?.scrollIntoView({ block: "nearest" })
+            this.elementRef.nativeElement.querySelector(".list-group-item.active")?.scrollIntoView({ block: "nearest" })
         })
     }
 
@@ -80,14 +74,11 @@ export class SearchModalComponent implements IComponentController {
 
     public selectDocument(document: SearchResult) {
         this.ngbActiveModal.close(document)
-        this.$state.go(document.url).then(() => {
+        void this.router.navigateByUrl(document.url).then(() => {
             requestAnimationFrame(() => {
-                const scrollContainer = globalThis.document.getElementById("docs-content-scroll")
-
-                if(!scrollContainer) return
-
-                const scrollSpy = angular.element(scrollContainer).controller("ngbScrollSpy") as NgbScrollSpy | undefined
-                scrollSpy?.scrollTo(document.fragment)
+                globalThis.document
+                    .getElementById(document.fragment)
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
             })
         })
     }
@@ -122,24 +113,5 @@ export class SearchModalComponent implements IComponentController {
         } catch {
             return []
         }
-    }
-
-    static get $name() {
-        return "docsSearchModal"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            bindings: {
-                ngbActiveModal: "<",
-            },
-            controllerAs: "$",
-            controller: SearchModalComponent,
-            templateUrl: "./search-modal.component.html", styleUrl: "./search-modal.component.css",
-        }
-    }
-
-    static get $inject() {
-        return [SearchService.$name, "$element", "$state"]
     }
 }

@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class AlertApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsAlertApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AlertApiPageComponent,
-            templateUrl: "./alert-api-page.component.html", styleUrl: "./alert-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-alert-api-page",
+    controllerAs: "$",
+    templateUrl: "./alert-api-page.component.html",
+    styleUrl: "./alert-api-page.component.css",
+})
+export class AlertApiPageComponent {}

@@ -1,8 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class ContextualTextProgressbarComponent implements IComponentController {
-    static get $name() { return "docsContextualTextProgressbar" }
-    static get $factory(): IComponentOptions {
-        return { controller: ContextualTextProgressbarComponent, controllerAs: "example", templateUrl: "./contextual-text-progressbar.component.html", styleUrl: "./contextual-text-progressbar.component.css" }
-    }
-}
+@Component({
+    selector: "docs-contextual-text-progressbar",
+    controllerAs: "example",
+    templateUrl: "./contextual-text-progressbar.component.html",
+    styleUrl: "./contextual-text-progressbar.component.css",
+})
+export class ContextualTextProgressbarComponent {}

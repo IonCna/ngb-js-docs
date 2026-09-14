@@ -1,12 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class NavbarScrollspyComponent implements IComponentController {
-    static get $name() { return "docsNavbarScrollspy" }
-    static get $factory(): IComponentOptions {
-        return {
-            controller: NavbarScrollspyComponent,
-            controllerAs: "example",
-            templateUrl: "./navbar-scrollspy.component.html", styleUrl: "./navbar-scrollspy.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-navbar-scrollspy",
+    controllerAs: "example",
+    templateUrl: "./navbar-scrollspy.component.html",
+    styleUrl: "./navbar-scrollspy.component.css",
+})
+export class NavbarScrollspyComponent {}

@@ -1,4 +1,4 @@
-import { NgModule, provideAppInitializer } from "ngjs-core";
+import { NgModule } from "ngjs-core";
 
 import { LayoutModule } from "@/core/layouts/layout.module"
 
@@ -53,9 +53,3 @@ import { SearchService } from "@/core/services/search.service"
     ],
 })
 export class CoreModule {}
-
-// Traducción de los `.run()`: enganchar los observers de transición al arrancar.
-provideAppInitializer(($injector) => {
-    $injector.get<ScrollService>(ScrollService.$name).observeScroll()
-    $injector.get<TitleService>(TitleService.$name).observeRoute()
-})

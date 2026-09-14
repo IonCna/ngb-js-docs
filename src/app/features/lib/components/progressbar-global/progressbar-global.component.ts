@@ -1,10 +1,16 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
 import { NgbProgressbarConfig, NGB_PROGRESSBAR_CONFIG } from "ngb-js/progressbar";
 
-export class ProgressbarGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-progressbar-global",
+    controllerAs: "example",
+    templateUrl: "./progressbar-global.component.html",
+    styleUrl: "./progressbar-global.component.css",
+})
+export class ProgressbarGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbProgressbarConfig, "animated" | "height" | "max" | "showValue" | "striped" | "textType" | "type">;
 
-    constructor(private readonly config: NgbProgressbarConfig) {
+    constructor(@Inject(NGB_PROGRESSBAR_CONFIG) private readonly config: NgbProgressbarConfig) {
         this.initialConfig = {
             animated: config.animated,
             height: config.height,
@@ -23,13 +29,7 @@ export class ProgressbarGlobalComponent implements IComponentController {
         config.type = "primary";
     }
 
-    public $postLink() { this.restoreConfig(); }
-    public $onDestroy() { this.restoreConfig(); }
+    public ngAfterViewInit() { this.restoreConfig(); }
+    public ngOnDestroy() { this.restoreConfig(); }
     private restoreConfig() { Object.assign(this.config, this.initialConfig); }
-
-    static get $name() { return "docsProgressbarGlobal" }
-    static get $inject() { return [NGB_PROGRESSBAR_CONFIG] }
-    static get $factory(): IComponentOptions {
-        return { controller: ProgressbarGlobalComponent, controllerAs: "example", templateUrl: "./progressbar-global.component.html", styleUrl: "./progressbar-global.component.css" }
-    }
 }

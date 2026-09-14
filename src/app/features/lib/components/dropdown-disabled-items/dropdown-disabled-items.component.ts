@@ -1,17 +1,11 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class DropdownDisabledItemsComponent implements IComponentController {
+@Component({
+    selector: "docs-dropdown-disabled-items",
+    controllerAs: "example",
+    templateUrl: "./dropdown-disabled-items.component.html",
+    styleUrl: "./dropdown-disabled-items.component.css",
+})
+export class DropdownDisabledItemsComponent {
     public restricted = true;
-
-    static get $name() {
-        return "docsDropdownDisabledItems"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: DropdownDisabledItemsComponent,
-            controllerAs: "example",
-            templateUrl: "./dropdown-disabled-items.component.html", styleUrl: "./dropdown-disabled-items.component.css",
-        }
-    }
 }

@@ -1,7 +1,13 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
 import { NgbPaginationConfig, NGB_PAGINATION_CONFIG } from "ngb-js/pagination";
 
-export class PaginationGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-pagination-global",
+    controllerAs: "example",
+    templateUrl: "./pagination-global.component.html",
+    styleUrl: "./pagination-global.component.css",
+})
+export class PaginationGlobalComponent implements AfterViewInit, OnDestroy {
     public page = 8;
 
     private readonly initialConfig: Pick<
@@ -9,7 +15,7 @@ export class PaginationGlobalComponent implements IComponentController {
         "boundaryLinks" | "directionLinks" | "maxSize" | "rotate" | "size"
     >;
 
-    constructor(private readonly config: NgbPaginationConfig) {
+    constructor(@Inject(NGB_PAGINATION_CONFIG) private readonly config: NgbPaginationConfig) {
         this.initialConfig = {
             boundaryLinks: config.boundaryLinks,
             directionLinks: config.directionLinks,
@@ -29,11 +35,11 @@ export class PaginationGlobalComponent implements IComponentController {
         this.page = page;
     }
 
-    public $postLink() {
+    public ngAfterViewInit() {
         this.restoreConfig();
     }
 
-    public $onDestroy() {
+    public ngOnDestroy() {
         this.restoreConfig();
     }
 
@@ -43,21 +49,5 @@ export class PaginationGlobalComponent implements IComponentController {
         this.config.maxSize = this.initialConfig.maxSize;
         this.config.rotate = this.initialConfig.rotate;
         this.config.size = this.initialConfig.size;
-    }
-
-    static get $name() {
-        return "docsPaginationGlobal"
-    }
-
-    static get $inject() {
-        return [NGB_PAGINATION_CONFIG]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PaginationGlobalComponent,
-            controllerAs: "example",
-            templateUrl: "./pagination-global.component.html", styleUrl: "./pagination-global.component.css",
-        }
     }
 }

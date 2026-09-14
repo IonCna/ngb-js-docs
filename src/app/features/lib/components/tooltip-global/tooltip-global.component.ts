@@ -1,10 +1,16 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
 import { NgbTooltipConfig, NGB_TOOLTIP_CONFIG } from "ngb-js/tooltip";
 
-export class TooltipGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-tooltip-global",
+    controllerAs: "example",
+    templateUrl: "./tooltip-global.component.html",
+    styleUrl: "./tooltip-global.component.css",
+})
+export class TooltipGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbTooltipConfig, "container" | "openDelay" | "placement" | "triggers">;
 
-    constructor(private readonly config: NgbTooltipConfig) {
+    constructor(@Inject(NGB_TOOLTIP_CONFIG) private readonly config: NgbTooltipConfig) {
         this.initialConfig = {
             container: config.container,
             openDelay: config.openDelay,
@@ -17,19 +23,13 @@ export class TooltipGlobalComponent implements IComponentController {
         config.triggers = "mouseenter:mouseleave";
     }
 
-    public $postLink(): void { this.restoreConfig(); }
-    public $onDestroy(): void { this.restoreConfig(); }
+    public ngAfterViewInit(): void { this.restoreConfig(); }
+    public ngOnDestroy(): void { this.restoreConfig(); }
 
     private restoreConfig(): void {
         this.config.container = this.initialConfig.container;
         this.config.openDelay = this.initialConfig.openDelay;
         this.config.placement = this.initialConfig.placement;
         this.config.triggers = this.initialConfig.triggers;
-    }
-
-    static get $name() { return "docsTooltipGlobal" }
-    static get $inject() { return [NGB_TOOLTIP_CONFIG] }
-    static get $factory(): IComponentOptions {
-        return { controller: TooltipGlobalComponent, controllerAs: "example", templateUrl: "./tooltip-global.component.html", styleUrl: "./tooltip-global.component.css" }
     }
 }

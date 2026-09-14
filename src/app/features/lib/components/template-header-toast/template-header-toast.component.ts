@@ -1,9 +1,11 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class TemplateHeaderToastComponent implements IComponentController {
+@Component({
+    selector: "docs-template-header-toast",
+    controllerAs: "example",
+    templateUrl: "./template-header-toast.component.html",
+    styleUrl: "./template-header-toast.component.css",
+})
+export class TemplateHeaderToastComponent {
     public visible = true;
-    static get $name() { return "docsTemplateHeaderToast" }
-    static get $factory(): IComponentOptions {
-        return { controller: TemplateHeaderToastComponent, controllerAs: "example", templateUrl: "./template-header-toast.component.html", styleUrl: "./template-header-toast.component.css" }
-    }
 }

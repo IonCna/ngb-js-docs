@@ -1,10 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import type { NgbTooltip } from "ngb-js/tooltip";
 
-export class TooltipTriggersComponent implements IComponentController {
+@Component({
+    selector: "docs-tooltip-triggers",
+    controllerAs: "example",
+    templateUrl: "./tooltip-triggers.component.html",
+    styleUrl: "./tooltip-triggers.component.css",
+})
+export class TooltipTriggersComponent {
     public manual?: NgbTooltip;
-    static get $name() { return "docsTooltipTriggers" }
-    static get $factory(): IComponentOptions {
-        return { controller: TooltipTriggersComponent, controllerAs: "example", templateUrl: "./tooltip-triggers.component.html", styleUrl: "./tooltip-triggers.component.css" }
-    }
 }

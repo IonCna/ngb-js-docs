@@ -1,8 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class ProgressHeightComponent implements IComponentController {
-    static get $name() { return "docsProgressHeight" }
-    static get $factory(): IComponentOptions {
-        return { controller: ProgressHeightComponent, controllerAs: "example", templateUrl: "./progress-height.component.html", styleUrl: "./progress-height.component.css" }
-    }
-}
+@Component({
+    selector: "docs-progress-height",
+    controllerAs: "example",
+    templateUrl: "./progress-height.component.html",
+    styleUrl: "./progress-height.component.css",
+})
+export class ProgressHeightComponent {}

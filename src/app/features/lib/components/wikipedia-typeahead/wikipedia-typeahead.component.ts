@@ -1,24 +1,29 @@
-import type { IComponentController, IComponentOptions, IHttpService } from "angular";
-import { catchError, debounceTime, distinctUntilChanged, from, map, of, type OperatorFunction, switchMap, tap } from "rxjs";
+import { Component, Injectable } from "ngjs-core";
+import { HttpClient, HttpParams } from "ngjs-core/common/http";
+import { catchError, debounceTime, distinctUntilChanged, map, type OperatorFunction, of, switchMap, tap } from "rxjs";
 
 const WIKI_URL = "https://en.wikipedia.org/w/api.php";
 type WikiResponse = [string, string[], string[], string[]];
 
+@Injectable({ id: "docs.wikipedia.search.service" })
 export class WikipediaSearchService {
-    constructor(private readonly $http: IHttpService) {}
+    constructor(private readonly http: HttpClient) {}
 
     public search(term: string) {
         if (!term) return of([] as string[]);
-        return from(this.$http.get<WikiResponse>(WIKI_URL, {
-            params: { action: "opensearch", format: "json", origin: "*", search: term },
-        })).pipe(map(response => response.data[1]));
+        return this.http.get<WikiResponse>(WIKI_URL, {
+            params: new HttpParams({ action: "opensearch", format: "json", origin: "*", search: term }),
+        }).pipe(map(response => response[1]));
     }
-
-    static get $name() { return "docs.wikipedia.search.service" }
-    static get $inject() { return ["$http"] }
 }
 
-export class WikipediaTypeaheadComponent implements IComponentController {
+@Component({
+    selector: "docs-wikipedia-typeahead",
+    controllerAs: "example",
+    templateUrl: "./wikipedia-typeahead.component.html",
+    styleUrl: "./wikipedia-typeahead.component.css",
+})
+export class WikipediaTypeaheadComponent {
     public model = "";
     public searching = false;
     public searchFailed = false;
@@ -38,10 +43,4 @@ export class WikipediaTypeaheadComponent implements IComponentController {
         )),
         tap(() => this.searching = false),
     );
-
-    static get $name() { return "docsWikipediaTypeahead" }
-    static get $inject() { return [WikipediaSearchService.$name] }
-    static get $factory(): IComponentOptions {
-        return { controller: WikipediaTypeaheadComponent, controllerAs: "example", templateUrl: "./wikipedia-typeahead.component.html", styleUrl: "./wikipedia-typeahead.component.css" }
-    }
 }

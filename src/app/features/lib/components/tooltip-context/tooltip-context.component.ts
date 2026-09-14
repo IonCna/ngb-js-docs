@@ -1,8 +1,13 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, type TemplateRef } from "ngjs-core";
 import type { NgbTooltip } from "ngb-js/tooltip";
-import type { TemplateRef } from "ngjs-core";
 
-export class TooltipContextComponent implements IComponentController {
+@Component({
+    selector: "docs-tooltip-context",
+    controllerAs: "example",
+    templateUrl: "./tooltip-context.component.html",
+    styleUrl: "./tooltip-context.component.css",
+})
+export class TooltipContextComponent {
     public name = "World";
     public contentTemplate?: TemplateRef<unknown>;
     public french?: NgbTooltip;
@@ -11,10 +16,5 @@ export class TooltipContextComponent implements IComponentController {
 
     public toggleWithGreeting(tooltip: NgbTooltip, greeting: string): void {
         tooltip.isOpen() ? tooltip.close() : tooltip.open({ greeting });
-    }
-
-    static get $name() { return "docsTooltipContext" }
-    static get $factory(): IComponentOptions {
-        return { controller: TooltipContextComponent, controllerAs: "example", templateUrl: "./tooltip-context.component.html", styleUrl: "./tooltip-context.component.css" }
     }
 }

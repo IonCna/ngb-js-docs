@@ -1,18 +1,11 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class CustomNavComponent implements IComponentController {
+@Component({
+    selector: "docs-custom-nav",
+    controllerAs: "example",
+    templateUrl: "./custom-nav.component.html",
+    styleUrl: "./custom-nav.component.css",
+})
+export class CustomNavComponent {
     public activeId = "custom-weekly";
-
-    static get $name() {
-        return "docsCustomNav"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CustomNavComponent,
-            controllerAs: "example",
-            templateUrl: "./custom-nav.component.html",
-            styleUrl: "./custom-nav.component.css",
-        }
-    }
 }

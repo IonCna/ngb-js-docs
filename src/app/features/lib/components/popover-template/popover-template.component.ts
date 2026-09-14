@@ -1,12 +1,14 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import type { TemplateRef } from "ngjs-core";
 
-export class PopoverTemplateComponent implements IComponentController {
+@Component({
+    selector: "docs-popover-template",
+    controllerAs: "example",
+    templateUrl: "./popover-template.component.html",
+    styleUrl: "./popover-template.component.css",
+})
+export class PopoverTemplateComponent {
     public name = "NgbJS";
     public contentTemplate?: TemplateRef<unknown>;
     public titleTemplate?: TemplateRef<unknown>;
-    static get $name() { return "docsPopoverTemplate" }
-    static get $factory(): IComponentOptions {
-        return { controller: PopoverTemplateComponent, controllerAs: "example", templateUrl: "./popover-template.component.html", styleUrl: "./popover-template.component.css" }
-    }
 }

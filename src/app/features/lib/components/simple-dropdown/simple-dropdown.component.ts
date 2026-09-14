@@ -1,15 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class SimpleDropdownComponent implements IComponentController {
-    static get $name() {
-        return "docsSimpleDropdown"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: SimpleDropdownComponent,
-            controllerAs: "example",
-            templateUrl: "./simple-dropdown.component.html", styleUrl: "./simple-dropdown.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-simple-dropdown",
+    controllerAs: "example",
+    templateUrl: "./simple-dropdown.component.html",
+    styleUrl: "./simple-dropdown.component.css",
+})
+export class SimpleDropdownComponent {}

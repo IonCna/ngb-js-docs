@@ -1,41 +1,36 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import adapterTs from "@/features/lib/components/timepicker-custom-adapter/timepicker-custom-adapter.component.ts?raw"
+import adapterHtml from "@/features/lib/components/timepicker-custom-adapter/timepicker-custom-adapter.component.html?raw"
 import basicTs from "@/features/lib/components/basic-timepicker/basic-timepicker.component.ts?raw"
+import basicHtml from "@/features/lib/components/basic-timepicker/basic-timepicker.component.html?raw"
 import i18nTs from "@/features/lib/components/timepicker-i18n/timepicker-i18n.component.ts?raw"
+import i18nHtml from "@/features/lib/components/timepicker-i18n/timepicker-i18n.component.html?raw"
 import meridianTs from "@/features/lib/components/meridian-timepicker/meridian-timepicker.component.ts?raw"
+import meridianHtml from "@/features/lib/components/meridian-timepicker/meridian-timepicker.component.html?raw"
 import secondsTs from "@/features/lib/components/seconds-timepicker/seconds-timepicker.component.ts?raw"
+import secondsHtml from "@/features/lib/components/seconds-timepicker/seconds-timepicker.component.html?raw"
 import spinnersTs from "@/features/lib/components/spinners-timepicker/spinners-timepicker.component.ts?raw"
+import spinnersHtml from "@/features/lib/components/spinners-timepicker/spinners-timepicker.component.html?raw"
 import stepsTs from "@/features/lib/components/timepicker-custom-steps/timepicker-custom-steps.component.ts?raw"
+import stepsHtml from "@/features/lib/components/timepicker-custom-steps/timepicker-custom-steps.component.html?raw"
 import validationTs from "@/features/lib/components/timepicker-validation/timepicker-validation.component.ts?raw"
-import { BasicTimepickerComponent } from "@/features/lib/components/basic-timepicker/basic-timepicker.component"
-import { TimepickerI18nComponent } from "@/features/lib/components/timepicker-i18n/timepicker-i18n.component"
-import { MeridianTimepickerComponent } from "@/features/lib/components/meridian-timepicker/meridian-timepicker.component"
-import { TimepickerCustomAdapterComponent } from "@/features/lib/components/timepicker-custom-adapter/timepicker-custom-adapter.component"
-import { SecondsTimepickerComponent } from "@/features/lib/components/seconds-timepicker/seconds-timepicker.component"
-import { SpinnersTimepickerComponent } from "@/features/lib/components/spinners-timepicker/spinners-timepicker.component"
-import { TimepickerCustomStepsComponent } from "@/features/lib/components/timepicker-custom-steps/timepicker-custom-steps.component"
-import { TimepickerValidationComponent } from "@/features/lib/components/timepicker-validation/timepicker-validation.component"
+import validationHtml from "@/features/lib/components/timepicker-validation/timepicker-validation.component.html?raw"
 
-export class TimepickerExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-timepicker-examples-page",
+    controllerAs: "$",
+    templateUrl: "./timepicker-examples-page.component.html",
+    styleUrl: "./timepicker-examples-page.component.css",
+})
+export class TimepickerExamplesPageComponent {
     public readonly examples = {
-        basic: { html: BasicTimepickerComponent.$factory.templateUrl, typescript: basicTs },
-        meridian: { html: MeridianTimepickerComponent.$factory.templateUrl, typescript: meridianTs },
-        seconds: { html: SecondsTimepickerComponent.$factory.templateUrl, typescript: secondsTs },
-        spinners: { html: SpinnersTimepickerComponent.$factory.templateUrl, typescript: spinnersTs },
-        steps: { html: TimepickerCustomStepsComponent.$factory.templateUrl, typescript: stepsTs },
-        validation: { html: TimepickerValidationComponent.$factory.templateUrl, typescript: validationTs },
-        adapter: { html: TimepickerCustomAdapterComponent.$factory.templateUrl, typescript: adapterTs },
-        i18n: { html: TimepickerI18nComponent.$factory.templateUrl, typescript: i18nTs },
-    }
-    static get $name() {
-        return "docsTimepickerExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: TimepickerExamplesPageComponent,
-            templateUrl: "./timepicker-examples-page.component.html", styleUrl: "./timepicker-examples-page.component.css",
-            controllerAs: "$",
-        }
+        basic: { html: basicHtml, typescript: basicTs },
+        meridian: { html: meridianHtml, typescript: meridianTs },
+        seconds: { html: secondsHtml, typescript: secondsTs },
+        spinners: { html: spinnersHtml, typescript: spinnersTs },
+        steps: { html: stepsHtml, typescript: stepsTs },
+        validation: { html: validationHtml, typescript: validationTs },
+        adapter: { html: adapterHtml, typescript: adapterTs },
+        i18n: { html: i18nHtml, typescript: i18nTs },
     }
 }

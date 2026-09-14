@@ -1,33 +1,19 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, Input } from "ngjs-core";
 import { NgbModal, type NgbActiveModal, NGB_MODAL } from "ngb-js/modal";
 
-export class ModalStackedContentComponent implements IComponentController {
-    public ngbActiveModal!: NgbActiveModal;
-    public level = 1;
+@Component({
+    selector: "docs-modal-stacked-content",
+    controllerAs: "$",
+    templateUrl: "./modal-stacked-content.component.html",
+    styleUrl: "./modal-stacked-content.component.css",
+})
+export class ModalStackedContentComponent {
+    @Input({ required: true }) ngbActiveModal!: NgbActiveModal;
+    @Input() level = 1;
 
-    constructor(private readonly modal: NgbModal) {}
+    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
 
     public dismissAll() {
         this.modal.dismissAll("Dismiss all");
-    }
-
-    static get $name() {
-        return "docsModalStackedContent"
-    }
-
-    static get $inject() {
-        return [NGB_MODAL]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            bindings: {
-                ngbActiveModal: "<",
-                level: "<?",
-            },
-            controller: ModalStackedContentComponent,
-            controllerAs: "$",
-            templateUrl: "./modal-stacked-content.component.html", styleUrl: "./modal-stacked-content.component.css",
-        }
     }
 }

@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class PopoverApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsPopoverApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PopoverApiPageComponent,
-            templateUrl: "./popover-api-page.component.html", styleUrl: "./popover-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-popover-api-page",
+    controllerAs: "$",
+    templateUrl: "./popover-api-page.component.html",
+    styleUrl: "./popover-api-page.component.css",
+})
+export class PopoverApiPageComponent {}

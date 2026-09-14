@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class PaginationApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsPaginationApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PaginationApiPageComponent,
-            templateUrl: "./pagination-api-page.component.html", styleUrl: "./pagination-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-pagination-api-page",
+    controllerAs: "$",
+    templateUrl: "./pagination-api-page.component.html",
+    styleUrl: "./pagination-api-page.component.css",
+})
+export class PaginationApiPageComponent {}

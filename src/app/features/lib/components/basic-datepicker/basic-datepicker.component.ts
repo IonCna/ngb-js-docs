@@ -1,10 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import type { NgbDateStruct } from "ngb-js/datepicker";
 
-export class BasicDatepickerComponent implements IComponentController {
+@Component({
+    selector: "docs-basic-datepicker",
+    controllerAs: "example",
+    templateUrl: "./basic-datepicker.component.html",
+    styleUrl: "./basic-datepicker.component.css",
+})
+export class BasicDatepickerComponent {
     public date: NgbDateStruct = { year: 2026, month: 8, day: 24 };
-    static get $name() { return "docsBasicDatepicker" }
-    static get $factory(): IComponentOptions {
-        return { controller: BasicDatepickerComponent, controllerAs: "example", templateUrl: "./basic-datepicker.component.html", styleUrl: "./basic-datepicker.component.css" }
-    }
 }

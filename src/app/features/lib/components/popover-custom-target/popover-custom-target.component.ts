@@ -1,8 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class PopoverCustomTargetComponent implements IComponentController {
-    static get $name() { return "docsPopoverCustomTarget" }
-    static get $factory(): IComponentOptions {
-        return { controller: PopoverCustomTargetComponent, controllerAs: "example", templateUrl: "./popover-custom-target.component.html", styleUrl: "./popover-custom-target.component.css" }
-    }
-}
+@Component({
+    selector: "docs-popover-custom-target",
+    controllerAs: "example",
+    templateUrl: "./popover-custom-target.component.html",
+    styleUrl: "./popover-custom-target.component.css",
+})
+export class PopoverCustomTargetComponent {}

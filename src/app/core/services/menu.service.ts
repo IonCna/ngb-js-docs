@@ -6,13 +6,11 @@ import { MenuComponent } from "@/core/layouts/components/menu/menu.component"
 
 @Injectable({ id: "core.menu.service" })
 export class MenuService {
-    static readonly $name = "core.menu.service";
-
     private _isOpen = false;
     private _change = new Subject<boolean>();
     public onChange$ = this._change.asObservable();
 
-    constructor(@Inject(NGB_OFFCANVAS) private offCanvasService: NgbOffcanvas) {}
+    constructor(@Inject(NGB_OFFCANVAS) private readonly offCanvasService: NgbOffcanvas) {}
 
     public toggleMenu() {
         if (this._isOpen || this.offCanvasService.hasOpenOffcanvas()) {
@@ -21,7 +19,7 @@ export class MenuService {
 
         this._setOpenState(true)
 
-        this.offCanvasService.open(MenuComponent.$name, {
+        this.offCanvasService.open(MenuComponent, {
             bindings: { mode: "mobile" },
             ariaLabelledBy: "docs-mobile-menu-title",
             animation: true,

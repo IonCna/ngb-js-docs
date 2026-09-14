@@ -1,16 +1,22 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject, type OnDestroy } from "ngjs-core";
 import { OffcanvasDemoContentComponent } from "@/features/lib/components/offcanvas-demo-content/offcanvas-demo-content.component"
 import { NgbOffcanvas, NgbOffcanvasConfig, NGB_OFFCANVAS, NGB_OFFCANVAS_CONFIG } from "ngb-js/offcanvas";
 
-export class OffcanvasGlobalComponent implements IComponentController {
+@Component({
+    selector: "docs-offcanvas-global",
+    controllerAs: "example",
+    templateUrl: "./offcanvas-global.component.html",
+    styleUrl: "./offcanvas-global.component.css",
+})
+export class OffcanvasGlobalComponent implements OnDestroy {
     private readonly initialConfig: Pick<
         NgbOffcanvasConfig,
         "backdrop" | "keyboard" | "position" | "scroll"
     >;
 
     constructor(
-        private readonly offcanvas: NgbOffcanvas,
-        private readonly config: NgbOffcanvasConfig,
+        @Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas,
+        @Inject(NGB_OFFCANVAS_CONFIG) private readonly config: NgbOffcanvasConfig,
     ) {
         this.initialConfig = {
             backdrop: config.backdrop,
@@ -24,13 +30,13 @@ export class OffcanvasGlobalComponent implements IComponentController {
         this.applyConfig();
 
         try {
-            await this.offcanvas.open(OffcanvasDemoContentComponent.$name);
+            await this.offcanvas.open(OffcanvasDemoContentComponent);
         } finally {
             this.restoreConfig();
         }
     }
 
-    public $onDestroy() {
+    public ngOnDestroy() {
         this.restoreConfig();
     }
 
@@ -46,21 +52,5 @@ export class OffcanvasGlobalComponent implements IComponentController {
         this.config.keyboard = this.initialConfig.keyboard;
         this.config.position = this.initialConfig.position;
         this.config.scroll = this.initialConfig.scroll;
-    }
-
-    static get $name() {
-        return "docsOffcanvasGlobal"
-    }
-
-    static get $inject() {
-        return [NGB_OFFCANVAS, NGB_OFFCANVAS_CONFIG]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: OffcanvasGlobalComponent,
-            controllerAs: "example",
-            templateUrl: "./offcanvas-global.component.html", styleUrl: "./offcanvas-global.component.css",
-        }
     }
 }

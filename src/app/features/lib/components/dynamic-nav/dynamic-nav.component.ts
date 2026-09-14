@@ -1,11 +1,17 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
 interface DynamicNavItem {
     id: string;
     title: string;
 }
 
-export class DynamicNavComponent implements IComponentController {
+@Component({
+    selector: "docs-dynamic-nav",
+    controllerAs: "example",
+    templateUrl: "./dynamic-nav.component.html",
+    styleUrl: "./dynamic-nav.component.css",
+})
+export class DynamicNavComponent {
     public items: DynamicNavItem[] = [
         { id: "dynamic-1", title: "Tab 1" },
         { id: "dynamic-2", title: "Tab 2" },
@@ -33,17 +39,5 @@ export class DynamicNavComponent implements IComponentController {
 
         this.activeId = replacement.id;
         this.items = this.items.filter(({ id }) => id !== this.items[activeIndex].id);
-    }
-
-    static get $name() {
-        return "docsDynamicNav"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: DynamicNavComponent,
-            controllerAs: "example",
-            templateUrl: "./dynamic-nav.component.html", styleUrl: "./dynamic-nav.component.css",
-        }
     }
 }

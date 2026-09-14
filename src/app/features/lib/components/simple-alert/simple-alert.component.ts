@@ -1,15 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class SimpleAlertComponent implements IComponentController {
-    static get $name() {
-        return "docsSimpleAlert"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: SimpleAlertComponent,
-            controllerAs: "example",
-            templateUrl: "./simple-alert.component.html", styleUrl: "./simple-alert.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-simple-alert",
+    controllerAs: "example",
+    templateUrl: "./simple-alert.component.html",
+    styleUrl: "./simple-alert.component.css",
+})
+export class SimpleAlertComponent {}

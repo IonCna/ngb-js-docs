@@ -1,8 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class TooltipPlacementsComponent implements IComponentController {
-    static get $name() { return "docsTooltipPlacements" }
-    static get $factory(): IComponentOptions {
-        return { controller: TooltipPlacementsComponent, controllerAs: "example", templateUrl: "./tooltip-placements.component.html", styleUrl: "./tooltip-placements.component.css" }
-    }
-}
+@Component({
+    selector: "docs-tooltip-placements",
+    controllerAs: "example",
+    templateUrl: "./tooltip-placements.component.html",
+    styleUrl: "./tooltip-placements.component.css",
+})
+export class TooltipPlacementsComponent {}

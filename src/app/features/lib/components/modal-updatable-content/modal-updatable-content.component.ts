@@ -1,8 +1,14 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Input } from "ngjs-core";
 import type { NgbActiveModal, NgbModalUpdatableOptions } from "ngb-js/modal";
 
-export class ModalUpdatableContentComponent implements IComponentController {
-    public ngbActiveModal!: NgbActiveModal;
+@Component({
+    selector: "docs-modal-updatable-content",
+    controllerAs: "$",
+    templateUrl: "./modal-updatable-content.component.html",
+    styleUrl: "./modal-updatable-content.component.css",
+})
+export class ModalUpdatableContentComponent {
+    @Input({ required: true }) ngbActiveModal!: NgbActiveModal;
     public ariaReferences = true;
     public centered = false;
     public fullscreen = false;
@@ -48,20 +54,5 @@ export class ModalUpdatableContentComponent implements IComponentController {
     public toggleDialogClass() {
         this.customDialog = !this.customDialog;
         this.ngbActiveModal.update({ modalDialogClass: this.customDialog ? "updated-dialog" : "" });
-    }
-
-    static get $name() {
-        return "docsModalUpdatableContent"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            bindings: {
-                ngbActiveModal: "<",
-            },
-            controller: ModalUpdatableContentComponent,
-            controllerAs: "$",
-            templateUrl: "./modal-updatable-content.component.html", styleUrl: "./modal-updatable-content.component.css",
-        }
     }
 }

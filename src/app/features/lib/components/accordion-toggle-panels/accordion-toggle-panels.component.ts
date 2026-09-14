@@ -1,5 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
-import { ViewChild } from "ngjs-core";
+import { Component, ViewChild } from "ngjs-core";
 
 interface AccordionController {
     expandAll(): void;
@@ -7,7 +6,13 @@ interface AccordionController {
     toggle(itemId: string): void;
 }
 
-export class AccordionTogglePanelsComponent implements IComponentController {
+@Component({
+    selector: "docs-accordion-toggle-panels",
+    controllerAs: "example",
+    templateUrl: "./accordion-toggle-panels.component.html",
+    styleUrl: "./accordion-toggle-panels.component.css",
+})
+export class AccordionTogglePanelsComponent {
     @ViewChild("accordion", { static: true })
     private accordion!: AccordionController;
 
@@ -21,17 +26,5 @@ export class AccordionTogglePanelsComponent implements IComponentController {
 
     public toggle(itemId: string) {
         this.accordion.toggle(itemId);
-    }
-
-    static get $name() {
-        return "docsAccordionTogglePanels"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: AccordionTogglePanelsComponent,
-            controllerAs: "example",
-            templateUrl: "./accordion-toggle-panels.component.html", styleUrl: "./accordion-toggle-panels.component.css",
-        }
     }
 }

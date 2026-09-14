@@ -1,19 +1,22 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component, type OnDestroy, type OnInit } from "ngjs-core";
+import { Subject, takeUntil } from "rxjs";
 import { TitleService } from "@/core/services/title.service"
-import {Subject, takeUntil} from "rxjs";
 
-export class TitleHeadingComponent implements IComponentController {
-    private destroyRef = new Subject<void>();
+@Component({
+    selector: "docs-title-heading",
+    controllerAs: "$",
+    templateUrl: "./title-heading.component.html",
+    styleUrl: "./title-heading.component.css",
+})
+export class TitleHeadingComponent implements OnInit, OnDestroy {
+    private readonly destroyRef = new Subject<void>();
     public title?: string
     public tabs?: unknown[]
+    public visible = false
 
-    public visible: boolean = false
+    public constructor(public readonly titleService: TitleService) {}
 
-    public constructor(
-        private titleService: TitleService,
-    ) {}
-
-    $postLink() {
+    public ngOnInit() {
         this.titleService.transition$.pipe(
             takeUntil(this.destroyRef)
         ).subscribe(data => {
@@ -23,24 +26,8 @@ export class TitleHeadingComponent implements IComponentController {
         })
     }
 
-    $onDestroy() {
+    public ngOnDestroy() {
         this.destroyRef.next();
         this.destroyRef.complete();
-    }
-
-    static get $inject() {
-        return [TitleService.$name]
-    }
-
-    static get $name() {
-        return "docsTitleHeading";
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controllerAs: "$",
-            controller: TitleHeadingComponent,
-            templateUrl: "./title-heading.component.html", styleUrl: "./title-heading.component.css",
-        }
     }
 }

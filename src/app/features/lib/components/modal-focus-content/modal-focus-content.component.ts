@@ -1,23 +1,13 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Input } from "ngjs-core";
 import type { NgbActiveModal } from "ngb-js/modal";
 
-export class ModalFocusContentComponent implements IComponentController {
-    public ngbActiveModal!: NgbActiveModal;
-    public autofocus = false;
-
-    static get $name() {
-        return "docsModalFocusContent"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            bindings: {
-                ngbActiveModal: "<",
-                autofocus: "<?",
-            },
-            controller: ModalFocusContentComponent,
-            controllerAs: "$",
-            templateUrl: "./modal-focus-content.component.html", styleUrl: "./modal-focus-content.component.css",
-        }
-    }
+@Component({
+    selector: "docs-modal-focus-content",
+    controllerAs: "$",
+    templateUrl: "./modal-focus-content.component.html",
+    styleUrl: "./modal-focus-content.component.css",
+})
+export class ModalFocusContentComponent {
+    @Input({ required: true }) ngbActiveModal!: NgbActiveModal;
+    @Input() autofocus = false;
 }

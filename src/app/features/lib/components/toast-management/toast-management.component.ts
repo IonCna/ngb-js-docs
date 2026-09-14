@@ -1,4 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Injectable, type OnDestroy } from "ngjs-core";
 
 interface ManagedToast {
     id: number;
@@ -7,6 +7,7 @@ interface ManagedToast {
     delay?: number;
 }
 
+@Injectable({ id: "docs.toast.service" })
 export class DocsToastService {
     public readonly toasts: ManagedToast[] = [];
     private nextId = 0;
@@ -23,11 +24,15 @@ export class DocsToastService {
     public clear(): void {
         this.toasts.length = 0;
     }
-
-    static get $name() { return "docs.toast.service" }
 }
 
-export class ToastManagementComponent implements IComponentController {
+@Component({
+    selector: "docs-toast-management",
+    controllerAs: "example",
+    templateUrl: "./toast-management.component.html",
+    styleUrl: "./toast-management.component.css",
+})
+export class ToastManagementComponent implements OnDestroy {
     constructor(public readonly toastService: DocsToastService) {}
 
     public showStandard(): void {
@@ -42,13 +47,7 @@ export class ToastManagementComponent implements IComponentController {
         this.toastService.show("The operation could not be completed.", { className: "bg-danger text-white", delay: 10000 });
     }
 
-    public $onDestroy(): void {
+    public ngOnDestroy(): void {
         this.toastService.clear();
-    }
-
-    static get $name() { return "docsToastManagement" }
-    static get $inject() { return [DocsToastService.$name] }
-    static get $factory(): IComponentOptions {
-        return { controller: ToastManagementComponent, controllerAs: "example", templateUrl: "./toast-management.component.html", styleUrl: "./toast-management.component.css" }
     }
 }

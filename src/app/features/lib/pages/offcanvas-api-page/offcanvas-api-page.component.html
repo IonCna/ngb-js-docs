@@ -4,14 +4,13 @@
 </div>
 
 <section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-offcanvas">
-    <header class="mb-3"><p class="small fw-semibold text-primary mb-1">Service</p><h2 class="h3 mb-2"><code class="text-body">NgbOffcanvas</code></h2><p class="text-body-secondary mb-0">Creates and coordinates offcanvas panels from templates or registered AngularJS component names.</p></header>
+    <header class="mb-3"><p class="small fw-semibold text-primary mb-1">Service</p><h2 class="h3 mb-2"><code class="text-body">NgbOffcanvas</code></h2><p class="text-body-secondary mb-0">Creates and coordinates offcanvas panels from a component class or a <code>TemplateRef</code>.</p></header>
     <div class="alert alert-info" role="note">
-        To open component content, pass its registered name: <code>offcanvas.open(MyContentComponent.$name)</code>.
-        Passing the component class itself is not supported.
+        To open component content, pass its <code>@Component</code> class directly: <code>offcanvas.open(MyContentComponent)</code>.
     </div>
     <h3 class="h5 mt-4 mb-3">Members</h3>
     <div class="table-responsive"><table class="table table-sm align-middle mb-0"><thead><tr><th>Member</th><th>Returns</th><th>Description</th></tr></thead><tbody>
-        <tr><td><code>open(componentName | templateRef, options?)</code></td><td><code>NgbOffcanvasRef</code></td><td>Opens a registered <code>Component.$name</code> or a <code>TemplateRef</code>, with options merged over <code>NgbOffcanvasConfig</code>.</td></tr>
+        <tr><td><code>open(component | templateRef, options?)</code></td><td><code>NgbOffcanvasRef</code></td><td>Opens a <code>@Component</code> class or a <code>TemplateRef</code>, with options merged over <code>NgbOffcanvasConfig</code>.</td></tr>
         <tr><td><code>activeInstance</code></td><td>Active instance</td><td>Exposes the currently open offcanvas instance.</td></tr>
         <tr><td><code>dismiss(reason?)</code></td><td><code>void</code></td><td>Dismisses the active panel.</td></tr>
         <tr><td><code>hasOpenOffcanvas()</code></td><td><code>boolean</code></td><td>Reports whether a panel is open.</td></tr>

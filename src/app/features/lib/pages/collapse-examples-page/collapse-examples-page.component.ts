@@ -1,36 +1,30 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import horizontalCollapseTs from "@/features/lib/components/horizontal-collapse/horizontal-collapse.component.ts?raw"
 import navbarCollapseTs from "@/features/lib/components/navbar-collapse/navbar-collapse.component.ts?raw"
 import simpleCollapseTs from "@/features/lib/components/simple-collapse/simple-collapse.component.ts?raw"
-import { HorizontalCollapseComponent } from "@/features/lib/components/horizontal-collapse/horizontal-collapse.component"
-import { NavbarCollapseComponent } from "@/features/lib/components/navbar-collapse/navbar-collapse.component"
-import { SimpleCollapseComponent } from "@/features/lib/components/simple-collapse/simple-collapse.component"
+import simpleCollapseHtml from "@/features/lib/components/simple-collapse/simple-collapse.component.html?raw"
+import horizontalCollapseHtml from "@/features/lib/components/horizontal-collapse/horizontal-collapse.component.html?raw"
+import navbarCollapseHtml from "@/features/lib/components/navbar-collapse/navbar-collapse.component.html?raw"
 
-export class CollapseExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-collapse-examples-page",
+    controllerAs: "$",
+    templateUrl: "./collapse-examples-page.component.html",
+    styleUrl: "./collapse-examples-page.component.css",
+})
+export class CollapseExamplesPageComponent {
     public readonly examples = {
         simple: {
-            html: SimpleCollapseComponent.$factory.templateUrl,
+            html: simpleCollapseHtml,
             typescript: simpleCollapseTs,
         },
         horizontal: {
-            html: HorizontalCollapseComponent.$factory.templateUrl,
+            html: horizontalCollapseHtml,
             typescript: horizontalCollapseTs,
         },
         navbar: {
-            html: NavbarCollapseComponent.$factory.templateUrl,
+            html: navbarCollapseHtml,
             typescript: navbarCollapseTs,
         },
-    }
-
-    static get $name() {
-        return "docsCollapseExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CollapseExamplesPageComponent,
-            templateUrl: "./collapse-examples-page.component.html", styleUrl: "./collapse-examples-page.component.css",
-            controllerAs: "$",
-        }
     }
 }

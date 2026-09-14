@@ -1,58 +1,52 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 import dropdownDisabledItemsTs from "@/features/lib/components/dropdown-disabled-items/dropdown-disabled-items.component.ts?raw"
 import dropdownFormTs from "@/features/lib/components/dropdown-form/dropdown-form.component.ts?raw"
 import dropdownGlobalTs from "@/features/lib/components/dropdown-global/dropdown-global.component.ts?raw"
 import manualDropdownTs from "@/features/lib/components/manual-dropdown/manual-dropdown.component.ts?raw"
-import { DropdownBodyComponent } from "@/features/lib/components/dropdown-body/dropdown-body.component"
-import { DropdownButtonGroupsComponent } from "@/features/lib/components/dropdown-button-groups/dropdown-button-groups.component"
-import { DropdownDisabledItemsComponent } from "@/features/lib/components/dropdown-disabled-items/dropdown-disabled-items.component"
-import { DropdownFormComponent } from "@/features/lib/components/dropdown-form/dropdown-form.component"
-import { DropdownGlobalComponent } from "@/features/lib/components/dropdown-global/dropdown-global.component"
-import { DropdownNavbarComponent } from "@/features/lib/components/dropdown-navbar/dropdown-navbar.component"
-import { ManualDropdownComponent } from "@/features/lib/components/manual-dropdown/manual-dropdown.component"
-import { SimpleDropdownComponent } from "@/features/lib/components/simple-dropdown/simple-dropdown.component"
+import simpleDropdownHtml from "@/features/lib/components/simple-dropdown/simple-dropdown.component.html?raw"
+import manualDropdownHtml from "@/features/lib/components/manual-dropdown/manual-dropdown.component.html?raw"
+import dropdownButtonGroupsHtml from "@/features/lib/components/dropdown-button-groups/dropdown-button-groups.component.html?raw"
+import dropdownDisabledItemsHtml from "@/features/lib/components/dropdown-disabled-items/dropdown-disabled-items.component.html?raw"
+import dropdownFormHtml from "@/features/lib/components/dropdown-form/dropdown-form.component.html?raw"
+import dropdownBodyHtml from "@/features/lib/components/dropdown-body/dropdown-body.component.html?raw"
+import dropdownNavbarHtml from "@/features/lib/components/dropdown-navbar/dropdown-navbar.component.html?raw"
+import dropdownGlobalHtml from "@/features/lib/components/dropdown-global/dropdown-global.component.html?raw"
 
-export class DropdownExamplesPageComponent implements IComponentController {
+@Component({
+    selector: "docs-dropdown-examples-page",
+    controllerAs: "$",
+    templateUrl: "./dropdown-examples-page.component.html",
+    styleUrl: "./dropdown-examples-page.component.css",
+})
+export class DropdownExamplesPageComponent {
     public readonly examples = {
         simple: {
-            html: SimpleDropdownComponent.$factory.templateUrl,
+            html: simpleDropdownHtml,
         },
         manual: {
-            html: ManualDropdownComponent.$factory.templateUrl,
+            html: manualDropdownHtml,
             typescript: manualDropdownTs,
         },
         buttonGroups: {
-            html: DropdownButtonGroupsComponent.$factory.templateUrl,
+            html: dropdownButtonGroupsHtml,
         },
         disabledItems: {
-            html: DropdownDisabledItemsComponent.$factory.templateUrl,
+            html: dropdownDisabledItemsHtml,
             typescript: dropdownDisabledItemsTs,
         },
         form: {
-            html: DropdownFormComponent.$factory.templateUrl,
+            html: dropdownFormHtml,
             typescript: dropdownFormTs,
         },
         body: {
-            html: DropdownBodyComponent.$factory.templateUrl,
+            html: dropdownBodyHtml,
         },
         navbar: {
-            html: DropdownNavbarComponent.$factory.templateUrl,
+            html: dropdownNavbarHtml,
         },
         global: {
-            html: DropdownGlobalComponent.$factory.templateUrl,
+            html: dropdownGlobalHtml,
             typescript: dropdownGlobalTs,
         },
-    }
-
-    static get $name() {
-        return "docsDropdownExamplesPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: DropdownExamplesPageComponent,
-            templateUrl: "./dropdown-examples-page.component.html", styleUrl: "./dropdown-examples-page.component.css",
-            controllerAs: "$",
-        }
     }
 }

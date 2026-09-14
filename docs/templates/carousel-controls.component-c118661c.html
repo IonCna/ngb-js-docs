@@ -1,0 +1,53 @@
+<div class="d-flex flex-column gap-3" _content-a50968e9="">
+    <div class="row g-3" _content-a50968e9="">
+        <div class="col-sm-6" _content-a50968e9="">
+            <div class="form-check form-switch" _content-a50968e9="">
+                <input class="form-check-input" type="checkbox" role="switch" id="carousel-pause-hover" ng-model="example.pauseOnHover" _content-a50968e9="">
+                <label class="form-check-label" for="carousel-pause-hover" _content-a50968e9="">Pause on hover</label>
+            </div>
+        </div>
+        <div class="col-sm-6" _content-a50968e9="">
+            <div class="form-check form-switch" _content-a50968e9="">
+                <input class="form-check-input" type="checkbox" role="switch" id="carousel-pause-focus" ng-model="example.pauseOnFocus" _content-a50968e9="">
+                <label class="form-check-label" for="carousel-pause-focus" _content-a50968e9="">Pause on focus</label>
+            </div>
+        </div>
+        <div class="col-sm-6" _content-a50968e9="">
+            <div class="form-check form-switch" _content-a50968e9="">
+                <input class="form-check-input" type="checkbox" role="switch" id="carousel-unpause-arrows" ng-model="example.unpauseOnArrow" _content-a50968e9="">
+                <label class="form-check-label" for="carousel-unpause-arrows" _content-a50968e9="">Unpause when clicking an arrow</label>
+            </div>
+        </div>
+        <div class="col-sm-6" _content-a50968e9="">
+            <div class="form-check form-switch" _content-a50968e9="">
+                <input class="form-check-input" type="checkbox" role="switch" id="carousel-pause-indicator" ng-model="example.pauseOnIndicator" _content-a50968e9="">
+                <label class="form-check-label" for="carousel-pause-indicator" _content-a50968e9="">Pause when clicking an indicator</label>
+            </div>
+        </div>
+    </div>
+
+    <div _content-a50968e9="">
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.toggleCycle()" _content-a50968e9="">
+            <i class="bi me-1" ng-class="example.paused ? 'bi-play-fill' : 'bi-pause-fill'" aria-hidden="true" _content-a50968e9=""></i>
+            {{ example.paused ? 'Cycle' : 'Pause' }}
+        </button>
+    </div>
+
+    <ngb-carousel ng-ref="carousel" ng-ref-read="ngbCarousel" aria-label="Configurable carousel" interval="3000" pause-on-hover="example.pauseOnHover" pause-on-focus="example.pauseOnFocus" show-navigation-arrows="true" show-navigation-indicators="true" slide="example.onSlide($event)" _content-a50968e9="">
+        <ng-template ngb-slide="" id="controls-building" _content-a50968e9="">
+            <img src="https://picsum.photos/id/1050/900/500" class="d-block w-100 h-auto" width="900" height="500" alt="Building beside the water" _content-a50968e9="">
+        </ng-template>
+
+        <ng-template ngb-slide="" id="controls-landscape" _content-a50968e9="">
+            <img src="https://picsum.photos/id/1067/900/500" class="d-block w-100 h-auto" width="900" height="500" alt="Open landscape at sunset" _content-a50968e9="">
+        </ng-template>
+
+        <ng-template ngb-slide="" id="controls-field" _content-a50968e9="">
+            <img src="https://picsum.photos/id/1074/900/500" class="d-block w-100 h-auto" width="900" height="500" alt="Field beneath a cloudy sky" _content-a50968e9="">
+        </ng-template>
+
+        <ng-template ngb-slide="" id="controls-hills" _content-a50968e9="">
+            <img src="https://picsum.photos/id/1084/900/500" class="d-block w-100 h-auto" width="900" height="500" alt="Hills in warm light" _content-a50968e9="">
+        </ng-template>
+    </ngb-carousel>
+</div>

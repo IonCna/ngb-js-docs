@@ -1,10 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class RatingCustomTemplateComponent implements IComponentController {
+@Component({
+    selector: "docs-rating-custom-template",
+    controllerAs: "example",
+    templateUrl: "./rating-custom-template.component.html",
+    styleUrl: "./rating-custom-template.component.css",
+})
+export class RatingCustomTemplateComponent {
     public rating = 6;
     public setRating(rating: number) { this.rating = rating; }
-    static get $name() { return "docsRatingCustomTemplate" }
-    static get $factory(): IComponentOptions {
-        return { controller: RatingCustomTemplateComponent, controllerAs: "example", templateUrl: "./rating-custom-template.component.html", styleUrl: "./rating-custom-template.component.css" }
-    }
 }

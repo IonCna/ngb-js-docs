@@ -1,4 +1,4 @@
-import type { IAugmentedJQuery, IComponentController, IComponentOptions, ITimeoutService } from "angular";
+import { Component, ViewChild } from "ngjs-core";
 
 interface CarouselController {
     cycle(): void;
@@ -9,29 +9,21 @@ interface CarouselSlideEvent {
     source?: "timer" | "arrowLeft" | "arrowRight" | "indicator";
 }
 
-export class CarouselControlsComponent implements IComponentController {
+@Component({
+    selector: "docs-carousel-controls",
+    controllerAs: "example",
+    templateUrl: "./carousel-controls.component.html",
+    styleUrl: "./carousel-controls.component.css",
+})
+export class CarouselControlsComponent {
     public pauseOnHover = true;
     public pauseOnFocus = true;
     public unpauseOnArrow = false;
     public pauseOnIndicator = false;
     public paused = false;
 
+    @ViewChild("carousel")
     private carousel?: CarouselController;
-
-    constructor(
-        private readonly $element: IAugmentedJQuery,
-        private readonly $timeout: ITimeoutService,
-    ) {}
-
-    public $postLink() {
-        this.$timeout(
-            () => {
-                this.carousel = this.$element.find("ngb-carousel").controller("ngbCarousel") as CarouselController;
-            },
-            0,
-            false,
-        );
-    }
 
     public onSlide(event: CarouselSlideEvent) {
         const isArrow = event.source === "arrowLeft" || event.source === "arrowRight";
@@ -55,21 +47,5 @@ export class CarouselControlsComponent implements IComponentController {
         }
 
         this.paused = !this.paused;
-    }
-
-    static get $name() {
-        return "docsCarouselControls"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: CarouselControlsComponent,
-            controllerAs: "example",
-            templateUrl: "./carousel-controls.component.html", styleUrl: "./carousel-controls.component.css",
-        }
-    }
-
-    static get $inject() {
-        return ["$element", "$timeout"]
     }
 }

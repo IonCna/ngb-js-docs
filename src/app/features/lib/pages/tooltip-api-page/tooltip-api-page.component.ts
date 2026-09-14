@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class TooltipApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsTooltipApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: TooltipApiPageComponent,
-            templateUrl: "./tooltip-api-page.component.html", styleUrl: "./tooltip-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-tooltip-api-page",
+    controllerAs: "$",
+    templateUrl: "./tooltip-api-page.component.html",
+    styleUrl: "./tooltip-api-page.component.css",
+})
+export class TooltipApiPageComponent {}

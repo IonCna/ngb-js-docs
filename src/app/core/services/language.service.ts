@@ -5,8 +5,6 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({ id: "docs.language.service" })
 export class LanguageService {
-    static readonly $name = "docs.language.service";
-
     private _changeLang: BehaviorSubject<Language>;
     public changeLang$: Observable<Language>;
 

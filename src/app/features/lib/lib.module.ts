@@ -1,4 +1,6 @@
-import angular from "angular";
+import { NgModule } from "ngjs-core";
+import { RouterModule } from "ngjs-core/router"
+import { routes } from "@/features/lib/lib.routes"
 
 import { AlertCloseableComponent } from "@/features/lib/components/alert-closeable/alert-closeable.component"
 import { AlertCustomComponent } from "@/features/lib/components/alert-custom/alert-custom.component"
@@ -110,7 +112,7 @@ import { SpinnersTimepickerComponent } from "@/features/lib/components/spinners-
 import { TimepickerCustomAdapterComponent } from "@/features/lib/components/timepicker-custom-adapter/timepicker-custom-adapter.component"
 import { TimepickerCustomStepsComponent } from "@/features/lib/components/timepicker-custom-steps/timepicker-custom-steps.component"
 import { GreekTimepickerI18n, TimepickerI18nComponent } from "@/features/lib/components/timepicker-i18n/timepicker-i18n.component"
-import { TimepickerValidationComponent, timepickerLunchValidator } from "@/features/lib/components/timepicker-validation/timepicker-validation.component"
+import { TimepickerValidationComponent, TimepickerLunchValidatorDirective } from "@/features/lib/components/timepicker-validation/timepicker-validation.component"
 import { CloseableToastComponent } from "@/features/lib/components/closeable-toast/closeable-toast.component"
 import { InlineToastComponent } from "@/features/lib/components/inline-toast/inline-toast.component"
 import { PreventAutohideToastComponent } from "@/features/lib/components/prevent-autohide-toast/prevent-autohide-toast.component"
@@ -134,220 +136,154 @@ import { SimpleTypeaheadComponent } from "@/features/lib/components/simple-typea
 import { TemplateResultsTypeaheadComponent } from "@/features/lib/components/template-results-typeahead/template-results-typeahead.component"
 import { TypeaheadGlobalComponent } from "@/features/lib/components/typeahead-global/typeahead-global.component"
 import { WikipediaSearchService, WikipediaTypeaheadComponent } from "@/features/lib/components/wikipedia-typeahead/wikipedia-typeahead.component"
-import { AlertApiPageComponent } from "@/features/lib/pages/alert-api-page/alert-api-page.component"
-import { AlertExamplesPageComponent } from "@/features/lib/pages/alert-examples-page/alert-examples-page.component"
-import { AccordionApiPageComponent } from "@/features/lib/pages/accordion-api-page/accordion-api-page.component"
-import { AccordionExamplesPageComponent } from "@/features/lib/pages/accordion-examples-page/accordion-examples-page.component"
-import { CarouselApiPageComponent } from "@/features/lib/pages/carousel-api-page/carousel-api-page.component"
-import { CarouselExamplesPageComponent } from "@/features/lib/pages/carousel-examples-page/carousel-examples-page.component"
-import { CollapseApiPageComponent } from "@/features/lib/pages/collapse-api-page/collapse-api-page.component"
-import { CollapseExamplesPageComponent } from "@/features/lib/pages/collapse-examples-page/collapse-examples-page.component"
-import { DatepickerApiPageComponent } from "@/features/lib/pages/datepicker-api-page/datepicker-api-page.component"
-import { DatepickerCalendarsPageComponent } from "@/features/lib/pages/datepicker-calendars-page/datepicker-calendars-page.component"
-import { DatepickerExamplesPageComponent } from "@/features/lib/pages/datepicker-examples-page/datepicker-examples-page.component"
-import { DropdownApiPageComponent } from "@/features/lib/pages/dropdown-api-page/dropdown-api-page.component"
-import { DropdownExamplesPageComponent } from "@/features/lib/pages/dropdown-examples-page/dropdown-examples-page.component"
-import { ModalApiPageComponent } from "@/features/lib/pages/modal-api-page/modal-api-page.component"
-import { ModalExamplesPageComponent } from "@/features/lib/pages/modal-examples-page/modal-examples-page.component"
-import { NavApiPageComponent } from "@/features/lib/pages/nav-api-page/nav-api-page.component"
-import { NavExamplesPageComponent } from "@/features/lib/pages/nav-examples-page/nav-examples-page.component"
-import { OffcanvasApiPageComponent } from "@/features/lib/pages/offcanvas-api-page/offcanvas-api-page.component"
-import { OffcanvasExamplesPageComponent } from "@/features/lib/pages/offcanvas-examples-page/offcanvas-examples-page.component"
-import { PaginationApiPageComponent } from "@/features/lib/pages/pagination-api-page/pagination-api-page.component"
-import { PaginationExamplesPageComponent } from "@/features/lib/pages/pagination-examples-page/pagination-examples-page.component"
-import { PopoverApiPageComponent } from "@/features/lib/pages/popover-api-page/popover-api-page.component"
-import { PopoverExamplesPageComponent } from "@/features/lib/pages/popover-examples-page/popover-examples-page.component"
-import { ProgressbarApiPageComponent } from "@/features/lib/pages/progressbar-api-page/progressbar-api-page.component"
-import { ProgressbarExamplesPageComponent } from "@/features/lib/pages/progressbar-examples-page/progressbar-examples-page.component"
-import { RatingApiPageComponent } from "@/features/lib/pages/rating-api-page/rating-api-page.component"
-import { RatingExamplesPageComponent } from "@/features/lib/pages/rating-examples-page/rating-examples-page.component"
-import { ScrollspyApiPageComponent } from "@/features/lib/pages/scrollspy-api-page/scrollspy-api-page.component"
-import { ScrollspyExamplesPageComponent } from "@/features/lib/pages/scrollspy-examples-page/scrollspy-examples-page.component"
-import { TimepickerApiPageComponent } from "@/features/lib/pages/timepicker-api-page/timepicker-api-page.component"
-import { TimepickerExamplesPageComponent } from "@/features/lib/pages/timepicker-examples-page/timepicker-examples-page.component"
-import { ToastApiPageComponent } from "@/features/lib/pages/toast-api-page/toast-api-page.component"
-import { ToastExamplesPageComponent } from "@/features/lib/pages/toast-examples-page/toast-examples-page.component"
-import { TooltipApiPageComponent } from "@/features/lib/pages/tooltip-api-page/tooltip-api-page.component"
-import { TooltipExamplesPageComponent } from "@/features/lib/pages/tooltip-examples-page/tooltip-examples-page.component"
-import { TypeaheadApiPageComponent } from "@/features/lib/pages/typeahead-api-page/typeahead-api-page.component"
-import { TypeaheadExamplesPageComponent } from "@/features/lib/pages/typeahead-examples-page/typeahead-examples-page.component"
-import { routing } from "@/features/lib/lib.routes"
 
-export const LibModule = angular.module("docs.lib", []);
-
-LibModule.component(AlertCloseableComponent.$name, AlertCloseableComponent.$factory)
-LibModule.component(AlertCustomComponent.$name, AlertCustomComponent.$factory)
-LibModule.component(AlertGlobalComponent.$name, AlertGlobalComponent.$factory)
-LibModule.component(AccordionContentComponent.$name, AccordionContentComponent.$factory)
-LibModule.component(AccordionCustomHeaderComponent.$name, AccordionCustomHeaderComponent.$factory)
-LibModule.component(AccordionGlobalComponent.$name, AccordionGlobalComponent.$factory)
-LibModule.component(AccordionSimpleComponent.$name, AccordionSimpleComponent.$factory)
-LibModule.component(AccordionTogglePanelsComponent.$name, AccordionTogglePanelsComponent.$factory)
-LibModule.component(OnePanelAccordionComponent.$name, OnePanelAccordionComponent.$factory)
-LibModule.component(SelfClosingAlertComponent.$name, SelfClosingAlertComponent.$factory)
-LibModule.component(SimpleAlertComponent.$name, SimpleAlertComponent.$factory)
-LibModule.component(CarouselControlsComponent.$name, CarouselControlsComponent.$factory)
-LibModule.component(CarouselGlobalComponent.$name, CarouselGlobalComponent.$factory)
-LibModule.component(CarouselKeyboardComponent.$name, CarouselKeyboardComponent.$factory)
-LibModule.component(CarouselSimpleComponent.$name, CarouselSimpleComponent.$factory)
-LibModule.component(HorizontalCollapseComponent.$name, HorizontalCollapseComponent.$factory)
-LibModule.component(NavbarCollapseComponent.$name, NavbarCollapseComponent.$factory)
-LibModule.component(SimpleCollapseComponent.$name, SimpleCollapseComponent.$factory)
-LibModule.component(DropdownBodyComponent.$name, DropdownBodyComponent.$factory)
-LibModule.component(DropdownButtonGroupsComponent.$name, DropdownButtonGroupsComponent.$factory)
-LibModule.component(DropdownDisabledItemsComponent.$name, DropdownDisabledItemsComponent.$factory)
-LibModule.component(DropdownFormComponent.$name, DropdownFormComponent.$factory)
-LibModule.component(DropdownGlobalComponent.$name, DropdownGlobalComponent.$factory)
-LibModule.component(DropdownNavbarComponent.$name, DropdownNavbarComponent.$factory)
-LibModule.component(ManualDropdownComponent.$name, ManualDropdownComponent.$factory)
-LibModule.component(SimpleDropdownComponent.$name, SimpleDropdownComponent.$factory)
-LibModule.component(ModalComponentContentComponent.$name, ModalComponentContentComponent.$factory)
-LibModule.component(ModalDefaultComponent.$name, ModalDefaultComponent.$factory)
-LibModule.component(ModalDemoContentComponent.$name, ModalDemoContentComponent.$factory)
-LibModule.component(ModalFocusComponent.$name, ModalFocusComponent.$factory)
-LibModule.component(ModalFocusContentComponent.$name, ModalFocusContentComponent.$factory)
-LibModule.component(ModalGlobalComponent.$name, ModalGlobalComponent.$factory)
-LibModule.component(ModalOptionsComponent.$name, ModalOptionsComponent.$factory)
-LibModule.component(ModalStackedComponent.$name, ModalStackedComponent.$factory)
-LibModule.component(ModalStackedContentComponent.$name, ModalStackedContentComponent.$factory)
-LibModule.component(ModalUpdatableComponent.$name, ModalUpdatableComponent.$factory)
-LibModule.component(ModalUpdatableContentComponent.$name, ModalUpdatableContentComponent.$factory)
-LibModule.component(AlternativeNavComponent.$name, AlternativeNavComponent.$factory)
-LibModule.component(CustomNavComponent.$name, CustomNavComponent.$factory)
-LibModule.component(DynamicNavComponent.$name, DynamicNavComponent.$factory)
-LibModule.component(KeepContentNavComponent.$name, KeepContentNavComponent.$factory)
-LibModule.component(NavGlobalComponent.$name, NavGlobalComponent.$factory)
-LibModule.component(SelectingNavComponent.$name, SelectingNavComponent.$factory)
-LibModule.component(SimpleNavComponent.$name, SimpleNavComponent.$factory)
-LibModule.component(VerticalNavComponent.$name, VerticalNavComponent.$factory)
-LibModule.component(OffcanvasComponentContentComponent.$name, OffcanvasComponentContentComponent.$factory)
-LibModule.component(OffcanvasDefaultComponent.$name, OffcanvasDefaultComponent.$factory)
-LibModule.component(OffcanvasDemoContentComponent.$name, OffcanvasDemoContentComponent.$factory)
-LibModule.component(OffcanvasFocusComponent.$name, OffcanvasFocusComponent.$factory)
-LibModule.component(OffcanvasFocusContentComponent.$name, OffcanvasFocusContentComponent.$factory)
-LibModule.component(OffcanvasGlobalComponent.$name, OffcanvasGlobalComponent.$factory)
-LibModule.component(OffcanvasOptionsComponent.$name, OffcanvasOptionsComponent.$factory)
-LibModule.component(AdvancedPaginationComponent.$name, AdvancedPaginationComponent.$factory)
-LibModule.component(BasicPaginationComponent.$name, BasicPaginationComponent.$factory)
-LibModule.component(CustomPaginationComponent.$name, CustomPaginationComponent.$factory)
-LibModule.component(DisabledPaginationComponent.$name, DisabledPaginationComponent.$factory)
-LibModule.component(PaginationAlignmentComponent.$name, PaginationAlignmentComponent.$factory)
-LibModule.component(PaginationGlobalComponent.$name, PaginationGlobalComponent.$factory)
-LibModule.component(PaginationSizeComponent.$name, PaginationSizeComponent.$factory)
-LibModule.component(BasicDatepickerComponent.$name, BasicDatepickerComponent.$factory)
-LibModule.component(DatepickerCustomAdapterComponent.$name, DatepickerCustomAdapterComponent.$factory)
-LibModule.component(DatepickerCustomDayComponent.$name, DatepickerCustomDayComponent.$factory)
-LibModule.component(DatepickerCustomMonthComponent.$name, DatepickerCustomMonthComponent.$factory)
-LibModule.component(DatepickerFooterComponent.$name, DatepickerFooterComponent.$factory)
-LibModule.component(DatepickerGlobalComponent.$name, DatepickerGlobalComponent.$factory)
-LibModule.component(DatepickerI18nComponent.$name, DatepickerI18nComponent.$factory)
-LibModule.component(DatepickerKeyboardComponent.$name, DatepickerKeyboardComponent.$factory)
-LibModule.component(DatepickerPositionTargetComponent.$name, DatepickerPositionTargetComponent.$factory)
-LibModule.component(DisabledDatepickerComponent.$name, DisabledDatepickerComponent.$factory)
-LibModule.component(MultipleMonthsDatepickerComponent.$name, MultipleMonthsDatepickerComponent.$factory)
-LibModule.component(PopupDatepickerComponent.$name, PopupDatepickerComponent.$factory)
-LibModule.component(RangeDatepickerComponent.$name, RangeDatepickerComponent.$factory)
-LibModule.component(RangePopupDatepickerComponent.$name, RangePopupDatepickerComponent.$factory)
-LibModule.component(PopoverAutocloseComponent.$name, PopoverAutocloseComponent.$factory)
-LibModule.component(PopoverBodyComponent.$name, PopoverBodyComponent.$factory)
-LibModule.component(PopoverContextComponent.$name, PopoverContextComponent.$factory)
-LibModule.component(PopoverCustomClassComponent.$name, PopoverCustomClassComponent.$factory)
-LibModule.component(PopoverCustomTargetComponent.$name, PopoverCustomTargetComponent.$factory)
-LibModule.component(PopoverDelaysComponent.$name, PopoverDelaysComponent.$factory)
-LibModule.component(PopoverEventsComponent.$name, PopoverEventsComponent.$factory)
-LibModule.component(PopoverGlobalComponent.$name, PopoverGlobalComponent.$factory)
-LibModule.component(PopoverManualControlComponent.$name, PopoverManualControlComponent.$factory)
-LibModule.component(PopoverPlacementsComponent.$name, PopoverPlacementsComponent.$factory)
-LibModule.component(PopoverTemplateComponent.$name, PopoverTemplateComponent.$factory)
-LibModule.component(PopoverTriggersComponent.$name, PopoverTriggersComponent.$factory)
-LibModule.component(ContextualTextProgressbarComponent.$name, ContextualTextProgressbarComponent.$factory)
-LibModule.component(CustomLabelsProgressbarComponent.$name, CustomLabelsProgressbarComponent.$factory)
-LibModule.component(ProgressBarsStackedComponent.$name, ProgressBarsStackedComponent.$factory)
-LibModule.component(ProgressHeightComponent.$name, ProgressHeightComponent.$factory)
-LibModule.component(ProgressbarGlobalComponent.$name, ProgressbarGlobalComponent.$factory)
-LibModule.component(SimpleProgressbarComponent.$name, SimpleProgressbarComponent.$factory)
-LibModule.component(StripedProgressBarComponent.$name, StripedProgressBarComponent.$factory)
-LibModule.component(BasicRatingComponent.$name, BasicRatingComponent.$factory)
-LibModule.component(RatingCustomTemplateComponent.$name, RatingCustomTemplateComponent.$factory)
-LibModule.component(RatingDecimalComponent.$name, RatingDecimalComponent.$factory)
-LibModule.component(RatingEventsComponent.$name, RatingEventsComponent.$factory)
-LibModule.component(RatingFormComponent.$name, RatingFormComponent.$factory)
-LibModule.component(RatingGlobalComponent.$name, RatingGlobalComponent.$factory)
-LibModule.component(BasicScrollspyComponent.$name, BasicScrollspyComponent.$factory)
-LibModule.component(NavbarScrollspyComponent.$name, NavbarScrollspyComponent.$factory)
-LibModule.component(NestedScrollspyComponent.$name, NestedScrollspyComponent.$factory)
-LibModule.component(ScrollspyMenuItemsComponent.$name, ScrollspyMenuItemsComponent.$factory)
-LibModule.component(ScrollspyServiceDemoComponent.$name, ScrollspyServiceDemoComponent.$factory)
-LibModule.component(BasicTimepickerComponent.$name, BasicTimepickerComponent.$factory)
-LibModule.component(MeridianTimepickerComponent.$name, MeridianTimepickerComponent.$factory)
-LibModule.component(SecondsTimepickerComponent.$name, SecondsTimepickerComponent.$factory)
-LibModule.component(SpinnersTimepickerComponent.$name, SpinnersTimepickerComponent.$factory)
-LibModule.component(TimepickerCustomAdapterComponent.$name, TimepickerCustomAdapterComponent.$factory)
-LibModule.component(TimepickerCustomStepsComponent.$name, TimepickerCustomStepsComponent.$factory)
-LibModule.service("NgbTimepickerI18n", GreekTimepickerI18n)
-LibModule.component(TimepickerI18nComponent.$name, TimepickerI18nComponent.$factory)
-LibModule.component(TimepickerValidationComponent.$name, TimepickerValidationComponent.$factory)
-LibModule.directive("docsTimepickerLunchValidator", timepickerLunchValidator)
-LibModule.component(CloseableToastComponent.$name, CloseableToastComponent.$factory)
-LibModule.component(InlineToastComponent.$name, InlineToastComponent.$factory)
-LibModule.component(PreventAutohideToastComponent.$name, PreventAutohideToastComponent.$factory)
-LibModule.component(TemplateHeaderToastComponent.$name, TemplateHeaderToastComponent.$factory)
-LibModule.service(DocsToastService.$name, DocsToastService)
-LibModule.component(ToastManagementComponent.$name, ToastManagementComponent.$factory)
-LibModule.component(TooltipAutocloseComponent.$name, TooltipAutocloseComponent.$factory)
-LibModule.component(TooltipBodyComponent.$name, TooltipBodyComponent.$factory)
-LibModule.component(TooltipContextComponent.$name, TooltipContextComponent.$factory)
-LibModule.component(TooltipCustomClassComponent.$name, TooltipCustomClassComponent.$factory)
-LibModule.component(TooltipCustomTargetComponent.$name, TooltipCustomTargetComponent.$factory)
-LibModule.component(TooltipDelaysComponent.$name, TooltipDelaysComponent.$factory)
-LibModule.component(TooltipGlobalComponent.$name, TooltipGlobalComponent.$factory)
-LibModule.component(TooltipPlacementsComponent.$name, TooltipPlacementsComponent.$factory)
-LibModule.component(TooltipTemplateComponent.$name, TooltipTemplateComponent.$factory)
-LibModule.component(TooltipTriggersComponent.$name, TooltipTriggersComponent.$factory)
-LibModule.component(ExactTypeaheadComponent.$name, ExactTypeaheadComponent.$factory)
-LibModule.component(FocusTypeaheadComponent.$name, FocusTypeaheadComponent.$factory)
-LibModule.component(FormattedTypeaheadComponent.$name, FormattedTypeaheadComponent.$factory)
-LibModule.component(NonEditableTypeaheadComponent.$name, NonEditableTypeaheadComponent.$factory)
-LibModule.component(SimpleTypeaheadComponent.$name, SimpleTypeaheadComponent.$factory)
-LibModule.component(TemplateResultsTypeaheadComponent.$name, TemplateResultsTypeaheadComponent.$factory)
-LibModule.component(TypeaheadGlobalComponent.$name, TypeaheadGlobalComponent.$factory)
-LibModule.service(WikipediaSearchService.$name, WikipediaSearchService)
-LibModule.component(WikipediaTypeaheadComponent.$name, WikipediaTypeaheadComponent.$factory)
-LibModule.component(AlertApiPageComponent.$name, AlertApiPageComponent.$factory)
-LibModule.component(AlertExamplesPageComponent.$name, AlertExamplesPageComponent.$factory)
-LibModule.component(AccordionApiPageComponent.$name, AccordionApiPageComponent.$factory)
-LibModule.component(AccordionExamplesPageComponent.$name, AccordionExamplesPageComponent.$factory)
-LibModule.component(CarouselApiPageComponent.$name, CarouselApiPageComponent.$factory)
-LibModule.component(CarouselExamplesPageComponent.$name, CarouselExamplesPageComponent.$factory)
-LibModule.component(CollapseApiPageComponent.$name, CollapseApiPageComponent.$factory)
-LibModule.component(CollapseExamplesPageComponent.$name, CollapseExamplesPageComponent.$factory)
-LibModule.component(DatepickerApiPageComponent.$name, DatepickerApiPageComponent.$factory)
-LibModule.component(DatepickerCalendarsPageComponent.$name, DatepickerCalendarsPageComponent.$factory)
-LibModule.component(DatepickerExamplesPageComponent.$name, DatepickerExamplesPageComponent.$factory)
-LibModule.component(DropdownApiPageComponent.$name, DropdownApiPageComponent.$factory)
-LibModule.component(DropdownExamplesPageComponent.$name, DropdownExamplesPageComponent.$factory)
-LibModule.component(ModalApiPageComponent.$name, ModalApiPageComponent.$factory)
-LibModule.component(ModalExamplesPageComponent.$name, ModalExamplesPageComponent.$factory)
-LibModule.component(NavApiPageComponent.$name, NavApiPageComponent.$factory)
-LibModule.component(NavExamplesPageComponent.$name, NavExamplesPageComponent.$factory)
-LibModule.component(OffcanvasApiPageComponent.$name, OffcanvasApiPageComponent.$factory)
-LibModule.component(OffcanvasExamplesPageComponent.$name, OffcanvasExamplesPageComponent.$factory)
-LibModule.component(PaginationApiPageComponent.$name, PaginationApiPageComponent.$factory)
-LibModule.component(PaginationExamplesPageComponent.$name, PaginationExamplesPageComponent.$factory)
-LibModule.component(PopoverApiPageComponent.$name, PopoverApiPageComponent.$factory)
-LibModule.component(PopoverExamplesPageComponent.$name, PopoverExamplesPageComponent.$factory)
-LibModule.component(ProgressbarApiPageComponent.$name, ProgressbarApiPageComponent.$factory)
-LibModule.component(ProgressbarExamplesPageComponent.$name, ProgressbarExamplesPageComponent.$factory)
-LibModule.component(RatingApiPageComponent.$name, RatingApiPageComponent.$factory)
-LibModule.component(RatingExamplesPageComponent.$name, RatingExamplesPageComponent.$factory)
-LibModule.component(ScrollspyApiPageComponent.$name, ScrollspyApiPageComponent.$factory)
-LibModule.component(ScrollspyExamplesPageComponent.$name, ScrollspyExamplesPageComponent.$factory)
-LibModule.component(TimepickerApiPageComponent.$name, TimepickerApiPageComponent.$factory)
-LibModule.component(TimepickerExamplesPageComponent.$name, TimepickerExamplesPageComponent.$factory)
-LibModule.component(ToastApiPageComponent.$name, ToastApiPageComponent.$factory)
-LibModule.component(ToastExamplesPageComponent.$name, ToastExamplesPageComponent.$factory)
-LibModule.component(TooltipApiPageComponent.$name, TooltipApiPageComponent.$factory)
-LibModule.component(TooltipExamplesPageComponent.$name, TooltipExamplesPageComponent.$factory)
-LibModule.component(TypeaheadApiPageComponent.$name, TypeaheadApiPageComponent.$factory)
-LibModule.component(TypeaheadExamplesPageComponent.$name, TypeaheadExamplesPageComponent.$factory)
-LibModule.config(routing)
+@NgModule({
+    id: "docs.lib",
+    controllerAs: "example",
+    imports: [
+        RouterModule.forChild(routes),
+    ],
+    providers: [
+        DocsToastService,
+        WikipediaSearchService,
+        GreekTimepickerI18n,
+    ],
+    declarations: [
+        AlertCloseableComponent,
+        AlertCustomComponent,
+        AlertGlobalComponent,
+        AccordionContentComponent,
+        AccordionCustomHeaderComponent,
+        AccordionGlobalComponent,
+        AccordionSimpleComponent,
+        AccordionTogglePanelsComponent,
+        OnePanelAccordionComponent,
+        SelfClosingAlertComponent,
+        SimpleAlertComponent,
+        CarouselControlsComponent,
+        CarouselGlobalComponent,
+        CarouselKeyboardComponent,
+        CarouselSimpleComponent,
+        HorizontalCollapseComponent,
+        NavbarCollapseComponent,
+        SimpleCollapseComponent,
+        DropdownBodyComponent,
+        DropdownButtonGroupsComponent,
+        DropdownDisabledItemsComponent,
+        DropdownFormComponent,
+        DropdownGlobalComponent,
+        DropdownNavbarComponent,
+        ManualDropdownComponent,
+        SimpleDropdownComponent,
+        ModalComponentContentComponent,
+        ModalDefaultComponent,
+        ModalDemoContentComponent,
+        ModalFocusComponent,
+        ModalFocusContentComponent,
+        ModalGlobalComponent,
+        ModalOptionsComponent,
+        ModalStackedComponent,
+        ModalStackedContentComponent,
+        ModalUpdatableComponent,
+        ModalUpdatableContentComponent,
+        AlternativeNavComponent,
+        CustomNavComponent,
+        DynamicNavComponent,
+        KeepContentNavComponent,
+        NavGlobalComponent,
+        SelectingNavComponent,
+        SimpleNavComponent,
+        VerticalNavComponent,
+        OffcanvasComponentContentComponent,
+        OffcanvasDefaultComponent,
+        OffcanvasDemoContentComponent,
+        OffcanvasFocusComponent,
+        OffcanvasFocusContentComponent,
+        OffcanvasGlobalComponent,
+        OffcanvasOptionsComponent,
+        AdvancedPaginationComponent,
+        BasicPaginationComponent,
+        CustomPaginationComponent,
+        DisabledPaginationComponent,
+        PaginationAlignmentComponent,
+        PaginationGlobalComponent,
+        PaginationSizeComponent,
+        BasicDatepickerComponent,
+        DatepickerCustomAdapterComponent,
+        DatepickerCustomDayComponent,
+        DatepickerCustomMonthComponent,
+        DatepickerFooterComponent,
+        DatepickerGlobalComponent,
+        DatepickerI18nComponent,
+        DatepickerKeyboardComponent,
+        DatepickerPositionTargetComponent,
+        DisabledDatepickerComponent,
+        MultipleMonthsDatepickerComponent,
+        PopupDatepickerComponent,
+        RangeDatepickerComponent,
+        RangePopupDatepickerComponent,
+        PopoverAutocloseComponent,
+        PopoverBodyComponent,
+        PopoverContextComponent,
+        PopoverCustomClassComponent,
+        PopoverCustomTargetComponent,
+        PopoverDelaysComponent,
+        PopoverEventsComponent,
+        PopoverGlobalComponent,
+        PopoverManualControlComponent,
+        PopoverPlacementsComponent,
+        PopoverTemplateComponent,
+        PopoverTriggersComponent,
+        ContextualTextProgressbarComponent,
+        CustomLabelsProgressbarComponent,
+        ProgressBarsStackedComponent,
+        ProgressHeightComponent,
+        ProgressbarGlobalComponent,
+        SimpleProgressbarComponent,
+        StripedProgressBarComponent,
+        BasicRatingComponent,
+        RatingCustomTemplateComponent,
+        RatingDecimalComponent,
+        RatingEventsComponent,
+        RatingFormComponent,
+        RatingGlobalComponent,
+        BasicScrollspyComponent,
+        NavbarScrollspyComponent,
+        NestedScrollspyComponent,
+        ScrollspyMenuItemsComponent,
+        ScrollspyServiceDemoComponent,
+        BasicTimepickerComponent,
+        MeridianTimepickerComponent,
+        SecondsTimepickerComponent,
+        SpinnersTimepickerComponent,
+        TimepickerCustomAdapterComponent,
+        TimepickerCustomStepsComponent,
+        TimepickerI18nComponent,
+        TimepickerValidationComponent,
+        TimepickerLunchValidatorDirective,
+        CloseableToastComponent,
+        InlineToastComponent,
+        PreventAutohideToastComponent,
+        TemplateHeaderToastComponent,
+        ToastManagementComponent,
+        TooltipAutocloseComponent,
+        TooltipBodyComponent,
+        TooltipContextComponent,
+        TooltipCustomClassComponent,
+        TooltipCustomTargetComponent,
+        TooltipDelaysComponent,
+        TooltipGlobalComponent,
+        TooltipPlacementsComponent,
+        TooltipTemplateComponent,
+        TooltipTriggersComponent,
+        ExactTypeaheadComponent,
+        FocusTypeaheadComponent,
+        FormattedTypeaheadComponent,
+        NonEditableTypeaheadComponent,
+        SimpleTypeaheadComponent,
+        TemplateResultsTypeaheadComponent,
+        TypeaheadGlobalComponent,
+        WikipediaTypeaheadComponent,
+    ],
+})
+export class LibModule {}

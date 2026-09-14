@@ -1,15 +1,9 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class DropdownApiPageComponent implements IComponentController {
-    static get $name() {
-        return "docsDropdownApiPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: DropdownApiPageComponent,
-            templateUrl: "./dropdown-api-page.component.html", styleUrl: "./dropdown-api-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-dropdown-api-page",
+    controllerAs: "$",
+    templateUrl: "./dropdown-api-page.component.html",
+    styleUrl: "./dropdown-api-page.component.css",
+})
+export class DropdownApiPageComponent {}

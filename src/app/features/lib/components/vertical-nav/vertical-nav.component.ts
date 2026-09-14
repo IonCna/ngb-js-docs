@@ -1,17 +1,11 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class VerticalNavComponent implements IComponentController {
+@Component({
+    selector: "docs-vertical-nav",
+    controllerAs: "example",
+    templateUrl: "./vertical-nav.component.html",
+    styleUrl: "./vertical-nav.component.css",
+})
+export class VerticalNavComponent {
     public activeId = "vertical-profile";
-
-    static get $name() {
-        return "docsVerticalNav"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: VerticalNavComponent,
-            controllerAs: "example",
-            templateUrl: "./vertical-nav.component.html", styleUrl: "./vertical-nav.component.css",
-        }
-    }
 }

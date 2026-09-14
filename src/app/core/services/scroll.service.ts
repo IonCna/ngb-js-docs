@@ -1,23 +1,20 @@
-import { Inject, Injectable } from "ngjs-core";
-import type { TransitionService } from "@uirouter/angularjs";
+import { Injectable } from "ngjs-core";
+import { filter } from "rxjs";
+import { NavigationEnd, Router } from "ngjs-core/router";
 
 @Injectable({ id: "docs.scroll.service" })
 export class ScrollService {
-    static readonly $name = "docs.scroll.service";
-
-    constructor(
-        @Inject("$transitions") private $transitionService: TransitionService,
-    ) {}
-
-    observeScroll() {
-        this.$transitionService.onSuccess({}, () => {
-            window.requestAnimationFrame(() => {
-                document.getElementById("docs-content-scroll")?.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: "auto",
+    constructor(private readonly router: Router) {
+        this.router.events
+            .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+            .subscribe(() => {
+                requestAnimationFrame(() => {
+                    document.getElementById("docs-content-scroll")?.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "auto",
+                    })
                 })
             })
-        })
     }
 }

@@ -1,6 +1,12 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class PaginationAlignmentComponent implements IComponentController {
+@Component({
+    selector: "docs-pagination-alignment",
+    controllerAs: "example",
+    templateUrl: "./pagination-alignment.component.html",
+    styleUrl: "./pagination-alignment.component.css",
+})
+export class PaginationAlignmentComponent {
     public startPage = 2;
     public centerPage = 2;
     public endPage = 2;
@@ -8,16 +14,4 @@ export class PaginationAlignmentComponent implements IComponentController {
     public selectStartPage(page: number) { this.startPage = page; }
     public selectCenterPage(page: number) { this.centerPage = page; }
     public selectEndPage(page: number) { this.endPage = page; }
-
-    static get $name() {
-        return "docsPaginationAlignment"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PaginationAlignmentComponent,
-            controllerAs: "example",
-            templateUrl: "./pagination-alignment.component.html", styleUrl: "./pagination-alignment.component.css",
-        }
-    }
 }

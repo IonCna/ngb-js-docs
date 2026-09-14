@@ -1,15 +1,9 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 
-export class DropdownNavbarComponent implements IComponentController {
-    static get $name() {
-        return "docsDropdownNavbar"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: DropdownNavbarComponent,
-            controllerAs: "example",
-            templateUrl: "./dropdown-navbar.component.html", styleUrl: "./dropdown-navbar.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-dropdown-navbar",
+    controllerAs: "example",
+    templateUrl: "./dropdown-navbar.component.html",
+    styleUrl: "./dropdown-navbar.component.css",
+})
+export class DropdownNavbarComponent {}

@@ -1,4 +1,4 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component } from "ngjs-core";
 import { NgbCalendarBuddhist, NgbCalendarEthiopian, NgbCalendarGregorian, NgbCalendarHebrew, NgbCalendarIslamicCivil, NgbCalendarIslamicUmalqura, NgbCalendarPersian, NgbDatepickerI18n, NgbDatepickerI18nAmharic, NgbDatepickerI18nHebrew, type NgbCalendar, type NgbDateStruct } from "ngb-js/datepicker";
 
 class CalendarI18n extends NgbDatepickerI18n {
@@ -24,7 +24,13 @@ const THAI_MONTHS = ["มกราคม", "กุมภาพันธ์", "�
 const GALACTIC_MONTHS = ["ᔑリ⊣⚍ᔑ∷||", "⎓ᒷʖ∷⚍ᔑ∷||", "ᒲᔑ∷ᓵ⍑", "ᔑ!¡∷╎ꖎ", "ᒲᔑ||", "⋮⚍リᒷ", "⋮⚍ꖎ||", "ᔑ⚍⊣⚍ᓭℸ̣", "ᓭᒷ!¡ℸ̣ᒷᒲʖᒷ∷", "𝙹ᓵℸ̣𝙹ʖᒷ∷", "リ𝙹⍊ᒷᒲʖᒷ∷", "↸ᒷᓵᒷᒲʖᒷ∷"];
 const GALACTIC_WEEKDAYS = ["ᒲ", "ℸ̣", "∴", "ℸ̣", "⎓", "ᓭ", "ᓭ"];
 
-export class DatepickerCalendarsPageComponent implements IComponentController {
+@Component({
+    selector: "docs-datepicker-calendars-page",
+    controllerAs: "$",
+    templateUrl: "./datepicker-calendars-page.component.html",
+    styleUrl: "./datepicker-calendars-page.component.css",
+})
+export class DatepickerCalendarsPageComponent {
     public readonly calendars = {
         hebrew: this.create(new NgbCalendarHebrew(), new NgbDatepickerI18nHebrew()),
         jalali: this.create(new NgbCalendarPersian(), new CalendarI18n(PERSIAN_MONTHS, PERSIAN_WEEKDAYS, "Jalali")),
@@ -36,8 +42,4 @@ export class DatepickerCalendarsPageComponent implements IComponentController {
     };
 
     private create(calendar: NgbCalendar, i18n: NgbDatepickerI18n): CalendarDemo { return { calendar, i18n, date: calendar.getToday() }; }
-    static get $name() { return "docsDatepickerCalendarsPage" }
-    static get $factory(): IComponentOptions {
-        return { controller: DatepickerCalendarsPageComponent, controllerAs: "$", templateUrl: "./datepicker-calendars-page.component.html", styleUrl: "./datepicker-calendars-page.component.css" }
-    }
 }

@@ -1,10 +1,15 @@
 import type { INgbAlert } from "ngb-js/alert";
-import type { IComponentController, IComponentOptions, IPromise, ITimeoutService } from "angular";
-import { ViewChild } from "ngjs-core";
+import { Component, type OnDestroy, type OnInit, ViewChild } from "ngjs-core";
 
-export class SelfClosingAlertComponent implements IComponentController {
+@Component({
+    selector: "docs-self-closing-alert",
+    controllerAs: "example",
+    templateUrl: "./self-closing-alert.component.html",
+    styleUrl: "./self-closing-alert.component.css",
+})
+export class SelfClosingAlertComponent implements OnInit, OnDestroy {
     private readonly initialSeconds = 5;
-    private timer?: IPromise<void>;
+    private timer?: ReturnType<typeof setTimeout>;
 
     @ViewChild("alert")
     private alert?: INgbAlert;
@@ -12,13 +17,11 @@ export class SelfClosingAlertComponent implements IComponentController {
     public remaining = this.initialSeconds;
     public visible = true;
 
-    constructor(private readonly $timeout: ITimeoutService) {}
-
-    $onInit() {
+    public ngOnInit() {
         this.startTimer();
     }
 
-    $onDestroy() {
+    public ngOnDestroy() {
         this.cancelTimer();
     }
 
@@ -35,7 +38,7 @@ export class SelfClosingAlertComponent implements IComponentController {
     }
 
     private startTimer() {
-        this.timer = this.$timeout(() => {
+        this.timer = setTimeout(() => {
             this.remaining--;
 
             if (this.remaining <= 0) {
@@ -53,24 +56,8 @@ export class SelfClosingAlertComponent implements IComponentController {
 
     private cancelTimer() {
         if (this.timer) {
-            this.$timeout.cancel(this.timer);
+            clearTimeout(this.timer);
             this.timer = undefined;
-        }
-    }
-
-    static get $name() {
-        return "docsSelfClosingAlert"
-    }
-
-    static get $inject() {
-        return ["$timeout"]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: SelfClosingAlertComponent,
-            controllerAs: "example",
-            templateUrl: "./self-closing-alert.component.html", styleUrl: "./self-closing-alert.component.css",
         }
     }
 }

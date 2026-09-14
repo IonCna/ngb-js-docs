@@ -1,9 +1,15 @@
-import type { IComponentController, IComponentOptions } from "angular";
+import { Component, Inject } from "ngjs-core";
 import { ModalDemoContentComponent } from "@/features/lib/components/modal-demo-content/modal-demo-content.component"
 import { NgbModal, type NgbModalOptions, NGB_MODAL } from "ngb-js/modal";
 
-export class ModalOptionsComponent implements IComponentController {
-    constructor(private readonly modal: NgbModal) {}
+@Component({
+    selector: "docs-modal-options",
+    controllerAs: "example",
+    templateUrl: "./modal-options.component.html",
+    styleUrl: "./modal-options.component.css",
+})
+export class ModalOptionsComponent {
+    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
 
     public openCustomWindow() {
         this.open("Custom window class", { windowClass: "window" });
@@ -46,7 +52,7 @@ export class ModalOptionsComponent implements IComponentController {
     }
 
     private open(title: string, options: NgbModalOptions, longContent = false) {
-        this.modal.open(ModalDemoContentComponent.$name, {
+        this.modal.open(ModalDemoContentComponent, {
             ...options,
             bindings: {
                 title,
@@ -54,22 +60,5 @@ export class ModalOptionsComponent implements IComponentController {
                 longContent,
             },
         });
-    }
-
-    static get $name() {
-        return "docsModalOptions"
-    }
-
-    static get $inject() {
-        return [NGB_MODAL]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: ModalOptionsComponent,
-            controllerAs: "example",
-            templateUrl: "./modal-options.component.html",
-            styleUrl: "./modal-options.component.css",
-        }
     }
 }
