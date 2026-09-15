@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-popover-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/popover-api-page.component-be7ad0f4.html`,styleUrl:`./popover-api-page.component.css`})],n);export{n as PopoverApiPageComponent};

@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-carousel-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/carousel-api-page.component-b0058500.html`,styleUrl:`./carousel-api-page.component.css`})],n);export{n as CarouselApiPageComponent};

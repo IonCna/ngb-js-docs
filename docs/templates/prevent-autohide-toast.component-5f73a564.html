@@ -1,9 +1,0 @@
-<p _content-180473c9="">Show the toast and keep the pointer over it to pause autohide.</p>
-
-<button type="button" class="btn btn-primary mb-3" ng-click="example.show()" _content-180473c9="">Show toast</button>
-
-<div class="toast-container position-static" _content-180473c9="">
-    <ngb-toast ng-if="example.visible" header="Autohide can be paused" delay="5000" autohide="example.autohide" hidden="example.hide()" ng-mouseenter="example.autohide = false" ng-mouseleave="example.autohide = true" ng-class="{ 'border-warning': !example.autohide }" _content-180473c9="">
-        {{ example.autohide ? 'Hover over me before five seconds pass.' : 'Paused. I will remain visible until you leave.' }}
-    </ngb-toast>
-</div>

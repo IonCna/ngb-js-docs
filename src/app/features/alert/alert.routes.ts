@@ -1,5 +1,4 @@
 import type {Routes} from "ngjs-core/router";
-import {MenuAbstractPageComponent} from "@/core/layouts/pages/menu-abstract-page/menu-abstract-page.component.ts";
 
 export const routes: Routes = [
     {
@@ -43,5 +42,6 @@ export const routes: Routes = [
                     import("@/features/alert/pages/alert-api-page/alert-api-page.component").then(m => m.AlertApiPageComponent),
             },
         ],
+        title: "Ngb-Js | Alert"
     },
 ]

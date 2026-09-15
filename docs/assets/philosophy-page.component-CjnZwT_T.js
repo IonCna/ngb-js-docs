@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-qfgSl2U_.js";var n=class{};n=t([e({selector:`docs-philosophy-page`,templateUrl:`/ngb-js-docs/templates/philosophy-page.component-52a48d97.html`,styleUrl:`./philosophy-page.component.css`})],n);export{n as PhilosophyPageComponent};

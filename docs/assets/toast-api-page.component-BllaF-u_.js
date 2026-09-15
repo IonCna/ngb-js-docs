@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-toast-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/toast-api-page.component-4922c87d.html`,styleUrl:`./toast-api-page.component.css`})],n);export{n as ToastApiPageComponent};

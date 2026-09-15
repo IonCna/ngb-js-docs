@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-tooltip-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/tooltip-api-page.component-213be6bd.html`,styleUrl:`./tooltip-api-page.component.css`})],n);export{n as TooltipApiPageComponent};

@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-alert-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/alert-api-page.component-06ab30c7.html`,styleUrl:`./alert-api-page.component.css`})],n);export{n as AlertApiPageComponent};

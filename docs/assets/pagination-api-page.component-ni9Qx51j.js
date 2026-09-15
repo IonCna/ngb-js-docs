@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-pagination-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/pagination-api-page.component-1678ab11.html`,styleUrl:`./pagination-api-page.component.css`})],n);export{n as PaginationApiPageComponent};

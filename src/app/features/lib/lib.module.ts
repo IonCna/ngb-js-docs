@@ -9,8 +9,7 @@ import { AccordionGlobalComponent } from "@/features/lib/components/accordion-gl
 import { AccordionSimpleComponent } from "@/features/lib/components/accordion-simple/accordion-simple.component"
 import { AccordionTogglePanelsComponent } from "@/features/lib/components/accordion-toggle-panels/accordion-toggle-panels.component"
 import { OnePanelAccordionComponent } from "@/features/lib/components/one-panel-accordion/one-panel-accordion.component"
-import { SelfClosingAlertComponent } from "@/features/lib/components/self-closing-alert/self-closing-alert.component"
-import { SimpleAlertComponent } from "@/features/lib/components/simple-alert/simple-alert.component"
+
 import { CarouselControlsComponent } from "@/features/lib/components/carousel-controls/carousel-controls.component"
 import { CarouselGlobalComponent } from "@/features/lib/components/carousel-global/carousel-global.component"
 import { CarouselKeyboardComponent } from "@/features/lib/components/carousel-keyboard/carousel-keyboard.component"
@@ -153,8 +152,6 @@ import { WikipediaSearchService, WikipediaTypeaheadComponent } from "@/features/
         AccordionSimpleComponent,
         AccordionTogglePanelsComponent,
         OnePanelAccordionComponent,
-        SelfClosingAlertComponent,
-        SimpleAlertComponent,
         CarouselControlsComponent,
         CarouselGlobalComponent,
         CarouselKeyboardComponent,

@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{installCommand=`npm install ngb-js`};n=t([e({selector:`home-page`,templateUrl:`/ngb-js-docs/templates/home-page.component-34f83676.html`,styleUrl:`./home-page.component.css`})],n);export{n as HomePageComponent};

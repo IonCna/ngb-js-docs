@@ -1,1 +1,0 @@
-import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-nav-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/nav-api-page.component-fbec6a94.html`,styleUrl:`./nav-api-page.component.css`})],n);export{n as NavApiPageComponent};
