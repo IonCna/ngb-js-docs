@@ -9,7 +9,7 @@ interface AccordionController {
 @Component({
     selector: "docs-accordion-toggle-panels",
     controllerAs: "example",
-    templateUrl: "./accordion-toggle-panels.component.html",
+    templateUrl: "accordion-toggle-panels.component.html",
     styleUrl: "./accordion-toggle-panels.component.css",
 })
 export class AccordionTogglePanelsComponent {

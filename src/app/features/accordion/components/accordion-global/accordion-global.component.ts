@@ -4,7 +4,7 @@ import { NgbAccordionConfig, NGB_ACCORDION_CONFIG } from "ngb-js/accordion/compa
 @Component({
     selector: "docs-accordion-global",
     controllerAs: "example",
-    templateUrl: "./accordion-global.component.html",
+    templateUrl: "accordion-global.component.html",
     styleUrl: "./accordion-global.component.css",
 })
 export class AccordionGlobalComponent implements OnDestroy {

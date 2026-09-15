@@ -1,10 +1,8 @@
 import type { Routes } from "ngjs-core/router";
-import { MenuAbstractPageComponent } from "@/core/layouts/pages/menu-abstract-page/menu-abstract-page.component";
 
 export const routes: Routes = [
     {
         path: "",
-        component: MenuAbstractPageComponent,
         children: [
             { path: "", pathMatch: "full", redirectTo: "introduction" },
             {

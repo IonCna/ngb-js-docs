@@ -3,13 +3,6 @@ import { RouterModule } from "ngjs-core/router"
 import { routes } from "@/features/lib/lib.routes"
 
 
-import { AccordionContentComponent } from "@/features/lib/components/accordion-content/accordion-content.component"
-import { AccordionCustomHeaderComponent } from "@/features/lib/components/accordion-custom-header/accordion-custom-header.component"
-import { AccordionGlobalComponent } from "@/features/lib/components/accordion-global/accordion-global.component"
-import { AccordionSimpleComponent } from "@/features/lib/components/accordion-simple/accordion-simple.component"
-import { AccordionTogglePanelsComponent } from "@/features/lib/components/accordion-toggle-panels/accordion-toggle-panels.component"
-import { OnePanelAccordionComponent } from "@/features/lib/components/one-panel-accordion/one-panel-accordion.component"
-
 import { CarouselControlsComponent } from "@/features/lib/components/carousel-controls/carousel-controls.component"
 import { CarouselGlobalComponent } from "@/features/lib/components/carousel-global/carousel-global.component"
 import { CarouselKeyboardComponent } from "@/features/lib/components/carousel-keyboard/carousel-keyboard.component"
@@ -146,12 +139,6 @@ import { WikipediaSearchService, WikipediaTypeaheadComponent } from "@/features/
         GreekTimepickerI18n,
     ],
     declarations: [
-        AccordionContentComponent,
-        AccordionCustomHeaderComponent,
-        AccordionGlobalComponent,
-        AccordionSimpleComponent,
-        AccordionTogglePanelsComponent,
-        OnePanelAccordionComponent,
         CarouselControlsComponent,
         CarouselGlobalComponent,
         CarouselKeyboardComponent,
