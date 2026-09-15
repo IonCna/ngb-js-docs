@@ -1,0 +1,77 @@
+<header class="modal-header align-items-start gap-3 border-bottom-0 px-3 px-sm-4 pb-2" _content-f257aef8="">
+    <div _content-f257aef8="">
+        <h2 class="modal-title fs-5" _content-f257aef8="">Search documentation</h2>
+        <p class="small text-body-secondary mb-0" _content-f257aef8="">Find guides, components and API references.</p>
+    </div>
+    <button class="btn-close ms-auto mt-1 flex-shrink-0" type="button" aria-label="Close search" ng-click="$.ngbActiveModal.dismiss('close')" _content-f257aef8="">
+    </button>
+</header>
+
+<div class="modal-body d-flex flex-column flex-grow-1 overflow-auto px-3 px-sm-4 pt-3" _content-f257aef8="">
+    <label class="visually-hidden" for="docs-search" _content-f257aef8="">Search documentation</label>
+    <div class="input-group input-group-lg shadow-sm" _content-f257aef8="">
+        <span class="input-group-text bg-body border-end-0 pe-2" _content-f257aef8="">
+            <i class="bi bi-search text-body-secondary" aria-hidden="true" _content-f257aef8=""></i>
+        </span>
+        <input id="docs-search" class="form-control border-start-0 ps-0" type="search" placeholder="Search the docs..." autocomplete="off" ngbautofocus="" ng-model="$.query" ng-change="$.search()" ng-keydown="$.handleKeydown($event)" ng-model-options="{ debounce: 300 }" _content-f257aef8="">
+    </div>
+
+    <section class="mt-4" ng-class="{ 'order-2': $.query }" aria-labelledby="recent-searches-title" _content-f257aef8="">
+        <div class="d-flex align-items-center justify-content-between mb-2" _content-f257aef8="">
+            <h3 id="recent-searches-title" class="h6 mb-0" _content-f257aef8="">
+                <i class="bi bi-clock-history me-2 text-body-secondary" aria-hidden="true" _content-f257aef8=""></i>
+                Recent
+            </h3>
+            <button class="btn btn-link btn-sm link-secondary text-decoration-none p-0" type="button" ng-click="$.clearRecentDocuments()" ng-if="$.recentDocuments.length" _content-f257aef8="">
+                Clear
+            </button>
+        </div>
+
+        <div class="list-group list-group-flush border rounded-3 overflow-hidden" ng-if="$.recentDocuments.length" _content-f257aef8="">
+            <a ng-click="$.selectDocument(document)" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3" ng-class="{ active: $.activeDocumentId === document.id }" ng-mouseenter="$.activateDocument(document)" ng-repeat="document in $.recentDocuments | limitTo: ($.query ? 2 : 10) track by document.id" _content-f257aef8="">
+                <span class="d-inline-flex align-items-center justify-content-center rounded-2 bg-body-tertiary text-body-secondary flex-shrink-0" style="width: 2.25rem; height: 2.25rem;" _content-f257aef8="">
+                    <i class="bi bi-file-text" aria-hidden="true" _content-f257aef8=""></i>
+                </span>
+                <span class="flex-grow-1 overflow-hidden" _content-f257aef8="">
+                    <span class="d-block fw-semibold text-truncate" _content-f257aef8="">{{ document.title }}</span>
+                    <small class="d-block text-body-secondary text-truncate" _content-f257aef8="">{{ document.content }}</small>
+                </span>
+                <i class="bi bi-arrow-up-right text-body-secondary" aria-hidden="true" _content-f257aef8=""></i>
+            </a>
+        </div>
+
+        <div class="border rounded-3 text-center px-4 py-5" ng-if="!$.recentDocuments || !$.recentDocuments.length" _content-f257aef8="">
+            <i class="bi bi-clock fs-3 text-body-secondary" aria-hidden="true" _content-f257aef8=""></i>
+            <p class="fw-semibold mt-3 mb-1" _content-f257aef8="">No recent pages</p>
+            <p class="small text-body-secondary mb-0" _content-f257aef8="">Pages opened from search will appear here.</p>
+        </div>
+    </section>
+
+    <section class="mt-4 order-1" aria-labelledby="search-results-title" ng-if="$.query" _content-f257aef8="">
+        <h3 id="search-results-title" class="h6 mb-2" _content-f257aef8="">Results</h3>
+
+        <div class="list-group list-group-flush border rounded-3 overflow-hidden" ng-if="$.results.length" _content-f257aef8="">
+            <a ng-click="$.selectDocument(document)" class="list-group-item list-group-item-action py-3" ng-class="{ active: $.activeDocumentId === document.id }" ng-mouseenter="$.activateDocument(document)" ng-repeat="document in $.results track by document.id" _content-f257aef8="">
+                <div class="d-flex align-items-start justify-content-between gap-3" _content-f257aef8="">
+                    <div class="overflow-hidden" _content-f257aef8="">
+                        <p class="fw-semibold text-truncate mb-1" _content-f257aef8="">{{ document.title }}</p>
+                        <p class="small text-body-secondary text-truncate mb-0" _content-f257aef8="">{{ document.content }}</p>
+                    </div>
+                    <i class="bi bi-arrow-up-right text-body-secondary flex-shrink-0" aria-hidden="true" _content-f257aef8=""></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="border rounded-3 text-center px-4 py-5" ng-if="!$.results || !$.results.length" _content-f257aef8="">
+            <i class="bi bi-search fs-3 text-body-secondary" aria-hidden="true" _content-f257aef8=""></i>
+            <p class="fw-semibold mt-3 mb-1" _content-f257aef8="">No results</p>
+            <p class="small text-body-secondary mb-0" _content-f257aef8="">Try searching for another term.</p>
+        </div>
+    </section>
+</div>
+
+<footer class="modal-footer d-none d-md-flex flex-shrink-0 justify-content-start gap-3 border-top bg-body-tertiary px-4 py-2" _content-f257aef8="">
+    <small class="text-body-secondary" _content-f257aef8=""><kbd _content-f257aef8="">↑</kbd> <kbd _content-f257aef8="">↓</kbd> Navigate</small>
+    <small class="text-body-secondary" _content-f257aef8=""><kbd _content-f257aef8="">Enter</kbd> Open</small>
+    <small class="text-body-secondary ms-auto" _content-f257aef8=""><kbd _content-f257aef8="">Esc</kbd> Close</small>
+</footer>

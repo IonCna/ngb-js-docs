@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-primary" ng-click="example.open()" _content-9e0fa3cf="">Open default modal</button>
+
+<ng-template ng-ref="content" let-close="close" let-dismiss="dismiss" _content-9e0fa3cf="">
+    <div class="modal-header" _content-9e0fa3cf="">
+        <h2 class="modal-title fs-5" _content-9e0fa3cf="">Default modal</h2>
+        <button type="button" class="btn-close" aria-label="Close" ng-click="dismiss('header close')" _content-9e0fa3cf=""></button>
+    </div>
+    <div class="modal-body" _content-9e0fa3cf="">
+        <p class="mb-0" _content-9e0fa3cf="">This modal uses the global defaults without passing local options.</p>
+    </div>
+    <div class="modal-footer" _content-9e0fa3cf="">
+        <button type="button" class="btn btn-outline-secondary" ng-click="dismiss('cancel')" _content-9e0fa3cf="">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="close('accepted')" _content-9e0fa3cf="">Continue</button>
+    </div>
+</ng-template>

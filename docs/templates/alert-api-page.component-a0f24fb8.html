@@ -1,0 +1,61 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-bf070bb8="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-bf070bb8=""><code _content-bf070bb8="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-bf070bb8=""><code _content-bf070bb8="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-alert" _content-bf070bb8="">
+    <header class="mb-3" _content-bf070bb8="">
+        <p class="small fw-semibold text-primary mb-1" _content-bf070bb8="">Component</p>
+        <h2 class="h3 mb-2" _content-bf070bb8=""><code class="text-body" _content-bf070bb8="">NgbAlert</code></h2>
+        <p class="text-body-secondary mb-0" _content-bf070bb8="">
+            Displays contextual feedback and optionally provides a dismiss action with an animated close transition.
+        </p>
+    </header>
+
+    <dl class="row gy-2 mb-0" _content-bf070bb8="">
+        <dt class="col-sm-3 fw-semibold" _content-bf070bb8="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-bf070bb8=""><code _content-bf070bb8="">&lt;ngb-alert&gt;</code></dd>
+    </dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-bf070bb8="">Inputs</h3>
+    <div class="table-responsive" _content-bf070bb8="">
+        <table class="table table-sm align-middle" _content-bf070bb8="">
+            <thead _content-bf070bb8=""><tr _content-bf070bb8=""><th _content-bf070bb8="">Input</th><th _content-bf070bb8="">Binding</th><th _content-bf070bb8="">Type</th><th _content-bf070bb8="">Default</th><th _content-bf070bb8="">Description</th></tr></thead>
+            <tbody _content-bf070bb8="">
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">animation</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">&lt;?</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">boolean</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">$config.animation</code></td><td _content-bf070bb8="">Enables the close transition.</td></tr>
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">dismissible</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">&lt;?</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">boolean</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">true</code></td><td _content-bf070bb8="">Shows the dismiss button.</td></tr>
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">type</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">@?</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">string</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">"warning"</code></td><td _content-bf070bb8="">Sets the Bootstrap contextual type.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-bf070bb8="">Outputs</h3>
+    <div class="table-responsive" _content-bf070bb8="">
+        <table class="table table-sm align-middle mb-0" _content-bf070bb8="">
+            <thead _content-bf070bb8=""><tr _content-bf070bb8=""><th _content-bf070bb8="">Output</th><th _content-bf070bb8="">Binding</th><th _content-bf070bb8="">Payload</th><th _content-bf070bb8="">Emitted when</th></tr></thead>
+            <tbody _content-bf070bb8="">
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">closed</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">&amp;?</code></td><td _content-bf070bb8="">None</td><td _content-bf070bb8="">The close transition finishes.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-alert-config" _content-bf070bb8="">
+    <header class="mb-3" _content-bf070bb8="">
+        <p class="small fw-semibold text-primary mb-1" _content-bf070bb8="">Service</p>
+        <h2 class="h3 mb-2" _content-bf070bb8=""><code class="text-body" _content-bf070bb8="">NgbAlertConfig</code></h2>
+        <p class="text-body-secondary mb-0" _content-bf070bb8="">Provides application-wide defaults for alert instances.</p>
+    </header>
+
+    <h3 class="h5 mt-4 mb-3" _content-bf070bb8="">Properties</h3>
+    <div class="table-responsive" _content-bf070bb8="">
+        <table class="table table-sm align-middle mb-0" _content-bf070bb8="">
+            <thead _content-bf070bb8=""><tr _content-bf070bb8=""><th _content-bf070bb8="">Property</th><th _content-bf070bb8="">Type</th><th _content-bf070bb8="">Default</th><th _content-bf070bb8="">Description</th></tr></thead>
+            <tbody _content-bf070bb8="">
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">animation</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">boolean</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">$config.animation</code></td><td _content-bf070bb8="">Default close animation state.</td></tr>
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">dismissible</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">boolean</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">true</code></td><td _content-bf070bb8="">Default dismissible state.</td></tr>
+                <tr _content-bf070bb8=""><td _content-bf070bb8=""><code _content-bf070bb8="">type</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">string</code></td><td _content-bf070bb8=""><code _content-bf070bb8="">"warning"</code></td><td _content-bf070bb8="">Default contextual type.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>

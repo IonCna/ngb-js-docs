@@ -1,0 +1,57 @@
+<section class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="{{ example.fragment }}" _content-0b5cb349="">
+    <header class="d-flex align-items-start justify-content-between gap-3 mb-4" _content-0b5cb349="">
+        <div _content-0b5cb349="">
+            <h2 class="h3 mb-2" _content-0b5cb349="">{{ example.title }}</h2>
+            <p class="text-body-secondary mb-0" _content-0b5cb349="">{{ example.description }}</p>
+        </div>
+
+        <button type="button" class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center gap-2 flex-shrink-0" ng-click="example.toggleCode()" ng-attr-aria-expanded="{{ !example.codeCollapsed }}" ng-attr-aria-controls="{{ example.fragment }}-code" _content-0b5cb349="">
+            <i class="bi bi-code-slash" aria-hidden="true" _content-0b5cb349=""></i>
+            <span _content-0b5cb349="">{{ example.codeCollapsed ? 'View code' : 'Hide code' }}</span>
+        </button>
+    </header>
+
+    <ng-content _content-0b5cb349=""></ng-content>
+
+    <div class="mt-4" ngb-collapse="example.codeCollapsed" ng-attr-id="{{ example.fragment }}-code" _content-0b5cb349="">
+        <div class="border rounded-3 overflow-hidden" _content-0b5cb349="">
+            <div ng-if="!example.hasAdditionalCode" _content-0b5cb349="">
+                <div class="d-flex align-items-center justify-content-between bg-body-tertiary border-bottom ps-3 pe-2 py-1" _content-0b5cb349="">
+                    <span class="small fw-semibold" _content-0b5cb349="">HTML</span>
+                    <docs-copy-button value="example.htmlCode" button-class="text-body-secondary" aria-label="Copy HTML code" _content-0b5cb349="">
+                    </docs-copy-button>
+                </div>
+                <pre class="bg-body-tertiary m-0 p-3 overflow-auto" _content-0b5cb349=""><code ng-bind="example.htmlCode" _content-0b5cb349=""></code></pre>
+            </div>
+
+            <div ng-if="example.hasAdditionalCode" _content-0b5cb349="">
+                <div class="d-flex align-items-end justify-content-between bg-body-tertiary border-bottom pe-2" _content-0b5cb349="">
+                    <ul class="nav nav-tabs border-bottom-0 px-3 pt-2" ngb-nav="" active-id="example.activeTab" animation="false" ng-ref="example.codeNav" ng-ref-read="ngbNav" _content-0b5cb349="">
+                        <li ngb-nav-item="'html'" _content-0b5cb349="">
+                            <button type="button" ngb-nav-link="" _content-0b5cb349="">HTML</button>
+                            <ng-template ngb-nav-content="" _content-0b5cb349="">
+                                <pre class="bg-body-tertiary m-0 p-3 overflow-auto" _content-0b5cb349=""><code ng-bind="example.htmlCode" _content-0b5cb349=""></code></pre>
+                            </ng-template>
+                        </li>
+                        <li ng-if="example.tsCode" ngb-nav-item="'typescript'" _content-0b5cb349="">
+                            <button type="button" ngb-nav-link="" _content-0b5cb349="">TypeScript</button>
+                            <ng-template ngb-nav-content="" _content-0b5cb349="">
+                                <pre class="bg-body-tertiary m-0 p-3 overflow-auto" _content-0b5cb349=""><code ng-bind="example.tsCode" _content-0b5cb349=""></code></pre>
+                            </ng-template>
+                        </li>
+                        <li ng-if="example.cssCode" ngb-nav-item="'css'" _content-0b5cb349="">
+                            <button type="button" ngb-nav-link="" _content-0b5cb349="">CSS</button>
+                            <ng-template ngb-nav-content="" _content-0b5cb349="">
+                                <pre class="bg-body-tertiary m-0 p-3 overflow-auto" _content-0b5cb349=""><code ng-bind="example.cssCode" _content-0b5cb349=""></code></pre>
+                            </ng-template>
+                        </li>
+                    </ul>
+
+                    <docs-copy-button value="example.activeCode" button-class="text-body-secondary" aria-label="Copy active code" _content-0b5cb349="">
+                    </docs-copy-button>
+                </div>
+                <div ngb-nav-outlet="example.codeNav" _content-0b5cb349=""></div>
+            </div>
+        </div>
+    </div>
+</section>

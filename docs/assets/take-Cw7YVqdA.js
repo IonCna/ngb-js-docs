@@ -1,0 +1,1 @@
+import{lt as e,st as t,ut as n}from"./decorate-DwQZkZoC.js";function r(r){return r<=0?function(){return t}:n(function(t,n){var i=0;t.subscribe(e(n,function(e){++i<=r&&(n.next(e),r<=i&&n.complete())}))})}export{r as t};

@@ -1,0 +1,27 @@
+<p class="text-body-secondary mb-3" _content-24c59c4f="">
+    Resize the viewport to see the navigation switch between its expanded and collapsed layouts.
+</p>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border rounded" _content-24c59c4f="">
+    <div class="container-fluid" _content-24c59c4f="">
+        <span class="navbar-brand mb-0" _content-24c59c4f="">NgbJS</span>
+
+        <button type="button" class="navbar-toggler" ng-click="example.toggleMenu()" ng-attr-aria-expanded="{{ !example.menuCollapsed }}" aria-controls="collapse-navbar-menu" aria-label="Toggle navigation" _content-24c59c4f="">
+            <span class="navbar-toggler-icon" _content-24c59c4f=""></span>
+        </button>
+
+        <div id="collapse-navbar-menu" class="navbar-collapse" ngb-collapse="example.menuCollapsed" _content-24c59c4f="">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" _content-24c59c4f="">
+                <li class="nav-item" _content-24c59c4f="">
+                    <button type="button" class="nav-link active" ng-click="example.closeMenu()" _content-24c59c4f="">Features</button>
+                </li>
+                <li class="nav-item" _content-24c59c4f="">
+                    <button type="button" class="nav-link" ng-click="example.closeMenu()" _content-24c59c4f="">Examples</button>
+                </li>
+                <li class="nav-item" _content-24c59c4f="">
+                    <button type="button" class="nav-link" ng-click="example.closeMenu()" _content-24c59c4f="">About</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

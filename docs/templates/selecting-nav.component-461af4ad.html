@@ -1,0 +1,29 @@
+<div class="d-flex flex-wrap gap-2 mb-3" _content-ff196e77="">
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.select('selecting-first')" _content-ff196e77="">
+        Select first
+    </button>
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.select('selecting-second')" _content-ff196e77="">
+        Select second
+    </button>
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.select('selecting-third')" _content-ff196e77="">
+        Select third
+    </button>
+</div>
+
+<ul ngb-nav="" ng-ref="example.nav" ng-ref-read="ngbNav" active-id="example.activeId" class="nav-tabs" _content-ff196e77="">
+    <li ngb-nav-item="'selecting-first'" _content-ff196e77="">
+        <button type="button" ngb-nav-link="" _content-ff196e77="">First</button>
+        <ng-template ngb-nav-content="" _content-ff196e77=""><p class="pt-3 mb-0" _content-ff196e77="">First tab selected.</p></ng-template>
+    </li>
+    <li ngb-nav-item="'selecting-second'" _content-ff196e77="">
+        <button type="button" ngb-nav-link="" _content-ff196e77="">Second</button>
+        <ng-template ngb-nav-content="" _content-ff196e77=""><p class="pt-3 mb-0" _content-ff196e77="">Second tab selected.</p></ng-template>
+    </li>
+    <li ngb-nav-item="'selecting-third'" _content-ff196e77="">
+        <button type="button" ngb-nav-link="" _content-ff196e77="">Third</button>
+        <ng-template ngb-nav-content="" _content-ff196e77=""><p class="pt-3 mb-0" _content-ff196e77="">Third tab selected.</p></ng-template>
+    </li>
+</ul>
+
+<div ngb-nav-outlet="example.nav" _content-ff196e77=""></div>
+<p class="small text-body-secondary mt-2 mb-0" _content-ff196e77="">Active id: {{ example.activeId }}</p>

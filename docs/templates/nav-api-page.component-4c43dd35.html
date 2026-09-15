@@ -1,0 +1,74 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-5a4963bc="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-5a4963bc=""><code _content-5a4963bc="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-nav" _content-5a4963bc="">
+    <header class="mb-3" _content-5a4963bc=""><p class="small fw-semibold text-primary mb-1" _content-5a4963bc="">Directive</p><h2 class="h3 mb-2" _content-5a4963bc=""><code class="text-body" _content-5a4963bc="">NgbNav</code></h2><p class="text-body-secondary mb-0" _content-5a4963bc="">Coordinates nav items, selection, keyboard behavior and panel transitions.</p></header>
+    <dl class="row gy-2 mb-0" _content-5a4963bc=""><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Markup</dt><dd class="col-sm-9 mb-0" _content-5a4963bc=""><code _content-5a4963bc="">&lt;ul ngb-nav active-id="activeId"&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-5a4963bc="">Inputs</h3>
+    <div class="table-responsive" _content-5a4963bc=""><table class="table table-sm align-middle" _content-5a4963bc="">
+        <thead _content-5a4963bc=""><tr _content-5a4963bc=""><th _content-5a4963bc="">Input</th><th _content-5a4963bc="">Binding</th><th _content-5a4963bc="">Type</th><th _content-5a4963bc="">Default</th><th _content-5a4963bc="">Description</th></tr></thead>
+        <tbody _content-5a4963bc="">
+            <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">active-id</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">=?</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">string</code></td><td _content-5a4963bc="">First enabled item</td><td _content-5a4963bc="">Two-way active item id.</td></tr>
+            <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">animation</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">boolean</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">$config.animation</code></td><td _content-5a4963bc="">Enables panel transitions.</td></tr>
+            <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">destroy-on-hide</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">boolean</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">true</code></td><td _content-5a4963bc="">Removes inactive panel views.</td></tr>
+            <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">keyboard</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">boolean | "changeWithArrows"</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">true</code></td><td _content-5a4963bc="">Controls arrow-key navigation.</td></tr>
+            <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">orientation</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">"horizontal" | "vertical"</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">"horizontal"</code></td><td _content-5a4963bc="">Sets keyboard orientation.</td></tr>
+            <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">roles</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">"tablist" | false</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">"tablist"</code></td><td _content-5a4963bc="">Enables or disables tab ARIA roles.</td></tr>
+        </tbody>
+    </table></div>
+    <h3 class="h5 mt-4 mb-3" _content-5a4963bc="">Outputs</h3>
+    <div class="table-responsive" _content-5a4963bc=""><table class="table table-sm align-middle mb-0" _content-5a4963bc=""><thead _content-5a4963bc=""><tr _content-5a4963bc=""><th _content-5a4963bc="">Output</th><th _content-5a4963bc="">Payload</th><th _content-5a4963bc="">Emitted when</th></tr></thead><tbody _content-5a4963bc="">
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">active-id-change</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">$event: string</code></td><td _content-5a4963bc="">The active id changes.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">nav-change</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">$event: NgbNavChangeEvent</code></td><td _content-5a4963bc="">Before selection changes; the event can prevent it.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">shown</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">$event: string</code></td><td _content-5a4963bc="">The next panel finishes appearing.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">hidden</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">$event: string</code></td><td _content-5a4963bc="">The previous panel finishes hiding.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-nav-item" _content-5a4963bc="">
+    <header class="mb-3" _content-5a4963bc=""><p class="small fw-semibold text-primary mb-1" _content-5a4963bc="">Directive</p><h2 class="h3 mb-2" _content-5a4963bc=""><code class="text-body" _content-5a4963bc="">NgbNavItem</code></h2><p class="text-body-secondary mb-0" _content-5a4963bc="">Defines one selectable item and its associated content.</p></header>
+    <dl class="row gy-2 mb-0" _content-5a4963bc=""><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Markup</dt><dd class="col-sm-9 mb-0" _content-5a4963bc=""><code _content-5a4963bc="">&lt;li ngb-nav-item="'overview'"&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Requires</dt><dd class="col-sm-9 mb-0" _content-5a4963bc="">An ancestor <code _content-5a4963bc="">ngb-nav</code>; optionally reads <code _content-5a4963bc="">ng-disabled</code>.</dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-5a4963bc="">Bindings</h3>
+    <div class="table-responsive" _content-5a4963bc=""><table class="table table-sm align-middle mb-0" _content-5a4963bc=""><thead _content-5a4963bc=""><tr _content-5a4963bc=""><th _content-5a4963bc="">Name</th><th _content-5a4963bc="">Binding</th><th _content-5a4963bc="">Default</th><th _content-5a4963bc="">Description</th></tr></thead><tbody _content-5a4963bc="">
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">ngb-nav-item</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">@?</code></td><td _content-5a4963bc="">Generated id</td><td _content-5a4963bc="">Identifies the item.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">dom-id</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">@?</code></td><td _content-5a4963bc="">Generated id</td><td _content-5a4963bc="">Overrides the DOM id.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">destroy-on-hide</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc="">Inherited</td><td _content-5a4963bc="">Overrides panel lifecycle for this item.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">shown</code>, <code _content-5a4963bc="">hidden</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&amp;?</code></td><td _content-5a4963bc="">—</td><td _content-5a4963bc="">Item-level panel lifecycle callbacks.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-nav-link" _content-5a4963bc="">
+    <header class="mb-3" _content-5a4963bc=""><p class="small fw-semibold text-primary mb-1" _content-5a4963bc="">Directive</p><h2 class="h3 mb-2" _content-5a4963bc=""><code class="text-body" _content-5a4963bc="">NgbNavLink</code></h2><p class="text-body-secondary mb-0" _content-5a4963bc="">Turns an anchor or button into the interactive trigger for its nav item.</p></header>
+    <dl class="row gy-2 mb-0" _content-5a4963bc=""><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Markup</dt><dd class="col-sm-9 mb-0" _content-5a4963bc=""><code _content-5a4963bc="">&lt;button ngb-nav-link&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Requires</dt><dd class="col-sm-9 mb-0" _content-5a4963bc="">Ancestor <code _content-5a4963bc="">ngb-nav-item</code> and <code _content-5a4963bc="">ngb-nav</code> controllers.</dd></dl>
+    <p class="small text-body-secondary mt-3 mb-0" _content-5a4963bc="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-nav-content" _content-5a4963bc="">
+    <header class="mb-3" _content-5a4963bc=""><p class="small fw-semibold text-primary mb-1" _content-5a4963bc="">Directive</p><h2 class="h3 mb-2" _content-5a4963bc=""><code class="text-body" _content-5a4963bc="">NgbNavContent</code></h2><p class="text-body-secondary mb-0" _content-5a4963bc="">Marks the template rendered for a nav item.</p></header>
+    <dl class="row gy-2 mb-0" _content-5a4963bc=""><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Markup</dt><dd class="col-sm-9 mb-0" _content-5a4963bc=""><code _content-5a4963bc="">&lt;ng-template ngb-nav-content&gt;</code></dd></dl>
+    <p class="small text-body-secondary mt-3 mb-0" _content-5a4963bc="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-nav-outlet" _content-5a4963bc="">
+    <header class="mb-3" _content-5a4963bc=""><p class="small fw-semibold text-primary mb-1" _content-5a4963bc="">Directive</p><h2 class="h3 mb-2" _content-5a4963bc=""><code class="text-body" _content-5a4963bc="">NgbNavOutlet</code></h2><p class="text-body-secondary mb-0" _content-5a4963bc="">Renders the active panel for a nav controller.</p></header>
+    <dl class="row gy-2 mb-0" _content-5a4963bc=""><dt class="col-sm-3 fw-semibold" _content-5a4963bc="">Markup</dt><dd class="col-sm-9 mb-0" _content-5a4963bc=""><code _content-5a4963bc="">&lt;div ngb-nav-outlet="navController"&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-5a4963bc="">Inputs</h3>
+    <div class="table-responsive" _content-5a4963bc=""><table class="table table-sm align-middle mb-0" _content-5a4963bc=""><thead _content-5a4963bc=""><tr _content-5a4963bc=""><th _content-5a4963bc="">Input</th><th _content-5a4963bc="">Binding</th><th _content-5a4963bc="">Description</th></tr></thead><tbody _content-5a4963bc="">
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">ngb-nav-outlet</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;</code></td><td _content-5a4963bc="">The <code _content-5a4963bc="">NgbNav</code> controller to render.</td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">pane-role</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">&lt;?</code></td><td _content-5a4963bc="">Overrides the generated panel role.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-nav-config" _content-5a4963bc="">
+    <header class="mb-3" _content-5a4963bc=""><p class="small fw-semibold text-primary mb-1" _content-5a4963bc="">Service</p><h2 class="h3 mb-2" _content-5a4963bc=""><code class="text-body" _content-5a4963bc="">NgbNavConfig</code></h2><p class="text-body-secondary mb-0" _content-5a4963bc="">Provides application-wide nav defaults.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-5a4963bc="">Properties</h3>
+    <div class="table-responsive" _content-5a4963bc=""><table class="table table-sm align-middle mb-0" _content-5a4963bc=""><thead _content-5a4963bc=""><tr _content-5a4963bc=""><th _content-5a4963bc="">Property</th><th _content-5a4963bc="">Default</th></tr></thead><tbody _content-5a4963bc="">
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">animation</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">$config.animation</code></td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">destroyOnHide</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">true</code></td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">orientation</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">"horizontal"</code></td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">roles</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">"tablist"</code></td></tr>
+        <tr _content-5a4963bc=""><td _content-5a4963bc=""><code _content-5a4963bc="">keyboard</code></td><td _content-5a4963bc=""><code _content-5a4963bc="">true</code></td></tr>
+    </tbody></table></div>
+</section>

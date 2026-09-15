@@ -1,0 +1,340 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-6dd40453="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-6dd40453=""><code _content-6dd40453="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-6dd40453=""><code _content-6dd40453="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Directive</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordion</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Root directive that coordinates all accordion items. It applies the Bootstrap accordion structure,
+            controls whether multiple items may remain open and exposes methods for toggling items by id.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-6dd40453="">
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453=""><code _content-6dd40453="">&lt;div ngb-accordion&gt;</code></dd>
+
+    </dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-6dd40453="">Inputs</h3>
+    <div class="table-responsive" _content-6dd40453="">
+        <table class="table table-sm align-middle" _content-6dd40453="">
+            <thead _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <th scope="col" _content-6dd40453="">Input</th>
+                    <th scope="col" _content-6dd40453="">Binding</th>
+                    <th scope="col" _content-6dd40453="">Type</th>
+                    <th scope="col" _content-6dd40453="">Default</th>
+                    <th scope="col" _content-6dd40453="">Description</th>
+                </tr>
+            </thead>
+            <tbody _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">animation</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&lt;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">$config.animation</code></td>
+                    <td _content-6dd40453="">Enables the collapse transition.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">close-others</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&lt;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">false</code></td>
+                    <td _content-6dd40453="">Closes the currently expanded item before another one opens.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">destroy-on-hide</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&lt;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">true</code></td>
+                    <td _content-6dd40453="">Removes a collapsed item's body view from the DOM.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-6dd40453="">Outputs</h3>
+    <div class="table-responsive" _content-6dd40453="">
+        <table class="table table-sm align-middle mb-0" _content-6dd40453="">
+            <thead _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <th scope="col" _content-6dd40453="">Output</th>
+                    <th scope="col" _content-6dd40453="">Binding</th>
+                    <th scope="col" _content-6dd40453="">Payload</th>
+                    <th scope="col" _content-6dd40453="">Emitted when</th>
+                </tr>
+            </thead>
+            <tbody _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">show</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">$event: string</code></td>
+                    <td _content-6dd40453="">An item starts expanding; <code _content-6dd40453="">$event</code> is its id.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">shown</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">$event: string</code></td>
+                    <td _content-6dd40453="">An item finishes expanding.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">hide</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">$event: string</code></td>
+                    <td _content-6dd40453="">An item starts collapsing.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">hidden</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">$event: string</code></td>
+                    <td _content-6dd40453="">An item finishes collapsing.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-item" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Directive</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordionItem</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Represents one collapsible item. It owns the item id and collapsed state, applies per-item
+            <code _content-6dd40453="">destroyOnHide</code> behavior and emits the item lifecycle events.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-6dd40453="">
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453=""><code _content-6dd40453="">&lt;div ngb-accordion-item="'details'"&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453="">
+            An ancestor <code _content-6dd40453="">ngb-accordion</code>; optionally reads <code _content-6dd40453="">ng-disabled</code>.
+        </dd>
+
+    </dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-6dd40453="">Inputs</h3>
+    <div class="table-responsive" _content-6dd40453="">
+        <table class="table table-sm align-middle" _content-6dd40453="">
+            <thead _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <th scope="col" _content-6dd40453="">Input</th>
+                    <th scope="col" _content-6dd40453="">Binding</th>
+                    <th scope="col" _content-6dd40453="">Type</th>
+                    <th scope="col" _content-6dd40453="">Default</th>
+                    <th scope="col" _content-6dd40453="">Description</th>
+                </tr>
+            </thead>
+            <tbody _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">ngb-accordion-item</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&lt;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">string</code></td>
+                    <td _content-6dd40453="">Generated id</td>
+                    <td _content-6dd40453="">Expression that identifies the item in the parent accordion.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">collapsed</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&lt;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">true</code></td>
+                    <td _content-6dd40453="">Controls the initial and current collapsed state.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">destroy-on-hide</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&lt;?</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453="">Inherited</td>
+                    <td _content-6dd40453="">Overrides the parent accordion setting for this item.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">ng-disabled</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">ngDisabled</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">false</code></td>
+                    <td _content-6dd40453="">Prevents the item's trigger from changing its state.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-6dd40453="">Outputs</h3>
+    <div class="table-responsive" _content-6dd40453="">
+        <table class="table table-sm align-middle mb-0" _content-6dd40453="">
+            <thead _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <th scope="col" _content-6dd40453="">Output</th>
+                    <th scope="col" _content-6dd40453="">Binding</th>
+                    <th scope="col" _content-6dd40453="">Payload</th>
+                    <th scope="col" _content-6dd40453="">Emitted when</th>
+                </tr>
+            </thead>
+            <tbody _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">show</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453="">None</td>
+                    <td _content-6dd40453="">This item starts expanding.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">shown</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453="">None</td>
+                    <td _content-6dd40453="">This item finishes expanding.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">hide</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453="">None</td>
+                    <td _content-6dd40453="">This item starts collapsing.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">hidden</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">&amp;?</code></td>
+                    <td _content-6dd40453="">None</td>
+                    <td _content-6dd40453="">This item finishes collapsing.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-header" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Directive</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordionHeader</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Marks an item's heading container. It adds the Bootstrap header class and heading semantics, and
+            mirrors the collapsed state without handling the toggle action itself.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-6dd40453="">
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453=""><code _content-6dd40453="">&lt;h2 ngb-accordion-header&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453="">An ancestor <code _content-6dd40453="">ngb-accordion-item</code>.</dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-6dd40453="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-button" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Directive</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordionButton</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Provides the standard Bootstrap accordion trigger. It configures the button type, classes and ARIA
+            state, respects <code _content-6dd40453="">ng-disabled</code> and toggles its containing item when clicked.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-6dd40453="">
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453=""><code _content-6dd40453="">&lt;button ngb-accordion-button&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453="">
+            Ancestor controllers for <code _content-6dd40453="">ngb-accordion-item</code> and <code _content-6dd40453="">ngb-accordion</code>.
+        </dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-6dd40453="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-toggle" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Directive</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordionToggle</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Adds toggle behavior and accessible state to custom header markup. Use it when the trigger should not
+            receive the standard <code _content-6dd40453="">accordion-button</code> presentation supplied by
+            <code _content-6dd40453="">NgbAccordionButton</code>.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-6dd40453="">
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453=""><code _content-6dd40453="">&lt;span ngb-accordion-toggle&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453="">
+            Ancestor controllers for <code _content-6dd40453="">ngb-accordion-item</code> and <code _content-6dd40453="">ngb-accordion</code>.
+        </dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-6dd40453="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-body" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Directive</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordionBody</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Hosts the item's body template. Content is supplied through a child <code _content-6dd40453="">ng-template</code> and its
+            embedded view is created or destroyed according to the item state and <code _content-6dd40453="">destroyOnHide</code>.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-6dd40453="">
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453=""><code _content-6dd40453="">&lt;div ngb-accordion-body&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-6dd40453="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-6dd40453="">An ancestor <code _content-6dd40453="">ngb-accordion-item</code>.</dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-6dd40453="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-config" _content-6dd40453="">
+    <header class="mb-3" _content-6dd40453="">
+        <p class="small fw-semibold text-primary mb-1" _content-6dd40453="">Service</p>
+        <h2 class="h3 mb-2" _content-6dd40453=""><code class="text-body" _content-6dd40453="">NgbAccordionConfig</code></h2>
+        <p class="text-body-secondary mb-0" _content-6dd40453="">
+            Provides application-wide default values for accordions. Configure it once during application setup;
+            values supplied directly to an <code _content-6dd40453="">ngb-accordion</code> instance take precedence.
+        </p>
+    </header>
+
+    <h3 class="h5 mt-4 mb-3" _content-6dd40453="">Properties</h3>
+    <div class="table-responsive" _content-6dd40453="">
+        <table class="table table-sm align-middle mb-0" _content-6dd40453="">
+            <thead _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <th scope="col" _content-6dd40453="">Property</th>
+                    <th scope="col" _content-6dd40453="">Type</th>
+                    <th scope="col" _content-6dd40453="">Default</th>
+                    <th scope="col" _content-6dd40453="">Description</th>
+                </tr>
+            </thead>
+            <tbody _content-6dd40453="">
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">animation</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">$config.animation</code></td>
+                    <td _content-6dd40453="">Sets the default animation behavior for every accordion.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">closeOthers</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">false</code></td>
+                    <td _content-6dd40453="">Sets whether opening an item closes the previously expanded item.</td>
+                </tr>
+                <tr _content-6dd40453="">
+                    <td _content-6dd40453=""><code _content-6dd40453="">destroyOnHide</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">boolean</code></td>
+                    <td _content-6dd40453=""><code _content-6dd40453="">true</code></td>
+                    <td _content-6dd40453="">Sets whether hidden body views are removed from the DOM.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

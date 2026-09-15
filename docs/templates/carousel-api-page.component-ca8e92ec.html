@@ -1,0 +1,85 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-c2b4188d="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-c2b4188d=""><code _content-c2b4188d="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-carousel" _content-c2b4188d="">
+    <header class="mb-3" _content-c2b4188d="">
+        <p class="small fw-semibold text-primary mb-1" _content-c2b4188d="">Component</p>
+        <h2 class="h3 mb-2" _content-c2b4188d=""><code class="text-body" _content-c2b4188d="">NgbCarousel</code></h2>
+        <p class="text-body-secondary mb-0" _content-c2b4188d="">Coordinates slides, navigation, cycling, pause behavior and transitions.</p>
+    </header>
+
+    <dl class="row gy-2 mb-0" _content-c2b4188d=""><dt class="col-sm-3 fw-semibold" _content-c2b4188d="">Markup</dt><dd class="col-sm-9 mb-0" _content-c2b4188d=""><code _content-c2b4188d="">&lt;ngb-carousel&gt;</code></dd></dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-c2b4188d="">Inputs</h3>
+    <div class="table-responsive" _content-c2b4188d="">
+        <table class="table table-sm align-middle" _content-c2b4188d="">
+            <thead _content-c2b4188d=""><tr _content-c2b4188d=""><th _content-c2b4188d="">Input</th><th _content-c2b4188d="">Binding</th><th _content-c2b4188d="">Type</th><th _content-c2b4188d="">Default</th><th _content-c2b4188d="">Description</th></tr></thead>
+            <tbody _content-c2b4188d="">
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">active-id</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">@?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">string</code></td><td _content-c2b4188d="">First slide</td><td _content-c2b4188d="">Identifies the active slide.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">animation</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">$config.animation</code></td><td _content-c2b4188d="">Enables slide transitions.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">interval</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">number</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">5000</code></td><td _content-c2b4188d="">Delay between automatic slides in milliseconds; <code _content-c2b4188d="">0</code> disables cycling.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">keyboard</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td><td _content-c2b4188d="">Enables keyboard navigation.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">pause-on-focus</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td><td _content-c2b4188d="">Pauses cycling while focused.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">pause-on-hover</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td><td _content-c2b4188d="">Pauses cycling while hovered.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">show-navigation-arrows</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td><td _content-c2b4188d="">Displays previous and next controls.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">show-navigation-indicators</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td><td _content-c2b4188d="">Displays slide indicators.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">wrap</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&lt;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td><td _content-c2b4188d="">Wraps navigation at the first and last slide.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-c2b4188d="">Outputs</h3>
+    <div class="table-responsive" _content-c2b4188d="">
+        <table class="table table-sm align-middle mb-0" _content-c2b4188d="">
+            <thead _content-c2b4188d=""><tr _content-c2b4188d=""><th _content-c2b4188d="">Output</th><th _content-c2b4188d="">Binding</th><th _content-c2b4188d="">Payload</th><th _content-c2b4188d="">Emitted when</th></tr></thead>
+            <tbody _content-c2b4188d="">
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">slide</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&amp;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">$event: NgbSlideEvent</code></td><td _content-c2b4188d="">A slide transition starts.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">slid</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&amp;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">$event: NgbSlideEvent</code></td><td _content-c2b4188d="">A slide transition finishes.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-slide" _content-c2b4188d="">
+    <header class="mb-3" _content-c2b4188d="">
+        <p class="small fw-semibold text-primary mb-1" _content-c2b4188d="">Directive</p>
+        <h2 class="h3 mb-2" _content-c2b4188d=""><code class="text-body" _content-c2b4188d="">NgbSlide</code></h2>
+        <p class="text-body-secondary mb-0" _content-c2b4188d="">Marks projected content as a carousel slide.</p>
+    </header>
+    <dl class="row gy-2 mb-0" _content-c2b4188d="">
+        <dt class="col-sm-3 fw-semibold" _content-c2b4188d="">Markup</dt><dd class="col-sm-9 mb-0" _content-c2b4188d=""><code _content-c2b4188d="">&lt;ng-template ngb-slide&gt;</code></dd>
+        <dt class="col-sm-3 fw-semibold" _content-c2b4188d="">Requires</dt><dd class="col-sm-9 mb-0" _content-c2b4188d="">An ancestor <code _content-c2b4188d="">ngb-carousel</code>.</dd>
+    </dl>
+    <h3 class="h5 mt-4 mb-3" _content-c2b4188d="">Bindings</h3>
+    <div class="table-responsive" _content-c2b4188d="">
+        <table class="table table-sm align-middle mb-0" _content-c2b4188d="">
+            <thead _content-c2b4188d=""><tr _content-c2b4188d=""><th _content-c2b4188d="">Name</th><th _content-c2b4188d="">Binding</th><th _content-c2b4188d="">Type</th><th _content-c2b4188d="">Default</th><th _content-c2b4188d="">Description</th></tr></thead>
+            <tbody _content-c2b4188d="">
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">id</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">@?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">string</code></td><td _content-c2b4188d="">Generated id</td><td _content-c2b4188d="">Identifies the slide.</td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">slid</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">&amp;?</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">$event: NgbSingleSlideEvent</code></td><td _content-c2b4188d="">—</td><td _content-c2b4188d="">Runs when this slide completes a transition.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-carousel-config" _content-c2b4188d="">
+    <header class="mb-3" _content-c2b4188d="">
+        <p class="small fw-semibold text-primary mb-1" _content-c2b4188d="">Service</p>
+        <h2 class="h3 mb-2" _content-c2b4188d=""><code class="text-body" _content-c2b4188d="">NgbCarouselConfig</code></h2>
+        <p class="text-body-secondary mb-0" _content-c2b4188d="">Provides application-wide carousel defaults.</p>
+    </header>
+    <h3 class="h5 mt-4 mb-3" _content-c2b4188d="">Properties</h3>
+    <div class="table-responsive" _content-c2b4188d="">
+        <table class="table table-sm align-middle mb-0" _content-c2b4188d="">
+            <thead _content-c2b4188d=""><tr _content-c2b4188d=""><th _content-c2b4188d="">Property</th><th _content-c2b4188d="">Type</th><th _content-c2b4188d="">Default</th></tr></thead>
+            <tbody _content-c2b4188d="">
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">animation</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">$config.animation</code></td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">interval</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">number</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">5000</code></td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">wrap</code>, <code _content-c2b4188d="">keyboard</code>, <code _content-c2b4188d="">pauseOnFocus</code>, <code _content-c2b4188d="">pauseOnHover</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td></tr>
+                <tr _content-c2b4188d=""><td _content-c2b4188d=""><code _content-c2b4188d="">showNavigationArrows</code>, <code _content-c2b4188d="">showNavigationIndicators</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">boolean</code></td><td _content-c2b4188d=""><code _content-c2b4188d="">true</code></td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>

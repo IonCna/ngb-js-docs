@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-DwQZkZoC.js";var n=class{};n=t([e({selector:`docs-alert-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/alert-api-page.component-a0f24fb8.html`,styleUrl:`./alert-api-page.component.css`})],n);export{n as AlertApiPageComponent};

@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-DwQZkZoC.js";var n=class{};n=t([e({selector:`docs-nav-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/nav-api-page.component-4c43dd35.html`,styleUrl:`./nav-api-page.component.css`})],n);export{n as NavApiPageComponent};

@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-DwQZkZoC.js";var n=class{};n=t([e({selector:`docs-progressbar-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/progressbar-api-page.component-b21e257a.html`,styleUrl:`./progressbar-api-page.component.css`})],n);export{n as ProgressbarApiPageComponent};

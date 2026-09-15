@@ -1,0 +1,15 @@
+<div class="form-check form-switch mb-3" _content-e676af58="">
+    <input class="form-check-input" type="checkbox" role="switch" id="dropdown-restricted-items" ng-model="example.restricted" _content-e676af58="">
+    <label class="form-check-label" for="dropdown-restricted-items" _content-e676af58="">Disable restricted actions</label>
+</div>
+
+<div ngb-dropdown="" _content-e676af58="">
+    <button type="button" class="btn btn-primary" ngb-dropdown-toggle="" _content-e676af58="">Project actions</button>
+    <div ngb-dropdown-menu="" _content-e676af58="">
+        <button type="button" ngb-dropdown-item="" _content-e676af58="">Open project</button>
+        <button type="button" ngb-dropdown-item="" ng-disabled="example.restricted" _content-e676af58="">Archive project</button>
+        <button type="button" ngb-dropdown-item="" ng-disabled="example.restricted" _content-e676af58="">Delete project</button>
+        <div class="dropdown-divider" _content-e676af58=""></div>
+        <button type="button" ngb-dropdown-item="" ng-disabled="true" _content-e676af58="">Unavailable action</button>
+    </div>
+</div>

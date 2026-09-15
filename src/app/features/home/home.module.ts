@@ -5,6 +5,6 @@ import { NgbTooltipModule } from "ngb-js/tooltip"
 @NgModule({
     id: "docs.home",
     imports: [NgbTooltipModule],
-    declarations: [HomeHeroComponent],
+    declarations: [HomeHeroComponent]
 })
 export class HomeModule {}

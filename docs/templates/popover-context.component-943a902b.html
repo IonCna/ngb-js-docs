@@ -1,0 +1,12 @@
+<ng-template ng-ref="example.contentTemplate" let-greeting="greeting" _content-843c94c5="">{{ greeting }}, <strong _content-843c94c5="">{{ example.name }}</strong>!</ng-template>
+<ng-template ng-ref="example.titleTemplate" let-language="language" _content-843c94c5="">Greeting in {{ language }}</ng-template>
+
+<p _content-843c94c5="">You can pass context when manually opening a popover.</p>
+<div class="d-flex flex-wrap gap-2 mb-4" _content-843c94c5="">
+    <button type="button" class="btn btn-outline-secondary" ngb-popover="example.contentTemplate" popover-title="example.titleTemplate" triggers="'manual'" ng-ref="example.french" ng-ref-read="ngbPopover" ng-click="example.toggleWithGreeting(example.french, 'Bonjour', 'French')" _content-843c94c5="">French</button>
+    <button type="button" class="btn btn-outline-secondary" ngb-popover="example.contentTemplate" popover-title="example.titleTemplate" triggers="'manual'" ng-ref="example.german" ng-ref-read="ngbPopover" ng-click="example.toggleWithGreeting(example.german, 'Guten Tag', 'German')" _content-843c94c5="">German</button>
+    <button type="button" class="btn btn-outline-secondary" ngb-popover="example.contentTemplate" popover-title="example.titleTemplate" triggers="'manual'" ng-ref="example.english" ng-ref-read="ngbPopover" ng-click="example.toggleWithGreeting(example.english, 'Hello', 'English')" _content-843c94c5="">English</button>
+</div>
+
+<p _content-843c94c5="">Alternatively, provide a default context through <code _content-843c94c5="">popover-context</code>.</p>
+<button type="button" class="btn btn-outline-secondary" ngb-popover="example.contentTemplate" popover-title="example.titleTemplate" popover-context="{ language: '中文', greeting: '你好' }" _content-843c94c5="">Chinese</button>

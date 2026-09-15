@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-DwQZkZoC.js";var n=class{};n=t([e({selector:`docs-offcanvas-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/offcanvas-api-page.component-59d617d1.html`,styleUrl:`./offcanvas-api-page.component.css`})],n);export{n as OffcanvasApiPageComponent};

@@ -1,0 +1,19 @@
+<div class="d-flex flex-wrap gap-2 mb-3" _content-0e9f53d2="">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="example.open()" _content-0e9f53d2="">Open</button>
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.close()" _content-0e9f53d2="">Close</button>
+    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="example.toggle()" _content-0e9f53d2="">Toggle</button>
+</div>
+
+<div ngb-dropdown="" ng-ref="dropdown" ng-ref-read="ngbDropdown" open="example.opened" open-change="example.opened = $event" _content-0e9f53d2="">
+    <button type="button" class="btn btn-outline-dark" ngb-dropdown-anchor="" _content-0e9f53d2="">
+        Manually controlled menu
+    </button>
+    <div ngb-dropdown-menu="" _content-0e9f53d2="">
+        <button type="button" ngb-dropdown-item="" _content-0e9f53d2="">First action</button>
+        <button type="button" ngb-dropdown-item="" _content-0e9f53d2="">Second action</button>
+    </div>
+</div>
+
+<p class="small text-body-secondary mt-2 mb-0" _content-0e9f53d2="">
+    Current state: {{ example.opened ? 'open' : 'closed' }}
+</p>

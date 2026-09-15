@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-DwQZkZoC.js";var n=class{installCommand=`npm install ngb-js`};n=t([e({selector:`home-page`,templateUrl:`/ngb-js-docs/templates/home-page.component-bbc4062d.html`,styleUrl:`./home-page.component.css`})],n);export{n as HomePageComponent};

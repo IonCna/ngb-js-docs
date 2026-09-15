@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-end mb-3" _content-33eb80c4="">
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.reset()" _content-33eb80c4="">
+        <i class="bi bi-arrow-clockwise me-1" aria-hidden="true" _content-33eb80c4=""></i>
+        Reset alerts
+    </button>
+</div>
+
+<ngb-alert ng-repeat="alert in example.alerts track by alert.id" type="alert.type" dismissible="true" animation="alert.animation" closed="example.close(alert.id)" _content-33eb80c4="">
+    {{ alert.message }}
+    <span class="small opacity-75" _content-33eb80c4="">{{ alert.animation ? 'Animated' : 'No animation' }}</span>
+</ngb-alert>
+
+<p class="text-body-secondary mb-0" ng-if="!example.alerts.length" _content-33eb80c4="">
+    All alerts have been closed.
+</p>

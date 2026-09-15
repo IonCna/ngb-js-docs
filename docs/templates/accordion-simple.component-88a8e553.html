@@ -1,0 +1,49 @@
+<ng-template ng-ref="templateHeader" _content-d53a548c="">
+    <span class="d-inline-flex align-items-center gap-2" _content-d53a548c="">
+        <i class="bi bi-stars text-primary" aria-hidden="true" _content-d53a548c=""></i>
+        Header rendered from an ng-template
+    </span>
+</ng-template>
+
+<div ngb-accordion="" animation="true" close-others="false" destroy-on-hide="true" _content-d53a548c="">
+    <div ngb-accordion-item="'simple-first'" collapsed="false" _content-d53a548c="">
+        <h2 ngb-accordion-header="" _content-d53a548c="">
+            <button ngb-accordion-button="" _content-d53a548c="">Regular header</button>
+        </h2>
+        <div ngb-accordion-collapse="" _content-d53a548c="">
+            <div ngb-accordion-body="" _content-d53a548c="">
+                <ng-template _content-d53a548c="">
+                    <p class="mb-0" _content-d53a548c="">This panel uses the standard accordion header and button.</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div ngb-accordion-item="'simple-template'" _content-d53a548c="">
+        <h2 ngb-accordion-header="" _content-d53a548c="">
+            <button ngb-accordion-button="" _content-d53a548c="">
+                <ng-container ng-template-outlet="templateHeader" _content-d53a548c=""></ng-container>
+            </button>
+        </h2>
+        <div ngb-accordion-collapse="" _content-d53a548c="">
+            <div ngb-accordion-body="" _content-d53a548c="">
+                <ng-template _content-d53a548c="">
+                    <p class="mb-0" _content-d53a548c="">The header content comes from a reusable AngularJS template.</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div ngb-accordion-item="'simple-disabled'" ng-disabled="true" _content-d53a548c="">
+        <h2 ngb-accordion-header="" _content-d53a548c="">
+            <button ngb-accordion-button="" _content-d53a548c="">Disabled panel</button>
+        </h2>
+        <div ngb-accordion-collapse="" _content-d53a548c="">
+            <div ngb-accordion-body="" _content-d53a548c="">
+                <ng-template _content-d53a548c="">
+                    <p class="mb-0" _content-d53a548c="">Disabled items ignore pointer and keyboard toggle actions.</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

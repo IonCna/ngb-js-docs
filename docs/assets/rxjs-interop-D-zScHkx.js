@@ -1,0 +1,1 @@
+import{ct as e,st as t}from"./decorate-DwQZkZoC.js";import{t as n}from"./takeUntil-BKtcECga.js";function r(r){let i=new e,a=!1;return r.onDestroy(()=>{a=!0,i.next(),i.complete()}),e=>a?t:e.pipe(n(i))}export{r as t};
