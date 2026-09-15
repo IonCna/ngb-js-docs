@@ -9,7 +9,7 @@ import carouselGlobalHtml from "@/features/lib/components/carousel-global/carous
 @Component({
     selector: "docs-carousel-examples-page",
     controllerAs: "$",
-    templateUrl: "./carousel-examples-page.component.html",
+    templateUrl: "carousel-examples-page.component.html",
     styleUrl: "./carousel-examples-page.component.css",
 })
 export class CarouselExamplesPageComponent {

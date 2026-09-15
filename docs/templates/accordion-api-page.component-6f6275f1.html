@@ -1,0 +1,340 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-62fc1cae="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Directive</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordion</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Root directive that coordinates all accordion items. It applies the Bootstrap accordion structure,
+            controls whether multiple items may remain open and exposes methods for toggling items by id.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-62fc1cae="">
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae=""><code _content-62fc1cae="">&lt;div ngb-accordion&gt;</code></dd>
+
+    </dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-62fc1cae="">Inputs</h3>
+    <div class="table-responsive" _content-62fc1cae="">
+        <table class="table table-sm align-middle" _content-62fc1cae="">
+            <thead _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <th scope="col" _content-62fc1cae="">Input</th>
+                    <th scope="col" _content-62fc1cae="">Binding</th>
+                    <th scope="col" _content-62fc1cae="">Type</th>
+                    <th scope="col" _content-62fc1cae="">Default</th>
+                    <th scope="col" _content-62fc1cae="">Description</th>
+                </tr>
+            </thead>
+            <tbody _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">animation</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">$config.animation</code></td>
+                    <td _content-62fc1cae="">Enables the collapse transition.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">close-others</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">false</code></td>
+                    <td _content-62fc1cae="">Closes the currently expanded item before another one opens.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">destroy-on-hide</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">true</code></td>
+                    <td _content-62fc1cae="">Removes a collapsed item's body view from the DOM.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-62fc1cae="">Outputs</h3>
+    <div class="table-responsive" _content-62fc1cae="">
+        <table class="table table-sm align-middle mb-0" _content-62fc1cae="">
+            <thead _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <th scope="col" _content-62fc1cae="">Output</th>
+                    <th scope="col" _content-62fc1cae="">Binding</th>
+                    <th scope="col" _content-62fc1cae="">Payload</th>
+                    <th scope="col" _content-62fc1cae="">Emitted when</th>
+                </tr>
+            </thead>
+            <tbody _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">show</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">$event: string</code></td>
+                    <td _content-62fc1cae="">An item starts expanding; <code _content-62fc1cae="">$event</code> is its id.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">shown</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">$event: string</code></td>
+                    <td _content-62fc1cae="">An item finishes expanding.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">hide</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">$event: string</code></td>
+                    <td _content-62fc1cae="">An item starts collapsing.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">hidden</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">$event: string</code></td>
+                    <td _content-62fc1cae="">An item finishes collapsing.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-item" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Directive</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordionItem</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Represents one collapsible item. It owns the item id and collapsed state, applies per-item
+            <code _content-62fc1cae="">destroyOnHide</code> behavior and emits the item lifecycle events.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-62fc1cae="">
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae=""><code _content-62fc1cae="">&lt;div ngb-accordion-item="'details'"&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae="">
+            An ancestor <code _content-62fc1cae="">ngb-accordion</code>; optionally reads <code _content-62fc1cae="">ng-disabled</code>.
+        </dd>
+
+    </dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-62fc1cae="">Inputs</h3>
+    <div class="table-responsive" _content-62fc1cae="">
+        <table class="table table-sm align-middle" _content-62fc1cae="">
+            <thead _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <th scope="col" _content-62fc1cae="">Input</th>
+                    <th scope="col" _content-62fc1cae="">Binding</th>
+                    <th scope="col" _content-62fc1cae="">Type</th>
+                    <th scope="col" _content-62fc1cae="">Default</th>
+                    <th scope="col" _content-62fc1cae="">Description</th>
+                </tr>
+            </thead>
+            <tbody _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">ngb-accordion-item</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">string</code></td>
+                    <td _content-62fc1cae="">Generated id</td>
+                    <td _content-62fc1cae="">Expression that identifies the item in the parent accordion.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">collapsed</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">true</code></td>
+                    <td _content-62fc1cae="">Controls the initial and current collapsed state.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">destroy-on-hide</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&lt;?</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae="">Inherited</td>
+                    <td _content-62fc1cae="">Overrides the parent accordion setting for this item.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">ng-disabled</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">ngDisabled</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">false</code></td>
+                    <td _content-62fc1cae="">Prevents the item's trigger from changing its state.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-62fc1cae="">Outputs</h3>
+    <div class="table-responsive" _content-62fc1cae="">
+        <table class="table table-sm align-middle mb-0" _content-62fc1cae="">
+            <thead _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <th scope="col" _content-62fc1cae="">Output</th>
+                    <th scope="col" _content-62fc1cae="">Binding</th>
+                    <th scope="col" _content-62fc1cae="">Payload</th>
+                    <th scope="col" _content-62fc1cae="">Emitted when</th>
+                </tr>
+            </thead>
+            <tbody _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">show</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae="">None</td>
+                    <td _content-62fc1cae="">This item starts expanding.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">shown</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae="">None</td>
+                    <td _content-62fc1cae="">This item finishes expanding.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">hide</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae="">None</td>
+                    <td _content-62fc1cae="">This item starts collapsing.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">hidden</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">&amp;?</code></td>
+                    <td _content-62fc1cae="">None</td>
+                    <td _content-62fc1cae="">This item finishes collapsing.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-header" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Directive</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordionHeader</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Marks an item's heading container. It adds the Bootstrap header class and heading semantics, and
+            mirrors the collapsed state without handling the toggle action itself.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-62fc1cae="">
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae=""><code _content-62fc1cae="">&lt;h2 ngb-accordion-header&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae="">An ancestor <code _content-62fc1cae="">ngb-accordion-item</code>.</dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-62fc1cae="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-button" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Directive</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordionButton</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Provides the standard Bootstrap accordion trigger. It configures the button type, classes and ARIA
+            state, respects <code _content-62fc1cae="">ng-disabled</code> and toggles its containing item when clicked.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-62fc1cae="">
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae=""><code _content-62fc1cae="">&lt;button ngb-accordion-button&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae="">
+            Ancestor controllers for <code _content-62fc1cae="">ngb-accordion-item</code> and <code _content-62fc1cae="">ngb-accordion</code>.
+        </dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-62fc1cae="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-toggle" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Directive</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordionToggle</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Adds toggle behavior and accessible state to custom header markup. Use it when the trigger should not
+            receive the standard <code _content-62fc1cae="">accordion-button</code> presentation supplied by
+            <code _content-62fc1cae="">NgbAccordionButton</code>.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-62fc1cae="">
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae=""><code _content-62fc1cae="">&lt;span ngb-accordion-toggle&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae="">
+            Ancestor controllers for <code _content-62fc1cae="">ngb-accordion-item</code> and <code _content-62fc1cae="">ngb-accordion</code>.
+        </dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-62fc1cae="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-body" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Directive</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordionBody</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Hosts the item's body template. Content is supplied through a child <code _content-62fc1cae="">ng-template</code> and its
+            embedded view is created or destroyed according to the item state and <code _content-62fc1cae="">destroyOnHide</code>.
+        </p>
+    </header>
+
+    <dl class="row gy-3 mb-0" _content-62fc1cae="">
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae=""><code _content-62fc1cae="">&lt;div ngb-accordion-body&gt;</code></dd>
+
+        <dt class="col-sm-3 fw-semibold" _content-62fc1cae="">Requires</dt>
+        <dd class="col-sm-9 mb-0" _content-62fc1cae="">An ancestor <code _content-62fc1cae="">ngb-accordion-item</code>.</dd>
+    </dl>
+
+    <p class="small text-body-secondary mt-3 mb-0" _content-62fc1cae="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-accordion-config" _content-62fc1cae="">
+    <header class="mb-3" _content-62fc1cae="">
+        <p class="small fw-semibold text-primary mb-1" _content-62fc1cae="">Service</p>
+        <h2 class="h3 mb-2" _content-62fc1cae=""><code class="text-body" _content-62fc1cae="">NgbAccordionConfig</code></h2>
+        <p class="text-body-secondary mb-0" _content-62fc1cae="">
+            Provides application-wide default values for accordions. Configure it once during application setup;
+            values supplied directly to an <code _content-62fc1cae="">ngb-accordion</code> instance take precedence.
+        </p>
+    </header>
+
+    <h3 class="h5 mt-4 mb-3" _content-62fc1cae="">Properties</h3>
+    <div class="table-responsive" _content-62fc1cae="">
+        <table class="table table-sm align-middle mb-0" _content-62fc1cae="">
+            <thead _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <th scope="col" _content-62fc1cae="">Property</th>
+                    <th scope="col" _content-62fc1cae="">Type</th>
+                    <th scope="col" _content-62fc1cae="">Default</th>
+                    <th scope="col" _content-62fc1cae="">Description</th>
+                </tr>
+            </thead>
+            <tbody _content-62fc1cae="">
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">animation</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">$config.animation</code></td>
+                    <td _content-62fc1cae="">Sets the default animation behavior for every accordion.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">closeOthers</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">false</code></td>
+                    <td _content-62fc1cae="">Sets whether opening an item closes the previously expanded item.</td>
+                </tr>
+                <tr _content-62fc1cae="">
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">destroyOnHide</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">boolean</code></td>
+                    <td _content-62fc1cae=""><code _content-62fc1cae="">true</code></td>
+                    <td _content-62fc1cae="">Sets whether hidden body views are removed from the DOM.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

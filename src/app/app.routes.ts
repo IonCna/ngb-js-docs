@@ -1,5 +1,5 @@
 import type { Routes } from "ngjs-core/router"
-import {MenuAbstractPageComponent} from "@/core/layouts/pages/menu-abstract-page/menu-abstract-page.component.ts";
+import {MenuAbstractPageComponent} from "@/core/layouts/pages/menu-abstract-page/menu-abstract-page.component";
 
 export const routes: Routes = [
     {

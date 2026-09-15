@@ -1,0 +1,1 @@
+import{t as e,vt as t}from"./decorate-qfgSl2U_.js";import{i as n}from"./router-zyAQBv0a.js";var r=[],i=class{};i=e([t({id:`docs.carousel`,imports:[n.forChild(r)]})],i);export{i as CarouselModule};

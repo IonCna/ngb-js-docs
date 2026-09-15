@@ -3,6 +3,7 @@ import {NgModule} from "ngjs-core";
 import { NgbAccordionModule } from "ngb-js/accordion"
 import { NgbCollapseModule } from "ngb-js/collapse"
 import { NgbNavModule } from "ngb-js/nav"
+import { NgbTooltipModule } from "ngb-js/tooltip"
 
 import { RouterModule } from "ngjs-core/router"
 
@@ -27,6 +28,7 @@ import {routes} from "@/features/accordion/accordion.routes.ts";
     ],
     imports: [
         NgbAccordionModule,
+        NgbTooltipModule,
         NgbCollapseModule,
         NgbNavModule,
         RouterModule.forChild(routes)

@@ -10,5 +10,10 @@ export const routes: Routes = [
         path: "accordion",
         loadChildren: () =>
             import("@/features/accordion/accordion.module").then(m => m.AccordionModule)
+    },
+    {
+        path: "carousel",
+        loadChildren: () =>
+            import("@/features/carousel/carousel.module").then(m => m.CarouselModule)
     }
 ]

@@ -7,7 +7,5 @@ import { TitleService } from "@/core/services/title.service";
     template: "<ui-view></ui-view>",
 })
 export class AppComponent {
-    // Inyectados solo para instanciarlos al arrancar: cada servicio se engancha
-    // a `Router` en su propio constructor (reemplaza los viejos `.run()`).
     constructor(_scrollService: ScrollService, _titleService: TitleService) {}
 }
