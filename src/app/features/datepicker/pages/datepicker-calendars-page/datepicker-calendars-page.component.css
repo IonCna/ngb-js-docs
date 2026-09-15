@@ -1,0 +1,33 @@
+.alert,
+.card,
+.dropdown-menu,
+.list-group-item,
+.form-control,
+.form-select {
+    border-color: var(--bs-border-color);
+}
+
+.alert-light {
+    color: var(--bs-body-color);
+    background: color-mix(in srgb, var(--bs-tertiary-bg) 86%, var(--bs-body-bg));
+}
+
+.card,
+.list-group,
+.dropdown-menu {
+    box-shadow: 0 .75rem 2rem rgba(var(--bs-body-color-rgb), .05);
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+    --bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor);
+}
+
+.form-control,
+.form-select {
+    background-color: var(--bs-body-bg);
+}
+
+code {
+    color: var(--ngbjs-code-color);
+}
