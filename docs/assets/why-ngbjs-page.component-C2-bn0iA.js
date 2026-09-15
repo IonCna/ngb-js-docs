@@ -1,1 +1,0 @@
-import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-why-ngb-js-page`,templateUrl:`/ngb-js-docs/templates/why-ngbjs-page.component-6ea12139.html`,styleUrl:`./why-ngbjs-page.component.css`})],n);export{n as WhyNgbJsPageComponent};

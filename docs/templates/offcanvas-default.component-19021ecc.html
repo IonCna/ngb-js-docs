@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-primary" ng-click="example.open()" _content-94e5a186="">Open default offcanvas</button>
+
+<ng-template ng-ref="content" let-close="close" let-dismiss="dismiss" _content-94e5a186="">
+    <div class="offcanvas-header" _content-94e5a186="">
+        <h2 class="offcanvas-title fs-5" _content-94e5a186="">Default offcanvas</h2>
+        <button type="button" class="btn-close" aria-label="Close" ng-click="dismiss('header close')" _content-94e5a186=""></button>
+    </div>
+    <div class="offcanvas-body" _content-94e5a186="">
+        <p _content-94e5a186="">This offcanvas uses the global defaults without passing local options.</p>
+        <div class="d-flex flex-wrap gap-2" _content-94e5a186="">
+            <button type="button" class="btn btn-outline-secondary" ng-click="dismiss('cancel')" _content-94e5a186="">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="close('accepted')" _content-94e5a186="">Continue</button>
+        </div>
+    </div>
+</ng-template>

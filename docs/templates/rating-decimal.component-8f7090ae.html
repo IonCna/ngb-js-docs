@@ -1,0 +1,14 @@
+<ng-template ng-ref="example.heartTemplate" let-fill="fill" _content-674a2361="">
+    <span class="heart" _content-674a2361="">
+        <i class="bi bi-heart-fill" aria-hidden="true" _content-674a2361=""></i>
+        <span class="fill" ng-style="{ width: fill + '%' }" _content-674a2361=""><i class="bi bi-heart-fill" aria-hidden="true" _content-674a2361=""></i></span>
+    </span>
+</ng-template>
+
+<ngb-rating rate="example.rating" max="5" readonly="true" star-template="example.heartTemplate" aria-value-text="example.ariaValueText" _content-674a2361=""></ngb-rating>
+<hr _content-674a2361="">
+<p _content-674a2361="">Rate: <strong _content-674a2361="">{{ example.rating }}</strong></p>
+<div class="d-flex flex-wrap gap-2" _content-674a2361="">
+    <button type="button" class="btn btn-sm btn-outline-primary" ng-click="example.rating = 1.35" _content-674a2361="">1.35</button>
+    <button type="button" class="btn btn-sm btn-outline-primary" ng-click="example.rating = 4.72" _content-674a2361="">4.72</button>
+</div>

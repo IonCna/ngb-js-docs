@@ -1,1 +1,0 @@
-import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-collapse-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/collapse-api-page.component-3c50660f.html`,styleUrl:`./collapse-api-page.component.css`})],n);export{n as CollapseApiPageComponent};

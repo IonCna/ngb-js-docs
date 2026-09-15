@@ -1,5 +1,4 @@
 import router from "@uirouter/angularjs"
-import { NgbModule } from "ngb-js";
 import { AppComponent } from "@/app.component"
 
 import { CoreModule } from "@/core/core.module"
@@ -15,7 +14,6 @@ import {RouterModule, withRouterConfig} from "ngjs-core/router";
     declarations: [AppComponent],
     imports: [
         router,
-        NgbModule,
         NgCoreModule,
         CoreModule,
         SharedModule,

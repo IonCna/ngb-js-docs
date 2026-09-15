@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-scrollspy-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/scrollspy-api-page.component-29b310d2.html`,styleUrl:`./scrollspy-api-page.component.css`})],n);export{n as ScrollspyApiPageComponent};

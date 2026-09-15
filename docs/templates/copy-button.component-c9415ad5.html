@@ -1,0 +1,8 @@
+<ng-template ng-ref="copyTooltip" _content-08a60860="">
+    <span _content-08a60860="">{{ $.copied ? "Copied" : "Copy to clipboard" }}</span>
+</ng-template>
+
+<button type="button" class="btn btn-link d-inline-flex align-items-center justify-content-center p-2 lh-1 {{ $.buttonClass }}" ng-click="$.copy()" ngb-tooltip="copyTooltip" placement="top" ng-attr-aria-label="{{ $.copied ? 'Copied' : ($.ariaLabel || 'Copy to clipboard') }}" _content-08a60860="">
+    <i class="bi fs-5" ng-class="$.copied ? 'bi-check-lg text-success' : 'bi-clipboard'" aria-hidden="true" _content-08a60860="">
+    </i>
+</button>

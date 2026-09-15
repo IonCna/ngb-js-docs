@@ -1,7 +1,0 @@
-<ng-template ng-ref="example.day" let-date="" let-focused="focused" _content-21ac5488="">
-    <span class="day" ng-class="{ focused: focused, range: example.isRange(date), faded: example.isHovered(date) || example.isInside(date) }" ng-mouseenter="example.hoveredDate = date" ng-mouseleave="example.hoveredDate = null" _content-21ac5488="">{{ date.day }}</span>
-</ng-template>
-<div class="overflow-auto pb-2" _content-21ac5488="">
-    <ngb-datepicker display-months="2" outside-days="hidden" day-template="example.day" date-select="example.select($event)" _content-21ac5488=""></ngb-datepicker>
-</div>
-<p class="small text-body-secondary mt-3 mb-0" _content-21ac5488="">From <code _content-21ac5488="">{{ example.fromDate | json }}</code> to <code _content-21ac5488="">{{ example.toDate | json }}</code></p>

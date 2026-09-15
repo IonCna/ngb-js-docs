@@ -1,8 +1,0 @@
-<ng-template ng-ref="example.day" let-date="" let-focused="focused" _content-b3e91e2f="">
-    <span class="day" ng-class="{ focused: focused, range: example.isRange(date), faded: example.isHovered(date) || example.isInside(date) }" ng-mouseenter="example.hoveredDate = date" ng-mouseleave="example.hoveredDate = null" _content-b3e91e2f="">{{ date.day }}</span>
-</ng-template>
-<div class="input-group" style="max-width: 24rem" _content-b3e91e2f="">
-    <input class="form-control" ng-model="example.model" ngb-datepicker="" display-months="2" outside-days="hidden" auto-close="'outside'" day-template="example.day" date-select="example.select($event)" aria-label="Date range" _content-b3e91e2f="">
-    <button type="button" class="btn btn-outline-secondary" ng-click="$datepicker.toggle()" aria-label="Toggle calendar" _content-b3e91e2f=""><i class="bi bi-calendar-range" aria-hidden="true" _content-b3e91e2f=""></i></button>
-</div>
-<p class="small text-body-secondary mt-3 mb-0" _content-b3e91e2f="">From <code _content-b3e91e2f="">{{ example.fromDate | json }}</code> to <code _content-b3e91e2f="">{{ example.toDate | json }}</code></p>

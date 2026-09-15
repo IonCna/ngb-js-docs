@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-accordion-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/accordion-api-page.component-72f38561.html`,styleUrl:`./accordion-api-page.component.css`})],n);export{n as AccordionApiPageComponent};

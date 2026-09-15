@@ -1,1 +1,0 @@
-import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-nav-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/nav-api-page.component-1bc4e4b9.html`,styleUrl:`./nav-api-page.component.css`})],n);export{n as NavApiPageComponent};

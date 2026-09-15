@@ -1,0 +1,9 @@
+<p _content-d3e6006c="">Every popover also closes with <kbd _content-d3e6006c="">Esc</kbd>.</p>
+<div class="vstack gap-3 align-items-start" _content-d3e6006c="">
+    <button type="button" class="btn btn-outline-secondary" auto-close="'inside'" ngb-popover="'Click this content or press Escape'" popover-title="'Inside clicks'" _content-d3e6006c="">Close on inside click</button>
+    <button type="button" class="btn btn-outline-secondary" auto-close="'outside'" ngb-popover="'Click elsewhere or press Escape'" popover-title="'Outside clicks'" _content-d3e6006c="">Close on outside click</button>
+    <div class="d-flex flex-wrap gap-2" _content-d3e6006c="">
+        <button type="button" class="btn btn-outline-secondary" auto-close="true" ngb-popover="'Click anywhere or press Escape'" popover-title="'All clicks'" ng-ref="example.popover" ng-ref-read="ngbPopover" _content-d3e6006c="">Close on every click</button>
+        <button type="button" class="btn btn-outline-secondary" ng-click="example.popover.toggle()" _content-d3e6006c="">External toggle</button>
+    </div>
+</div>

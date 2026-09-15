@@ -1,0 +1,62 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-ef6c5924="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-ef6c5924=""><code _content-ef6c5924="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-ef6c5924=""><code _content-ef6c5924="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-collapse" _content-ef6c5924="">
+    <header class="mb-3" _content-ef6c5924="">
+        <p class="small fw-semibold text-primary mb-1" _content-ef6c5924="">Directive</p>
+        <h2 class="h3 mb-2" _content-ef6c5924=""><code class="text-body" _content-ef6c5924="">NgbCollapse</code></h2>
+        <p class="text-body-secondary mb-0" _content-ef6c5924="">
+            Controls the visible state of an element and runs vertical or horizontal Bootstrap collapse transitions.
+        </p>
+    </header>
+
+    <dl class="row gy-2 mb-0" _content-ef6c5924="">
+        <dt class="col-sm-3 fw-semibold" _content-ef6c5924="">Markup</dt>
+        <dd class="col-sm-9 mb-0" _content-ef6c5924=""><code _content-ef6c5924="">&lt;div ngb-collapse="isCollapsed"&gt;</code></dd>
+    </dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-ef6c5924="">Inputs</h3>
+    <div class="table-responsive" _content-ef6c5924="">
+        <table class="table table-sm align-middle" _content-ef6c5924="">
+            <thead _content-ef6c5924=""><tr _content-ef6c5924=""><th _content-ef6c5924="">Input</th><th _content-ef6c5924="">Binding</th><th _content-ef6c5924="">Type</th><th _content-ef6c5924="">Default</th><th _content-ef6c5924="">Description</th></tr></thead>
+            <tbody _content-ef6c5924="">
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">ngb-collapse</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">&lt;</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">boolean</code></td><td _content-ef6c5924="">Required</td><td _content-ef6c5924="">Sets whether the host is collapsed.</td></tr>
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">animation</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">&lt;?</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">boolean</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">$config.animation</code></td><td _content-ef6c5924="">Enables transition animation.</td></tr>
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">horizontal</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">&lt;?</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">boolean</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">false</code></td><td _content-ef6c5924="">Uses width instead of height for the transition.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-ef6c5924="">Outputs</h3>
+    <div class="table-responsive" _content-ef6c5924="">
+        <table class="table table-sm align-middle mb-0" _content-ef6c5924="">
+            <thead _content-ef6c5924=""><tr _content-ef6c5924=""><th _content-ef6c5924="">Output</th><th _content-ef6c5924="">Binding</th><th _content-ef6c5924="">Payload</th><th _content-ef6c5924="">Emitted when</th></tr></thead>
+            <tbody _content-ef6c5924="">
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">ngb-collapse-change</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">&amp;?</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">$event: boolean</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">toggle()</code> changes the collapsed state.</td></tr>
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">shown</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">&amp;?</code></td><td _content-ef6c5924="">None</td><td _content-ef6c5924="">The expand transition finishes.</td></tr>
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">ngb-hidden</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">&amp;?</code></td><td _content-ef6c5924="">None</td><td _content-ef6c5924="">The collapse transition finishes.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-collapse-config" _content-ef6c5924="">
+    <header class="mb-3" _content-ef6c5924="">
+        <p class="small fw-semibold text-primary mb-1" _content-ef6c5924="">Service</p>
+        <h2 class="h3 mb-2" _content-ef6c5924=""><code class="text-body" _content-ef6c5924="">NgbCollapseConfig</code></h2>
+        <p class="text-body-secondary mb-0" _content-ef6c5924="">Provides application-wide defaults for collapse directives.</p>
+    </header>
+
+    <h3 class="h5 mt-4 mb-3" _content-ef6c5924="">Properties</h3>
+    <div class="table-responsive" _content-ef6c5924="">
+        <table class="table table-sm align-middle mb-0" _content-ef6c5924="">
+            <thead _content-ef6c5924=""><tr _content-ef6c5924=""><th _content-ef6c5924="">Property</th><th _content-ef6c5924="">Type</th><th _content-ef6c5924="">Default</th><th _content-ef6c5924="">Description</th></tr></thead>
+            <tbody _content-ef6c5924="">
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">animation</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">boolean</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">$config.animation</code></td><td _content-ef6c5924="">Default transition animation state.</td></tr>
+                <tr _content-ef6c5924=""><td _content-ef6c5924=""><code _content-ef6c5924="">horizontal</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">boolean</code></td><td _content-ef6c5924=""><code _content-ef6c5924="">false</code></td><td _content-ef6c5924="">Default transition orientation.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>

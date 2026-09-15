@@ -1,0 +1,16 @@
+<div class="toast-container position-static d-flex flex-column gap-3" _content-04441e6d="">
+    <div _content-04441e6d="">
+        <h3 class="h6" _content-04441e6d="">Body only</h3>
+        <ngb-toast autohide="false" _content-04441e6d="">I am a simple static toast.</ngb-toast>
+    </div>
+
+    <div _content-04441e6d="">
+        <h3 class="h6" _content-04441e6d="">With a text header</h3>
+        <ngb-toast ng-if="example.showHeaderToast" header="Hello" autohide="false" hidden="example.showHeaderToast = false" _content-04441e6d="">
+            I am a simple static toast with a header.
+        </ngb-toast>
+        <button ng-if="!example.showHeaderToast" type="button" class="btn btn-sm btn-outline-primary" ng-click="example.showHeaderToast = true" _content-04441e6d="">
+            Show toast again
+        </button>
+    </div>
+</div>

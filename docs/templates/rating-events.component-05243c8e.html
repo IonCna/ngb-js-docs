@@ -1,0 +1,9 @@
+<ngb-rating rate="example.selected" rate-change="example.setSelected($event)" hover="example.setHovered($event)" leave="example.setHovered(0)" readonly="example.readonly" _content-6205edb2=""></ngb-rating>
+<hr _content-6205edb2="">
+<dl class="row mb-3" _content-6205edb2="">
+    <dt class="col-auto" _content-6205edb2="">Selected</dt><dd class="col mb-0" _content-6205edb2="">{{ example.selected }}</dd>
+    <dt class="col-auto" _content-6205edb2="">Hovered</dt><dd class="col mb-0" _content-6205edb2="">{{ example.hovered }}</dd>
+</dl>
+<button type="button" class="btn btn-sm" ng-class="example.readonly ? 'btn-outline-danger' : 'btn-outline-success'" ng-click="example.readonly = !example.readonly" _content-6205edb2="">
+    {{ example.readonly ? 'Read-only' : 'Editable' }}
+</button>

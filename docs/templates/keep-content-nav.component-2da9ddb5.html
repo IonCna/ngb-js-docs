@@ -1,0 +1,22 @@
+<ul ngb-nav="" ng-ref="example.nav" ng-ref-read="ngbNav" active-id="example.activeId" destroy-on-hide="false" class="nav-tabs" _content-0baf86e3="">
+    <li ngb-nav-item="'keep-editor'" _content-0baf86e3="">
+        <button type="button" ngb-nav-link="" _content-0baf86e3="">Editor</button>
+        <ng-template ngb-nav-content="" _content-0baf86e3="">
+            <div class="pt-3" _content-0baf86e3="">
+                <label class="form-label" for="keep-content-draft" _content-0baf86e3="">Draft</label>
+                <input id="keep-content-draft" type="text" class="form-control" ng-model="example.draft" _content-0baf86e3="">
+            </div>
+        </ng-template>
+    </li>
+    <li ngb-nav-item="'keep-preview'" _content-0baf86e3="">
+        <button type="button" ngb-nav-link="" _content-0baf86e3="">Preview</button>
+        <ng-template ngb-nav-content="" _content-0baf86e3="">
+            <div class="pt-3" _content-0baf86e3="">
+                <p class="small text-body-secondary mb-1" _content-0baf86e3="">Current draft</p>
+                <p class="mb-0" _content-0baf86e3="">{{ example.draft }}</p>
+            </div>
+        </ng-template>
+    </li>
+</ul>
+
+<div ngb-nav-outlet="example.nav" _content-0baf86e3=""></div>

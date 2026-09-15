@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-modal-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/modal-api-page.component-fd058949.html`,styleUrl:`./modal-api-page.component.css`})],n);export{n as ModalApiPageComponent};

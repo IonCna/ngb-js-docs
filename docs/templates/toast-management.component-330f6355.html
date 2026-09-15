@@ -1,0 +1,14 @@
+<div class="d-flex flex-wrap gap-2 mb-3" _content-11b378cc="">
+    <button type="button" class="btn btn-primary" ng-click="example.showStandard()" _content-11b378cc="">Standard</button>
+    <button type="button" class="btn btn-success" ng-click="example.showSuccess()" _content-11b378cc="">Success</button>
+    <button type="button" class="btn btn-danger" ng-click="example.showDanger()" _content-11b378cc="">Danger</button>
+    <button type="button" class="btn btn-outline-secondary" ng-click="example.toastService.clear()" ng-disabled="!example.toastService.toasts.length" _content-11b378cc="">Clear all</button>
+</div>
+
+<div class="toast-container position-static d-flex flex-column gap-2" aria-live="polite" aria-atomic="true" _content-11b378cc="">
+    <ngb-toast ng-repeat="toast in example.toastService.toasts track by toast.id" class="{{ toast.className }}" autohide="true" delay="toast.delay || 5000" hidden="example.toastService.remove(toast)" _content-11b378cc="">
+        {{ toast.body }}
+    </ngb-toast>
+
+    <p ng-if="!example.toastService.toasts.length" class="small text-body-secondary mb-0" _content-11b378cc="">No active toasts.</p>
+</div>

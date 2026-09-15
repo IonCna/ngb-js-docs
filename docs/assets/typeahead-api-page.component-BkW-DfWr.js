@@ -1,1 +1,0 @@
-import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-typeahead-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/typeahead-api-page.component-9f356bc2.html`,styleUrl:`./typeahead-api-page.component.css`})],n);export{n as TypeaheadApiPageComponent};

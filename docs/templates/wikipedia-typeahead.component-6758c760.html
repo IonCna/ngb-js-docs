@@ -1,0 +1,5 @@
+<label class="form-label" for="wikipedia-typeahead" _content-06c2dc65="">Search for a Wikipedia page</label>
+<input id="wikipedia-typeahead" type="text" class="form-control" ng-class="{ 'is-invalid': example.searchFailed }" ng-model="example.model" ngb-typeahead="example.search" placeholder="Wikipedia search" _content-06c2dc65="">
+<div class="form-text" ng-if="example.searching" _content-06c2dc65="">Searching…</div>
+<div class="invalid-feedback" ng-if="example.searchFailed" _content-06c2dc65="">Suggestions could not be loaded.</div>
+<p class="small text-body-secondary mt-2 mb-0" _content-06c2dc65="">Model: <strong _content-06c2dc65="">{{ example.model || 'empty' }}</strong></p>

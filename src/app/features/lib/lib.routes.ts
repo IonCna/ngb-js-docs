@@ -3,50 +3,7 @@ import { MenuAbstractPageComponent } from "@/core/layouts/pages/menu-abstract-pa
 
 export const routes: Routes = [
     {
-        path: "components/alert",
-        component: MenuAbstractPageComponent,
-        data: {
-            title: "Alert",
-            tabs: [
-                { name: "Examples", to: "/components/alert/examples" },
-                { name: "Api", to: "/components/alert/api" },
-            ],
-            externalLinks: {
-                bootstrap: "components/alerts/",
-                ngBootstrap: "components/alert/overview",
-            },
-        },
-        children: [
-            { path: "", pathMatch: "full", redirectTo: "examples" },
-            {
-                path: "examples",
-                data: {
-                    sections: [
-                        { id: "simple-alert", name: "Simple alert" },
-                        { id: "alert-closeable", name: "Closeable alerts" },
-                        { id: "self-closing-alert", name: "Self-closing alert" },
-                        { id: "alert-custom", name: "Custom alert" },
-                        { id: "alert-global", name: "Global configuration" },
-                    ],
-                },
-                loadComponent: () =>
-                    import("@/features/lib/pages/alert-examples-page/alert-examples-page.component").then(m => m.AlertExamplesPageComponent),
-            },
-            {
-                path: "api",
-                data: {
-                    sections: [
-                        { id: "ngb-alert", name: "NgbAlert" },
-                        { id: "ngb-alert-config", name: "NgbAlertConfig" },
-                    ],
-                },
-                loadComponent: () =>
-                    import("@/features/lib/pages/alert-api-page/alert-api-page.component").then(m => m.AlertApiPageComponent),
-            },
-        ],
-    },
-    {
-        path: "components/accordion",
+        path: "accordion",
         component: MenuAbstractPageComponent,
         data: {
             title: "Accordion",
@@ -95,7 +52,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/carousel",
+        path: "carousel",
         component: MenuAbstractPageComponent,
         data: {
             title: "Carousel",
@@ -138,7 +95,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/collapse",
+        path: "collapse",
         component: MenuAbstractPageComponent,
         data: {
             title: "Collapse",
@@ -179,7 +136,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/datepicker",
+        path: "datepicker",
         component: MenuAbstractPageComponent,
         data: {
             title: "Datepicker",
@@ -250,7 +207,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/dropdown",
+        path: "dropdown",
         component: MenuAbstractPageComponent,
         data: {
             title: "Dropdown",
@@ -300,7 +257,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/modal",
+        path: "modal",
         component: MenuAbstractPageComponent,
         data: {
             title: "Modal",
@@ -347,7 +304,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/nav",
+        path: "nav",
         component: MenuAbstractPageComponent,
         data: {
             title: "Nav",
@@ -397,7 +354,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/offcanvas",
+        path: "offcanvas",
         component: MenuAbstractPageComponent,
         data: {
             title: "Offcanvas",
@@ -442,7 +399,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/pagination",
+        path: "pagination",
         component: MenuAbstractPageComponent,
         data: {
             title: "Pagination",
@@ -487,7 +444,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/popover",
+        path: "popover",
         component: MenuAbstractPageComponent,
         data: {
             title: "Popover",
@@ -537,7 +494,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/progressbar",
+        path: "progressbar",
         component: MenuAbstractPageComponent,
         data: {
             title: "Progress bar",
@@ -583,7 +540,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/rating",
+        path: "rating",
         component: MenuAbstractPageComponent,
         data: {
             title: "Rating",
@@ -626,7 +583,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/scrollspy",
+        path: "scrollspy",
         component: MenuAbstractPageComponent,
         data: {
             title: "Scrollspy",
@@ -673,7 +630,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/timepicker",
+        path: "timepicker",
         component: MenuAbstractPageComponent,
         data: {
             title: "Timepicker",
@@ -720,7 +677,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/toast",
+        path: "toast",
         component: MenuAbstractPageComponent,
         data: {
             title: "Toast",
@@ -764,7 +721,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/tooltip",
+        path: "tooltip",
         component: MenuAbstractPageComponent,
         data: {
             title: "Tooltip",
@@ -812,7 +769,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: "components/typeahead",
+        path: "typeahead",
         component: MenuAbstractPageComponent,
         data: {
             title: "Typeahead",

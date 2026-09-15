@@ -1,1 +1,0 @@
-import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-timepicker-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/timepicker-api-page.component-6a20ccd7.html`,styleUrl:`./timepicker-api-page.component.css`})],n);export{n as TimepickerApiPageComponent};

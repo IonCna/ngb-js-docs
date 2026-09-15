@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-rating-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/rating-api-page.component-77ad3f92.html`,styleUrl:`./rating-api-page.component.css`})],n);export{n as RatingApiPageComponent};

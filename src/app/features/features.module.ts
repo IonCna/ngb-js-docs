@@ -1,10 +1,13 @@
-import { GuideModule } from "@/features/guide/guide.module"
 import { HomeModule } from "@/features/home/home.module"
-import { LibModule } from "@/features/lib/lib.module"
 import {NgModule} from "ngjs-core";
+import { RouterModule } from "ngjs-core/router"
+import {routes} from "@/features/features.routes";
 
 @NgModule({
     id: "docs.features",
-    imports: [GuideModule, HomeModule, LibModule]
+    imports: [
+        HomeModule,
+        RouterModule.forChild(routes)
+    ]
 })
 export class FeaturesModule {}

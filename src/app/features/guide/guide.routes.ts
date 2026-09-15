@@ -3,7 +3,7 @@ import { MenuAbstractPageComponent } from "@/core/layouts/pages/menu-abstract-pa
 
 export const routes: Routes = [
     {
-        path: "guide",
+        path: "",
         component: MenuAbstractPageComponent,
         children: [
             { path: "", pathMatch: "full", redirectTo: "introduction" },

@@ -1,0 +1,16 @@
+<form name="example.form" novalidate="" _content-35fae89b="">
+    <ngb-rating rate="example.rating" rate-change="example.setRating($event)" ng-disabled="example.disabled" _content-35fae89b=""></ngb-rating>
+    <input class="visually-hidden" type="number" name="rating" ng-model="example.rating" min="1" required="" ng-disabled="example.disabled" tabindex="-1" aria-hidden="true" _content-35fae89b="">
+
+    <p class="small mt-2 mb-3" ng-class="example.form.rating.$valid ? 'text-success' : 'text-danger'" _content-35fae89b="">
+        {{ example.form.rating.$valid ? 'Thanks!' : 'Please rate us' }}
+    </p>
+
+    <p _content-35fae89b="">Model: <strong _content-35fae89b="">{{ example.rating === null ? 'null' : example.rating }}</strong></p>
+    <div class="d-flex flex-wrap gap-2" _content-35fae89b="">
+        <button type="button" class="btn btn-sm" ng-class="example.disabled ? 'btn-outline-danger' : 'btn-outline-success'" ng-click="example.disabled = !example.disabled" _content-35fae89b="">
+            {{ example.disabled ? 'Control disabled' : 'Control enabled' }}
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-primary" ng-click="example.clear()" _content-35fae89b="">Clear</button>
+    </div>
+</form>

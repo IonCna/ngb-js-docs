@@ -1,1 +1,0 @@
-import{d as e,f as t}from"./index-B9XAkpig.js";var n=class{};n=e([t({selector:`docs-datepicker-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/datepicker-api-page.component-7360e621.html`,styleUrl:`./datepicker-api-page.component.css`})],n);export{n as DatepickerApiPageComponent};

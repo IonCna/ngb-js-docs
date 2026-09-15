@@ -1,0 +1,7 @@
+<ng-template ng-ref="example.customDay" let-date="" let-data="data" let-selected="selected" let-today="today" let-focused="focused" _content-cd8369c1="">
+    <span class="day" ng-class="{ selected: selected, today: today, weekend: data.weekend, focused: focused }" _content-cd8369c1="">
+        {{ date.day }}
+        <i ng-if="today" class="bi bi-dot" aria-hidden="true" _content-cd8369c1=""></i>
+    </span>
+</ng-template>
+<ngb-datepicker ng-model="example.date" day-template="example.customDay" day-template-data="example.dayData" _content-cd8369c1=""></ngb-datepicker>

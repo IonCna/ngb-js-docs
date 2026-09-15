@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-why-ngb-js-page`,templateUrl:`/ngb-js-docs/templates/why-ngbjs-page.component-858bb1ed.html`,styleUrl:`./why-ngbjs-page.component.css`})],n);export{n as WhyNgbJsPageComponent};

@@ -1,0 +1,11 @@
+<ng-template ng-ref="example.resultTemplate" let-result="result" let-term="term" _content-b132d5b9="">
+    <span class="d-flex align-items-center gap-2" _content-b132d5b9="">
+        <span class="fs-5" aria-hidden="true" _content-b132d5b9="">{{ result.flag }}</span>
+        <span class="flex-grow-1" _content-b132d5b9=""><ngb-highlight result="result.name" term="term" _content-b132d5b9=""></ngb-highlight></span>
+        <small class="text-body-secondary" _content-b132d5b9="">{{ result.region }}</small>
+    </span>
+</ng-template>
+
+<label class="form-label" for="template-results-typeahead" _content-b132d5b9="">Search for a country</label>
+<input id="template-results-typeahead" type="text" class="form-control" ng-model="example.model" ngb-typeahead="example.search" result-template="example.resultTemplate" input-formatter="example.formatter" placeholder="Try Mexico" _content-b132d5b9="">
+<pre class="mt-3 mb-0" _content-b132d5b9="">Model: {{ example.model | json }}</pre>

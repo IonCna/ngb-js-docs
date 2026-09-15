@@ -1,0 +1,29 @@
+<aside class="position-sticky top-0 px-4 py-4" _content-4979fabb="">
+    <nav ngb-scroll-spy-menu="" aria-label="On this page" _content-4979fabb="">
+        <h2 class="small fw-semibold text-body-secondary mb-2" _content-4979fabb="">On this page</h2>
+
+        <div class="nav nav-underline flex-column align-items-start" _content-4979fabb="">
+            <button class="nav-link rounded-0 px-0 py-1 text-start small" type="button" ng-repeat="section in $.sections track by section.id" ngb-scroll-spy-item="section.id" _content-4979fabb="">
+                {{ section.name }}
+            </button>
+        </div>
+    </nav>
+
+    <div ng-if="$.bootstrapHref || $.ngBootstrapHref" _content-4979fabb="">
+        <hr class="my-3" _content-4979fabb="">
+
+        <h2 class="small fw-semibold text-body-secondary mb-2" _content-4979fabb="">Official references</h2>
+
+        <nav class="nav flex-column" aria-label="Related documentation" _content-4979fabb="">
+            <a class="nav-link d-flex align-items-center gap-2 px-0 py-1 small" ng-if="$.bootstrapHref" ng-href="{{ $.bootstrapHref }}" target="_blank" rel="noopener noreferrer" _content-4979fabb="">
+                <span _content-4979fabb="">Bootstrap documentation</span>
+                <i class="bi bi-box-arrow-up-right small" aria-hidden="true" _content-4979fabb=""></i>
+            </a>
+
+            <a class="nav-link d-flex align-items-center gap-2 px-0 py-1 small" ng-if="$.ngBootstrapHref" ng-href="{{ $.ngBootstrapHref }}" target="_blank" rel="noopener noreferrer" _content-4979fabb="">
+                <span _content-4979fabb="">ng-bootstrap documentation</span>
+                <i class="bi bi-box-arrow-up-right small" aria-hidden="true" _content-4979fabb=""></i>
+            </a>
+        </nav>
+    </div>
+</aside>

@@ -1,0 +1,21 @@
+<div class="d-flex flex-column align-items-start gap-3" _content-c58b0b21="">
+    <ngb-timepicker ng-model="example.time" seconds="true" hour-step="example.hourStep" minute-step="example.minuteStep" second-step="example.secondStep" _content-c58b0b21=""></ngb-timepicker>
+
+    <div class="row g-3 align-self-stretch" _content-c58b0b21="">
+        <div class="col-sm-4" _content-c58b0b21="">
+            <label class="form-label small" for="timepicker-hour-step" _content-c58b0b21="">Hour step</label>
+            <input id="timepicker-hour-step" class="form-control form-control-sm" type="number" min="1" ng-model="example.hourStep" _content-c58b0b21="">
+        </div>
+        <div class="col-sm-4" _content-c58b0b21="">
+            <label class="form-label small" for="timepicker-minute-step" _content-c58b0b21="">Minute step</label>
+            <input id="timepicker-minute-step" class="form-control form-control-sm" type="number" min="1" ng-model="example.minuteStep" _content-c58b0b21="">
+        </div>
+        <div class="col-sm-4" _content-c58b0b21="">
+            <label class="form-label small" for="timepicker-second-step" _content-c58b0b21="">Second step</label>
+            <input id="timepicker-second-step" class="form-control form-control-sm" type="number" min="1" ng-model="example.secondStep" _content-c58b0b21="">
+        </div>
+    </div>
+
+    <hr class="w-100 my-0" _content-c58b0b21="">
+    <pre class="w-100 mb-0" _content-c58b0b21="">Selected time: {{ example.time | json }}</pre>
+</div>

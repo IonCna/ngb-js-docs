@@ -1,0 +1,8 @@
+<ng-template ng-ref="example.footer" _content-ec7197aa="">
+    <div class="d-flex gap-2 p-2 border-top bg-body-tertiary" _content-ec7197aa="">
+        <button type="button" class="btn btn-primary btn-sm" ng-click="example.today()" _content-ec7197aa="">Today</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm ms-auto" ng-click="example.clear()" _content-ec7197aa="">Clear</button>
+    </div>
+</ng-template>
+<ngb-datepicker ng-model="example.date" footer-template="example.footer" ng-ref="example.datepicker" ng-ref-read="ngbDatepicker" _content-ec7197aa=""></ngb-datepicker>
+<p class="small text-body-secondary mt-3 mb-0" _content-ec7197aa="">Selected date: <code _content-ec7197aa="">{{ example.date | json }}</code></p>

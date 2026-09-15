@@ -1,0 +1,1 @@
+import{r as e,t}from"./decorate-U3LoYfOr.js";var n=class{};n=t([e({selector:`docs-datepicker-api-page`,controllerAs:`$`,templateUrl:`/ngb-js-docs/templates/datepicker-api-page.component-2aaa27ef.html`,styleUrl:`./datepicker-api-page.component.css`})],n);export{n as DatepickerApiPageComponent};

@@ -2,9 +2,7 @@ import { NgModule } from "ngjs-core";
 import { RouterModule } from "ngjs-core/router"
 import { routes } from "@/features/lib/lib.routes"
 
-import { AlertCloseableComponent } from "@/features/lib/components/alert-closeable/alert-closeable.component"
-import { AlertCustomComponent } from "@/features/lib/components/alert-custom/alert-custom.component"
-import { AlertGlobalComponent } from "@/features/lib/components/alert-global/alert-global.component"
+
 import { AccordionContentComponent } from "@/features/lib/components/accordion-content/accordion-content.component"
 import { AccordionCustomHeaderComponent } from "@/features/lib/components/accordion-custom-header/accordion-custom-header.component"
 import { AccordionGlobalComponent } from "@/features/lib/components/accordion-global/accordion-global.component"
@@ -149,9 +147,6 @@ import { WikipediaSearchService, WikipediaTypeaheadComponent } from "@/features/
         GreekTimepickerI18n,
     ],
     declarations: [
-        AlertCloseableComponent,
-        AlertCustomComponent,
-        AlertGlobalComponent,
         AccordionContentComponent,
         AccordionCustomHeaderComponent,
         AccordionGlobalComponent,

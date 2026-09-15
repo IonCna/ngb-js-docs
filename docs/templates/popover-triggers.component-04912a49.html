@@ -1,0 +1,12 @@
+<p class="mb-3" _content-34060dee="">Custom events can be paired as <code _content-34060dee="">mouseenter:mouseleave</code>.</p>
+<button type="button" class="btn btn-outline-secondary mb-4" ngb-popover="'Shown while the pointer is over the trigger'" popover-title="'Hover trigger'" triggers="'mouseenter:mouseleave'" _content-34060dee="">
+    Hover over me
+</button>
+
+<p class="mb-3" _content-34060dee="">A manual trigger delegates opening and closing to application code.</p>
+<div class="d-flex flex-wrap gap-2" _content-34060dee="">
+    <button type="button" class="btn btn-outline-primary" ngb-popover="'Manually controlled content'" popover-title="'Manual popover'" triggers="'manual'" auto-close="false" ng-ref="example.manual" ng-ref-read="ngbPopover" ng-click="example.manual.open()" _content-34060dee="">
+        Open popover
+    </button>
+    <button type="button" class="btn btn-outline-primary" ng-click="example.manual.close()" _content-34060dee="">Close popover</button>
+</div>
