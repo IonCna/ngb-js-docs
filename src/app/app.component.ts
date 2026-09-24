@@ -7,5 +7,5 @@ import { TitleService } from "@/core/services/title.service";
     template: "<ui-view></ui-view>",
 })
 export class AppComponent {
-    constructor(_scrollService: ScrollService, _titleService: TitleService) {}
+    //constructor(_scrollService: ScrollService, _titleService: TitleService) {}
 }

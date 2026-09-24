@@ -1,0 +1,34 @@
+{
+  "version": "1",
+  "root": ".",
+  "projectType": "library",
+  "sourceRoot": "src",
+  "prefix": "app",
+  "architect": {
+    "build": {
+      "options": {
+        "entryPoints": {
+          "index": "src/index.ts"
+        },
+        "outputPath": "dist"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "test": {
+      "options": {
+        "include": [
+          "src/**/*.spec.ts"
+        ]
+      }
+    }
+  }
+}

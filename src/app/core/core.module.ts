@@ -29,27 +29,7 @@ import { ScrollService } from "@/core/services/scroll.service"
 import { SearchService } from "@/core/services/search.service"
 
 @NgModule({
-    id: "docs.core",
     imports: [LayoutModule],
-    providers: [
-        { provide: THEME_STORAGE_KEY, useValue: "theme" },
-        { provide: LANGUAGE_STORAGE_KEY, useValue: "language" },
-        { provide: THEMES_ENUM, useValue: Themes },
-        { provide: SEARCH_DOCUMENTS, useValue: documents },
-
-        { provide: BOOTSTRAP_URL, useValue: bootstrapUrlFactory({ url: "https://getbootstrap.com", version: 5.3 }) },
-        { provide: NG_BOOTSTRAP_URL, useValue: ngBootstrapUrlFactory({ url: "https://ng-bootstrap.github.io" }) },
-
-        { provide: THEME, useFactory: themeFactory, deps: [THEME_STORAGE_KEY] },
-        { provide: LANGUAGE, useFactory: languageFactory, deps: [LANGUAGE_STORAGE_KEY] },
-        { provide: INDEXING, useFactory: buildSearchIndex, deps: [LANGUAGE, SEARCH_DOCUMENTS] },
-
-        ThemeService,
-        LanguageService,
-        MenuService,
-        TitleService,
-        ScrollService,
-        SearchService,
-    ],
+    providers: [],
 })
 export class CoreModule {}
