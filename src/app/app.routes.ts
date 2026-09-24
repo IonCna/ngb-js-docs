@@ -1,12 +1,12 @@
 import type { Routes } from "ngjs-core/router"
 import {MenuAbstractPageComponent} from "@/core/layouts/pages/menu-abstract-page/menu-abstract-page.component";
+import { HomePageComponent } from "@/features/home/pages/home-page/home-page.component"
 
 export const routes: Routes = [
     {
         path: "",
         pathMatch: "full",
-        loadComponent: () =>
-            import("@/features/home/pages/home-page/home-page.component").then(m => m.HomePageComponent),
+        component: HomePageComponent
     },
     {
       path: "",

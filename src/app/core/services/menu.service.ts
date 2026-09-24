@@ -1,16 +1,18 @@
-import { Inject, Injectable } from "ngjs-core";
+import { Injectable } from "ngjs-core";
 import { Subject } from "rxjs";
 
-import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas/compat"
+import { NgbOffcanvas } from "ngb-js/offcanvas"
 import { MenuComponent } from "@/core/layouts/components/menu/menu.component"
 
-@Injectable({ id: "core.menu.service" })
+@Injectable({ providedIn: "root" })
 export class MenuService {
     private _isOpen = false;
     private _change = new Subject<boolean>();
     public onChange$ = this._change.asObservable();
 
-    constructor(@Inject(NGB_OFFCANVAS) private readonly offCanvasService: NgbOffcanvas) {}
+    constructor(
+        private readonly offCanvasService: NgbOffcanvas
+    ) {}
 
     public toggleMenu() {
         if (this._isOpen || this.offCanvasService.hasOpenOffcanvas()) {

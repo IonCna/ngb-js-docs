@@ -1,5 +1,5 @@
 import { Component, DOCUMENT, Inject, type OnDestroy, type OnInit } from "ngjs-core";
-import { NGB_MODAL, NgbModal } from "ngb-js/modal/compat"
+import { NgbModal } from "ngb-js/modal"
 import { ThemeService } from "@/core/services/theme.service"
 import { type Themes } from "@/core/constants/themes.constant.ts";
 import { THEMES_ENUM } from "@/core/tokens"
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public readonly brandLogoLightUrl = brandLogoLightUrl
 
     constructor(
-        @Inject(NGB_MODAL) private readonly modalService: NgbModal,
+        private readonly modalService: NgbModal,
         public readonly themeService: ThemeService,
         @Inject(THEMES_ENUM) public readonly themes: typeof Themes,
         public readonly menuService: MenuService,

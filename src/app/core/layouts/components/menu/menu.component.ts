@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, type AfterViewInit } from "ngjs-core";
-import { NgbOffcanvasRef } from "ngb-js/offcanvas/compat"
+import { NgbOffcanvasRef } from "ngb-js/offcanvas"
 
 type MenuModes = "desktop" | "mobile";
 

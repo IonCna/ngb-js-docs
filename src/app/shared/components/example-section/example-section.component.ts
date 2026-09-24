@@ -3,7 +3,6 @@ import { Component, Input } from "ngjs-core";
 @Component({
     selector: "docs-example-section",
     controllerAs: "example",
-    transclude: true,
     templateUrl: "./example-section.component.html",
     styleUrl: "./example-section.component.css",
 })

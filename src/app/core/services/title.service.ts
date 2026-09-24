@@ -3,7 +3,7 @@ import { ReplaySubject } from "rxjs";
 import { ActivatedRoute, Router } from "ngjs-core/router";
 import type { HeadingData } from "@/core/models/title.model.ts";
 
-@Injectable({ id: "docs.title.service" })
+@Injectable({ providedIn: "root" })
 export class TitleService {
     private _transition = new ReplaySubject<HeadingData>(1)
     public transition$ = this._transition.asObservable()
