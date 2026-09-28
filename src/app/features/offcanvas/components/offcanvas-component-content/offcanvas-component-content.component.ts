@@ -1,6 +1,6 @@
-import { Component, Inject } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { OffcanvasDemoContentComponent } from "@/features/offcanvas/components/offcanvas-demo-content/offcanvas-demo-content.component"
-import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
+import { NgbOffcanvas } from "ngb-js/offcanvas";
 
 @Component({
     selector: "docs-offcanvas-component-content",
@@ -11,7 +11,7 @@ import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
 export class OffcanvasComponentContentComponent {
     public lastResult = "No result yet";
 
-    constructor(@Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas) {}
+    constructor(private readonly offcanvas: NgbOffcanvas) {}
 
     public async open() {
         const offcanvasRef = await this.offcanvas.open(OffcanvasDemoContentComponent);

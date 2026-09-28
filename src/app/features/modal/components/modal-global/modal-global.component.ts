@@ -1,6 +1,6 @@
-import { Component, Inject, type OnDestroy } from "ngjs-core";
+import { Component, type OnDestroy } from "ngjs-core";
 import { ModalDemoContentComponent } from "@/features/modal/components/modal-demo-content/modal-demo-content.component"
-import { NgbModal, NgbModalConfig, NGB_MODAL, NGB_MODAL_CONFIG } from "ngb-js/modal";
+import { NgbModal, NgbModalConfig } from "ngb-js/modal";
 
 @Component({
     selector: "docs-modal-global",
@@ -12,8 +12,8 @@ export class ModalGlobalComponent implements OnDestroy {
     private readonly initialConfig: Pick<NgbModalConfig, "backdrop" | "centered" | "keyboard" | "size">;
 
     constructor(
-        @Inject(NGB_MODAL) private readonly modal: NgbModal,
-        @Inject(NGB_MODAL_CONFIG) private readonly config: NgbModalConfig,
+        private readonly modal: NgbModal,
+        private readonly config: NgbModalConfig,
     ) {
         this.initialConfig = {
             backdrop: config.backdrop,

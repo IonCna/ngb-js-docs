@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbTooltipConfig, NGB_TOOLTIP_CONFIG } from "ngb-js/tooltip";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbTooltipConfig } from "ngb-js/tooltip";
 
 @Component({
     selector: "docs-tooltip-global",
@@ -10,7 +10,7 @@ import { NgbTooltipConfig, NGB_TOOLTIP_CONFIG } from "ngb-js/tooltip";
 export class TooltipGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbTooltipConfig, "container" | "openDelay" | "placement" | "triggers">;
 
-    constructor(@Inject(NGB_TOOLTIP_CONFIG) private readonly config: NgbTooltipConfig) {
+    constructor(private readonly config: NgbTooltipConfig) {
         this.initialConfig = {
             container: config.container,
             openDelay: config.openDelay,

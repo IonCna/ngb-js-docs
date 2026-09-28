@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "ngjs-core";
-import { NgbDropdown } from "ngb-js/dropdown/compat";
+import { NgbDropdown } from "ngb-js/dropdown";
 
 @Component({
     selector: "docs-manual-dropdown",

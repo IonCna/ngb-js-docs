@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbTypeaheadConfig, NGB_TYPEAHEAD_CONFIG } from "ngb-js/typeahead";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbTypeaheadConfig } from "ngb-js/typeahead";
 import { debounceTime, distinctUntilChanged, map, type OperatorFunction } from "rxjs";
 
 const STATES = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii"];
@@ -14,7 +14,7 @@ export class TypeaheadGlobalComponent implements AfterViewInit, OnDestroy {
     public model = "";
     private readonly initialConfig: Pick<NgbTypeaheadConfig, "container" | "selectOnExact" | "showHint">;
 
-    constructor(@Inject(NGB_TYPEAHEAD_CONFIG) private readonly config: NgbTypeaheadConfig) {
+    constructor(private readonly config: NgbTypeaheadConfig) {
         this.initialConfig = {
             container: config.container,
             selectOnExact: config.selectOnExact,

@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbRatingConfig, NGB_RATING_CONFIG } from "ngb-js/rating";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbRatingConfig } from "ngb-js/rating";
 
 @Component({
     selector: "docs-rating-global",
@@ -10,7 +10,7 @@ import { NgbRatingConfig, NGB_RATING_CONFIG } from "ngb-js/rating";
 export class RatingGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbRatingConfig, "max" | "readonly" | "resettable" | "tabindex">;
 
-    constructor(@Inject(NGB_RATING_CONFIG) private readonly config: NgbRatingConfig) {
+    constructor(private readonly config: NgbRatingConfig) {
         this.initialConfig = {
             max: config.max,
             readonly: config.readonly,

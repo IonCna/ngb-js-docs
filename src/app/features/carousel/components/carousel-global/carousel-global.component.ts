@@ -1,5 +1,5 @@
-import { Component, Inject, type OnDestroy } from "ngjs-core";
-import { NgbCarouselConfig, NGB_CAROUSEL_CONFIG } from "ngb-js/carousel";
+import { Component, type OnDestroy } from "ngjs-core";
+import { NgbCarouselConfig } from "ngb-js/carousel";
 
 @Component({
     selector: "docs-carousel-global",
@@ -13,7 +13,7 @@ export class CarouselGlobalComponent implements OnDestroy {
         "animation" | "interval" | "wrap" | "pauseOnFocus" | "pauseOnHover" | "showNavigationArrows"
     >;
 
-    constructor(@Inject(NGB_CAROUSEL_CONFIG) private readonly config: NgbCarouselConfig) {
+    constructor(private readonly config: NgbCarouselConfig) {
         this.initialConfig = {
             animation: config.animation,
             interval: config.interval,

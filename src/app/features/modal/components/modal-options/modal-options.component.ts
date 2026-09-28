@@ -1,6 +1,6 @@
-import { Component, Inject } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { ModalDemoContentComponent } from "@/features/modal/components/modal-demo-content/modal-demo-content.component"
-import { NgbModal, type NgbModalOptions, NGB_MODAL } from "ngb-js/modal";
+import { NgbModal, type NgbModalOptions } from "ngb-js/modal";
 
 @Component({
     selector: "docs-modal-options",
@@ -9,7 +9,7 @@ import { NgbModal, type NgbModalOptions, NGB_MODAL } from "ngb-js/modal";
     styleUrl: "./modal-options.component.css",
 })
 export class ModalOptionsComponent {
-    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
+    constructor(private readonly modal: NgbModal) {}
 
     public openCustomWindow() {
         this.open("Custom window class", { windowClass: "window" });

@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbNavConfig, NGB_NAV_CONFIG } from "ngb-js/nav";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbNavConfig } from "ngb-js/nav";
 
 @Component({
     selector: "docs-nav-global",
@@ -15,7 +15,7 @@ export class NavGlobalComponent implements AfterViewInit, OnDestroy {
         "animation" | "destroyOnHide" | "keyboard" | "orientation" | "roles"
     >;
 
-    constructor(@Inject(NGB_NAV_CONFIG) private readonly config: NgbNavConfig) {
+    constructor(private readonly config: NgbNavConfig) {
         this.initialConfig = {
             animation: config.animation,
             destroyOnHide: config.destroyOnHide,

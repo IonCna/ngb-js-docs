@@ -1,6 +1,6 @@
-import { Component, Inject } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { ModalStackedContentComponent } from "@/features/modal/components/modal-stacked-content/modal-stacked-content.component"
-import { NgbModal, NGB_MODAL } from "ngb-js/modal";
+import { NgbModal } from "ngb-js/modal";
 
 @Component({
     selector: "docs-modal-stacked",
@@ -9,7 +9,7 @@ import { NgbModal, NGB_MODAL } from "ngb-js/modal";
     styleUrl: "./modal-stacked.component.css",
 })
 export class ModalStackedComponent {
-    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
+    constructor(private readonly modal: NgbModal) {}
 
     public async openStack() {
         for (let level = 1; level <= 3; level++) {

@@ -1,5 +1,5 @@
-import { Component, Inject, type OnDestroy } from "ngjs-core";
-import { NgbDropdownConfig, NGB_DROPDOWN_CONFIG } from "ngb-js/dropdown";
+import { Component, type OnDestroy } from "ngjs-core";
+import { NgbDropdownConfig } from "ngb-js/dropdown";
 
 @Component({
     selector: "docs-dropdown-global",
@@ -10,7 +10,7 @@ import { NgbDropdownConfig, NGB_DROPDOWN_CONFIG } from "ngb-js/dropdown";
 export class DropdownGlobalComponent implements OnDestroy {
     private readonly initialConfig: Pick<NgbDropdownConfig, "autoClose" | "container" | "placement">;
 
-    constructor(@Inject(NGB_DROPDOWN_CONFIG) private readonly config: NgbDropdownConfig) {
+    constructor(private readonly config: NgbDropdownConfig) {
         this.initialConfig = {
             autoClose: config.autoClose,
             container: config.container,

@@ -22,7 +22,6 @@ import {RangeDatepickerComponent} from "@/features/datepicker/components/range-d
 import {RangePopupDatepickerComponent} from "@/features/datepicker/components/range-popup-datepicker/range-popup-datepicker.component.ts";
 
 @NgModule({
-    id: "docs.datepicker",
     declarations: [
         BasicDatepickerComponent,
         DatepickerCustomAdapterComponent,

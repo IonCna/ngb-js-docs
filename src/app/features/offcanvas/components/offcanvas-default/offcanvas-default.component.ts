@@ -1,5 +1,5 @@
-import { Component, Inject, TemplateRef, ViewChild } from "ngjs-core";
-import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
+import { Component, TemplateRef, ViewChild } from "ngjs-core";
+import { NgbOffcanvas } from "ngb-js/offcanvas";
 
 @Component({
     selector: "docs-offcanvas-default",
@@ -11,7 +11,7 @@ export class OffcanvasDefaultComponent {
     @ViewChild("content", { read: TemplateRef, static: true })
     private content!: TemplateRef<unknown>;
 
-    constructor(@Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas) {}
+    constructor(private readonly offcanvas: NgbOffcanvas) {}
 
     public open() {
         this.offcanvas.open(this.content);

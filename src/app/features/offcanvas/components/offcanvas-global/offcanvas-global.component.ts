@@ -1,6 +1,6 @@
-import { Component, Inject, type OnDestroy } from "ngjs-core";
+import { Component, type OnDestroy } from "ngjs-core";
 import { OffcanvasDemoContentComponent } from "@/features/offcanvas/components/offcanvas-demo-content/offcanvas-demo-content.component"
-import { NgbOffcanvas, NgbOffcanvasConfig, NGB_OFFCANVAS, NGB_OFFCANVAS_CONFIG } from "ngb-js/offcanvas";
+import { NgbOffcanvas, NgbOffcanvasConfig } from "ngb-js/offcanvas";
 
 @Component({
     selector: "docs-offcanvas-global",
@@ -15,8 +15,8 @@ export class OffcanvasGlobalComponent implements OnDestroy {
     >;
 
     constructor(
-        @Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas,
-        @Inject(NGB_OFFCANVAS_CONFIG) private readonly config: NgbOffcanvasConfig,
+        private readonly offcanvas: NgbOffcanvas,
+        private readonly config: NgbOffcanvasConfig,
     ) {
         this.initialConfig = {
             backdrop: config.backdrop,

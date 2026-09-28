@@ -1,6 +1,6 @@
-import { Component, Inject } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { OffcanvasDemoContentComponent } from "@/features/offcanvas/components/offcanvas-demo-content/offcanvas-demo-content.component"
-import { NgbOffcanvas, type NgbOffcanvasOptions, NGB_OFFCANVAS } from "ngb-js/offcanvas";
+import { NgbOffcanvas, type NgbOffcanvasOptions } from "ngb-js/offcanvas";
 
 @Component({
     selector: "docs-offcanvas-options",
@@ -9,7 +9,7 @@ import { NgbOffcanvas, type NgbOffcanvasOptions, NGB_OFFCANVAS } from "ngb-js/of
     styleUrl: "./offcanvas-options.component.css",
 })
 export class OffcanvasOptionsComponent {
-    constructor(@Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas) {}
+    constructor(private readonly offcanvas: NgbOffcanvas) {}
 
     public openCustomPanel() {
         this.open({ panelClass: "panel" });

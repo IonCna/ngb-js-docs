@@ -10,6 +10,11 @@
         "entryPoints": {
           "index": "src/index.ts"
         },
+        "styles": [
+          { "input": "node_modules/bootstrap/dist/css/bootstrap.min.css" },
+          { "input": "node_modules/bootstrap-icons/font/bootstrap-icons.css" },
+          { "input": "src/style.css" }
+        ],
         "outputPath": "dist"
       },
       "configurations": {

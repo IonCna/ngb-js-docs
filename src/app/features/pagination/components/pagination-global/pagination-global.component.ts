@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbPaginationConfig, NGB_PAGINATION_CONFIG } from "ngb-js/pagination";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbPaginationConfig } from "ngb-js/pagination";
 
 @Component({
     selector: "docs-pagination-global",
@@ -15,7 +15,7 @@ export class PaginationGlobalComponent implements AfterViewInit, OnDestroy {
         "boundaryLinks" | "directionLinks" | "maxSize" | "rotate" | "size"
     >;
 
-    constructor(@Inject(NGB_PAGINATION_CONFIG) private readonly config: NgbPaginationConfig) {
+    constructor(private readonly config: NgbPaginationConfig) {
         this.initialConfig = {
             boundaryLinks: config.boundaryLinks,
             directionLinks: config.directionLinks,

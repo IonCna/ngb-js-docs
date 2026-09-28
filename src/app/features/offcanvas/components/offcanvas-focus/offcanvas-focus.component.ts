@@ -1,6 +1,6 @@
-import { Component, Inject } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { OffcanvasFocusContentComponent } from "@/features/offcanvas/components/offcanvas-focus-content/offcanvas-focus-content.component"
-import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
+import { NgbOffcanvas } from "ngb-js/offcanvas";
 
 @Component({
     selector: "docs-offcanvas-focus",
@@ -9,7 +9,7 @@ import { NgbOffcanvas, NGB_OFFCANVAS } from "ngb-js/offcanvas";
     styleUrl: "./offcanvas-focus.component.css",
 })
 export class OffcanvasFocusComponent {
-    constructor(@Inject(NGB_OFFCANVAS) private readonly offcanvas: NgbOffcanvas) {}
+    constructor(private readonly offcanvas: NgbOffcanvas) {}
 
     public openDefaultFocus() {
         this.offcanvas.open(OffcanvasFocusContentComponent, {

@@ -1,5 +1,5 @@
-import { Component, Inject, TemplateRef, ViewChild } from "ngjs-core";
-import { NgbModal, NGB_MODAL } from "ngb-js/modal";
+import { Component, TemplateRef, ViewChild } from "ngjs-core";
+import { NgbModal } from "ngb-js/modal";
 
 @Component({
     selector: "docs-modal-default",
@@ -11,7 +11,7 @@ export class ModalDefaultComponent {
     @ViewChild("content", { read: TemplateRef, static: true })
     private content!: TemplateRef<unknown>;
 
-    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
+    constructor(private readonly modal: NgbModal) {}
 
     public open() {
         this.modal.open(this.content);

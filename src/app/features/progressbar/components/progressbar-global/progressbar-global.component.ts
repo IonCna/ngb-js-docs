@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbProgressbarConfig, NGB_PROGRESSBAR_CONFIG } from "ngb-js/progressbar";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbProgressbarConfig } from "ngb-js/progressbar";
 
 @Component({
     selector: "docs-progressbar-global",
@@ -10,7 +10,7 @@ import { NgbProgressbarConfig, NGB_PROGRESSBAR_CONFIG } from "ngb-js/progressbar
 export class ProgressbarGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbProgressbarConfig, "animated" | "height" | "max" | "showValue" | "striped" | "textType" | "type">;
 
-    constructor(@Inject(NGB_PROGRESSBAR_CONFIG) private readonly config: NgbProgressbarConfig) {
+    constructor(private readonly config: NgbProgressbarConfig) {
         this.initialConfig = {
             animated: config.animated,
             height: config.height,

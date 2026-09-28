@@ -1,5 +1,5 @@
-import { Component, Inject, type AfterViewInit, type OnDestroy } from "ngjs-core";
-import { NgbPopoverConfig, NGB_POPOVER_CONFIG } from "ngb-js/popover";
+import { Component, type AfterViewInit, type OnDestroy } from "ngjs-core";
+import { NgbPopoverConfig } from "ngb-js/popover";
 
 @Component({
     selector: "docs-popover-global",
@@ -10,7 +10,7 @@ import { NgbPopoverConfig, NGB_POPOVER_CONFIG } from "ngb-js/popover";
 export class PopoverGlobalComponent implements AfterViewInit, OnDestroy {
     private readonly initialConfig: Pick<NgbPopoverConfig, "container" | "openDelay" | "placement" | "triggers">;
 
-    constructor(@Inject(NGB_POPOVER_CONFIG) private readonly config: NgbPopoverConfig) {
+    constructor(private readonly config: NgbPopoverConfig) {
         this.initialConfig = {
             container: config.container,
             openDelay: config.openDelay,

@@ -1,6 +1,6 @@
-import { Component, Inject } from "ngjs-core";
+import { Component } from "ngjs-core";
 import { ModalDemoContentComponent } from "@/features/modal/components/modal-demo-content/modal-demo-content.component"
-import { NgbModal, NGB_MODAL } from "ngb-js/modal";
+import { NgbModal } from "ngb-js/modal";
 
 @Component({
     selector: "docs-modal-component-content",
@@ -11,7 +11,7 @@ import { NgbModal, NGB_MODAL } from "ngb-js/modal";
 export class ModalComponentContentComponent {
     public lastResult = "No result yet";
 
-    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
+    constructor(private readonly modal: NgbModal) {}
 
     public async open() {
         const modalRef = await this.modal.open(ModalDemoContentComponent, {

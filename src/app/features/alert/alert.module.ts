@@ -13,7 +13,6 @@ import { NgbCollapseModule } from "ngb-js/collapse"
 import {SimpleAlertComponent} from "@/features/alert/components/simple-alert/simple-alert.component.ts";
 
 @NgModule({
-    id: "docs.alert",
     declarations: [
         AlertCloseableComponent,
         AlertCustomComponent,

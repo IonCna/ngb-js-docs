@@ -1,5 +1,5 @@
-import { Component, Inject, Input } from "ngjs-core";
-import { NgbModal, type NgbActiveModal, NGB_MODAL } from "ngb-js/modal";
+import { Component, Input } from "ngjs-core";
+import { NgbModal, type NgbActiveModal } from "ngb-js/modal";
 
 @Component({
     selector: "docs-modal-stacked-content",
@@ -11,7 +11,7 @@ export class ModalStackedContentComponent {
     @Input({ required: true }) ngbActiveModal!: NgbActiveModal;
     @Input() level = 1;
 
-    constructor(@Inject(NGB_MODAL) private readonly modal: NgbModal) {}
+    constructor(private readonly modal: NgbModal) {}
 
     public dismissAll() {
         this.modal.dismissAll("Dismiss all");
