@@ -1,7 +1,7 @@
 <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
-    <button type="button" class="btn btn-sm btn-outline-primary" ng-click="example.start()" ng-disabled="example.running">Start</button>
-    <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="example.stop()" ng-disabled="!example.running">Stop</button>
-    <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="example.toggleFinish()" ng-disabled="!example.running">
+    <button type="button" class="btn btn-sm btn-outline-primary" ng-click="example.start()" disabled="example.running">Start</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="example.stop()" disabled="!example.running">Stop</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="example.toggleFinish()" disabled="!example.running">
         {{ example.observingFinish ? 'Unobserve' : 'Observe' }} finish
     </button>
     <span class="small text-body-secondary ms-sm-auto">

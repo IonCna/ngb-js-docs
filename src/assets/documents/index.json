@@ -262,11 +262,11 @@
       "translations": {
         "en_us": {
           "title": "NgbAccordionItem",
-          "content": "Directive Represents one collapsible item. It owns the item id and collapsed state, applies per-item destroyOnHide behavior and emits the item lifecycle events. Markup <div ngb-accordion-item=\"'details'\"> Requires An ancestor ngb-accordion ; optionally reads ng-disabled . Inputs Input Binding Type Default Description ngb-accordion-item <? string Generated id Expression that identifies the item in the parent accordion. collapsed <? boolean true Controls the initial and current collapsed state. destroy-on-hide <? boolean Inherited Overrides the parent accordion setting for this item. ng-disabled ngDisabled boolean false Prevents the item's trigger from changing its state. Outputs Output Binding Payload Emitted when show &? None This item starts expanding. shown &? None This item finishes expanding. hide &? None This item starts collapsing. hidden &? None This item finishes collapsing."
+          "content": "Directive Represents one collapsible item. It owns the item id and collapsed state, applies per-item destroyOnHide behavior and emits the item lifecycle events. Markup <div ngb-accordion-item=\"'details'\"> Requires An ancestor ngb-accordion ; optionally reads disabled . Inputs Input Binding Type Default Description ngb-accordion-item <? string Generated id Expression that identifies the item in the parent accordion. collapsed <? boolean true Controls the initial and current collapsed state. destroy-on-hide <? boolean Inherited Overrides the parent accordion setting for this item. disabled <? boolean false Prevents the item's trigger from changing its state. Outputs Output Binding Payload Emitted when show &? None This item starts expanding. shown &? None This item finishes expanding. hide &? None This item starts collapsing. hidden &? None This item finishes collapsing."
         },
         "es_mx": {
           "title": "NgbAccordionItem",
-          "content": "Referencia del directiva NgbAccordionItem. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbAccordionItem, destroyOnHide, <div ngb-accordion-item=\"'details'\">, ngb-accordion, ng-disabled, ngb-accordion-item, <?, string, collapsed, boolean, true, destroy-on-hide, ngDisabled, false, show, &?, shown, hide, hidden."
+          "content": "Referencia del directiva NgbAccordionItem. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbAccordionItem, destroyOnHide, <div ngb-accordion-item=\"'details'\">, ngb-accordion, disabled, ngb-accordion-item, <?, string, collapsed, boolean, true, destroy-on-hide, false, show, &?, shown, hide, hidden."
         }
       }
     },
@@ -292,11 +292,11 @@
       "translations": {
         "en_us": {
           "title": "NgbAccordionButton",
-          "content": "Directive Provides the standard Bootstrap accordion trigger. It configures the button type, classes and ARIA state, respects ng-disabled and toggles its containing item when clicked. Markup <button ngb-accordion-button> Requires Ancestor controllers for ngb-accordion-item and ngb-accordion . No public inputs or outputs."
+          "content": "Directive Provides the standard Bootstrap accordion trigger. It configures the button type, classes and ARIA state, respects the item disabled state and toggles its containing item when clicked. Markup <button ngb-accordion-button> Requires Ancestor controllers for ngb-accordion-item and ngb-accordion . No public inputs or outputs."
         },
         "es_mx": {
           "title": "NgbAccordionButton",
-          "content": "Referencia del directiva NgbAccordionButton. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbAccordionButton, ng-disabled, <button ngb-accordion-button>, ngb-accordion-item, ngb-accordion."
+          "content": "Referencia del directiva NgbAccordionButton. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbAccordionButton, disabled, <button ngb-accordion-button>, ngb-accordion-item, ngb-accordion."
         }
       }
     },
@@ -457,11 +457,11 @@
       "translations": {
         "en_us": {
           "title": "NgbDatepicker",
-          "content": "Component Renders an inline calendar and integrates its selected date with AngularJS forms. Markup <ngb-datepicker ng-model=\"date\"> Integration Optionally reads ng-model and ng-disabled . Inputs Input Binding Default Description calendar <? NgbCalendarGregorian Calendar system used for date arithmetic. date-adapter <? NgbDateStructAdapter Converts between the model and NgbDateStruct . i18n <? NgbDatepickerI18nDefault Supplies localized labels. display-months <? 1 Number of visible months. first-day-of-week <? 1 First weekday, from 1 (Monday) to 7 (Sunday). min-date , max-date <? undefined Selectable date boundaries. start-date <? undefined Initial month displayed when no model is selected. navigation @? \"select\" Accepts \"select\" , \"arrows\" or \"none\" . outside-days @? \"visible\" Controls days outside the current month. weekdays <? \"narrow\" Controls weekday labels and width. show-week-numbers <? false Displays week numbers. mark-disabled <? undefined Function that disables individual dates. day-template , footer-template , content-template <? Built-in templates Customize calendar rendering. day-template-data <? undefined Supplies custom data to day templates. Outputs Output Payload Emitted when date-select $event: NgbDate A date is selected. navigate $event: NgbDatepickerNavigateEvent The visible month changes."
+          "content": "Component Renders an inline calendar and integrates its selected date with AngularJS forms. Markup <ngb-datepicker ng-model=\"date\"> Integration Optionally reads ng-model and disabled . Inputs Input Binding Default Description calendar <? NgbCalendarGregorian Calendar system used for date arithmetic. date-adapter <? NgbDateStructAdapter Converts between the model and NgbDateStruct . i18n <? NgbDatepickerI18nDefault Supplies localized labels. display-months <? 1 Number of visible months. first-day-of-week <? 1 First weekday, from 1 (Monday) to 7 (Sunday). min-date , max-date <? undefined Selectable date boundaries. start-date <? undefined Initial month displayed when no model is selected. navigation @? \"select\" Accepts \"select\" , \"arrows\" or \"none\" . outside-days @? \"visible\" Controls days outside the current month. weekdays <? \"narrow\" Controls weekday labels and width. show-week-numbers <? false Displays week numbers. mark-disabled <? undefined Function that disables individual dates. day-template , footer-template , content-template <? Built-in templates Customize calendar rendering. day-template-data <? undefined Supplies custom data to day templates. Outputs Output Payload Emitted when date-select $event: NgbDate A date is selected. navigate $event: NgbDatepickerNavigateEvent The visible month changes."
         },
         "es_mx": {
           "title": "NgbDatepicker",
-          "content": "Referencia del componente NgbDatepicker. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbDatepicker, <ngb-datepicker ng-model=\"date\">, ng-model, ng-disabled, calendar, <?, NgbCalendarGregorian, date-adapter, NgbDateStructAdapter, NgbDateStruct, i18n, NgbDatepickerI18nDefault, display-months, 1, first-day-of-week, min-date, max-date, undefined, start-date, navigation, @?, \"select\", \"arrows\", \"none\", outside-days, \"visible\", weekdays, \"narrow\", show-week-numbers, false, mark-disabled, day-template, footer-template, content-template, day-template-data, date-select, $event: NgbDate, navigate, $event: NgbDatepickerNavigateEvent."
+          "content": "Referencia del componente NgbDatepicker. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbDatepicker, <ngb-datepicker ng-model=\"date\">, ng-model, disabled, calendar, <?, NgbCalendarGregorian, date-adapter, NgbDateStructAdapter, NgbDateStruct, i18n, NgbDatepickerI18nDefault, display-months, 1, first-day-of-week, min-date, max-date, undefined, start-date, navigation, @?, \"select\", \"arrows\", \"none\", outside-days, \"visible\", weekdays, \"narrow\", show-week-numbers, false, mark-disabled, day-template, footer-template, content-template, day-template-data, date-select, $event: NgbDate, navigate, $event: NgbDatepickerNavigateEvent."
         }
       }
     },
@@ -472,11 +472,11 @@
       "translations": {
         "en_us": {
           "title": "NgbInputDatepicker",
-          "content": "Directive Adds a popup calendar to an input while preserving AngularJS model parsing and validation. Markup <input ng-model=\"date\" ngb-datepicker> Requires ng-model ; optionally reads ng-disabled . Accepts the calendar inputs above plus the popup-specific inputs below. Popup inputs Input Binding Default Description auto-close <? true Controls which selections or outside clicks close the popup. container @? null Accepts \"body\" to move the popup. placement <? $config.placement Preferred Popper placements. popper-options <? $config.popperOptions Transforms Popper options. position-target <? Input element Overrides the positioning target. restore-focus <? true Restores focus after closing. datepicker-class @? - Adds a class to the popup calendar. parser-formatter <? NgbDateISOParserFormatter Parses and formats the input text. disabled <? false Disables input behavior. Additional output Output Payload Emitted when closed None The popup calendar closes."
+          "content": "Directive Adds a popup calendar to an input while preserving AngularJS model parsing and validation. Markup <input ng-model=\"date\" ngb-datepicker> Requires ng-model ; optionally reads disabled . Accepts the calendar inputs above plus the popup-specific inputs below. Popup inputs Input Binding Default Description auto-close <? true Controls which selections or outside clicks close the popup. container @? null Accepts \"body\" to move the popup. placement <? $config.placement Preferred Popper placements. popper-options <? $config.popperOptions Transforms Popper options. position-target <? Input element Overrides the positioning target. restore-focus <? true Restores focus after closing. datepicker-class @? - Adds a class to the popup calendar. parser-formatter <? NgbDateISOParserFormatter Parses and formats the input text. disabled <? false Disables input behavior. Additional output Output Payload Emitted when closed None The popup calendar closes."
         },
         "es_mx": {
           "title": "NgbInputDatepicker",
-          "content": "Referencia del directiva NgbInputDatepicker. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbInputDatepicker, <input ng-model=\"date\" ngb-datepicker>, ng-model, ng-disabled, auto-close, <?, true, container, @?, null, \"body\", placement, $config.placement, popper-options, $config.popperOptions, position-target, restore-focus, datepicker-class, parser-formatter, NgbDateISOParserFormatter, disabled, false, closed."
+          "content": "Referencia del directiva NgbInputDatepicker. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbInputDatepicker, <input ng-model=\"date\" ngb-datepicker>, ng-model, disabled, auto-close, <?, true, container, @?, null, \"body\", placement, $config.placement, popper-options, $config.popperOptions, position-target, restore-focus, datepicker-class, parser-formatter, NgbDateISOParserFormatter, disabled, false, closed."
         }
       }
     },
@@ -697,11 +697,11 @@
       "translations": {
         "en_us": {
           "title": "NgbDropdownItem",
-          "content": "Directive Marks an interactive menu entry and integrates with ng-disabled . Markup <button ngb-dropdown-item> Inputs Input Binding Type Default Description tabindex <? string | number 0 Sets the enabled tab order. ng-disabled ngDisabled boolean false Disables focus and activation."
+          "content": "Directive Marks an interactive menu entry and supports disabled . Markup <button ngb-dropdown-item> Inputs Input Binding Type Default Description tabindex <? string | number 0 Sets the enabled tab order. disabled <? boolean false Disables focus and activation."
         },
         "es_mx": {
           "title": "NgbDropdownItem",
-          "content": "Referencia del directiva NgbDropdownItem. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbDropdownItem, ng-disabled, <button ngb-dropdown-item>, tabindex, <?, string | number, 0, ngDisabled, boolean, false."
+          "content": "Referencia del directiva NgbDropdownItem. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbDropdownItem, disabled, <button ngb-dropdown-item>, tabindex, <?, string | number, 0, boolean, false."
         }
       }
     },
@@ -802,11 +802,11 @@
       "translations": {
         "en_us": {
           "title": "NgbNavItem",
-          "content": "Directive Defines one selectable item and its associated content. Markup <li ngb-nav-item=\"overview\"> Requires An ancestor ngb-nav ; optionally reads ng-disabled . Bindings Name Binding Default Description ngb-nav-item @? Generated id Identifies the item. dom-id @? Generated id Overrides the DOM id. destroy-on-hide <? Inherited Overrides panel lifecycle for this item. shown , hidden &? - Item-level panel lifecycle callbacks."
+          "content": "Directive Defines one selectable item and its associated content. Markup <li ngb-nav-item=\"overview\"> Requires An ancestor ngb-nav ; optionally reads disabled . Bindings Name Binding Default Description ngb-nav-item @? Generated id Identifies the item. dom-id @? Generated id Overrides the DOM id. destroy-on-hide <? Inherited Overrides panel lifecycle for this item. shown , hidden &? - Item-level panel lifecycle callbacks."
         },
         "es_mx": {
           "title": "NgbNavItem",
-          "content": "Referencia del directiva NgbNavItem. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbNavItem, <li ngb-nav-item=\"overview\">, ngb-nav, ng-disabled, ngb-nav-item, @?, dom-id, destroy-on-hide, <?, shown, hidden, &?."
+          "content": "Referencia del directiva NgbNavItem. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbNavItem, <li ngb-nav-item=\"overview\">, ngb-nav, disabled, ngb-nav-item, @?, dom-id, destroy-on-hide, <?, shown, hidden, &?."
         }
       }
     },
@@ -937,11 +937,11 @@
       "translations": {
         "en_us": {
           "title": "NgbPagination",
-          "content": "Component Builds accessible page navigation for a collection. Markup <ngb-pagination collection-size=\"total\" page=\"page\"> Integration Optionally reads ng-disabled . Inputs Input Binding Type Default Description collection-size < number Required Total number of collection items. page <? number 1 Current page. page-size <? number 10 Items represented by each page. max-size <? number 0 Maximum number of visible page links; zero is unlimited. boundary-links <? boolean false Shows first and last links. direction-links <? boolean true Shows previous and next links. ellipses <? boolean true Shows ellipses for omitted ranges. rotate <? boolean false Centers the current page within the visible range. size <? string | null $config.size Sets the Bootstrap pagination size. ng-disabled ngDisabled boolean false Disables page navigation. Outputs Output Binding Payload Emitted when page-change &? $event: number The user selects a page."
+          "content": "Component Builds accessible page navigation for a collection. Markup <ngb-pagination collection-size=\"total\" page=\"page\"> Integration Optionally reads disabled . Inputs Input Binding Type Default Description collection-size < number Required Total number of collection items. page <? number 1 Current page. page-size <? number 10 Items represented by each page. max-size <? number 0 Maximum number of visible page links; zero is unlimited. boundary-links <? boolean false Shows first and last links. direction-links <? boolean true Shows previous and next links. ellipses <? boolean true Shows ellipses for omitted ranges. rotate <? boolean false Centers the current page within the visible range. size <? string | null $config.size Sets the Bootstrap pagination size. disabled <? boolean false Disables page navigation. Outputs Output Binding Payload Emitted when page-change &? $event: number The user selects a page."
         },
         "es_mx": {
           "title": "NgbPagination",
-          "content": "Referencia del componente NgbPagination. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbPagination, <ngb-pagination collection-size=\"total\" page=\"page\">, ng-disabled, collection-size, <, number, page, <?, 1, page-size, 10, max-size, 0, boundary-links, boolean, false, direction-links, true, ellipses, rotate, size, string | null, $config.size, ngDisabled, page-change, &?, $event: number."
+          "content": "Referencia del componente NgbPagination. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbPagination, <ngb-pagination collection-size=\"total\" page=\"page\">, disabled, collection-size, <, number, page, <?, 1, page-size, 10, max-size, 0, boundary-links, boolean, false, direction-links, true, ellipses, rotate, size, string | null, $config.size, page-change, &?, $event: number."
         }
       }
     },
@@ -1042,11 +1042,11 @@
       "translations": {
         "en_us": {
           "title": "NgbRating",
-          "content": "Component Provides an accessible keyboard-driven rating control with customizable stars. Markup <ngb-rating rate=\"rating\"> Integration Optionally reads ng-disabled . Inputs Input Binding Type Default Description rate <? number 0 Current rating value. max <? number 10 Maximum number of rating items. readonly <? boolean false Prevents user changes. resettable <? boolean false Allows selecting the current value again to reset to zero. star-template <? TemplateRef Default star Provides custom item markup. tabindex <? number | string 0 Sets keyboard tab order. aria-value-text <? function Built-in formatter Formats the accessible value text. ng-disabled ngDisabled boolean false Disables interaction and focus. Outputs Output Binding Payload Emitted when rate-change &? $event: number The interactive rating changes. hover &? $event: number A rating item is hovered. leave &? $event: number The pointer leaves the rating."
+          "content": "Component Provides an accessible keyboard-driven rating control with customizable stars. Markup <ngb-rating rate=\"rating\"> Integration Optionally reads disabled . Inputs Input Binding Type Default Description rate <? number 0 Current rating value. max <? number 10 Maximum number of rating items. readonly <? boolean false Prevents user changes. resettable <? boolean false Allows selecting the current value again to reset to zero. star-template <? TemplateRef Default star Provides custom item markup. tabindex <? number | string 0 Sets keyboard tab order. aria-value-text <? function Built-in formatter Formats the accessible value text. disabled <? boolean false Disables interaction and focus. Outputs Output Binding Payload Emitted when rate-change &? $event: number The interactive rating changes. hover &? $event: number A rating item is hovered. leave &? $event: number The pointer leaves the rating."
         },
         "es_mx": {
           "title": "NgbRating",
-          "content": "Referencia del componente NgbRating. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbRating, <ngb-rating rate=\"rating\">, ng-disabled, rate, <?, number, 0, max, 10, readonly, boolean, false, resettable, star-template, TemplateRef, tabindex, number | string, aria-value-text, function, ngDisabled, rate-change, &?, $event: number, hover, leave."
+          "content": "Referencia del componente NgbRating. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbRating, <ngb-rating rate=\"rating\">, disabled, rate, <?, number, 0, max, 10, readonly, boolean, false, resettable, star-template, TemplateRef, tabindex, number | string, aria-value-text, function, rate-change, &?, $event: number, hover, leave."
         }
       }
     },
@@ -1162,11 +1162,11 @@
       "translations": {
         "en_us": {
           "title": "NgbTimepicker",
-          "content": "Component Edits a time value through AngularJS forms with optional spinners, seconds and meridian mode. Markup <ngb-timepicker ng-model=\"time\"> Requires ng-model ; optionally reads ng-disabled . Inputs Input Binding Type Default Description meridian <? boolean false uses a 12-hour clock with period selector. spinners <? boolean true Shows increment and decrement controls. seconds <? boolean false Shows the seconds field. hour-step <? number 1 Hours changed per step. minute-step <? number 1 Minutes changed per step. second-step <? number 1 Seconds changed per step. readonly-inputs <? boolean false Makes text fields readonly while keeping spinner controls active. size <? \"small\" | \"medium\" | \"large\" \"medium\" Sets the control size. ng-disabled ngDisabled boolean $config.disabled Disables the timepicker."
+          "content": "Component Edits a time value through AngularJS forms with optional spinners, seconds and meridian mode. Markup <ngb-timepicker ng-model=\"time\"> Requires ng-model ; optionally reads disabled . Inputs Input Binding Type Default Description meridian <? boolean false uses a 12-hour clock with period selector. spinners <? boolean true Shows increment and decrement controls. seconds <? boolean false Shows the seconds field. hour-step <? number 1 Hours changed per step. minute-step <? number 1 Minutes changed per step. second-step <? number 1 Seconds changed per step. readonly-inputs <? boolean false Makes text fields readonly while keeping spinner controls active. size <? \"small\" | \"medium\" | \"large\" \"medium\" Sets the control size. disabled <? boolean $config.disabled Disables the timepicker."
         },
         "es_mx": {
           "title": "NgbTimepicker",
-          "content": "Referencia del componente NgbTimepicker. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbTimepicker, <ngb-timepicker ng-model=\"time\">, ng-model, ng-disabled, meridian, <?, boolean, false, spinners, true, seconds, hour-step, number, 1, minute-step, second-step, readonly-inputs, size, \"small\" | \"medium\" | \"large\", \"medium\", ngDisabled, $config.disabled."
+          "content": "Referencia del componente NgbTimepicker. Documenta su marcado, configuracion, entradas, salidas, propiedades, metodos y comportamiento. Terminos de API: NgbTimepicker, <ngb-timepicker ng-model=\"time\">, ng-model, disabled, meridian, <?, boolean, false, spinners, true, seconds, hour-step, number, 1, minute-step, second-step, readonly-inputs, size, \"small\" | \"medium\" | \"large\", \"medium\", $config.disabled."
         }
       }
     },
@@ -1687,11 +1687,11 @@
       "translations": {
         "en_us": {
           "title": "Disabled datepicker",
-          "content": "Drive the disabled state through AngularJS ng-disabled."
+          "content": "Drive the disabled state through the disabled binding."
         },
         "es_mx": {
           "title": "Disabled datepicker",
-          "content": "Ejemplo de datepicker: Drive the disabled state through AngularJS ng-disabled."
+          "content": "Ejemplo de datepicker: Drive the disabled state through the disabled binding."
         }
       }
     },
@@ -1867,11 +1867,11 @@
       "translations": {
         "en_us": {
           "title": "Disabled items",
-          "content": "Use ng-disabled to update disabled dropdown items dynamically."
+          "content": "Use disabled to update disabled dropdown items dynamically."
         },
         "es_mx": {
           "title": "Disabled items",
-          "content": "Ejemplo de dropdown: Use ng-disabled to update disabled dropdown items dynamically."
+          "content": "Ejemplo de dropdown: Use disabled to update disabled dropdown items dynamically."
         }
       }
     },
@@ -2317,11 +2317,11 @@
       "translations": {
         "en_us": {
           "title": "Disabled pagination",
-          "content": "Disable every pagination action through the ng-disabled directive."
+          "content": "Disable every pagination action through the disabled input."
         },
         "es_mx": {
           "title": "Disabled pagination",
-          "content": "Ejemplo de pagination: Disable every pagination action through the ng-disabled directive."
+          "content": "Ejemplo de pagination: Disable every pagination action through the disabled input."
         }
       }
     },

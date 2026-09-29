@@ -1,5 +1,5 @@
 import { Component } from "ngjs-core";
-import type { NgbDateStruct } from "ngb-js/datepicker";
+import { NgbCalendar, type NgbDatepicker, type NgbDateStruct } from "ngb-js/datepicker";
 
 @Component({
     selector: "docs-basic-datepicker",
@@ -8,5 +8,13 @@ import type { NgbDateStruct } from "ngb-js/datepicker";
     styleUrl: "./basic-datepicker.component.css",
 })
 export class BasicDatepickerComponent {
-    public date: NgbDateStruct = { year: 2026, month: 8, day: 24 };
+    public today: NgbDateStruct;
+
+    public dp?: NgbDatepicker;
+    public model?: NgbDateStruct;
+    public date?: { year: number; month: number };
+
+    constructor(calendar: NgbCalendar) {
+        this.today = calendar.getToday();
+    }
 }

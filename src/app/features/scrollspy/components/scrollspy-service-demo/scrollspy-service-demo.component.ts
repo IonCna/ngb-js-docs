@@ -6,6 +6,7 @@ import { NgbScrollSpyService } from "ngb-js/scrollspy";
     controllerAs: "example",
     templateUrl: "./scrollspy-service-demo.component.html",
     styleUrl: "./scrollspy-service-demo.component.css",
+    providers: [NgbScrollSpyService],
 })
 export class ScrollspyServiceDemoComponent implements OnDestroy {
     public readonly fragments = ["service-introduction", "service-options", "service-finish"];
