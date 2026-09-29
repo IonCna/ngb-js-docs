@@ -14,5 +14,5 @@ import { TemplateResultsTypeaheadComponent } from "@/features/typeahead/componen
 import { TypeaheadGlobalComponent } from "@/features/typeahead/components/typeahead-global/typeahead-global.component";
 import { WikipediaSearchService, WikipediaTypeaheadComponent } from "@/features/typeahead/components/wikipedia-typeahead/wikipedia-typeahead.component";
 
-@NgModule({ id: "docs.typeahead", declarations: [ExactTypeaheadComponent, FocusTypeaheadComponent, FormattedTypeaheadComponent, NonEditableTypeaheadComponent, SimpleTypeaheadComponent, TemplateResultsTypeaheadComponent, TypeaheadGlobalComponent, WikipediaTypeaheadComponent], providers: [WikipediaSearchService], imports: [NgbTypeaheadModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
+@NgModule({ declarations: [ExactTypeaheadComponent, FocusTypeaheadComponent, FormattedTypeaheadComponent, NonEditableTypeaheadComponent, SimpleTypeaheadComponent, TemplateResultsTypeaheadComponent, TypeaheadGlobalComponent, WikipediaTypeaheadComponent], providers: [WikipediaSearchService], imports: [NgbTypeaheadModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
 export class TypeaheadModule {}

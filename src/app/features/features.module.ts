@@ -3,7 +3,6 @@ import { RouterModule } from "ngjs-core/router"
 import {routes} from "@/features/features.routes";
 
 @NgModule({
-    id: "docs.features",
     imports: [
         RouterModule.forChild(routes)
     ]

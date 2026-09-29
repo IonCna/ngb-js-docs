@@ -10,7 +10,6 @@ import { SimpleCollapseComponent } from "@/features/collapse/components/simple-c
 import { routes } from "@/features/collapse/collapse.routes"
 
 @NgModule({
-    id: "docs.collapse",
     declarations: [
         HorizontalCollapseComponent,
         NavbarCollapseComponent,

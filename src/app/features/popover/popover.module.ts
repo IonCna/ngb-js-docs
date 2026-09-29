@@ -21,7 +21,6 @@ import {PopoverTemplateComponent} from "@/features/popover/components/popover-te
 import {PopoverTriggersComponent} from "@/features/popover/components/popover-triggers/popover-triggers.component";
 
 @NgModule({
-    id: "docs.popover",
     declarations: [
         PopoverAutocloseComponent,
         PopoverBodyComponent,

@@ -10,5 +10,5 @@ import { NestedScrollspyComponent } from "@/features/scrollspy/components/nested
 import { ScrollspyMenuItemsComponent } from "@/features/scrollspy/components/scrollspy-menu-items/scrollspy-menu-items.component";
 import { ScrollspyServiceDemoComponent } from "@/features/scrollspy/components/scrollspy-service-demo/scrollspy-service-demo.component";
 
-@NgModule({ id: "docs.scrollspy", declarations: [BasicScrollspyComponent, NavbarScrollspyComponent, NestedScrollspyComponent, ScrollspyMenuItemsComponent, ScrollspyServiceDemoComponent], imports: [NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
+@NgModule({ declarations: [BasicScrollspyComponent, NavbarScrollspyComponent, NestedScrollspyComponent, ScrollspyMenuItemsComponent, ScrollspyServiceDemoComponent], imports: [NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
 export class ScrollspyModule {}

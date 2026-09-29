@@ -11,5 +11,5 @@ import { PreventAutohideToastComponent } from "@/features/toast/components/preve
 import { TemplateHeaderToastComponent } from "@/features/toast/components/template-header-toast/template-header-toast.component";
 import { DocsToastService, ToastManagementComponent } from "@/features/toast/components/toast-management/toast-management.component";
 
-@NgModule({ id: "docs.toast", declarations: [CloseableToastComponent, InlineToastComponent, PreventAutohideToastComponent, TemplateHeaderToastComponent, ToastManagementComponent], providers: [DocsToastService], imports: [NgbToastModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
+@NgModule({ declarations: [CloseableToastComponent, InlineToastComponent, PreventAutohideToastComponent, TemplateHeaderToastComponent, ToastManagementComponent], providers: [DocsToastService], imports: [NgbToastModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
 export class ToastModule {}

@@ -16,7 +16,6 @@ import {OffcanvasGlobalComponent} from "@/features/offcanvas/components/offcanva
 import {OffcanvasOptionsComponent} from "@/features/offcanvas/components/offcanvas-options/offcanvas-options.component";
 
 @NgModule({
-    id: "docs.offcanvas",
     declarations: [
         OffcanvasComponentContentComponent,
         OffcanvasDefaultComponent,

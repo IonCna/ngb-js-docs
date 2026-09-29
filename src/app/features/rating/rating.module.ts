@@ -13,7 +13,6 @@ import { RatingFormComponent } from "@/features/rating/components/rating-form/ra
 import { RatingGlobalComponent } from "@/features/rating/components/rating-global/rating-global.component";
 
 @NgModule({
-    id: "docs.rating",
     declarations: [BasicRatingComponent, RatingCustomTemplateComponent, RatingDecimalComponent, RatingEventsComponent, RatingFormComponent, RatingGlobalComponent],
     imports: [NgbRatingModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)],
 })

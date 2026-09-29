@@ -17,7 +17,6 @@ import {SimpleProgressbarComponent} from "@/features/progressbar/components/simp
 import {StripedProgressBarComponent} from "@/features/progressbar/components/striped-progress-bar/striped-progress-bar.component";
 
 @NgModule({
-    id: "docs.progressbar",
     declarations: [
         ContextualTextProgressbarComponent,
         CustomLabelsProgressbarComponent,

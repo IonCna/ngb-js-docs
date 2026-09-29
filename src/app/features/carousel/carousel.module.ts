@@ -14,7 +14,6 @@ import { CarouselKeyboardComponent } from "@/features/carousel/components/carous
 import { CarouselSimpleComponent } from "@/features/carousel/components/carousel-simple/carousel-simple.component"
 
 @NgModule({
-    id: "docs.carousel",
     declarations: [
         CarouselControlsComponent,
         CarouselGlobalComponent,

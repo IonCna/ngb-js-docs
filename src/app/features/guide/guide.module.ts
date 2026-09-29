@@ -6,7 +6,6 @@ import { NgbNavModule } from "ngb-js/nav"
 import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 
 @NgModule({
-    id: "docs.guide.module",
     imports: [
         NgbNavModule,
         NgbScrollSpyModule,

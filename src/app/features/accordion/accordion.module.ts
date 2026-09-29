@@ -18,7 +18,6 @@ import { OnePanelAccordionComponent } from "@/features/accordion/components/one-
 import {routes} from "@/features/accordion/accordion.routes.ts";
 
 @NgModule({
-    id: "docs.accordion",
     declarations: [
         AccordionContentComponent,
         AccordionCustomHeaderComponent,

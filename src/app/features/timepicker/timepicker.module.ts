@@ -14,5 +14,5 @@ import { TimepickerCustomStepsComponent } from "@/features/timepicker/components
 import { GreekTimepickerI18n, TimepickerI18nComponent } from "@/features/timepicker/components/timepicker-i18n/timepicker-i18n.component";
 import { TimepickerValidationComponent, TimepickerLunchValidatorDirective } from "@/features/timepicker/components/timepicker-validation/timepicker-validation.component";
 
-@NgModule({ id: "docs.timepicker", declarations: [BasicTimepickerComponent, MeridianTimepickerComponent, SecondsTimepickerComponent, SpinnersTimepickerComponent, TimepickerCustomAdapterComponent, TimepickerCustomStepsComponent, TimepickerI18nComponent, TimepickerValidationComponent, TimepickerLunchValidatorDirective], providers: [GreekTimepickerI18n], imports: [NgbTimepickerModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
+@NgModule({ declarations: [BasicTimepickerComponent, MeridianTimepickerComponent, SecondsTimepickerComponent, SpinnersTimepickerComponent, TimepickerCustomAdapterComponent, TimepickerCustomStepsComponent, TimepickerI18nComponent, TimepickerValidationComponent, TimepickerLunchValidatorDirective], providers: [GreekTimepickerI18n], imports: [NgbTimepickerModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
 export class TimepickerModule {}

@@ -16,5 +16,5 @@ import { TooltipPlacementsComponent } from "@/features/tooltip/components/toolti
 import { TooltipTemplateComponent } from "@/features/tooltip/components/tooltip-template/tooltip-template.component";
 import { TooltipTriggersComponent } from "@/features/tooltip/components/tooltip-triggers/tooltip-triggers.component";
 
-@NgModule({ id: "docs.tooltip", declarations: [TooltipAutocloseComponent, TooltipBodyComponent, TooltipContextComponent, TooltipCustomClassComponent, TooltipCustomTargetComponent, TooltipDelaysComponent, TooltipGlobalComponent, TooltipPlacementsComponent, TooltipTemplateComponent, TooltipTriggersComponent], imports: [NgbTooltipModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
+@NgModule({ declarations: [TooltipAutocloseComponent, TooltipBodyComponent, TooltipContextComponent, TooltipCustomClassComponent, TooltipCustomTargetComponent, TooltipDelaysComponent, TooltipGlobalComponent, TooltipPlacementsComponent, TooltipTemplateComponent, TooltipTriggersComponent], imports: [NgbTooltipModule, NgbScrollSpyModule, NgbNavModule, NgbCollapseModule, RouterModule.forChild(routes)] })
 export class TooltipModule {}

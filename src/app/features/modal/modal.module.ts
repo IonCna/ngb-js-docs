@@ -19,7 +19,6 @@ import {ModalUpdatableComponent} from "@/features/modal/components/modal-updatab
 import {ModalUpdatableContentComponent} from "@/features/modal/components/modal-updatable-content/modal-updatable-content.component";
 
 @NgModule({
-    id: "docs.modal",
     declarations: [
         ModalComponentContentComponent,
         ModalDefaultComponent,

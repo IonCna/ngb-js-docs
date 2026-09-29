@@ -15,7 +15,6 @@ import {SimpleNavComponent} from "@/features/nav/components/simple-nav/simple-na
 import {VerticalNavComponent} from "@/features/nav/components/vertical-nav/vertical-nav.component";
 
 @NgModule({
-    id: "docs.nav",
     declarations: [
         AlternativeNavComponent,
         CustomNavComponent,

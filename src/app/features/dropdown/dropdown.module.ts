@@ -18,7 +18,6 @@ import {ManualDropdownComponent} from "@/features/dropdown/components/manual-dro
 import {SimpleDropdownComponent} from "@/features/dropdown/components/simple-dropdown/simple-dropdown.component";
 
 @NgModule({
-    id: "docs.dropdown",
     declarations: [
         DropdownBodyComponent,
         DropdownButtonGroupsComponent,

@@ -16,7 +16,6 @@ import { NgbNavModule } from "ngb-js/nav"
 import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 
 @NgModule({
-    id: "docs.pagination",
     declarations: [
         AdvancedPaginationComponent,
         BasicPaginationComponent,
