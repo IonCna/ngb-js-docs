@@ -60,5 +60,29 @@ export const routes: Routes = [
         path: "progressbar",
         loadChildren: () =>
             import("@/features/progressbar/progressbar.module").then(m => m.ProgressbarModule)
+    },
+    {
+        path: "rating",
+        loadChildren: () => import("@/features/rating/rating.module").then(m => m.RatingModule)
+    },
+    {
+        path: "scrollspy",
+        loadChildren: () => import("@/features/scrollspy/scrollspy.module").then(m => m.ScrollspyModule)
+    },
+    {
+        path: "timepicker",
+        loadChildren: () => import("@/features/timepicker/timepicker.module").then(m => m.TimepickerModule)
+    },
+    {
+        path: "toast",
+        loadChildren: () => import("@/features/toast/toast.module").then(m => m.ToastModule)
+    },
+    {
+        path: "tooltip",
+        loadChildren: () => import("@/features/tooltip/tooltip.module").then(m => m.TooltipModule)
+    },
+    {
+        path: "typeahead",
+        loadChildren: () => import("@/features/typeahead/typeahead.module").then(m => m.TypeaheadModule)
     }
 ]

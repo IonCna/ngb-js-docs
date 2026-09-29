@@ -4,6 +4,7 @@ import {NgbPopoverModule} from "ngb-js/popover";
 
 import { NgbCollapseModule } from "ngb-js/collapse";
 import { NgbNavModule } from "ngb-js/nav";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 import {routes} from "@/features/popover/popover.routes";
 import {PopoverAutocloseComponent} from "@/features/popover/components/popover-autoclose/popover-autoclose.component";
@@ -38,6 +39,7 @@ import {PopoverTriggersComponent} from "@/features/popover/components/popover-tr
     imports: [
         NgbCollapseModule,
         NgbNavModule,
+        NgbScrollSpyModule,
         NgbPopoverModule,
         RouterModule.forChild(routes),
     ],

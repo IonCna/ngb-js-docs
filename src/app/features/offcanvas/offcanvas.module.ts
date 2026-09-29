@@ -4,6 +4,7 @@ import {NgbOffcanvasModule} from "ngb-js/offcanvas";
 
 import { NgbNavModule } from "ngb-js/nav";
 import { NgbCollapseModule } from "ngb-js/collapse";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 import {routes} from "@/features/offcanvas/offcanvas.routes";
 import {OffcanvasComponentContentComponent} from "@/features/offcanvas/components/offcanvas-component-content/offcanvas-component-content.component";
@@ -29,6 +30,7 @@ import {OffcanvasOptionsComponent} from "@/features/offcanvas/components/offcanv
         NgbOffcanvasModule,
         NgbNavModule,
         NgbCollapseModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes),
     ],
 })

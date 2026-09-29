@@ -4,6 +4,7 @@ import { NgbAccordionModule } from "ngb-js/accordion"
 import { NgbCollapseModule } from "ngb-js/collapse"
 import { NgbNavModule } from "ngb-js/nav"
 import { NgbTooltipModule } from "ngb-js/tooltip"
+import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 
 import { RouterModule } from "ngjs-core/router"
 
@@ -31,6 +32,7 @@ import {routes} from "@/features/accordion/accordion.routes.ts";
         NgbTooltipModule,
         NgbCollapseModule,
         NgbNavModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes)
     ],
 })

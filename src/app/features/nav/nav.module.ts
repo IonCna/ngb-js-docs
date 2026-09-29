@@ -2,6 +2,7 @@ import {NgModule} from "ngjs-core";
 import {RouterModule} from "ngjs-core/router";
 import {NgbNavModule} from "ngb-js/nav";
 import { NgbCollapseModule } from "ngb-js/collapse";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 import {routes} from "@/features/nav/nav.routes";
 import {AlternativeNavComponent} from "@/features/nav/components/alternative-nav/alternative-nav.component";
@@ -28,6 +29,7 @@ import {VerticalNavComponent} from "@/features/nav/components/vertical-nav/verti
     imports: [
         NgbCollapseModule,
         NgbNavModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes),
     ],
 })

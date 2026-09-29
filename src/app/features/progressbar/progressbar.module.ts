@@ -4,6 +4,7 @@ import {NgbProgressbarModule} from "ngb-js/progressbar";
 
 import { NgbNavModule } from "ngb-js/nav";
 import { NgbCollapseModule } from "ngb-js/collapse";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 
 import {routes} from "@/features/progressbar/progressbar.routes";
@@ -30,6 +31,7 @@ import {StripedProgressBarComponent} from "@/features/progressbar/components/str
         NgbProgressbarModule,
         NgbNavModule,
         NgbCollapseModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes),
     ],
 })

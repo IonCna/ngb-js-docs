@@ -5,6 +5,7 @@ import {routes} from "@/features/datepicker/datepicker.routes";
 import { NgbNavModule } from "ngb-js/nav"
 import { NgbDatepickerModule } from "ngb-js/datepicker"
 import { NgbCollapseModule } from "ngb-js/collapse"
+import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 
 import {BasicDatepickerComponent} from "@/features/datepicker/components/basic-datepicker/basic-datepicker.component.ts";
 import {DatepickerCustomAdapterComponent} from "@/features/datepicker/components/datepicker-custom-adapter/datepicker-custom-adapter.component.ts";
@@ -41,6 +42,7 @@ import {RangePopupDatepickerComponent} from "@/features/datepicker/components/ra
     imports: [
         NgbNavModule,
         NgbCollapseModule,
+        NgbScrollSpyModule,
         NgbDatepickerModule,
         RouterModule.forChild(routes)
     ]

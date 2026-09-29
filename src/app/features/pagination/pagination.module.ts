@@ -13,6 +13,7 @@ import {PaginationSizeComponent} from "@/features/pagination/components/paginati
 
 import { NgbCollapseModule } from "ngb-js/collapse"
 import { NgbNavModule } from "ngb-js/nav"
+import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 
 @NgModule({
     id: "docs.pagination",
@@ -28,6 +29,7 @@ import { NgbNavModule } from "ngb-js/nav"
     imports: [
         NgbCollapseModule,
         NgbNavModule,
+        NgbScrollSpyModule,
         NgbPaginationModule,
         RouterModule.forChild(routes),
     ],

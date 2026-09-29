@@ -10,6 +10,7 @@ import { SelfClosingAlertComponent } from "@/features/alert/components/self-clos
 import { NgbAlertModule } from "ngb-js/alert"
 import { NgbNavModule } from "ngb-js/nav"
 import { NgbCollapseModule } from "ngb-js/collapse"
+import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 import {SimpleAlertComponent} from "@/features/alert/components/simple-alert/simple-alert.component.ts";
 
 @NgModule({
@@ -24,6 +25,7 @@ import {SimpleAlertComponent} from "@/features/alert/components/simple-alert/sim
         NgbAlertModule,
         NgbNavModule,
         NgbCollapseModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes),
     ]
 })

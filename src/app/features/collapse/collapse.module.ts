@@ -1,6 +1,7 @@
 import { NgModule } from "ngjs-core";
 import { RouterModule } from "ngjs-core/router";
 import { NgbCollapseModule } from "ngb-js/collapse";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 import { HorizontalCollapseComponent } from "@/features/collapse/components/horizontal-collapse/horizontal-collapse.component"
 import { NavbarCollapseComponent } from "@/features/collapse/components/navbar-collapse/navbar-collapse.component"
@@ -17,6 +18,7 @@ import { routes } from "@/features/collapse/collapse.routes"
     ],
     imports: [
         NgbCollapseModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes)
     ]
 })

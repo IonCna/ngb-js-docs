@@ -4,6 +4,7 @@ import {NgbDropdownModule} from "ngb-js/dropdown";
 
 import { NgbCollapseModule } from "ngb-js/collapse";
 import { NgbNavModule } from "ngb-js/nav";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 
 import {routes} from "@/features/dropdown/dropdown.routes";
@@ -31,6 +32,7 @@ import {SimpleDropdownComponent} from "@/features/dropdown/components/simple-dro
     imports: [
         NgbCollapseModule,
         NgbNavModule,
+        NgbScrollSpyModule,
         NgbDropdownModule,
         RouterModule.forChild(routes),
     ],

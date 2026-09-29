@@ -3,6 +3,7 @@ import {RouterModule} from "ngjs-core/router";
 import {NgbModalModule} from "ngb-js/modal";
 import { NgbNavModule } from "ngb-js/nav";
 import { NgbCollapseModule } from "ngb-js/collapse";
+import { NgbScrollSpyModule } from "ngb-js/scrollspy";
 
 import {routes} from "@/features/modal/modal.routes";
 import {ModalComponentContentComponent} from "@/features/modal/components/modal-component-content/modal-component-content.component";
@@ -36,6 +37,7 @@ import {ModalUpdatableContentComponent} from "@/features/modal/components/modal-
         NgbModalModule,
         NgbNavModule,
         NgbCollapseModule,
+        NgbScrollSpyModule,
         RouterModule.forChild(routes),
     ],
 })
