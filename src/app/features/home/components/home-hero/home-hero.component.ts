@@ -1,19 +1,13 @@
-import type {IComponentController, IComponentOptions} from "angular";
-import brandIconUrl from "@/assets/brand/ngb-js-icon.png"
+import {Component} from "ngjs-core";
 
-export class HomeHeroComponent implements IComponentController {
+// En `public/`: relativo al `<base href>`, igual en `ngjs serve` y en la GitHub Page.
+const brandIconUrl = "brand/ngb-js-icon.png"
+
+@Component({
+    selector: "docs-home-hero",
+    templateUrl: "./home-hero.component.html",
+    styleUrl: "./home-hero.component.css"
+})
+export class HomeHeroComponent {
     public readonly brandIconUrl = brandIconUrl
-
-    static get $name() {
-        return "docsHomeHero"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controllerAs: "$",
-            controller: HomeHeroComponent,
-            templateUrl: "./home-hero.component.html",
-            styleUrl: "./home-hero.component.css",
-        }
-    }
 }

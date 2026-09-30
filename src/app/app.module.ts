@@ -1,22 +1,23 @@
-import angular from 'angular'
-import router from "@uirouter/angularjs"
-import { NgbModule } from "ngb-js"
-import { CoreModule as NgJsCoreModule } from "ngjs-core"
 import { AppComponent } from "@/app.component"
-import { routing } from "@/app.routes"
 
 import { CoreModule } from "@/core/core.module"
-import { SharedModule } from "@/shared/shared.module"
-import { FeaturesModule } from "@/features/features.module"
+import { HomeModule } from "@/features/home/home.module"
+import {NgModule} from "ngjs-core";
 
-export const AppModule = angular.module('docs', [
-    router,
-    CoreModule.name,
-    NgJsCoreModule.name,
-    NgbModule.name,
-    SharedModule.name,
-    FeaturesModule.name,
-])
+// import { SharedModule } from "@/shared/shared.module"
+// import { FeaturesModule } from "@/features/features.module"
+import { routes } from "@/app.routes"
+import {RouterModule} from "ngjs-core/router";
 
-AppModule.component(AppComponent.$name, AppComponent.$factory)
-AppModule.config(routing)
+@NgModule({
+    controllerAs: "$",
+    declarations: [AppComponent],
+    imports: [
+        CoreModule,
+        HomeModule,
+        RouterModule.forRoot(routes)
+    ],
+    bootstrap: [AppComponent]
+})
+
+export class RootModule { }

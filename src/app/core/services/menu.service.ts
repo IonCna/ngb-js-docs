@@ -1,14 +1,18 @@
-import {Subject} from "rxjs";
+import { Injectable } from "ngjs-core";
+import { Subject } from "rxjs";
 
-import { NgbOffcanvas } from "ngb-js"
+import { NgbOffcanvas } from "ngb-js/offcanvas"
 import { MenuComponent } from "@/core/layouts/components/menu/menu.component"
 
+@Injectable({ providedIn: "root" })
 export class MenuService {
     private _isOpen = false;
     private _change = new Subject<boolean>();
     public onChange$ = this._change.asObservable();
 
-    constructor(private offCanvasService: NgbOffcanvas) {}
+    constructor(
+        private readonly offCanvasService: NgbOffcanvas
+    ) {}
 
     public toggleMenu() {
         if (this._isOpen || this.offCanvasService.hasOpenOffcanvas()) {
@@ -17,7 +21,7 @@ export class MenuService {
 
         this._setOpenState(true)
 
-        this.offCanvasService.open(MenuComponent.$name, {
+        this.offCanvasService.open(MenuComponent, {
             bindings: { mode: "mobile" },
             ariaLabelledBy: "docs-mobile-menu-title",
             animation: true,
@@ -36,13 +40,5 @@ export class MenuService {
     private _setOpenState(isOpen: boolean) {
         this._isOpen = isOpen
         this._change.next(this._isOpen)
-    }
-
-    static get $inject() {
-        return [NgbOffcanvas.$name]
-    }
-
-    static get $name() {
-        return 'core.menu.service';
     }
 }

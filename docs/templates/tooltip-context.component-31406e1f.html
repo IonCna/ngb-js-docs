@@ -1,0 +1,11 @@
+<ng-template ng-ref="example.contentTemplate" let-greeting="greeting" _content-14a22f4e="">{{ greeting }}, <strong _content-14a22f4e="">{{ example.name }}</strong>!</ng-template>
+
+<p _content-14a22f4e="">Pass a different context each time a tooltip is opened manually.</p>
+<div class="d-flex flex-wrap gap-2 mb-4" _content-14a22f4e="">
+    <button type="button" class="btn btn-outline-secondary" ngb-tooltip="example.contentTemplate" triggers="manual" ng-ref="example.french" ng-ref-read="ngbTooltip" ng-click="example.toggleWithGreeting(example.french, 'Bonjour')" _content-14a22f4e="">French</button>
+    <button type="button" class="btn btn-outline-secondary" ngb-tooltip="example.contentTemplate" triggers="manual" ng-ref="example.german" ng-ref-read="ngbTooltip" ng-click="example.toggleWithGreeting(example.german, 'Guten Tag')" _content-14a22f4e="">German</button>
+    <button type="button" class="btn btn-outline-secondary" ngb-tooltip="example.contentTemplate" triggers="manual" ng-ref="example.english" ng-ref-read="ngbTooltip" ng-click="example.toggleWithGreeting(example.english, 'Hello')" _content-14a22f4e="">English</button>
+</div>
+
+<p _content-14a22f4e="">Alternatively, provide a default context through <code _content-14a22f4e="">tooltip-context</code>.</p>
+<button type="button" class="btn btn-outline-secondary" ngb-tooltip="example.contentTemplate" tooltip-context="{ greeting: 'Hola' }" _content-14a22f4e="">Spanish</button>

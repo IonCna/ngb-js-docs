@@ -1,46 +1,31 @@
-import type { IComponentController, IComponentOptions, ITimeoutService, IWindowService } from "angular";
+import {Component, Input} from "ngjs-core";
 
-export class CopyButtonComponent implements IComponentController {
+@Component({
+    selector: "docs-copy-button",
+    templateUrl: "./copy-button.component.html",
+    styleUrl: "./copy-button.component.css",
+})
+export class CopyButtonComponent {
+    @Input({ required: true })
     public value!: string;
+
+    @Input({ binding: "@" })
     public ariaLabel?: string;
+
+    @Input({ binding: "@" })
     public buttonClass?: string;
+
     public copied = false;
 
-    constructor(
-        private readonly $window: IWindowService,
-        private readonly $timeout: ITimeoutService,
-    ) {}
-
     public copy() {
-        void this.$window.navigator.clipboard.writeText(this.value).then(() => {
-            this.$timeout(() => {
-                this.copied = true;
-            });
+        window.navigator.clipboard.writeText(this.value).then(() => {
+            setTimeout(() => {
+                this.copied = true
+            })
 
-            this.$timeout(() => {
-                this.copied = false;
-            }, 2000);
+            setTimeout(() => {
+                this.copied = false
+            })
         });
-    }
-
-    static get $name() {
-        return "docsCopyButton"
-    }
-
-    static get $inject() {
-        return ["$window", "$timeout"]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            bindings: {
-                value: "<",
-                ariaLabel: "@?",
-                buttonClass: "@?",
-            },
-            controller: CopyButtonComponent,
-            controllerAs: "copyButton",
-            templateUrl: "./copy-button.component.html", styleUrl: "./copy-button.component.css",
-        }
     }
 }

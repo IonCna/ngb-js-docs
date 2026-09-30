@@ -1,15 +1,8 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import {Component} from "ngjs-core";
 
-export class WhyNgbJsPageComponent implements IComponentController {
-    static get $name() {
-        return "docsWhyNgbJsPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: WhyNgbJsPageComponent,
-            templateUrl: "./why-ngbjs-page.component.html", styleUrl: "./why-ngbjs-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-why-ngb-js-page",
+    templateUrl: "./why-ngbjs-page.component.html",
+    styleUrl: "./why-ngbjs-page.component.css"
+})
+export class WhyNgbJsPageComponent {}

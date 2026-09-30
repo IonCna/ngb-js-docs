@@ -1,7 +1,8 @@
-import angular, {type IComponentController, type IComponentOptions, type IDocumentService} from "angular";
-import {NgbModal} from "ngb-js"
-import {ThemeService} from "@/core/services/theme.service"
-import {ThemeEnumConstant, type Themes} from "@/core/constants/themes.constant.ts";
+import { Component, DOCUMENT, Inject, type OnDestroy, type OnInit } from "ngjs-core";
+import { NgbModal } from "ngb-js/modal"
+import { ThemeService } from "@/core/services/theme.service"
+import { type Themes } from "@/core/constants/themes.constant.ts";
+import { THEMES_ENUM } from "@/core/tokens"
 import { MenuService } from "@/core/services/menu.service"
 import {
     MAX_RECENT_DOCUMENTS,
@@ -9,57 +10,66 @@ import {
     SearchModalComponent,
 } from "@/core/layouts/components/search-modal/search-modal.component"
 import type { SearchResult } from "@/core/services/search.service"
-import brandLogoDarkUrl from "@/assets/brand/ngb-js-logo-dark.png"
-import brandLogoLightUrl from "@/assets/brand/ngb-js-logo-light.png"
+// En `public/`: relativo al `<base href>`, igual en `ngjs serve` y en la GitHub Page.
+const brandLogoDarkUrl = "brand/ngb-js-logo-dark.png"
+const brandLogoLightUrl = "brand/ngb-js-logo-light.png"
 
-export class HeaderComponent implements IComponentController{
+@Component({
+    selector: "docs-header",
+    templateUrl: "./header.component.html",
+    styleUrl: "./header.component.css",
+})
+export class HeaderComponent implements OnInit, OnDestroy {
     public readonly brandLogoDarkUrl = brandLogoDarkUrl
     public readonly brandLogoLightUrl = brandLogoLightUrl
 
     constructor(
-        private modalService: NgbModal,
-        public themeService: ThemeService,
-        public themes: typeof Themes,
-        public menuService: MenuService,
-        private readonly $document: IDocumentService,
+        private readonly modalService: NgbModal,
+        public readonly themeService: ThemeService,
+        @Inject(THEMES_ENUM) public readonly themes: typeof Themes,
+        public readonly menuService: MenuService,
+        @Inject(DOCUMENT) private readonly document: Document,
     ) {}
 
-    private readonly handleSearchShortcut = (event: JQueryEventObject) => {
-        if(!event.ctrlKey || event.key.toLowerCase() !== "k") return
+    private readonly handleSearchShortcut = (event: KeyboardEvent) => {
+        if (!event.ctrlKey || event.key.toLowerCase() !== "k") return
 
         event.preventDefault()
 
-        if(!this.modalService.hasOpenModals()) {
+        if (!this.modalService.hasOpenModals()) {
             this.openModal()
         }
     }
 
-    public $onInit() {
-        this.$document.on("keydown", this.handleSearchShortcut)
+    public ngOnInit() {
+        this.document.addEventListener("keydown", this.handleSearchShortcut)
     }
 
-    public $onDestroy() {
-        this.$document.off("keydown", this.handleSearchShortcut)
+    public ngOnDestroy() {
+        this.document.removeEventListener("keydown", this.handleSearchShortcut)
     }
 
     public openModal() {
-        this.modalService.open(SearchModalComponent.$name, {
+        void this.modalService.open(SearchModalComponent, {
             fullscreen: "md",
             size: "lg",
             scrollable: true,
-            animation: false
+            animation: false,
         }).then(modalRef => {
-            modalRef.result?.then(result => {
-                if(result) this.saveRecentDocument(result)
-            }, angular.noop)
-        }, angular.noop)
+            modalRef.result?.then(
+                result => {
+                    if (result) this.saveRecentDocument(result as SearchResult)
+                },
+                () => {},
+            )
+        }, () => {})
     }
 
     private saveRecentDocument(document: SearchResult) {
         const storedDocuments = localStorage.getItem(SEARCH_RECENTS_STORAGE_KEY)
         let recentDocuments: SearchResult[] = []
 
-        if(storedDocuments) {
+        if (storedDocuments) {
             try {
                 const documents = JSON.parse(storedDocuments)
                 recentDocuments = Array.isArray(documents) ? documents : []
@@ -74,27 +84,5 @@ export class HeaderComponent implements IComponentController{
         ].slice(0, MAX_RECENT_DOCUMENTS)
 
         localStorage.setItem(SEARCH_RECENTS_STORAGE_KEY, JSON.stringify(updatedDocuments))
-    }
-
-    static get $name() {
-        return "docsHeader"
-    }
-
-    static get $inject() {
-        return [
-            NgbModal.$name,
-            ThemeService.$name,
-            ThemeEnumConstant.$key,
-            MenuService.$name,
-            "$document"
-        ]
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controllerAs: "$",
-            controller: HeaderComponent,
-            templateUrl: "./header.component.html", styleUrl: "./header.component.css"
-        }
     }
 }

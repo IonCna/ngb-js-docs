@@ -1,0 +1,22 @@
+<div class="modal-header" _content-bcb301de="">
+    <h2 class="modal-title fs-5" _content-bcb301de="">{{ $.title }}</h2>
+    <button type="button" class="btn-close" aria-label="Close" ng-click="$.ngbActiveModal.dismiss('header close')" _content-bcb301de="">
+    </button>
+</div>
+
+<div class="modal-body" _content-bcb301de="">
+    <p ng-class="{ 'mb-0': !$.longContent }" _content-bcb301de="">{{ $.description }}</p>
+
+    <div class="list-group" ng-if="$.longContent" _content-bcb301de="">
+        <div class="list-group-item" ng-repeat="item in $.items track by $index" _content-bcb301de="">{{ item }}</div>
+    </div>
+</div>
+
+<div class="modal-footer" _content-bcb301de="">
+    <button type="button" class="btn btn-outline-secondary" ng-click="$.ngbActiveModal.dismiss('cancel')" _content-bcb301de="">
+        Cancel
+    </button>
+    <button type="button" class="btn btn-primary" ng-click="$.ngbActiveModal.close('accepted')" _content-bcb301de="">
+        Continue
+    </button>
+</div>

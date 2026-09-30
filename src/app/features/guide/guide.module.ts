@@ -1,13 +1,15 @@
-import angular from "angular";
+import { routes } from "@/features/guide/guide.routes"
+import { NgModule } from "ngjs-core";
+import { RouterModule } from "ngjs-core/router"
 
-import { IntroductionPageComponent } from "@/features/guide/pages/introduction-page/introduction-page.component"
-import { PhilosophyPageComponent } from "@/features/guide/pages/philosophy-page/philosophy-page.component"
-import { WhyNgbJsPageComponent } from "@/features/guide/pages/why-ngbjs-page/why-ngbjs-page.component"
-import { routing } from "@/features/guide/guide.routes"
+import { NgbNavModule } from "ngb-js/nav"
+import { NgbScrollSpyModule } from "ngb-js/scrollspy"
 
-export const GuideModule = angular.module("docs.guide", []);
-
-GuideModule.component(IntroductionPageComponent.$name, IntroductionPageComponent.$factory)
-GuideModule.component(PhilosophyPageComponent.$name, PhilosophyPageComponent.$factory)
-GuideModule.component(WhyNgbJsPageComponent.$name, WhyNgbJsPageComponent.$factory)
-GuideModule.config(routing)
+@NgModule({
+    imports: [
+        NgbNavModule,
+        NgbScrollSpyModule,
+        RouterModule.forChild(routes),
+    ]
+})
+export class GuideModule {}

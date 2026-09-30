@@ -1,9 +1,0 @@
-<p class="mb-3">Custom events can be paired as <code>mouseenter:mouseleave</code>.</p>
-<button type="button" class="btn btn-outline-secondary mb-4" ngb-tooltip="'Shown while the pointer is over the trigger'" triggers="'mouseenter:mouseleave'">Hover over me</button>
-
-<p class="mb-3">Manual triggers delegate opening and closing to application code.</p>
-<div class="d-flex flex-wrap gap-2">
-    <button type="button" class="btn btn-outline-primary" ngb-tooltip="'Manually controlled tooltip'" triggers="'manual'" auto-close="false" ng-ref="example.manual" ng-ref-read="ngbTooltip" ng-click="example.manual.open()">Open tooltip</button>
-    <button type="button" class="btn btn-outline-primary" ng-click="example.manual.close()">Close tooltip</button>
-    <button type="button" class="btn btn-outline-primary" ng-click="example.manual.toggle()">Toggle tooltip</button>
-</div>

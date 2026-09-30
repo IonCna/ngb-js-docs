@@ -1,18 +1,11 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import {Component} from "ngjs-core";
 
-export class HomePageComponent implements IComponentController {
+@Component({
+    selector: "home-page",
+    templateUrl: "./home-page.component.html",
+    styleUrl: "./home-page.component.css"
+})
+
+export class HomePageComponent {
     readonly installCommand = "npm install ngb-js"
-
-    static get $name() {
-        return "docsHomePage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: HomePageComponent,
-            templateUrl: "./home-page.component.html", styleUrl: "./home-page.component.css",
-            controllerAs: "$",
-        }
-    }
-
 }

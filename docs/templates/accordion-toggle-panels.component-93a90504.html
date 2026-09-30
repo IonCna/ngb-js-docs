@@ -1,0 +1,34 @@
+<div class="d-flex flex-wrap gap-2 mb-3" _content-d8aa3f5b="">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="example.expandAll()" _content-d8aa3f5b="">Expand all</button>
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="example.collapseAll()" _content-d8aa3f5b="">Collapse all</button>
+    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="example.toggle('toggle-first')" _content-d8aa3f5b="">Toggle first</button>
+    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="example.toggle('toggle-second')" _content-d8aa3f5b="">Toggle second</button>
+</div>
+
+<div ngb-accordion="" animation="true" close-others="false" destroy-on-hide="true" ng-ref="accordion" ng-ref-read="ngbAccordion" _content-d8aa3f5b="">
+    <div ngb-accordion-item="'toggle-first'" _content-d8aa3f5b="">
+        <h2 ngb-accordion-header="" _content-d8aa3f5b="">
+            <button ngb-accordion-button="" _content-d8aa3f5b="">First panel</button>
+        </h2>
+        <div ngb-accordion-collapse="" _content-d8aa3f5b="">
+            <div ngb-accordion-body="" _content-d8aa3f5b="">
+                <ng-template _content-d8aa3f5b="">
+                    <p class="mb-0" _content-d8aa3f5b="">This panel can be controlled from its header or the buttons above.</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div ngb-accordion-item="'toggle-second'" _content-d8aa3f5b="">
+        <h2 ngb-accordion-header="" _content-d8aa3f5b="">
+            <button ngb-accordion-button="" _content-d8aa3f5b="">Second panel</button>
+        </h2>
+        <div ngb-accordion-collapse="" _content-d8aa3f5b="">
+            <div ngb-accordion-body="" _content-d8aa3f5b="">
+                <ng-template _content-d8aa3f5b="">
+                    <p class="mb-0" _content-d8aa3f5b="">Use the accordion controller to expand, collapse or toggle known ids.</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

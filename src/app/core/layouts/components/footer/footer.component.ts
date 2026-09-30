@@ -1,14 +1,8 @@
-import type {IComponentOptions} from "angular";
+import { Component } from "ngjs-core";
 
-export class FooterComponent {
-    static get $name() {
-        return "docsFooter"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: FooterComponent,
-            templateUrl: "./footer.component.html", styleUrl: "./footer.component.css",
-        }
-    }
-}
+@Component({
+    selector: "docs-footer",
+    templateUrl: "./footer.component.html",
+    styleUrl: "./footer.component.css",
+})
+export class FooterComponent {}

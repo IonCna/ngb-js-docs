@@ -1,21 +1,25 @@
-import type {IComponentController, IComponentOptions} from "angular";
-import {Subject, takeUntil} from "rxjs";
-import { BootstrapUrlProvider } from "@/core/providers/bootstrap-url.provider"
-import { NgBootstrapUrlProvider } from "@/core/providers/ng-bootstrap-url.provider"
+import {Component, inject, Inject, type OnDestroy, type OnInit} from "ngjs-core";
+import { Subject, takeUntil } from "rxjs";
 import { TitleService } from "@/core/services/title.service"
-import type {HeadingExternalLinks, HeadingSection} from "@/core/models/title.model"
+import { BOOTSTRAP_URL, NG_BOOTSTRAP_URL } from "@/core/tokens"
+import type { HeadingExternalLinks, HeadingSection } from "@/core/models/title.model"
 
-export class PageOutlineComponent implements IComponentController {
-    private destroyRef = new Subject<void>()
+@Component({
+    selector: "docs-page-outline",
+    templateUrl: "./page-outline.component.html",
+    styleUrl: "./page-outline.component.css",
+})
+export class PageOutlineComponent implements OnInit, OnDestroy {
+    private readonly destroyRef = new Subject<void>()
     private externalLinks?: HeadingExternalLinks
+    private titleService = inject(TitleService)
 
     public title?: string
     public sections: HeadingSection[] = []
 
     constructor(
-        private titleService: TitleService,
-        private bootstrapUrl: string,
-        private ngBootstrapUrl: string,
+        @Inject(BOOTSTRAP_URL) private bootstrapUrl: string,
+        @Inject(NG_BOOTSTRAP_URL) private ngBootstrapUrl: string,
     ) {}
 
     get bootstrapHref() {
@@ -30,7 +34,7 @@ export class PageOutlineComponent implements IComponentController {
             : undefined
     }
 
-    $postLink() {
+    public ngOnInit() {
         this.titleService.transition$.pipe(
             takeUntil(this.destroyRef),
         ).subscribe(data => {
@@ -40,28 +44,8 @@ export class PageOutlineComponent implements IComponentController {
         })
     }
 
-    $onDestroy() {
+    public ngOnDestroy() {
         this.destroyRef.next()
         this.destroyRef.complete()
-    }
-
-    static get $inject() {
-        return [
-            TitleService.$name,
-            BootstrapUrlProvider.$name,
-            NgBootstrapUrlProvider.$name,
-        ]
-    }
-
-    static get $name() {
-        return "docsPageOutline"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controllerAs: "$",
-            controller: PageOutlineComponent,
-            templateUrl: "./page-outline.component.html", styleUrl: "./page-outline.component.css",
-        }
     }
 }

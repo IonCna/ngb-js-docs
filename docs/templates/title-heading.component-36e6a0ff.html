@@ -1,0 +1,17 @@
+<header class="mb-4 mb-lg-5" ng-if="$.visible" _content-a6e1afd5="">
+    <div class="pt-2 pb-4" _content-a6e1afd5="">
+        <h1 class="display-5 fw-bold lh-sm text-body-emphasis mb-0" _content-a6e1afd5="">
+            {{ $.title }}
+        </h1>
+    </div>
+
+    <nav class="overflow-x-auto border-bottom" ng-attr-aria-label="{{ $.title }} sections" _content-a6e1afd5="">
+        <ul class="nav-underline flex-nowrap gap-4 mb-0" ngb-nav="" active-id="$.titleService.currentTab" _content-a6e1afd5="">
+            <li ng-repeat="tab in $.tabs track by tab.to" ngb-nav-item="tab.to" _content-a6e1afd5="">
+                <a type="button" class="text-nowrap px-1 py-3 fw-semibold" ngb-nav-link="" ui-sref="tab.to" _content-a6e1afd5="">
+                    {{ tab.name }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

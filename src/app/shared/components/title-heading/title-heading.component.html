@@ -12,12 +12,12 @@
             active-id="$.titleService.currentTab">
             <li
                 ng-repeat="tab in $.tabs track by tab.to"
-                ngb-nav-item="{{ tab.to }}">
+                ngb-nav-item="tab.to">
                 <a
                     type="button"
                     class="text-nowrap px-1 py-3 fw-semibold"
                     ngb-nav-link
-                    ui-sref="{{ tab.to }}">
+                    ui-sref="tab.to">
                     {{ tab.name }}
                 </a>
             </li>

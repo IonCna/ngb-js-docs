@@ -44,19 +44,19 @@
                         animation="false"
                         ng-ref="example.codeNav"
                         ng-ref-read="ngbNav">
-                        <li ngb-nav-item="html">
+                        <li ngb-nav-item="'html'">
                             <button type="button" ngb-nav-link>HTML</button>
                             <ng-template ngb-nav-content>
                                 <pre class="bg-body-tertiary m-0 p-3 overflow-auto"><code ng-bind="example.htmlCode"></code></pre>
                             </ng-template>
                         </li>
-                        <li ng-if="example.tsCode" ngb-nav-item="typescript">
+                        <li ng-if="example.tsCode" ngb-nav-item="'typescript'">
                             <button type="button" ngb-nav-link>TypeScript</button>
                             <ng-template ngb-nav-content>
                                 <pre class="bg-body-tertiary m-0 p-3 overflow-auto"><code ng-bind="example.tsCode"></code></pre>
                             </ng-template>
                         </li>
-                        <li ng-if="example.cssCode" ngb-nav-item="css">
+                        <li ng-if="example.cssCode" ngb-nav-item="'css'">
                             <button type="button" ngb-nav-link>CSS</button>
                             <ng-template ngb-nav-content>
                                 <pre class="bg-body-tertiary m-0 p-3 overflow-auto"><code ng-bind="example.cssCode"></code></pre>

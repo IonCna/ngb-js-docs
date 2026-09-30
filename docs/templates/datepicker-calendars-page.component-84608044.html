@@ -1,0 +1,45 @@
+<div class="alert alert-light border mb-5" role="note" _content-484327c8="">
+    <div class="d-flex gap-3 align-items-start" _content-484327c8="">
+        <i class="bi bi-calendar3 text-primary mt-1" aria-hidden="true" _content-484327c8=""></i>
+        <div _content-484327c8="">
+            <h2 class="h5 mb-2" _content-484327c8="">Calendar implementations</h2>
+            <p class="text-body-secondary mb-0" _content-484327c8=""><code _content-484327c8="">NgbDatepicker</code> delegates date calculations to the abstract <code _content-484327c8="">NgbCalendar</code>. Gregorian is the default, but each instance can receive a calendar and its matching internationalization strategy.</p>
+        </div>
+    </div>
+</div>
+
+<section id="calendar-hebrew" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-hebrew" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Hebrew</h2><p class="text-body-secondary mb-4" _content-484327c8=""><code _content-484327c8="">NgbCalendarHebrew</code> with <code _content-484327c8="">NgbDatepickerI18nHebrew</code>, including Hebrew month names and numerals.</p>
+    <div dir="rtl" class="d-inline-block" _content-484327c8=""><ngb-datepicker ng-model="$.calendars.hebrew.date" calendar="$.calendars.hebrew.calendar" i18n="$.calendars.hebrew.i18n" _content-484327c8=""></ngb-datepicker></div>
+</section>
+
+<section id="calendar-jalali" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-jalali" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Jalali</h2><p class="text-body-secondary mb-4" _content-484327c8=""><code _content-484327c8="">NgbCalendarPersian</code> performs Persian calendar calculations; the labels are supplied independently through <code _content-484327c8="">NgbDatepickerI18n</code>.</p>
+    <div dir="rtl" class="d-inline-block" _content-484327c8=""><ngb-datepicker ng-model="$.calendars.jalali.date" calendar="$.calendars.jalali.calendar" i18n="$.calendars.jalali.i18n" _content-484327c8=""></ngb-datepicker></div>
+</section>
+
+<section id="calendar-islamic-civil" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-islamic-civil" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Islamic Civil</h2><p class="text-body-secondary mb-4" _content-484327c8=""><code _content-484327c8="">NgbCalendarIslamicCivil</code> uses the tabular civil Hijri calculation.</p>
+    <div dir="rtl" class="d-inline-block" _content-484327c8=""><ngb-datepicker ng-model="$.calendars.islamicCivil.date" calendar="$.calendars.islamicCivil.calendar" i18n="$.calendars.islamicCivil.i18n" _content-484327c8=""></ngb-datepicker></div>
+</section>
+
+<section id="calendar-islamic-umalqura" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-islamic-umalqura" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Islamic Umm al-Qura</h2><p class="text-body-secondary mb-4" _content-484327c8=""><code _content-484327c8="">NgbCalendarIslamicUmalqura</code> uses the Umm al-Qura calendar data while sharing the Hijri presentation layer.</p>
+    <div dir="rtl" class="d-inline-block" _content-484327c8=""><ngb-datepicker ng-model="$.calendars.islamicUmalqura.date" calendar="$.calendars.islamicUmalqura.calendar" i18n="$.calendars.islamicUmalqura.i18n" _content-484327c8=""></ngb-datepicker></div>
+</section>
+
+<section id="calendar-buddhist" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-buddhist" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Buddhist</h2><p class="text-body-secondary mb-4" _content-484327c8=""><code _content-484327c8="">NgbCalendarBuddhist</code> keeps Gregorian month rules and presents years in the Buddhist era.</p>
+    <ngb-datepicker ng-model="$.calendars.buddhist.date" calendar="$.calendars.buddhist.calendar" i18n="$.calendars.buddhist.i18n" _content-484327c8=""></ngb-datepicker>
+</section>
+
+<section id="calendar-ethiopian" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-ethiopian" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Ethiopian</h2><p class="text-body-secondary mb-4" _content-484327c8=""><code _content-484327c8="">NgbCalendarEthiopian</code> and <code _content-484327c8="">NgbDatepickerI18nAmharic</code> include the thirteenth Ethiopian month.</p>
+    <ngb-datepicker ng-model="$.calendars.ethiopian.date" calendar="$.calendars.ethiopian.calendar" i18n="$.calendars.ethiopian.i18n" _content-484327c8=""></ngb-datepicker>
+</section>
+
+<section id="calendar-intergalactic" class="pb-5 mb-5 border-bottom" ngb-scroll-spy-fragment="calendar-intergalactic" _content-484327c8="">
+    <h2 class="h3 mb-2" _content-484327c8="">Intergalactic Standard <span class="small fw-normal text-body-secondary" _content-484327c8="">(just for fun)</span></h2>
+    <p class="text-body-secondary mb-4" _content-484327c8="">A custom <code _content-484327c8="">NgbDatepickerI18n</code> translates Gregorian labels into the Standard Galactic Alphabet. The calendar math stays Gregorian—space-time remains someone else's problem.</p>
+    <ngb-datepicker ng-model="$.calendars.intergalactic.date" calendar="$.calendars.intergalactic.calendar" i18n="$.calendars.intergalactic.i18n" _content-484327c8=""></ngb-datepicker>
+</section>

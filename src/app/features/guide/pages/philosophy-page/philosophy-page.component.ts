@@ -1,15 +1,8 @@
-import type {IComponentController, IComponentOptions} from "angular";
+import {Component} from "ngjs-core";
 
-export class PhilosophyPageComponent implements IComponentController {
-    static get $name() {
-        return "docsPhilosophyPage"
-    }
-
-    static get $factory(): IComponentOptions {
-        return {
-            controller: PhilosophyPageComponent,
-            templateUrl: "./philosophy-page.component.html", styleUrl: "./philosophy-page.component.css",
-            controllerAs: "$",
-        }
-    }
-}
+@Component({
+    selector: "docs-philosophy-page",
+    templateUrl: "./philosophy-page.component.html",
+    styleUrl: "./philosophy-page.component.css"
+})
+export class PhilosophyPageComponent {}

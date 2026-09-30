@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "test": "ngjs test",
+    "dev": "ngjs serve",
+    "build": "tsc && ngjs build"
   },
   "devDependencies": {
     "@types/angular": "^1.8.9",
-    "ng-js-vite": "link:ng-js-vite",
+    "ng-js-cli": "link:ng-js-cli",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"
   },
