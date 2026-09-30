@@ -5,7 +5,6 @@ import { PageOutlineComponent } from "@/shared/components/page-outline/page-outl
 import { TitleHeadingComponent } from "@/shared/components/title-heading/title-heading.component"
 
 @NgModule({
-    id: "docs.shared",
     declarations: [
         CopyButtonComponent,
         ExampleSectionComponent,

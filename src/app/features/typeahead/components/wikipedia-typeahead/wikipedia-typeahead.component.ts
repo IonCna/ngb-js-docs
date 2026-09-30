@@ -12,7 +12,7 @@ export class WikipediaSearchService {
     public search(term: string) {
         if (!term) return of([] as string[]);
         return this.http.get<WikiResponse>(WIKI_URL, {
-            params: new HttpParams({ action: "opensearch", format: "json", origin: "*", search: term }),
+            params: new HttpParams({ fromObject: { action: "opensearch", format: "json", origin: "*", search: term } }),
         }).pipe(map(response => response[1]));
     }
 }
