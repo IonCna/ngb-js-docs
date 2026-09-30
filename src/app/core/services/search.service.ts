@@ -14,7 +14,7 @@ export interface SearchResult {
     content: string
 }
 
-@Injectable({ id: "docs.search.service" })
+@Injectable()
 export class SearchService {
     private readonly documentsById: Map<string, SearchDocument>
 

@@ -10,8 +10,9 @@ import {
     SearchModalComponent,
 } from "@/core/layouts/components/search-modal/search-modal.component"
 import type { SearchResult } from "@/core/services/search.service"
-import brandLogoDarkUrl from "@/assets/brand/ngb-js-logo-dark.png"
-import brandLogoLightUrl from "@/assets/brand/ngb-js-logo-light.png"
+// En `public/`: relativo al `<base href>`, igual en `ngjs serve` y en la GitHub Page.
+const brandLogoDarkUrl = "brand/ngb-js-logo-dark.png"
+const brandLogoLightUrl = "brand/ngb-js-logo-light.png"
 
 @Component({
     selector: "docs-header",

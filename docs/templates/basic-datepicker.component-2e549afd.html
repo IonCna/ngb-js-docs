@@ -1,0 +1,14 @@
+<p _content-46ccb1cc="">Simple datepicker</p>
+
+<ngb-datepicker ng-ref="example.dp" ng-model="example.model" navigate="example.date = $event.next" _content-46ccb1cc=""></ngb-datepicker>
+
+<hr _content-46ccb1cc="">
+
+<button type="button" class="btn btn-sm btn-outline-primary me-2" ng-click="example.model = example.today" _content-46ccb1cc="">Select Today</button>
+<button type="button" class="btn btn-sm btn-outline-primary me-2" ng-click="example.dp.navigateTo()" _content-46ccb1cc="">To current month</button>
+<button type="button" class="btn btn-sm btn-outline-primary me-2" ng-click="example.dp.navigateTo({ year: 2013, month: 2 })" _content-46ccb1cc="">To Feb 2013</button>
+
+<hr _content-46ccb1cc="">
+
+<pre _content-46ccb1cc="">Month: {{ example.date.month }}.{{ example.date.year }}</pre>
+<pre _content-46ccb1cc="">Model: {{ example.model | json }}</pre>

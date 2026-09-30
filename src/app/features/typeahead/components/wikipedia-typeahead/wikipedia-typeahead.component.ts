@@ -5,7 +5,7 @@ import { catchError, debounceTime, distinctUntilChanged, map, type OperatorFunct
 const WIKI_URL = "https://en.wikipedia.org/w/api.php";
 type WikiResponse = [string, string[], string[], string[]];
 
-@Injectable({ id: "docs.wikipedia.search.service" })
+@Injectable()
 export class WikipediaSearchService {
     constructor(private readonly http: HttpClient) {}
 

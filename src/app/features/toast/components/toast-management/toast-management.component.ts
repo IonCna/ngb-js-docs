@@ -7,7 +7,7 @@ interface ManagedToast {
     delay?: number;
 }
 
-@Injectable({ id: "docs.toast.service" })
+@Injectable()
 export class DocsToastService {
     public readonly toasts: ManagedToast[] = [];
     private nextId = 0;

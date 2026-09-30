@@ -3,7 +3,7 @@ import type { Language } from "@/core/constants/language.constant.ts";
 import { LANGUAGE } from "@/core/tokens";
 import { BehaviorSubject, Observable } from "rxjs";
 
-@Injectable({ id: "docs.language.service" })
+@Injectable()
 export class LanguageService {
     private _changeLang: BehaviorSubject<Language>;
     public changeLang$: Observable<Language>;

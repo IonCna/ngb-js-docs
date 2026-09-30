@@ -1,5 +1,7 @@
-import brandIconUrl from "@/assets/brand/ngb-js-icon.png"
 import {Component} from "ngjs-core";
+
+// En `public/`: relativo al `<base href>`, igual en `ngjs serve` y en la GitHub Page.
+const brandIconUrl = "brand/ngb-js-icon.png"
 
 @Component({
     selector: "docs-home-hero",

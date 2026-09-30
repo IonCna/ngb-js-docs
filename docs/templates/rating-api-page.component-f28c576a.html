@@ -1,0 +1,42 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-07634838="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-07634838=""><code _content-07634838="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-07634838=""><code _content-07634838="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-rating" _content-07634838="">
+    <header class="mb-3" _content-07634838=""><p class="small fw-semibold text-primary mb-1" _content-07634838="">Component</p><h2 class="h3 mb-2" _content-07634838=""><code class="text-body" _content-07634838="">NgbRating</code></h2><p class="text-body-secondary mb-0" _content-07634838="">Provides an accessible keyboard-driven rating control with customizable stars.</p></header>
+    <dl class="row gy-2 mb-0" _content-07634838=""><dt class="col-sm-3 fw-semibold" _content-07634838="">Markup</dt><dd class="col-sm-9 mb-0" _content-07634838=""><code _content-07634838="">&lt;ngb-rating rate="rating"&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-07634838="">Integration</dt><dd class="col-sm-9 mb-0" _content-07634838="">Optionally reads <code _content-07634838="">disabled</code>.</dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-07634838="">Inputs</h3>
+    <div class="table-responsive" _content-07634838=""><table class="table table-sm align-middle" _content-07634838="">
+        <thead _content-07634838=""><tr _content-07634838=""><th _content-07634838="">Input</th><th _content-07634838="">Binding</th><th _content-07634838="">Type</th><th _content-07634838="">Default</th><th _content-07634838="">Description</th></tr></thead>
+        <tbody _content-07634838="">
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">rate</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">number</code></td><td _content-07634838=""><code _content-07634838="">0</code></td><td _content-07634838="">Current rating value.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">max</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">number</code></td><td _content-07634838=""><code _content-07634838="">10</code></td><td _content-07634838="">Maximum number of rating items.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">readonly</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">boolean</code></td><td _content-07634838=""><code _content-07634838="">false</code></td><td _content-07634838="">Prevents user changes.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">resettable</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">boolean</code></td><td _content-07634838=""><code _content-07634838="">false</code></td><td _content-07634838="">Allows selecting the current value again to reset to zero.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">star-template</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">TemplateRef</code></td><td _content-07634838="">Default star</td><td _content-07634838="">Provides custom item markup.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">tabindex</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">number | string</code></td><td _content-07634838=""><code _content-07634838="">0</code></td><td _content-07634838="">Sets keyboard tab order.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">aria-value-text</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">function</code></td><td _content-07634838="">Built-in formatter</td><td _content-07634838="">Formats the accessible value text.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">disabled</code></td><td _content-07634838=""><code _content-07634838="">&lt;?</code></td><td _content-07634838=""><code _content-07634838="">boolean</code></td><td _content-07634838=""><code _content-07634838="">false</code></td><td _content-07634838="">Disables interaction and focus.</td></tr>
+        </tbody>
+    </table></div>
+    <h3 class="h5 mt-4 mb-3" _content-07634838="">Outputs</h3>
+    <div class="table-responsive" _content-07634838=""><table class="table table-sm align-middle mb-0" _content-07634838="">
+        <thead _content-07634838=""><tr _content-07634838=""><th _content-07634838="">Output</th><th _content-07634838="">Binding</th><th _content-07634838="">Payload</th><th _content-07634838="">Emitted when</th></tr></thead>
+        <tbody _content-07634838="">
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">rate-change</code></td><td _content-07634838=""><code _content-07634838="">&amp;?</code></td><td _content-07634838=""><code _content-07634838="">$event: number</code></td><td _content-07634838="">The interactive rating changes.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">hover</code></td><td _content-07634838=""><code _content-07634838="">&amp;?</code></td><td _content-07634838=""><code _content-07634838="">$event: number</code></td><td _content-07634838="">A rating item is hovered.</td></tr>
+            <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">leave</code></td><td _content-07634838=""><code _content-07634838="">&amp;?</code></td><td _content-07634838=""><code _content-07634838="">$event: number</code></td><td _content-07634838="">The pointer leaves the rating.</td></tr>
+        </tbody>
+    </table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-rating-config" _content-07634838="">
+    <header class="mb-3" _content-07634838=""><p class="small fw-semibold text-primary mb-1" _content-07634838="">Service</p><h2 class="h3 mb-2" _content-07634838=""><code class="text-body" _content-07634838="">NgbRatingConfig</code></h2><p class="text-body-secondary mb-0" _content-07634838="">Provides application-wide rating defaults.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-07634838="">Properties</h3>
+    <div class="table-responsive" _content-07634838=""><table class="table table-sm align-middle mb-0" _content-07634838=""><thead _content-07634838=""><tr _content-07634838=""><th _content-07634838="">Property</th><th _content-07634838="">Type</th><th _content-07634838="">Default</th></tr></thead><tbody _content-07634838="">
+        <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">max</code></td><td _content-07634838=""><code _content-07634838="">number</code></td><td _content-07634838=""><code _content-07634838="">10</code></td></tr>
+        <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">readonly</code>, <code _content-07634838="">resettable</code></td><td _content-07634838=""><code _content-07634838="">boolean</code></td><td _content-07634838=""><code _content-07634838="">false</code></td></tr>
+        <tr _content-07634838=""><td _content-07634838=""><code _content-07634838="">tabindex</code></td><td _content-07634838=""><code _content-07634838="">number | string</code></td><td _content-07634838=""><code _content-07634838="">0</code></td></tr>
+    </tbody></table></div>
+</section>

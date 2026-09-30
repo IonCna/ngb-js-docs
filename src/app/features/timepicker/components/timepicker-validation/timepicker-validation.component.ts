@@ -1,5 +1,5 @@
-import { Component, Directive } from "ngjs-core";
-import type { INgModelController } from "angular";
+import { Component, Directive, forwardRef } from "ngjs-core";
+import { type AbstractControl, NG_VALIDATORS, type ValidationErrors, type Validator } from "ngjs-core/forms";
 import type { NgbTimeStruct } from "ngb-js/timepicker";
 
 @Component({
@@ -14,11 +14,11 @@ export class TimepickerValidationComponent {
 
 @Directive({
     selector: "[docsTimepickerLunchValidator]",
-    require: "ngModel",
-    link: (_scope, _element, _attributes, controller) => {
-        const ngModel = controller as INgModelController;
-        ngModel.$validators.lunchtime = (modelValue: NgbTimeStruct | null) =>
-            !modelValue || (modelValue.hour >= 12 && modelValue.hour <= 13);
-    },
+    providers: [{ provide: NG_VALIDATORS, useExisting: forwardRef(() => TimepickerLunchValidatorDirective), multi: true }],
 })
-export class TimepickerLunchValidatorDirective {}
+export class TimepickerLunchValidatorDirective implements Validator {
+    public validate(control: AbstractControl): ValidationErrors | null {
+        const time = control.value as NgbTimeStruct | null;
+        return !time || (time.hour >= 12 && time.hour <= 13) ? null : { lunchtime: true };
+    }
+}

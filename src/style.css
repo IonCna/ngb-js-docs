@@ -1,6 +1,3 @@
-@import url("bootstrap");
-@import url("bootstrap-icons");
-
 /* Brand dimensions load with the global stylesheet to prevent layout shifts while
    component templates and their scoped styles are being resolved. */
 docs-header .brand-logo {

@@ -2,7 +2,7 @@ import { Injectable } from "ngjs-core";
 import { filter } from "rxjs";
 import { NavigationEnd, Router } from "ngjs-core/router";
 
-@Injectable({ id: "docs.scroll.service" })
+@Injectable()
 export class ScrollService {
     constructor(private readonly router: Router) {
         this.router.events

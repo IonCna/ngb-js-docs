@@ -2,7 +2,7 @@ import { DOCUMENT, Inject, Injectable } from "ngjs-core";
 import { Themes } from "@/core/constants/themes.constant";
 import { THEME, THEME_STORAGE_KEY } from "@/core/tokens";
 
-@Injectable({ id: "docs.theme.service" })
+@Injectable()
 export class ThemeService {
     constructor(
         @Inject(THEME) private _currentTheme: Themes,

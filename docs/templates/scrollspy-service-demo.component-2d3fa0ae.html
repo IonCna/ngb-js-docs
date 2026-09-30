@@ -1,0 +1,37 @@
+<div class="d-flex flex-wrap align-items-center gap-2 mb-3" _content-f67e0d9a="">
+    <button type="button" class="btn btn-sm btn-outline-primary" ng-click="example.start()" ng-disabled="example.running" _content-f67e0d9a="">Start</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="example.stop()" ng-disabled="!example.running" _content-f67e0d9a="">Stop</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="example.toggleFinish()" ng-disabled="!example.running" _content-f67e0d9a="">
+        {{ example.observingFinish ? 'Unobserve' : 'Observe' }} finish
+    </button>
+    <span class="small text-body-secondary ms-sm-auto" _content-f67e0d9a="">
+        Active: <code _content-f67e0d9a="">{{ example.scrollSpy.active || 'none' }}</code>
+    </span>
+</div>
+
+<div class="row g-3" _content-f67e0d9a="">
+    <div class="col-md-4" _content-f67e0d9a="">
+        <div class="nav nav-pills flex-column" _content-f67e0d9a="">
+            <button type="button" class="nav-link text-start" ng-click="example.scrollSpy.scrollTo('service-introduction')" _content-f67e0d9a="">Introduction</button>
+            <button type="button" class="nav-link text-start" ng-click="example.scrollSpy.scrollTo('service-options')" _content-f67e0d9a="">Options</button>
+            <button type="button" class="nav-link text-start" ng-click="example.scrollSpy.scrollTo('service-finish')" _content-f67e0d9a="">Finish</button>
+        </div>
+    </div>
+
+    <div class="col-md-8" _content-f67e0d9a="">
+        <div class="bg-body-tertiary border rounded p-3 overflow-y-auto" style="height: 17rem" data-service-scrollspy="" _content-f67e0d9a="">
+            <section id="service-introduction" class="pb-5" _content-f67e0d9a="">
+                <h3 class="h5" _content-f67e0d9a="">Introduction</h3>
+                <p _content-f67e0d9a="">The service can observe ordinary DOM elements without scrollspy directives.</p>
+            </section>
+            <section id="service-options" class="pb-5" _content-f67e0d9a="">
+                <h3 class="h5" _content-f67e0d9a="">Options</h3>
+                <p _content-f67e0d9a="">Call <code _content-f67e0d9a="">start()</code> with a root element and the fragment ids to observe.</p>
+            </section>
+            <section id="service-finish" class="pb-5 mb-5" _content-f67e0d9a="">
+                <h3 class="h5" _content-f67e0d9a="">Finish</h3>
+                <p class="mb-5" _content-f67e0d9a=""><code _content-f67e0d9a="">observe()</code>, <code _content-f67e0d9a="">unobserve()</code>, <code _content-f67e0d9a="">scrollTo()</code> and <code _content-f67e0d9a="">stop()</code> remain available programmatically.</p>
+            </section>
+        </div>
+    </div>
+</div>
