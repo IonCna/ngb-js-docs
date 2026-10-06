@@ -358,12 +358,11 @@ import {
   NgbNavModule
 } from "./chunk-S3STC4KD.js";
 import {
-  NgbScrollSpyModule,
-  NgbScrollSpyService
+  NgbScrollSpyModule
 } from "./chunk-R7GTDWT4.js";
 import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
 import "./chunk-BJK3QUXG.js";
 import "./chunk-U6UIHJCB.js";
 import {
@@ -373,28 +372,28 @@ import {
   __toESM
 } from "./chunk-57M53B5Q.js";
 
-// src/app/features/scrollspy/scrollspy.module.ts
+// src/app/features/nav/nav.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/scrollspy/scrollspy.routes.ts
+// src/app/features/nav/nav.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Scrollspy",
+      title: "Nav",
       tabs: [
         {
           name: "Examples",
-          to: "/components/scrollspy/examples"
+          to: "/components/nav/examples"
         },
         {
           name: "Api",
-          to: "/components/scrollspy/api"
+          to: "/components/nav/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/scrollspy/",
-        ngBootstrap: "components/scrollspy/overview"
+        bootstrap: "components/navs-tabs/",
+        ngBootstrap: "components/nav/overview"
       }
     },
     children: [
@@ -408,436 +407,434 @@ var routes = [
         data: {
           sections: [
             {
-              id: "basic-scrollspy",
-              name: "Basic"
+              id: "simple-nav",
+              name: "Simple nav"
             },
             {
-              id: "scrollspy-menu-items",
-              name: "Menu items"
+              id: "alternative-nav",
+              name: "Alternative markup"
             },
             {
-              id: "nested-scrollspy",
-              name: "Nested items"
+              id: "vertical-nav",
+              name: "Vertical pills"
             },
             {
-              id: "navbar-scrollspy",
-              name: "Navbar"
+              id: "selecting-nav",
+              name: "Selecting navs"
             },
             {
-              id: "scrollspy-service",
-              name: "Using the service"
+              id: "keep-content-nav",
+              name: "Keep content"
+            },
+            {
+              id: "dynamic-nav",
+              name: "Dynamic navs"
+            },
+            {
+              id: "custom-nav",
+              name: "Custom style"
+            },
+            {
+              id: "nav-global",
+              name: "Global configuration"
             }
           ]
         },
-        loadComponent: () => import("./scrollspy-examples-page.component-NWC6K7S7.js").then((m) => m.ScrollspyExamplesPageComponent)
+        loadComponent: () => import("./nav-examples-page.component-XIYVRKMZ.js").then((m) => m.NavExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-scrollspy",
-              name: "NgbScrollSpy"
+              id: "ngb-nav",
+              name: "NgbNav"
             },
             {
-              id: "ngb-scrollspy-fragment",
-              name: "NgbScrollSpyFragment"
+              id: "ngb-nav-item",
+              name: "NgbNavItem"
             },
             {
-              id: "ngb-scrollspy-menu",
-              name: "NgbScrollSpyMenu"
+              id: "ngb-nav-link",
+              name: "NgbNavLink"
             },
             {
-              id: "ngb-scrollspy-item",
-              name: "NgbScrollSpyItem"
+              id: "ngb-nav-content",
+              name: "NgbNavContent"
             },
             {
-              id: "ngb-scrollspy-service",
-              name: "NgbScrollSpyService"
+              id: "ngb-nav-outlet",
+              name: "NgbNavOutlet"
             },
             {
-              id: "ngb-scrollspy-config",
-              name: "NgbScrollSpyConfig"
+              id: "ngb-nav-config",
+              name: "NgbNavConfig"
             }
           ]
         },
-        loadComponent: () => import("./scrollspy-api-page.component-SOJPZDCV.js").then((m) => m.ScrollspyApiPageComponent)
+        loadComponent: () => import("./nav-api-page.component-SGAD3NVJ.js").then((m) => m.NavApiPageComponent)
       }
     ]
   }
 ];
 
-// src/app/features/scrollspy/components/basic-scrollspy/basic-scrollspy.component.ts
-var BasicScrollspyComponent = class {
+// src/app/features/nav/components/alternative-nav/alternative-nav.component.ts
+var AlternativeNavComponent = class {
+  constructor() {
+    this.activeId = "alternative-home";
+  }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-27962885],.card[_content-27962885],.dropdown-menu[_content-27962885],.list-group-item[_content-27962885],.form-control[_content-27962885],.form-select[_content-27962885]{border-color:var(--bs-border-color)}.alert-light[_content-27962885]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-27962885],.list-group[_content-27962885],.dropdown-menu[_content-27962885]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-27962885],.btn-outline-secondary[_content-27962885]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-27962885],.form-select[_content-27962885]{background-color:var(--bs-body-bg)}code[_content-27962885]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-38dd9848],.card[_content-38dd9848],.dropdown-menu[_content-38dd9848],.list-group-item[_content-38dd9848],.form-control[_content-38dd9848],.form-select[_content-38dd9848]{border-color:var(--bs-border-color)}.alert-light[_content-38dd9848]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-38dd9848],.list-group[_content-38dd9848],.dropdown-menu[_content-38dd9848]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-38dd9848],.btn-outline-secondary[_content-38dd9848]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-38dd9848],.form-select[_content-38dd9848]{background-color:var(--bs-body-bg)}code[_content-38dd9848]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-BasicScrollspyComponent.ɵfac = [
+AlternativeNavComponent.ɵfac = [
   "$element",
   "$scope",
-  function BasicScrollspyComponent_Factory($element, $scope) {
+  function AlternativeNavComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || BasicScrollspyComponent)();
+    var instance = new (this && this.ɵT || AlternativeNavComponent)();
     return instance;
   }
 ];
-BasicScrollspyComponent.ɵcmp = {
+AlternativeNavComponent.ɵcmp = {
   selectors: [
     [
-      "docs-basic-scrollspy"
+      "docs-alternative-nav"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/basic-scrollspy.component-9c1c2807.html",
+    "templateUrl": "templates/alternative-nav.component-95d2c8d1.html",
     "controllerAs": "example"
   }
 };
-BasicScrollspyComponent.ɵfac.ɵcomponent = true;
-BasicScrollspyComponent.ɵfac.ɵtype = BasicScrollspyComponent;
+AlternativeNavComponent.ɵfac.ɵcomponent = true;
+AlternativeNavComponent.ɵfac.ɵtype = AlternativeNavComponent;
 
-// src/app/features/scrollspy/components/navbar-scrollspy/navbar-scrollspy.component.ts
-var NavbarScrollspyComponent = class {
+// src/app/features/nav/components/custom-nav/custom-nav.component.ts
+var CustomNavComponent = class {
+  constructor() {
+    this.activeId = "custom-weekly";
+  }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-b57f37e2],.card[_content-b57f37e2],.dropdown-menu[_content-b57f37e2],.list-group-item[_content-b57f37e2],.form-control[_content-b57f37e2],.form-select[_content-b57f37e2]{border-color:var(--bs-border-color)}.alert-light[_content-b57f37e2]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-b57f37e2],.list-group[_content-b57f37e2],.dropdown-menu[_content-b57f37e2]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-b57f37e2],.btn-outline-secondary[_content-b57f37e2]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-b57f37e2],.form-select[_content-b57f37e2]{background-color:var(--bs-body-bg)}code[_content-b57f37e2]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".nav-demo[_content-0afcbdad]{gap:.35rem;padding:.4rem;border:1px solid var(--bs-border-color);border-radius:999px;background:color-mix(in srgb,var(--bs-tertiary-bg) 82%,var(--bs-body-bg));box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}.nav-demo .nav-link[_content-0afcbdad]{border-radius:999px;color:var(--bs-secondary-color)}.nav-demo .nav-link:hover[_content-0afcbdad]{color:var(--bs-emphasis-color);background:var(--bs-body-bg)}.nav-demo .nav-link.active[_content-0afcbdad]{color:var(--bs-primary-text-emphasis);background:var(--bs-primary-bg-subtle);box-shadow:0 .35rem 1rem rgba(var(--bs-body-color-rgb),.08)}";
   document.head.appendChild(s);
 })();
-NavbarScrollspyComponent.ɵfac = [
+CustomNavComponent.ɵfac = [
   "$element",
   "$scope",
-  function NavbarScrollspyComponent_Factory($element, $scope) {
+  function CustomNavComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || NavbarScrollspyComponent)();
+    var instance = new (this && this.ɵT || CustomNavComponent)();
     return instance;
   }
 ];
-NavbarScrollspyComponent.ɵcmp = {
+CustomNavComponent.ɵcmp = {
   selectors: [
     [
-      "docs-navbar-scrollspy"
+      "docs-custom-nav"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/navbar-scrollspy.component-7455b46d.html",
+    "templateUrl": "templates/custom-nav.component-a5b50992.html",
     "controllerAs": "example"
   }
 };
-NavbarScrollspyComponent.ɵfac.ɵcomponent = true;
-NavbarScrollspyComponent.ɵfac.ɵtype = NavbarScrollspyComponent;
+CustomNavComponent.ɵfac.ɵcomponent = true;
+CustomNavComponent.ɵfac.ɵtype = CustomNavComponent;
 
-// src/app/features/scrollspy/components/nested-scrollspy/nested-scrollspy.component.ts
-var NestedScrollspyComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-fa991de9],.card[_content-fa991de9],.dropdown-menu[_content-fa991de9],.list-group-item[_content-fa991de9],.form-control[_content-fa991de9],.form-select[_content-fa991de9]{border-color:var(--bs-border-color)}.alert-light[_content-fa991de9]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-fa991de9],.list-group[_content-fa991de9],.dropdown-menu[_content-fa991de9]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-fa991de9],.btn-outline-secondary[_content-fa991de9]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-fa991de9],.form-select[_content-fa991de9]{background-color:var(--bs-body-bg)}code[_content-fa991de9]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-NestedScrollspyComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function NestedScrollspyComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || NestedScrollspyComponent)();
-    return instance;
+// src/app/features/nav/components/dynamic-nav/dynamic-nav.component.ts
+var DynamicNavComponent = class {
+  add() {
+    const item = {
+      id: `dynamic-${this.nextId}`,
+      title: `Tab ${this.nextId}`
+    };
+    this.nextId++;
+    this.items.push(item);
+    this.activeId = item.id;
   }
-];
-NestedScrollspyComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-nested-scrollspy"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/nested-scrollspy.component-e0ce1197.html",
-    "controllerAs": "example"
+  removeActive() {
+    if (this.items.length === 1) return;
+    const activeIndex = this.items.findIndex(({ id }) => id === this.activeId);
+    const replacement = this.items[activeIndex === 0 ? 1 : activeIndex - 1];
+    this.activeId = replacement.id;
+    this.items = this.items.filter(({ id }) => id !== this.items[activeIndex].id);
   }
-};
-NestedScrollspyComponent.ɵfac.ɵcomponent = true;
-NestedScrollspyComponent.ɵfac.ɵtype = NestedScrollspyComponent;
-
-// src/app/features/scrollspy/components/scrollspy-menu-items/scrollspy-menu-items.component.ts
-var ScrollspyMenuItemsComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-39867fc1],.card[_content-39867fc1],.dropdown-menu[_content-39867fc1],.list-group-item[_content-39867fc1],.form-control[_content-39867fc1],.form-select[_content-39867fc1]{border-color:var(--bs-border-color)}.alert-light[_content-39867fc1]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-39867fc1],.list-group[_content-39867fc1],.dropdown-menu[_content-39867fc1]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-39867fc1],.btn-outline-secondary[_content-39867fc1]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-39867fc1],.form-select[_content-39867fc1]{background-color:var(--bs-body-bg)}code[_content-39867fc1]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-ScrollspyMenuItemsComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function ScrollspyMenuItemsComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || ScrollspyMenuItemsComponent)();
-    return instance;
-  }
-];
-ScrollspyMenuItemsComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-scrollspy-menu-items"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/scrollspy-menu-items.component-0f2f39fa.html",
-    "controllerAs": "example"
-  }
-};
-ScrollspyMenuItemsComponent.ɵfac.ɵcomponent = true;
-ScrollspyMenuItemsComponent.ɵfac.ɵtype = ScrollspyMenuItemsComponent;
-
-// src/app/features/scrollspy/components/scrollspy-service-demo/scrollspy-service-demo.component.ts
-var ScrollspyServiceDemoComponent = class {
-  constructor(elementRef, scrollSpy) {
-    this.elementRef = elementRef;
-    this.scrollSpy = scrollSpy;
-    this.fragments = [
-      "service-introduction",
-      "service-options",
-      "service-finish"
+  constructor() {
+    this.items = [
+      {
+        id: "dynamic-1",
+        title: "Tab 1"
+      },
+      {
+        id: "dynamic-2",
+        title: "Tab 2"
+      },
+      {
+        id: "dynamic-3",
+        title: "Tab 3"
+      }
     ];
-    this.running = false;
-    this.observingFinish = true;
+    this.activeId = "dynamic-1";
+    this.nextId = 4;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-6433c04a],.card[_content-6433c04a],.dropdown-menu[_content-6433c04a],.list-group-item[_content-6433c04a],.form-control[_content-6433c04a],.form-select[_content-6433c04a]{border-color:var(--bs-border-color)}.alert-light[_content-6433c04a]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-6433c04a],.list-group[_content-6433c04a],.dropdown-menu[_content-6433c04a]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-6433c04a],.btn-outline-secondary[_content-6433c04a]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-6433c04a],.form-select[_content-6433c04a]{background-color:var(--bs-body-bg)}code[_content-6433c04a]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+DynamicNavComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function DynamicNavComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || DynamicNavComponent)();
+    return instance;
+  }
+];
+DynamicNavComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-dynamic-nav"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/dynamic-nav.component-cc472c86.html",
+    "controllerAs": "example"
+  }
+};
+DynamicNavComponent.ɵfac.ɵcomponent = true;
+DynamicNavComponent.ɵfac.ɵtype = DynamicNavComponent;
+
+// src/app/features/nav/components/keep-content-nav/keep-content-nav.component.ts
+var KeepContentNavComponent = class {
+  constructor() {
+    this.activeId = "keep-editor";
+    this.draft = "This value survives tab changes.";
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-f6279610],.card[_content-f6279610],.dropdown-menu[_content-f6279610],.list-group-item[_content-f6279610],.form-control[_content-f6279610],.form-select[_content-f6279610]{border-color:var(--bs-border-color)}.alert-light[_content-f6279610]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-f6279610],.list-group[_content-f6279610],.dropdown-menu[_content-f6279610]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-f6279610],.btn-outline-secondary[_content-f6279610]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-f6279610],.form-select[_content-f6279610]{background-color:var(--bs-body-bg)}code[_content-f6279610]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+KeepContentNavComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function KeepContentNavComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || KeepContentNavComponent)();
+    return instance;
+  }
+];
+KeepContentNavComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-keep-content-nav"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/keep-content-nav.component-a25913b9.html",
+    "controllerAs": "example"
+  }
+};
+KeepContentNavComponent.ɵfac.ɵcomponent = true;
+KeepContentNavComponent.ɵfac.ɵtype = KeepContentNavComponent;
+
+// src/app/features/nav/components/nav-global/nav-global.component.ts
+var NavGlobalComponent = class {
+  constructor(config) {
+    this.config = config;
+    this.activeId = "global-account";
+    this.initialConfig = {
+      animation: config.animation,
+      destroyOnHide: config.destroyOnHide,
+      keyboard: config.keyboard,
+      orientation: config.orientation,
+      roles: config.roles
+    };
+    config.animation = false;
+    config.destroyOnHide = false;
+    config.keyboard = "changeWithArrows";
+    config.orientation = "vertical";
+    config.roles = "tablist";
   }
   ngAfterViewInit() {
-    this.root = this.elementRef.nativeElement.querySelector("[data-service-scrollspy]") ?? void 0;
-    this.start();
+    this.restoreConfig();
   }
   ngOnDestroy() {
-    this.scrollSpy.stop();
+    this.restoreConfig();
   }
-  start() {
-    if (!this.root) return;
-    this.scrollSpy.start({
-      root: this.root,
-      fragments: this.fragments,
-      rootMargin: "0px 0px -45%"
-    });
-    this.running = true;
-    this.observingFinish = true;
-  }
-  stop() {
-    this.scrollSpy.stop();
-    this.running = false;
-  }
-  toggleFinish() {
-    if (this.observingFinish) {
-      this.scrollSpy.unobserve("service-finish");
-    } else {
-      this.scrollSpy.observe("service-finish");
-    }
-    this.observingFinish = !this.observingFinish;
+  restoreConfig() {
+    this.config.animation = this.initialConfig.animation;
+    this.config.destroyOnHide = this.initialConfig.destroyOnHide;
+    this.config.keyboard = this.initialConfig.keyboard;
+    this.config.orientation = this.initialConfig.orientation;
+    this.config.roles = this.initialConfig.roles;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-650bf150],.card[_content-650bf150],.dropdown-menu[_content-650bf150],.list-group-item[_content-650bf150],.form-control[_content-650bf150],.form-select[_content-650bf150]{border-color:var(--bs-border-color)}.alert-light[_content-650bf150]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-650bf150],.list-group[_content-650bf150],.dropdown-menu[_content-650bf150]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-650bf150],.btn-outline-secondary[_content-650bf150]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-650bf150],.form-select[_content-650bf150]{background-color:var(--bs-body-bg)}code[_content-650bf150]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-9370a994],.card[_content-9370a994],.dropdown-menu[_content-9370a994],.list-group-item[_content-9370a994],.form-control[_content-9370a994],.form-select[_content-9370a994]{border-color:var(--bs-border-color)}.alert-light[_content-9370a994]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-9370a994],.list-group[_content-9370a994],.dropdown-menu[_content-9370a994]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-9370a994],.btn-outline-secondary[_content-9370a994]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-9370a994],.form-select[_content-9370a994]{background-color:var(--bs-body-bg)}code[_content-9370a994]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-ScrollspyServiceDemoComponent.ɵfac = [
-  "ElementRef_927308a2",
-  "NgbScrollSpyService_c5e43f01",
+NavGlobalComponent.ɵfac = [
+  "NgbNavConfig_a43093eb",
   "$element",
   "$scope",
-  function ScrollspyServiceDemoComponent_Factory(a0, a1, $element, $scope) {
+  function NavGlobalComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || ScrollspyServiceDemoComponent)(a0, a1);
+    var instance = new (this && this.ɵT || NavGlobalComponent)(a0);
     return instance;
   }
 ];
-ScrollspyServiceDemoComponent.ɵcmp = {
+NavGlobalComponent.ɵcmp = {
   selectors: [
     [
-      "docs-scrollspy-service-demo"
+      "docs-nav-global"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/scrollspy-service-demo.component-f6f51d05.html",
+    "templateUrl": "templates/nav-global.component-f85933c2.html",
     "controllerAs": "example"
   }
 };
-ScrollspyServiceDemoComponent.ɵfac.ɵcomponent = true;
-ScrollspyServiceDemoComponent.ɵfac.ɵtype = ScrollspyServiceDemoComponent;
-ScrollspyServiceDemoComponent.ɵfac.ɵproviders = [
-  {
-    token: "NgbScrollSpyService_c5e43f01",
-    kind: "class",
-    ctor: NgbScrollSpyService
-  }
-];
-ScrollspyServiceDemoComponent.prototype.$onDestroy = function() {
+NavGlobalComponent.ɵfac.ɵcomponent = true;
+NavGlobalComponent.ɵfac.ɵtype = NavGlobalComponent;
+NavGlobalComponent.prototype.$onDestroy = function() {
   this.ngOnDestroy();
 };
-ScrollspyServiceDemoComponent.prototype.$postLink = function() {
+NavGlobalComponent.prototype.$postLink = function() {
   this.ngAfterViewInit();
 };
 
-// src/app/features/scrollspy/scrollspy.module.ts
-function ɵElementInjectorNode(providers, parent, $injector, element, boundary) {
-  this.parent = parent;
-  this.$injector = $injector;
-  this.element = element;
-  this.boundary = boundary;
-  this.singles = {};
-  this.multis = {};
-  this.cache = {};
-  for (var i = 0; i < providers.length; i++) {
-    var p = providers[i];
-    if (p.multi) {
-      (this.multis[p.token] = this.multis[p.token] || []).push(p);
-    } else {
-      this.singles[p.token] = p;
-    }
+// src/app/features/nav/components/selecting-nav/selecting-nav.component.ts
+var SelectingNavComponent = class {
+  select(id) {
+    this.nav.select(id);
   }
-}
-var ɵNOT_FOUND = {};
-ɵElementInjectorNode.prototype.resolve = function(name) {
-  if (name === "ɵresolve") return this.resolverFor(this.boundary);
-  return this.resolveWith(name, {});
-};
-ɵElementInjectorNode.prototype.resolverFor = function(boundary) {
-  var self = this;
-  return function(token, flags) {
-    flags = flags || {};
-    return flags.host ? self.resolveHost(token, flags, boundary) : self.resolveWith(token, flags);
-  };
-};
-ɵElementInjectorNode.prototype.resolveWith = function(name, flags) {
-  if (flags.host) return this.resolveHost(name, flags, this.boundary);
-  if (!flags.skipSelf) {
-    var own = this.resolveOwn(name);
-    if (own !== ɵNOT_FOUND) return own;
-    if (flags.self) {
-      if (flags.optional) return null;
-      throw new Error('ɵElementInjectorNode: no hay provider para "' + name + '" con { self: true }.');
-    }
-  }
-  if (this.parent) return this.parent.resolveWith(name, {
-    optional: flags.optional
-  });
-  if (!flags.optional) return this.$injector.get(name);
-  return this.$injector.has(name) ? this.$injector.get(name) : null;
-};
-ɵElementInjectorNode.prototype.resolveHost = function(name, flags, boundary) {
-  var within = function(node2) {
-    return !boundary || !node2.element || node2.element === boundary || boundary.contains(node2.element);
-  };
-  for (var node = flags.skipSelf ? this.parent : this; node && within(node); node = node.parent) {
-    var own = node.resolveOwn(name);
-    if (own !== ɵNOT_FOUND) return own;
-  }
-  if (flags.optional) return null;
-  throw new Error('ɵElementInjectorNode: no hay provider para "' + name + '" con { host: true } (entre este elemento y su host).');
-};
-ɵElementInjectorNode.prototype.provides = function(name) {
-  for (var node = this; node; node = node.parent) {
-    if (Object.prototype.hasOwnProperty.call(node.singles, name) || Object.prototype.hasOwnProperty.call(node.multis, name)) return true;
-  }
-  return false;
-};
-ɵElementInjectorNode.prototype.resolveOwn = function(name) {
-  if (Object.prototype.hasOwnProperty.call(this.cache, name)) return this.cache[name];
-  if (Object.prototype.hasOwnProperty.call(this.multis, name)) {
-    var resolved = this.multis[name].map(this.instantiate, this);
-    this.cache[name] = resolved;
-    return resolved;
-  }
-  if (Object.prototype.hasOwnProperty.call(this.singles, name)) {
-    var resolved = this.instantiate(this.singles[name]);
-    this.cache[name] = resolved;
-    return resolved;
-  }
-  return ɵNOT_FOUND;
-};
-ɵElementInjectorNode.prototype.instantiate = function(descriptor) {
-  var self = this;
-  var resolve = function(name) {
-    return self.resolve(name);
-  };
-  if (descriptor.kind === "useValue") return descriptor.value;
-  if (descriptor.kind === "useFactory") return descriptor.factory.apply(null, descriptor.deps.map(resolve));
-  if (descriptor.kind === "useExisting") return resolve(descriptor.existing);
-  if (descriptor.deps) return new (Function.prototype.bind.apply(descriptor.ctor, [
-    null
-  ].concat(descriptor.deps.map(resolve))))();
-  var ctor = descriptor.ctor;
-  var own = Object.prototype.hasOwnProperty;
-  var fac = descriptor.kind === "class" && own.call(ctor, "ɵprov") && ctor.ɵprov.factory || (own.call(ctor, "ɵfac") ? ctor.ɵfac : null);
-  if (!fac && ctor.ɵfac) throw new Error('"' + ctor.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
-  if (!fac) return new ctor();
-  return fac[fac.length - 1].apply(null, fac.slice(0, -1).map(resolve));
-};
-ɵElementInjectorNode.prototype.destroy = function() {
-  var cache = this.cache;
-  this.cache = {};
-  for (var name in cache) {
-    var values = Object.prototype.hasOwnProperty.call(this.multis, name) ? cache[name] : [
-      cache[name]
-    ];
-    for (var i = 0; i < values.length; i++) {
-      var value = values[i];
-      if (value && typeof value.ngOnDestroy === "function" && !this.isAlias(name)) value.ngOnDestroy();
-    }
+  constructor() {
+    this.activeId = "selecting-first";
   }
 };
-ɵElementInjectorNode.prototype.isAlias = function(name) {
-  var single = this.singles[name];
-  return Boolean(single && (single.kind === "useExisting" || single.kind === "useValue"));
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-7dc7de89],.card[_content-7dc7de89],.dropdown-menu[_content-7dc7de89],.list-group-item[_content-7dc7de89],.form-control[_content-7dc7de89],.form-select[_content-7dc7de89]{border-color:var(--bs-border-color)}.alert-light[_content-7dc7de89]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-7dc7de89],.list-group[_content-7dc7de89],.dropdown-menu[_content-7dc7de89]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-7dc7de89],.btn-outline-secondary[_content-7dc7de89]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-7dc7de89],.form-select[_content-7dc7de89]{background-color:var(--bs-body-bg)}code[_content-7dc7de89]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+SelectingNavComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function SelectingNavComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || SelectingNavComponent)();
+    return instance;
+  }
+];
+SelectingNavComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-selecting-nav"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/selecting-nav.component-9978e2ff.html",
+    "controllerAs": "example"
+  }
 };
-function ɵscopedController($delegate, $injector) {
-  if ($injector.ɵngjsScopedController) return $delegate;
-  $injector.ɵngjsScopedController = true;
-  return function(expression, locals, later, ident) {
-    var $element = locals && locals.$element;
-    if (!$element) return $delegate(expression, locals, later, ident);
-    var isComponent = Boolean(expression && expression.ɵcomponent);
-    var boundary = isComponent ? $element[0] : $element.parent ? $element.parent().inheritedData("$ngjsHost") : void 0;
-    var ownProviders = expression && expression.ɵproviders;
-    var node = $element.inheritedData("$ngjsScopedInjector");
-    if (ownProviders && ownProviders.length) {
-      node = new ɵElementInjectorNode(ownProviders, node, $injector, $element[0], boundary);
-      $element.data("$ngjsScopedInjector", node);
-      var $scope = locals.$scope;
-      if ($scope && $scope.$on) {
-        (function(ownNode) {
-          $scope.$on("$destroy", function() {
-            ownNode.destroy();
-          });
-        })(node);
-      }
-    }
-    if (!node) return $delegate(expression, locals, later, ident);
-    var depNames = Array.isArray(expression) ? expression.slice(0, -1) : expression && expression.$inject || [];
-    var extra;
-    for (var i = 0; i < depNames.length; i++) {
-      var name = depNames[i];
-      if (locals && Object.prototype.hasOwnProperty.call(locals, name)) continue;
-      if (name !== "ɵresolve" && !node.provides(name)) continue;
-      extra = extra || {};
-      extra[name] = name === "ɵresolve" ? node.resolverFor(boundary) : node.resolve(name);
-    }
-    if (!extra) return $delegate(expression, locals, later, ident);
-    var merged = {};
-    for (var k in locals) merged[k] = locals[k];
-    for (var k2 in extra) merged[k2] = extra[k2];
-    return $delegate(expression, merged, later, ident);
-  };
-}
+SelectingNavComponent.ɵfac.ɵcomponent = true;
+SelectingNavComponent.ɵfac.ɵtype = SelectingNavComponent;
+
+// src/app/features/nav/components/simple-nav/simple-nav.component.ts
+var SimpleNavComponent = class {
+  constructor() {
+    this.activeId = "simple-overview";
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-3ed9df54],.card[_content-3ed9df54],.dropdown-menu[_content-3ed9df54],.list-group-item[_content-3ed9df54],.form-control[_content-3ed9df54],.form-select[_content-3ed9df54]{border-color:var(--bs-border-color)}.alert-light[_content-3ed9df54]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-3ed9df54],.list-group[_content-3ed9df54],.dropdown-menu[_content-3ed9df54]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-3ed9df54],.btn-outline-secondary[_content-3ed9df54]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-3ed9df54],.form-select[_content-3ed9df54]{background-color:var(--bs-body-bg)}code[_content-3ed9df54]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+SimpleNavComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function SimpleNavComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || SimpleNavComponent)();
+    return instance;
+  }
+];
+SimpleNavComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-simple-nav"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/simple-nav.component-41ae52a3.html",
+    "controllerAs": "example"
+  }
+};
+SimpleNavComponent.ɵfac.ɵcomponent = true;
+SimpleNavComponent.ɵfac.ɵtype = SimpleNavComponent;
+
+// src/app/features/nav/components/vertical-nav/vertical-nav.component.ts
+var VerticalNavComponent = class {
+  constructor() {
+    this.activeId = "vertical-profile";
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-0e800224],.card[_content-0e800224],.dropdown-menu[_content-0e800224],.list-group-item[_content-0e800224],.form-control[_content-0e800224],.form-select[_content-0e800224]{border-color:var(--bs-border-color)}.alert-light[_content-0e800224]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0e800224],.list-group[_content-0e800224],.dropdown-menu[_content-0e800224]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0e800224],.btn-outline-secondary[_content-0e800224]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0e800224],.form-select[_content-0e800224]{background-color:var(--bs-body-bg)}code[_content-0e800224]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+VerticalNavComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function VerticalNavComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || VerticalNavComponent)();
+    return instance;
+  }
+];
+VerticalNavComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-vertical-nav"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/vertical-nav.component-1d1c35f5.html",
+    "controllerAs": "example"
+  }
+};
+VerticalNavComponent.ɵfac.ɵcomponent = true;
+VerticalNavComponent.ɵfac.ɵtype = VerticalNavComponent;
+
+// src/app/features/nav/nav.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -952,53 +949,61 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var ScrollspyModule = class {
+var NavModule = class {
 };
-ScrollspyModule.ɵfac = [
-  function ScrollspyModule_Factory() {
-    return new (this && this.ɵT || ScrollspyModule)();
+NavModule.ɵfac = [
+  function NavModule_Factory() {
+    return new (this && this.ɵT || NavModule)();
   }
 ];
-var ɵScrollspyModule_import0 = RouterModule.forChild(routes);
-ScrollspyModule.ɵmod = {
-  id: "ScrollspyModule_d422318a"
+var ɵNavModule_import0 = RouterModule.forChild(routes);
+NavModule.ɵmod = {
+  id: "NavModule_e4c5865c"
 };
-ɵimportProviders(import_angular.default.module("ScrollspyModule_d422318a", [
-  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
+ɵimportProviders(import_angular.default.module("NavModule_e4c5865c", [
   typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
-  ɵimportedModuleName(ɵScrollspyModule_import0)
+  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
+  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+  ɵimportedModuleName(ɵNavModule_import0)
 ]), [
-  ɵScrollspyModule_import0
-]).decorator("$controller", [
-  "$delegate",
-  "$injector",
-  ɵscopedController
-]).component("docsBasicScrollspy", {
-  controller: BasicScrollspyComponent.ɵfac,
-  templateUrl: "templates/basic-scrollspy.component-9c1c2807.html",
+  ɵNavModule_import0
+]).component("docsAlternativeNav", {
+  controller: AlternativeNavComponent.ɵfac,
+  templateUrl: "templates/alternative-nav.component-95d2c8d1.html",
   controllerAs: "example"
-}).component("docsNavbarScrollspy", {
-  controller: NavbarScrollspyComponent.ɵfac,
-  templateUrl: "templates/navbar-scrollspy.component-7455b46d.html",
+}).component("docsCustomNav", {
+  controller: CustomNavComponent.ɵfac,
+  templateUrl: "templates/custom-nav.component-a5b50992.html",
   controllerAs: "example"
-}).component("docsNestedScrollspy", {
-  controller: NestedScrollspyComponent.ɵfac,
-  templateUrl: "templates/nested-scrollspy.component-e0ce1197.html",
+}).component("docsDynamicNav", {
+  controller: DynamicNavComponent.ɵfac,
+  templateUrl: "templates/dynamic-nav.component-cc472c86.html",
   controllerAs: "example"
-}).component("docsScrollspyMenuItems", {
-  controller: ScrollspyMenuItemsComponent.ɵfac,
-  templateUrl: "templates/scrollspy-menu-items.component-0f2f39fa.html",
+}).component("docsKeepContentNav", {
+  controller: KeepContentNavComponent.ɵfac,
+  templateUrl: "templates/keep-content-nav.component-a25913b9.html",
   controllerAs: "example"
-}).component("docsScrollspyServiceDemo", {
-  controller: ScrollspyServiceDemoComponent.ɵfac,
-  templateUrl: "templates/scrollspy-service-demo.component-f6f51d05.html",
+}).component("docsNavGlobal", {
+  controller: NavGlobalComponent.ɵfac,
+  templateUrl: "templates/nav-global.component-f85933c2.html",
   controllerAs: "example"
-}).factory("ScrollspyModule_bf74b1f9", ScrollspyModule.ɵfac).run([
-  "ScrollspyModule_bf74b1f9",
+}).component("docsSelectingNav", {
+  controller: SelectingNavComponent.ɵfac,
+  templateUrl: "templates/selecting-nav.component-9978e2ff.html",
+  controllerAs: "example"
+}).component("docsSimpleNav", {
+  controller: SimpleNavComponent.ɵfac,
+  templateUrl: "templates/simple-nav.component-41ae52a3.html",
+  controllerAs: "example"
+}).component("docsVerticalNav", {
+  controller: VerticalNavComponent.ɵfac,
+  templateUrl: "templates/vertical-nav.component-1d1c35f5.html",
+  controllerAs: "example"
+}).factory("NavModule_0e4ee266", NavModule.ɵfac).run([
+  "NavModule_0e4ee266",
   function() {
   }
 ]);
 export {
-  ScrollspyModule
+  NavModule
 };

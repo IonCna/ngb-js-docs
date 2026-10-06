@@ -362,7 +362,7 @@ import {
 } from "./chunk-R7GTDWT4.js";
 import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
 import "./chunk-BJK3QUXG.js";
 import {
   TemplateRef,

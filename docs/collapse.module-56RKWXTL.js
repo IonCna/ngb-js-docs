@@ -352,8 +352,15 @@
   });
 })();
 import {
+  NgbCollapseModule
+} from "./chunk-Y3STFSLE.js";
+import {
+  NgbScrollSpyModule
+} from "./chunk-R7GTDWT4.js";
+import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
+import "./chunk-U6UIHJCB.js";
 import {
   require_angular
 } from "./chunk-PFCKLQSI.js";
@@ -361,86 +368,211 @@ import {
   __toESM
 } from "./chunk-57M53B5Q.js";
 
-// src/app/features/features.module.ts
+// src/app/features/collapse/collapse.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/features.routes.ts
+// src/app/features/collapse/components/horizontal-collapse/horizontal-collapse.component.ts
+var HorizontalCollapseComponent = class {
+  toggle() {
+    this.collapsed = !this.collapsed;
+  }
+  constructor() {
+    this.collapsed = true;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-2c0cecd0],.card[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0],.list-group-item[_content-2c0cecd0],.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{border-color:var(--bs-border-color)}.alert-light[_content-2c0cecd0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2c0cecd0],.list-group[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2c0cecd0],.btn-outline-secondary[_content-2c0cecd0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{background-color:var(--bs-body-bg)}code[_content-2c0cecd0]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+HorizontalCollapseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function HorizontalCollapseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || HorizontalCollapseComponent)();
+    return instance;
+  }
+];
+HorizontalCollapseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-horizontal-collapse"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/horizontal-collapse.component-f0dd72af.html",
+    "controllerAs": "example"
+  }
+};
+HorizontalCollapseComponent.ɵfac.ɵcomponent = true;
+HorizontalCollapseComponent.ɵfac.ɵtype = HorizontalCollapseComponent;
+
+// src/app/features/collapse/components/navbar-collapse/navbar-collapse.component.ts
+var NavbarCollapseComponent = class {
+  toggleMenu() {
+    this.menuCollapsed = !this.menuCollapsed;
+  }
+  closeMenu() {
+    this.menuCollapsed = true;
+  }
+  constructor() {
+    this.menuCollapsed = true;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-c86be629],.card[_content-c86be629],.dropdown-menu[_content-c86be629],.list-group-item[_content-c86be629],.form-control[_content-c86be629],.form-select[_content-c86be629]{border-color:var(--bs-border-color)}.alert-light[_content-c86be629]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-c86be629],.list-group[_content-c86be629],.dropdown-menu[_content-c86be629]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-c86be629],.btn-outline-secondary[_content-c86be629]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-c86be629],.form-select[_content-c86be629]{background-color:var(--bs-body-bg)}code[_content-c86be629]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+NavbarCollapseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function NavbarCollapseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || NavbarCollapseComponent)();
+    return instance;
+  }
+];
+NavbarCollapseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-navbar-collapse"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/navbar-collapse.component-36e20d5c.html",
+    "controllerAs": "example"
+  }
+};
+NavbarCollapseComponent.ɵfac.ɵcomponent = true;
+NavbarCollapseComponent.ɵfac.ɵtype = NavbarCollapseComponent;
+
+// src/app/features/collapse/components/simple-collapse/simple-collapse.component.ts
+var SimpleCollapseComponent = class {
+  toggleWithController() {
+    this.collapse.toggle();
+  }
+  toggleWithBinding() {
+    this.collapsed = !this.collapsed;
+  }
+  constructor() {
+    this.collapsed = true;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-bfd88986],.card[_content-bfd88986],.dropdown-menu[_content-bfd88986],.list-group-item[_content-bfd88986],.form-control[_content-bfd88986],.form-select[_content-bfd88986]{border-color:var(--bs-border-color)}.alert-light[_content-bfd88986]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-bfd88986],.list-group[_content-bfd88986],.dropdown-menu[_content-bfd88986]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-bfd88986],.btn-outline-secondary[_content-bfd88986]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-bfd88986],.form-select[_content-bfd88986]{background-color:var(--bs-body-bg)}code[_content-bfd88986]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+SimpleCollapseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function SimpleCollapseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || SimpleCollapseComponent)();
+    return instance;
+  }
+];
+SimpleCollapseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-simple-collapse"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  viewQueries: [
+    {
+      propertyName: "collapse",
+      first: true,
+      descendants: true,
+      static: true,
+      predicate: [
+        "collapse"
+      ]
+    }
+  ],
+  definition: {
+    "templateUrl": "templates/simple-collapse.component-da5f376c.html",
+    "controllerAs": "example"
+  }
+};
+SimpleCollapseComponent.ɵfac.ɵcomponent = true;
+SimpleCollapseComponent.ɵfac.ɵtype = SimpleCollapseComponent;
+
+// src/app/features/collapse/collapse.routes.ts
 var routes = [
   {
-    path: "alert",
-    loadChildren: () => import("./alert.module-NMUSHISI.js").then((m) => m.AlertModule)
-  },
-  {
-    path: "accordion",
-    loadChildren: () => import("./accordion.module-M65T2YMA.js").then((m) => m.AccordionModule)
-  },
-  {
-    path: "carousel",
-    loadChildren: () => import("./carousel.module-DTFH2NUH.js").then((m) => m.CarouselModule)
-  },
-  {
-    path: "collapse",
-    loadChildren: () => import("./collapse.module-TW6NFONX.js").then((m) => m.CollapseModule)
-  },
-  {
-    path: "datepicker",
-    loadChildren: () => import("./datepicker.module-FVUTLQMP.js").then((m) => m.DatepickerModule)
-  },
-  {
-    path: "dropdown",
-    loadChildren: () => import("./dropdown.module-UTSD3NLI.js").then((m) => m.DropdownModule)
-  },
-  {
-    path: "modal",
-    loadChildren: () => import("./modal.module-I6XDYDGV.js").then((m) => m.ModalModule)
-  },
-  {
-    path: "nav",
-    loadChildren: () => import("./nav.module-PRSJALSU.js").then((m) => m.NavModule)
-  },
-  {
-    path: "offcanvas",
-    loadChildren: () => import("./offcanvas.module-3ZHQJ2MB.js").then((m) => m.OffcanvasModule)
-  },
-  {
-    path: "pagination",
-    loadChildren: () => import("./pagination.module-MZNJJB3R.js").then((m) => m.PaginationModule)
-  },
-  {
-    path: "popover",
-    loadChildren: () => import("./popover.module-VOERC7RX.js").then((m) => m.PopoverModule)
-  },
-  {
-    path: "progressbar",
-    loadChildren: () => import("./progressbar.module-MCLC7RZY.js").then((m) => m.ProgressbarModule)
-  },
-  {
-    path: "rating",
-    loadChildren: () => import("./rating.module-7FFJYKZS.js").then((m) => m.RatingModule)
-  },
-  {
-    path: "scrollspy",
-    loadChildren: () => import("./scrollspy.module-A7HVNFED.js").then((m) => m.ScrollspyModule)
-  },
-  {
-    path: "timepicker",
-    loadChildren: () => import("./timepicker.module-R5DTT67K.js").then((m) => m.TimepickerModule)
-  },
-  {
-    path: "toast",
-    loadChildren: () => import("./toast.module-YIRIHWDG.js").then((m) => m.ToastModule)
-  },
-  {
-    path: "tooltip",
-    loadChildren: () => import("./tooltip.module-EQAEOINZ.js").then((m) => m.TooltipModule)
-  },
-  {
-    path: "typeahead",
-    loadChildren: () => import("./typeahead.module-GLSBJRGT.js").then((m) => m.TypeaheadModule)
+    path: "",
+    data: {
+      title: "Collapse",
+      tabs: [
+        {
+          name: "Examples",
+          to: "/components/collapse/examples"
+        },
+        {
+          name: "Api",
+          to: "/components/collapse/api"
+        }
+      ],
+      externalLinks: {
+        bootstrap: "components/collapse/",
+        ngBootstrap: "components/collapse/overview"
+      }
+    },
+    children: [
+      {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "examples"
+      },
+      {
+        path: "examples",
+        data: {
+          sections: [
+            {
+              id: "simple-collapse",
+              name: "Simple collapse"
+            },
+            {
+              id: "horizontal-collapse",
+              name: "Horizontal collapse"
+            },
+            {
+              id: "navbar-collapse",
+              name: "Responsive navbar"
+            }
+          ]
+        },
+        loadComponent: () => import("./collapse-examples-page.component-LHKCN6VO.js").then((m) => m.CollapseExamplesPageComponent)
+      },
+      {
+        path: "api",
+        data: {
+          sections: [
+            {
+              id: "ngb-collapse",
+              name: "NgbCollapse"
+            },
+            {
+              id: "ngb-collapse-config",
+              name: "NgbCollapseConfig"
+            }
+          ]
+        },
+        loadComponent: () => import("./collapse-api-page.component-67KXYJO2.js").then((m) => m.CollapseApiPageComponent)
+      }
+    ]
   }
 ];
 
-// src/app/features/features.module.ts
+// src/app/features/collapse/collapse.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -555,26 +687,40 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var FeaturesModule = class {
+var CollapseModule = class {
 };
-FeaturesModule.ɵfac = [
-  function FeaturesModule_Factory() {
-    return new (this && this.ɵT || FeaturesModule)();
+CollapseModule.ɵfac = [
+  function CollapseModule_Factory() {
+    return new (this && this.ɵT || CollapseModule)();
   }
 ];
-var ɵFeaturesModule_import0 = RouterModule.forChild(routes);
-FeaturesModule.ɵmod = {
-  id: "FeaturesModule_ac665e6f"
+var ɵCollapseModule_import0 = RouterModule.forChild(routes);
+CollapseModule.ɵmod = {
+  id: "CollapseModule_045ce82f"
 };
-ɵimportProviders(import_angular.default.module("FeaturesModule_ac665e6f", [
-  ɵimportedModuleName(ɵFeaturesModule_import0)
+ɵimportProviders(import_angular.default.module("CollapseModule_045ce82f", [
+  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+  ɵimportedModuleName(ɵCollapseModule_import0)
 ]), [
-  ɵFeaturesModule_import0
-]).factory("FeaturesModule_1e9dd68c", FeaturesModule.ɵfac).run([
-  "FeaturesModule_1e9dd68c",
+  ɵCollapseModule_import0
+]).component("docsHorizontalCollapse", {
+  controller: HorizontalCollapseComponent.ɵfac,
+  templateUrl: "templates/horizontal-collapse.component-f0dd72af.html",
+  controllerAs: "example"
+}).component("docsNavbarCollapse", {
+  controller: NavbarCollapseComponent.ɵfac,
+  templateUrl: "templates/navbar-collapse.component-36e20d5c.html",
+  controllerAs: "example"
+}).component("docsSimpleCollapse", {
+  controller: SimpleCollapseComponent.ɵfac,
+  templateUrl: "templates/simple-collapse.component-da5f376c.html",
+  controllerAs: "example"
+}).factory("CollapseModule_a263c103", CollapseModule.ɵfac).run([
+  "CollapseModule_a263c103",
   function() {
   }
 ]);
 export {
-  FeaturesModule
+  CollapseModule
 };

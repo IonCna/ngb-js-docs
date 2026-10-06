@@ -352,506 +352,53 @@
   });
 })();
 import {
+  NgbOffcanvasModule
+} from "./chunk-KEPJRYVE.js";
+import {
   NgbCollapseModule
 } from "./chunk-Y3STFSLE.js";
 import {
   NgbNavModule
 } from "./chunk-S3STC4KD.js";
 import {
-  NgbConfig,
   NgbScrollSpyModule
 } from "./chunk-R7GTDWT4.js";
 import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
 import "./chunk-BJK3QUXG.js";
 import {
-  NgZone,
-  TemplateRef,
-  inject,
-  ngbRunTransition,
-  reflow,
-  take
+  TemplateRef
 } from "./chunk-U6UIHJCB.js";
 import {
-  CommonModule,
-  ElementRef,
-  EventEmitter,
   require_angular
 } from "./chunk-PFCKLQSI.js";
 import {
   __toESM
 } from "./chunk-57M53B5Q.js";
 
-// src/app/features/toast/toast.module.ts
-var import_angular2 = __toESM(require_angular(), 1);
-
-// ../ngb-js/dist/chunk-DZSZTOZM.js
+// src/app/features/offcanvas/offcanvas.module.ts
 var import_angular = __toESM(require_angular(), 1);
-var NgbToastConfig = class {
-  get animation() {
-    return this._animation ?? this._ngbConfig.animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  constructor() {
-    this._ngbConfig = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToastConfig"] ? globalThis.ɵngjsInjected["NgbToastConfig"][0] : inject(NgbConfig);
-    this.autohide = true;
-    this.delay = 5e3;
-    this.ariaLive = "polite";
-  }
-};
-NgbToastConfig.ɵfac = [
-  "NgbConfig_c7257787",
-  function NgbToastConfig_Factory(i0) {
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbToastConfig": [
-        i0
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbToastConfig)();
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
-    return instance;
-  }
-];
-NgbToastConfig.ɵprov = {
-  token: "NgbToastConfig_cf333917",
-  providedIn: "root"
-};
-(globalThis.ɵngjsRootProviders = globalThis.ɵngjsRootProviders || []).push([
-  "NgbToastConfig_cf333917",
-  NgbToastConfig.ɵfac
-]);
-var NgbToastHeader = class {
-};
-NgbToastHeader.ɵfac = [
-  "$element",
-  "$scope",
-  function NgbToastHeader_Factory($element, $scope) {
-    var instance = new (this && this.ɵT || NgbToastHeader)();
-    return instance;
-  }
-];
-NgbToastHeader.ɵdir = {
-  selectors: [
-    [
-      "",
-      "ngbToastHeader",
-      ""
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {}
-};
-NgbToastHeader.ɵfac.ɵtype = NgbToastHeader;
-var ngbToastFadeInTransition = (element, animation) => {
-  const { classList } = element;
-  if (animation) {
-    classList.add("fade");
-  } else {
-    classList.add("show");
-    return;
-  }
-  reflow(element);
-  classList.add("show", "showing");
-  return () => {
-    classList.remove("showing");
-  };
-};
-var ngbToastFadeOutTransition = ({ classList }) => {
-  classList.add("showing");
-  return () => {
-    classList.remove("show", "showing");
-  };
-};
-var NgbToast = class {
-  get _ariaLive() {
-    return this.ariaLive;
-  }
-  get _fade() {
-    return this.animation;
-  }
-  constructor(ariaLive) {
-    this.ariaLive = ariaLive;
-    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToast"] ? globalThis.ɵngjsInjected["NgbToast"][0] : inject(NgbToastConfig);
-    this._zone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToast"] ? globalThis.ɵngjsInjected["NgbToast"][1] : inject(NgZone);
-    this._element = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToast"] ? globalThis.ɵngjsInjected["NgbToast"][2] : inject(ElementRef);
-    this._timeoutID = null;
-    this.animation = this._config.animation;
-    this.delay = this._config.delay;
-    this.autohide = this._config.autohide;
-    this.contentHeaderTpl = null;
-    this.shown = new EventEmitter();
-    this.hidden = new EventEmitter();
-    this._role = "alert";
-    this._ariaAtomic = "true";
-    this._toast = true;
-    this.ariaLive ??= this._config.ariaLive;
-  }
-  ngAfterContentInit() {
-    this._zone.onStable.pipe(take(1)).subscribe(() => {
-      this._init();
-      this.show();
-    });
-  }
-  ngOnChanges(changes) {
-    if ("autohide" in changes) {
-      this._clearTimeout();
-      this._init();
-    }
-  }
-  hide() {
-    this._clearTimeout();
-    const transition = ngbRunTransition(this._zone, this._element.nativeElement, ngbToastFadeOutTransition, {
-      animation: this.animation,
-      runningTransition: "stop"
-    });
-    transition.subscribe(() => {
-      this.hidden.emit();
-    });
-    return transition;
-  }
-  show() {
-    const transition = ngbRunTransition(this._zone, this._element.nativeElement, ngbToastFadeInTransition, {
-      animation: this.animation,
-      runningTransition: "continue"
-    });
-    transition.subscribe(() => {
-      this.shown.emit();
-    });
-    return transition;
-  }
-  _init() {
-    if (this.autohide && !this._timeoutID) {
-      this._timeoutID = setTimeout(() => this.hide(), this.delay);
-    }
-  }
-  _clearTimeout() {
-    if (this._timeoutID) {
-      clearTimeout(this._timeoutID);
-      this._timeoutID = null;
-    }
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = "ngb-toast{display:block}ngb-toast .toast-header .close[_content-dd14d3e9]{margin-left:auto;margin-bottom:0.25rem}";
-  document.head.appendChild(s);
-})();
-NgbToast.ɵfac = [
-  "NgbToastConfig_cf333917",
-  "NgZone_31031859",
-  "ElementRef_927308a2",
-  "$element",
-  "$scope",
-  function NgbToast_Factory(i0, i1, i2, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbToast": [
-        i0,
-        i1,
-        i2
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbToast)($element[0].getAttribute("aria-live"));
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
-    var ɵunwatch0 = $scope.$watch(function() {
-      return instance._role;
-    }, function(v) {
-      v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
-    });
-    var ɵunwatch1 = $scope.$watch(function() {
-      return instance._ariaAtomic;
-    }, function(v) {
-      v == null ? $element.removeAttr("aria-atomic") : $element.attr("aria-atomic", String(v));
-    });
-    var ɵunwatch2 = $scope.$watch(function() {
-      return instance._toast;
-    }, function(v) {
-      v ? $element.addClass("toast") : $element.removeClass("toast");
-    });
-    var ɵunwatch3 = $scope.$watch(function() {
-      return instance._ariaLive;
-    }, function(v) {
-      v == null ? $element.removeAttr("aria-live") : $element.attr("aria-live", String(v));
-    });
-    var ɵunwatch4 = $scope.$watch(function() {
-      return instance._fade;
-    }, function(v) {
-      v ? $element.addClass("fade") : $element.removeClass("fade");
-    });
-    var ɵhostOnInit = instance.$onInit;
-    instance.$onInit = function() {
-      var ɵresult = ɵhostOnInit ? ɵhostOnInit.apply(this, arguments) : void 0;
-      (function(v) {
-        v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
-      })(instance._role);
-      (function(v) {
-        v == null ? $element.removeAttr("aria-atomic") : $element.attr("aria-atomic", String(v));
-      })(instance._ariaAtomic);
-      (function(v) {
-        v ? $element.addClass("toast") : $element.removeClass("toast");
-      })(instance._toast);
-      (function(v) {
-        v == null ? $element.removeAttr("aria-live") : $element.attr("aria-live", String(v));
-      })(instance._ariaLive);
-      (function(v) {
-        v ? $element.addClass("fade") : $element.removeClass("fade");
-      })(instance._fade);
-      return ɵresult;
-    };
-    $scope.$on("$destroy", function() {
-      ɵunwatch0();
-      ɵunwatch1();
-      ɵunwatch2();
-      ɵunwatch3();
-      ɵunwatch4();
-    });
-    return instance;
-  }
-];
-NgbToast.ɵcmp = {
-  selectors: [
-    [
-      "ngb-toast"
-    ]
-  ],
-  inputs: {
-    "animation": "animation",
-    "delay": "delay",
-    "autohide": "autohide",
-    "header": "header"
-  },
-  outputs: {
-    "shown": "shown",
-    "hidden": "hidden"
-  },
-  exportAs: [
-    "ngbToast"
-  ],
-  queries: [
-    {
-      propertyName: "contentHeaderTpl",
-      first: true,
-      descendants: true,
-      static: true,
-      get predicate() {
-        return NgbToastHeader;
-      },
-      get read() {
-        return TemplateRef;
-      }
-    }
-  ],
-  viewQueries: [
-    {
-      propertyName: "headerTpl",
-      first: true,
-      descendants: true,
-      static: true,
-      predicate: [
-        "headerTpl"
-      ],
-      get read() {
-        return TemplateRef;
-      }
-    }
-  ],
-  definition: {
-    "template": '<ng-template ng-ref="headerTpl" _content-dd14d3e9="">\n    <strong class="me-auto" _content-dd14d3e9="">{{ $.header }}</strong>\n</ng-template>\n\n<div ng-if="$.contentHeaderTpl || $.header" class="toast-header" _content-dd14d3e9="">\n    <ng-container ng-template-outlet="$.contentHeaderTpl || $.headerTpl" _content-dd14d3e9=""></ng-container>\n    <button type="button" class="btn-close" aria-label="Close" ng-click="$.hide()" _content-dd14d3e9=""></button>\n</div>\n\n<div class="toast-body" _content-dd14d3e9="">\n    <ng-content _content-dd14d3e9=""></ng-content>\n</div>',
-    "bindings": {
-      "animation": "<?",
-      "delay": "<?",
-      "autohide": "<?",
-      "header": "@?",
-      "shown": "&?",
-      "hidden": "&?"
-    },
-    "transclude": true
-  }
-};
-NgbToast.ɵfac.ɵcomponent = true;
-NgbToast.ɵfac.ɵtype = NgbToast;
-NgbToast.prototype.$onChanges = function(changesObj) {
-  var changes = {};
-  (function() {
-    var c = changesObj["animation"];
-    if (!c) return;
-    changes["animation"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  (function() {
-    var c = changesObj["delay"];
-    if (!c) return;
-    changes["delay"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  (function() {
-    var c = changesObj["autohide"];
-    if (!c) return;
-    changes["autohide"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  (function() {
-    var c = changesObj["header"];
-    if (!c) return;
-    changes["header"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  this.ngOnChanges(changes);
-};
-NgbToast.prototype.$postLink = function() {
-  this.ngAfterContentInit();
-};
-function ɵlazyController($delegate, $injector) {
-  if ($injector.ɵngjsLazyController) return $delegate;
-  $injector.ɵngjsLazyController = true;
-  return function(expression, locals, later, ident) {
-    var init = $delegate.apply(this, arguments);
-    if (!later || !expression || !expression.ɵtype || typeof init !== "function" || !init.instance) return init;
-    var state = 0, built;
-    var lazy = function() {
-      if (state === 2) return built;
-      if (state === 1) throw new Error('NG0200: dependencia circular — "' + expression.ɵtype.name + '" se pidió a sí misma mientras se construía (directivas del mismo elemento que se inyectan entre sí).');
-      state = 1;
-      try {
-        built = init();
-        state = 2;
-      } finally {
-        if (state !== 2) state = 0;
-      }
-      return built;
-    };
-    Object.defineProperty(init.instance, "ɵngjsBuild", {
-      value: lazy,
-      configurable: true
-    });
-    lazy.instance = init.instance;
-    lazy.identifier = init.identifier;
-    return lazy;
-  };
-}
-var NgbToastModule = class {
-};
-NgbToastModule.ɵfac = [
-  function NgbToastModule_Factory() {
-    return new (this && this.ɵT || NgbToastModule)();
-  }
-];
-NgbToastModule.ɵmod = {
-  id: "NgbToastModule_90bbc7b7",
-  controllerAs: "$"
-};
-import_angular.default.module("NgbToastModule_90bbc7b7", [
-  typeof CommonModule === "string" ? CommonModule : CommonModule.ɵmod ? CommonModule.ɵmod.id : CommonModule.name
-]).factory("ɵresolve", [
-  "$injector",
-  function($injector) {
-    return function(name, flags, element) {
-      flags = flags || {};
-      var bounded = element && (flags.self || flags.host);
-      if (!bounded && $injector.has(name)) return $injector.get(name);
-      if (flags.optional) return null;
-      throw new Error('ɵresolve: no hay provider para "' + name + '"' + (bounded ? " con { " + (flags.self ? "self" : "host") + ": true } (sin injector de elemento)" : "") + ".");
-    };
-  }
-]).decorator("$controller", [
-  "$delegate",
-  "$injector",
-  ɵlazyController
-]).component("ngbToast", {
-  controller: NgbToast.ɵfac,
-  template: '<ng-template ng-ref="headerTpl" _content-dd14d3e9="">\n    <strong class="me-auto" _content-dd14d3e9="">{{ $.header }}</strong>\n</ng-template>\n\n<div ng-if="$.contentHeaderTpl || $.header" class="toast-header" _content-dd14d3e9="">\n    <ng-container ng-template-outlet="$.contentHeaderTpl || $.headerTpl" _content-dd14d3e9=""></ng-container>\n    <button type="button" class="btn-close" aria-label="Close" ng-click="$.hide()" _content-dd14d3e9=""></button>\n</div>\n\n<div class="toast-body" _content-dd14d3e9="">\n    <ng-content _content-dd14d3e9=""></ng-content>\n</div>',
-  controllerAs: "$",
-  transclude: true,
-  bindings: {
-    "animation": "<?",
-    "delay": "<?",
-    "autohide": "<?",
-    "header": "@?",
-    "shown": "&?",
-    "hidden": "&?"
-  }
-}).directive("ngbToast", function() {
-  return {
-    restrict: "E",
-    link: {
-      pre: function(scope, element) {
-        [
-          "shown",
-          "hidden"
-        ].forEach(function(name) {
-          element[0].removeAttribute(name);
-        });
-      }
-    }
-  };
-}).directive("ngbToastHeader", function() {
-  return {
-    controller: NgbToastHeader.ɵfac,
-    restrict: "A",
-    bindToController: true,
-    controllerAs: "ngbToastHeader"
-  };
-}).factory("NgbToastModule_b8dfc097", NgbToastModule.ɵfac).run([
-  "NgbToastModule_b8dfc097",
-  function() {
-  }
-]);
 
-// src/app/features/toast/toast.routes.ts
+// src/app/features/offcanvas/offcanvas.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Toast",
+      title: "Offcanvas",
       tabs: [
         {
           name: "Examples",
-          to: "/components/toast/examples"
+          to: "/components/offcanvas/examples"
         },
         {
           name: "Api",
-          to: "/components/toast/api"
+          to: "/components/offcanvas/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/toasts/",
-        ngBootstrap: "components/toast/overview"
+        bootstrap: "components/offcanvas/",
+        ngBootstrap: "components/offcanvas/overview"
       }
     },
     children: [
@@ -865,306 +412,498 @@ var routes = [
         data: {
           sections: [
             {
-              id: "inline-toast",
-              name: "Declarative inline usage"
+              id: "offcanvas-default",
+              name: "Default options"
             },
             {
-              id: "template-header-toast",
-              name: "Template header"
+              id: "offcanvas-component-content",
+              name: "Component content"
             },
             {
-              id: "closeable-toast",
-              name: "Closeable toast"
+              id: "offcanvas-focus",
+              name: "Focus management"
             },
             {
-              id: "prevent-autohide-toast",
-              name: "Prevent autohide"
+              id: "offcanvas-options",
+              name: "Offcanvas options"
             },
             {
-              id: "toast-management",
-              name: "Management service"
+              id: "offcanvas-global",
+              name: "Global configuration"
             }
           ]
         },
-        loadComponent: () => import("./toast-examples-page.component-IZMY43IS.js").then((m) => m.ToastExamplesPageComponent)
+        loadComponent: () => import("./offcanvas-examples-page.component-PIG25XA3.js").then((m) => m.OffcanvasExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-toast",
-              name: "NgbToast"
+              id: "ngb-offcanvas",
+              name: "NgbOffcanvas"
             },
             {
-              id: "ngb-toast-header",
-              name: "NgbToastHeader"
+              id: "ngb-offcanvas-ref",
+              name: "NgbOffcanvasRef"
             },
             {
-              id: "ngb-toast-config",
-              name: "NgbToastConfig"
+              id: "ngb-active-offcanvas",
+              name: "NgbActiveOffcanvas"
+            },
+            {
+              id: "ngb-offcanvas-config",
+              name: "NgbOffcanvasConfig"
             }
           ]
         },
-        loadComponent: () => import("./toast-api-page.component-MQMMTKKH.js").then((m) => m.ToastApiPageComponent)
+        loadComponent: () => import("./offcanvas-api-page.component-B5CCOJED.js").then((m) => m.OffcanvasApiPageComponent)
       }
     ]
   }
 ];
 
-// src/app/features/toast/components/closeable-toast/closeable-toast.component.ts
-var CloseableToastComponent = class {
-  close() {
-    this.visible = false;
-    this.reopenTimer = setTimeout(() => {
-      this.visible = true;
-    }, 3e3);
+// src/app/features/offcanvas/components/offcanvas-demo-content/offcanvas-demo-content.component.ts
+var OffcanvasDemoContentComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-68f3d054],.card[_content-68f3d054],.dropdown-menu[_content-68f3d054],.list-group-item[_content-68f3d054],.form-control[_content-68f3d054],.form-select[_content-68f3d054]{border-color:var(--bs-border-color)}.alert-light[_content-68f3d054]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-68f3d054],.list-group[_content-68f3d054],.dropdown-menu[_content-68f3d054]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-68f3d054],.btn-outline-secondary[_content-68f3d054]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-68f3d054],.form-select[_content-68f3d054]{background-color:var(--bs-body-bg)}code[_content-68f3d054]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasDemoContentComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function OffcanvasDemoContentComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasDemoContentComponent)();
+    return instance;
   }
-  ngOnDestroy() {
-    if (this.reopenTimer) clearTimeout(this.reopenTimer);
+];
+OffcanvasDemoContentComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-demo-content"
+    ]
+  ],
+  inputs: {
+    "ngbActiveOffcanvas": "ngbActiveOffcanvas"
+  },
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/offcanvas-demo-content.component-8d4707cf.html",
+    "controllerAs": "$",
+    "bindings": {
+      "ngbActiveOffcanvas": "<?"
+    }
   }
-  constructor() {
-    this.visible = true;
+};
+OffcanvasDemoContentComponent.ɵfac.ɵcomponent = true;
+OffcanvasDemoContentComponent.ɵfac.ɵtype = OffcanvasDemoContentComponent;
+
+// src/app/features/offcanvas/components/offcanvas-component-content/offcanvas-component-content.component.ts
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) resolve(value);
+  else Promise.resolve(value).then(_next, _throw);
+}
+function _async_to_generator(fn) {
+  return function() {
+    var self = this, args = arguments;
+    return new Promise(function(resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(void 0);
+    });
+  };
+}
+var OffcanvasComponentContentComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
+    this.lastResult = "No result yet";
+  }
+  open() {
+    return _async_to_generator(function* () {
+      const offcanvasRef = yield this.offcanvas.open(OffcanvasDemoContentComponent);
+      offcanvasRef.closed.subscribe((result) => {
+        this.lastResult = `Closed with: ${result}`;
+      });
+      offcanvasRef.dismissed.subscribe((reason) => {
+        this.lastResult = `Dismissed with: ${reason}`;
+      });
+    }).call(this);
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-4071c1ea],.card[_content-4071c1ea],.dropdown-menu[_content-4071c1ea],.list-group-item[_content-4071c1ea],.form-control[_content-4071c1ea],.form-select[_content-4071c1ea]{border-color:var(--bs-border-color)}.alert-light[_content-4071c1ea]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-4071c1ea],.list-group[_content-4071c1ea],.dropdown-menu[_content-4071c1ea]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-4071c1ea],.btn-outline-secondary[_content-4071c1ea]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-4071c1ea],.form-select[_content-4071c1ea]{background-color:var(--bs-body-bg)}code[_content-4071c1ea]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-0a2d56f9],.card[_content-0a2d56f9],.dropdown-menu[_content-0a2d56f9],.list-group-item[_content-0a2d56f9],.form-control[_content-0a2d56f9],.form-select[_content-0a2d56f9]{border-color:var(--bs-border-color)}.alert-light[_content-0a2d56f9]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0a2d56f9],.list-group[_content-0a2d56f9],.dropdown-menu[_content-0a2d56f9]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0a2d56f9],.btn-outline-secondary[_content-0a2d56f9]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0a2d56f9],.form-select[_content-0a2d56f9]{background-color:var(--bs-body-bg)}code[_content-0a2d56f9]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-CloseableToastComponent.ɵfac = [
+OffcanvasComponentContentComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
   "$element",
   "$scope",
-  function CloseableToastComponent_Factory($element, $scope) {
+  function OffcanvasComponentContentComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || CloseableToastComponent)();
+    var instance = new (this && this.ɵT || OffcanvasComponentContentComponent)(a0);
     return instance;
   }
 ];
-CloseableToastComponent.ɵcmp = {
+OffcanvasComponentContentComponent.ɵcmp = {
   selectors: [
     [
-      "docs-closeable-toast"
+      "docs-offcanvas-component-content"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/closeable-toast.component-b472da8f.html",
+    "templateUrl": "templates/offcanvas-component-content.component-ae337a6f.html",
     "controllerAs": "example"
   }
 };
-CloseableToastComponent.ɵfac.ɵcomponent = true;
-CloseableToastComponent.ɵfac.ɵtype = CloseableToastComponent;
-CloseableToastComponent.prototype.$onDestroy = function() {
+OffcanvasComponentContentComponent.ɵfac.ɵcomponent = true;
+OffcanvasComponentContentComponent.ɵfac.ɵtype = OffcanvasComponentContentComponent;
+
+// src/app/features/offcanvas/components/offcanvas-default/offcanvas-default.component.ts
+var OffcanvasDefaultComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
+  }
+  open() {
+    this.offcanvas.open(this.content);
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-5448087f],.card[_content-5448087f],.dropdown-menu[_content-5448087f],.list-group-item[_content-5448087f],.form-control[_content-5448087f],.form-select[_content-5448087f]{border-color:var(--bs-border-color)}.alert-light[_content-5448087f]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-5448087f],.list-group[_content-5448087f],.dropdown-menu[_content-5448087f]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-5448087f],.btn-outline-secondary[_content-5448087f]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-5448087f],.form-select[_content-5448087f]{background-color:var(--bs-body-bg)}code[_content-5448087f]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasDefaultComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
+  "$element",
+  "$scope",
+  function OffcanvasDefaultComponent_Factory(a0, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasDefaultComponent)(a0);
+    return instance;
+  }
+];
+OffcanvasDefaultComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-default"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  viewQueries: [
+    {
+      propertyName: "content",
+      first: true,
+      descendants: true,
+      static: true,
+      predicate: [
+        "content"
+      ],
+      get read() {
+        return TemplateRef;
+      }
+    }
+  ],
+  definition: {
+    "templateUrl": "templates/offcanvas-default.component-60ef7408.html",
+    "controllerAs": "example"
+  }
+};
+OffcanvasDefaultComponent.ɵfac.ɵcomponent = true;
+OffcanvasDefaultComponent.ɵfac.ɵtype = OffcanvasDefaultComponent;
+
+// src/app/features/offcanvas/components/offcanvas-focus-content/offcanvas-focus-content.component.ts
+var OffcanvasFocusContentComponent = class {
+  constructor() {
+    this.autofocus = false;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-486788d3],.card[_content-486788d3],.dropdown-menu[_content-486788d3],.list-group-item[_content-486788d3],.form-control[_content-486788d3],.form-select[_content-486788d3]{border-color:var(--bs-border-color)}.alert-light[_content-486788d3]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-486788d3],.list-group[_content-486788d3],.dropdown-menu[_content-486788d3]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-486788d3],.btn-outline-secondary[_content-486788d3]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-486788d3],.form-select[_content-486788d3]{background-color:var(--bs-body-bg)}code[_content-486788d3]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasFocusContentComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function OffcanvasFocusContentComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasFocusContentComponent)();
+    return instance;
+  }
+];
+OffcanvasFocusContentComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-focus-content"
+    ]
+  ],
+  inputs: {
+    "ngbActiveOffcanvas": "ngbActiveOffcanvas",
+    "autofocus": "autofocus"
+  },
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/offcanvas-focus-content.component-6bb99332.html",
+    "controllerAs": "$",
+    "bindings": {
+      "ngbActiveOffcanvas": "<?",
+      "autofocus": "<?"
+    }
+  }
+};
+OffcanvasFocusContentComponent.ɵfac.ɵcomponent = true;
+OffcanvasFocusContentComponent.ɵfac.ɵtype = OffcanvasFocusContentComponent;
+
+// src/app/features/offcanvas/components/offcanvas-focus/offcanvas-focus.component.ts
+var OffcanvasFocusComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
+  }
+  openDefaultFocus() {
+    this.offcanvas.open(OffcanvasFocusContentComponent, {
+      ariaLabelledBy: "offcanvas-focus-title",
+      bindings: {
+        autofocus: false
+      }
+    });
+  }
+  openCustomFocus() {
+    this.offcanvas.open(OffcanvasFocusContentComponent, {
+      ariaLabelledBy: "offcanvas-focus-title",
+      bindings: {
+        autofocus: true
+      }
+    });
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-1d6f37eb],.card[_content-1d6f37eb],.dropdown-menu[_content-1d6f37eb],.list-group-item[_content-1d6f37eb],.form-control[_content-1d6f37eb],.form-select[_content-1d6f37eb]{border-color:var(--bs-border-color)}.alert-light[_content-1d6f37eb]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1d6f37eb],.list-group[_content-1d6f37eb],.dropdown-menu[_content-1d6f37eb]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1d6f37eb],.btn-outline-secondary[_content-1d6f37eb]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1d6f37eb],.form-select[_content-1d6f37eb]{background-color:var(--bs-body-bg)}code[_content-1d6f37eb]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasFocusComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
+  "$element",
+  "$scope",
+  function OffcanvasFocusComponent_Factory(a0, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasFocusComponent)(a0);
+    return instance;
+  }
+];
+OffcanvasFocusComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-focus"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/offcanvas-focus.component-efe1c651.html",
+    "controllerAs": "example"
+  }
+};
+OffcanvasFocusComponent.ɵfac.ɵcomponent = true;
+OffcanvasFocusComponent.ɵfac.ɵtype = OffcanvasFocusComponent;
+
+// src/app/features/offcanvas/components/offcanvas-global/offcanvas-global.component.ts
+function asyncGeneratorStep2(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) resolve(value);
+  else Promise.resolve(value).then(_next, _throw);
+}
+function _async_to_generator2(fn) {
+  return function() {
+    var self = this, args = arguments;
+    return new Promise(function(resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep2(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep2(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(void 0);
+    });
+  };
+}
+var OffcanvasGlobalComponent = class {
+  constructor(offcanvas, config) {
+    this.offcanvas = offcanvas;
+    this.config = config;
+    this.initialConfig = {
+      backdrop: config.backdrop,
+      keyboard: config.keyboard,
+      position: config.position,
+      scroll: config.scroll
+    };
+  }
+  open() {
+    return _async_to_generator2(function* () {
+      this.applyConfig();
+      try {
+        yield this.offcanvas.open(OffcanvasDemoContentComponent);
+      } finally {
+        this.restoreConfig();
+      }
+    }).call(this);
+  }
+  ngOnDestroy() {
+    this.restoreConfig();
+  }
+  applyConfig() {
+    this.config.backdrop = "static";
+    this.config.keyboard = false;
+    this.config.position = "end";
+    this.config.scroll = true;
+  }
+  restoreConfig() {
+    this.config.backdrop = this.initialConfig.backdrop;
+    this.config.keyboard = this.initialConfig.keyboard;
+    this.config.position = this.initialConfig.position;
+    this.config.scroll = this.initialConfig.scroll;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-56330ce4],.card[_content-56330ce4],.dropdown-menu[_content-56330ce4],.list-group-item[_content-56330ce4],.form-control[_content-56330ce4],.form-select[_content-56330ce4]{border-color:var(--bs-border-color)}.alert-light[_content-56330ce4]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-56330ce4],.list-group[_content-56330ce4],.dropdown-menu[_content-56330ce4]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-56330ce4],.btn-outline-secondary[_content-56330ce4]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-56330ce4],.form-select[_content-56330ce4]{background-color:var(--bs-body-bg)}code[_content-56330ce4]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasGlobalComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
+  "NgbOffcanvasConfig_b4ec4aca",
+  "$element",
+  "$scope",
+  function OffcanvasGlobalComponent_Factory(a0, a1, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasGlobalComponent)(a0, a1);
+    return instance;
+  }
+];
+OffcanvasGlobalComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-global"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/offcanvas-global.component-82adf11b.html",
+    "controllerAs": "example"
+  }
+};
+OffcanvasGlobalComponent.ɵfac.ɵcomponent = true;
+OffcanvasGlobalComponent.ɵfac.ɵtype = OffcanvasGlobalComponent;
+OffcanvasGlobalComponent.prototype.$onDestroy = function() {
   this.ngOnDestroy();
 };
 
-// src/app/features/toast/components/inline-toast/inline-toast.component.ts
-var InlineToastComponent = class {
-  constructor() {
-    this.showHeaderToast = true;
+// src/app/features/offcanvas/components/offcanvas-options/offcanvas-options.component.ts
+var OffcanvasOptionsComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
   }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-3379857c],.card[_content-3379857c],.dropdown-menu[_content-3379857c],.list-group-item[_content-3379857c],.form-control[_content-3379857c],.form-select[_content-3379857c]{border-color:var(--bs-border-color)}.alert-light[_content-3379857c]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-3379857c],.list-group[_content-3379857c],.dropdown-menu[_content-3379857c]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-3379857c],.btn-outline-secondary[_content-3379857c]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-3379857c],.form-select[_content-3379857c]{background-color:var(--bs-body-bg)}code[_content-3379857c]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-InlineToastComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function InlineToastComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || InlineToastComponent)();
-    return instance;
-  }
-];
-InlineToastComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-inline-toast"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/inline-toast.component-0fd25d0f.html",
-    "controllerAs": "example"
-  }
-};
-InlineToastComponent.ɵfac.ɵcomponent = true;
-InlineToastComponent.ɵfac.ɵtype = InlineToastComponent;
-
-// src/app/features/toast/components/prevent-autohide-toast/prevent-autohide-toast.component.ts
-var PreventAutohideToastComponent = class {
-  show() {
-    this.visible = false;
-    this.autohide = true;
-    setTimeout(() => this.visible = true);
-  }
-  hide() {
-    this.visible = false;
-    this.autohide = true;
-  }
-  constructor() {
-    this.visible = false;
-    this.autohide = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-0e132756],.card[_content-0e132756],.dropdown-menu[_content-0e132756],.list-group-item[_content-0e132756],.form-control[_content-0e132756],.form-select[_content-0e132756]{border-color:var(--bs-border-color)}.alert-light[_content-0e132756]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0e132756],.list-group[_content-0e132756],.dropdown-menu[_content-0e132756]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0e132756],.btn-outline-secondary[_content-0e132756]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0e132756],.form-select[_content-0e132756]{background-color:var(--bs-body-bg)}code[_content-0e132756]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-PreventAutohideToastComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function PreventAutohideToastComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || PreventAutohideToastComponent)();
-    return instance;
-  }
-];
-PreventAutohideToastComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-prevent-autohide-toast"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/prevent-autohide-toast.component-765b737c.html",
-    "controllerAs": "example"
-  }
-};
-PreventAutohideToastComponent.ɵfac.ɵcomponent = true;
-PreventAutohideToastComponent.ɵfac.ɵtype = PreventAutohideToastComponent;
-
-// src/app/features/toast/components/template-header-toast/template-header-toast.component.ts
-var TemplateHeaderToastComponent = class {
-  constructor() {
-    this.visible = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-f89b1a3c],.card[_content-f89b1a3c],.dropdown-menu[_content-f89b1a3c],.list-group-item[_content-f89b1a3c],.form-control[_content-f89b1a3c],.form-select[_content-f89b1a3c]{border-color:var(--bs-border-color)}.alert-light[_content-f89b1a3c]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-f89b1a3c],.list-group[_content-f89b1a3c],.dropdown-menu[_content-f89b1a3c]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-f89b1a3c],.btn-outline-secondary[_content-f89b1a3c]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-f89b1a3c],.form-select[_content-f89b1a3c]{background-color:var(--bs-body-bg)}code[_content-f89b1a3c]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-TemplateHeaderToastComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function TemplateHeaderToastComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TemplateHeaderToastComponent)();
-    return instance;
-  }
-];
-TemplateHeaderToastComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-template-header-toast"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/template-header-toast.component-eeeb19a4.html",
-    "controllerAs": "example"
-  }
-};
-TemplateHeaderToastComponent.ɵfac.ɵcomponent = true;
-TemplateHeaderToastComponent.ɵfac.ɵtype = TemplateHeaderToastComponent;
-
-// src/app/features/toast/components/toast-management/toast-management.component.ts
-var DocsToastService = class {
-  show(body, options = {}) {
-    this.toasts.push({
-      id: ++this.nextId,
-      body,
-      ...options
+  openCustomPanel() {
+    this.open({
+      panelClass: "panel"
     });
   }
-  remove(toast) {
-    const index = this.toasts.indexOf(toast);
-    if (index >= 0) this.toasts.splice(index, 1);
-  }
-  clear() {
-    this.toasts.length = 0;
-  }
-  constructor() {
-    this.toasts = [];
-    this.nextId = 0;
-  }
-};
-var ToastManagementComponent = class {
-  constructor(toastService) {
-    this.toastService = toastService;
-  }
-  showStandard() {
-    this.toastService.show("I am a standard toast.");
-  }
-  showSuccess() {
-    this.toastService.show("Your changes were saved.", {
-      className: "bg-success text-white",
-      delay: 8e3
+  openStaticBackdrop() {
+    this.open({
+      backdrop: "static",
+      backdropClass: "backdrop",
+      keyboard: false
     });
   }
-  showDanger() {
-    this.toastService.show("The operation could not be completed.", {
-      className: "bg-danger text-white",
-      delay: 1e4
+  openStart() {
+    this.open({
+      position: "start"
     });
   }
-  ngOnDestroy() {
-    this.toastService.clear();
+  openEnd() {
+    this.open({
+      position: "end"
+    });
+  }
+  openTop() {
+    this.open({
+      position: "top"
+    });
+  }
+  openBottom() {
+    this.open({
+      position: "bottom"
+    });
+  }
+  openScrollableBody() {
+    this.open({
+      scroll: true,
+      backdrop: false
+    });
+  }
+  open(options) {
+    this.offcanvas.open(OffcanvasDemoContentComponent, options);
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-4c229589],.card[_content-4c229589],.dropdown-menu[_content-4c229589],.list-group-item[_content-4c229589],.form-control[_content-4c229589],.form-select[_content-4c229589]{border-color:var(--bs-border-color)}.alert-light[_content-4c229589]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-4c229589],.list-group[_content-4c229589],.dropdown-menu[_content-4c229589]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-4c229589],.btn-outline-secondary[_content-4c229589]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-4c229589],.form-select[_content-4c229589]{background-color:var(--bs-body-bg)}code[_content-4c229589]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".panel[_content-67fdd7da]{--bs-offcanvas-width: 28rem;border-color:var(--bs-primary-border-subtle);box-shadow:0 1rem 3rem rgba(var(--bs-primary-rgb),.14)}.panel .offcanvas-header[_content-67fdd7da]{background:color-mix(in srgb,var(--bs-primary-bg-subtle) 55%,var(--bs-body-bg))}.backdrop[_content-67fdd7da]{--bs-backdrop-bg: var(--bs-danger);--bs-backdrop-opacity: .35}";
   document.head.appendChild(s);
 })();
-DocsToastService.ɵfac = [
-  function DocsToastService_Factory() {
-    return new (this && this.ɵT || DocsToastService)();
-  }
-];
-DocsToastService.ɵprov = {
-  token: "DocsToastService_8bbd794d"
-};
-ToastManagementComponent.ɵfac = [
-  "DocsToastService_8bbd794d",
+OffcanvasOptionsComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
   "$element",
   "$scope",
-  function ToastManagementComponent_Factory(a0, $element, $scope) {
+  function OffcanvasOptionsComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || ToastManagementComponent)(a0);
+    var instance = new (this && this.ɵT || OffcanvasOptionsComponent)(a0);
     return instance;
   }
 ];
-ToastManagementComponent.ɵcmp = {
+OffcanvasOptionsComponent.ɵcmp = {
   selectors: [
     [
-      "docs-toast-management"
+      "docs-offcanvas-options"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/toast-management.component-36cd11a5.html",
+    "templateUrl": "templates/offcanvas-options.component-aa8f6093.html",
     "controllerAs": "example"
   }
 };
-ToastManagementComponent.ɵfac.ɵcomponent = true;
-ToastManagementComponent.ɵfac.ɵtype = ToastManagementComponent;
-ToastManagementComponent.prototype.$onDestroy = function() {
-  this.ngOnDestroy();
-};
+OffcanvasOptionsComponent.ɵfac.ɵcomponent = true;
+OffcanvasOptionsComponent.ɵfac.ɵtype = OffcanvasOptionsComponent;
 
-// src/app/features/toast/toast.module.ts
+// src/app/features/offcanvas/offcanvas.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -1279,56 +1018,65 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var ToastModule = class {
+var OffcanvasModule = class {
 };
-ToastModule.ɵfac = [
-  function ToastModule_Factory() {
-    return new (this && this.ɵT || ToastModule)();
+OffcanvasModule.ɵfac = [
+  function OffcanvasModule_Factory() {
+    return new (this && this.ɵT || OffcanvasModule)();
   }
 ];
-var ɵToastModule_import0 = RouterModule.forChild(routes);
-ToastModule.ɵmod = {
-  id: "ToastModule_0901b02f"
+var ɵOffcanvasModule_import0 = RouterModule.forChild(routes);
+OffcanvasModule.ɵmod = {
+  id: "OffcanvasModule_4b532f0e"
 };
-ɵimportProviders(import_angular2.default.module("ToastModule_0901b02f", [
-  typeof NgbToastModule === "string" ? NgbToastModule : NgbToastModule.ɵmod ? NgbToastModule.ɵmod.id : NgbToastModule.name,
-  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+ɵimportProviders(import_angular.default.module("OffcanvasModule_4b532f0e", [
+  typeof NgbOffcanvasModule === "string" ? NgbOffcanvasModule : NgbOffcanvasModule.ɵmod ? NgbOffcanvasModule.ɵmod.id : NgbOffcanvasModule.name,
   typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
   typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
-  ɵimportedModuleName(ɵToastModule_import0)
+  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+  ɵimportedModuleName(ɵOffcanvasModule_import0)
 ]), [
-  ɵToastModule_import0
-]).factory("DocsToastService_8bbd794d", Object.prototype.hasOwnProperty.call(DocsToastService, "ɵprov") && DocsToastService.ɵprov.factory || (Object.prototype.hasOwnProperty.call(DocsToastService, "ɵfac") ? DocsToastService.ɵfac : DocsToastService.ɵfac ? (function() {
-  throw new Error('"' + DocsToastService.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
-})() : [
-  function() {
-    return new DocsToastService();
+  ɵOffcanvasModule_import0
+]).component("docsOffcanvasComponentContent", {
+  controller: OffcanvasComponentContentComponent.ɵfac,
+  templateUrl: "templates/offcanvas-component-content.component-ae337a6f.html",
+  controllerAs: "example"
+}).component("docsOffcanvasDefault", {
+  controller: OffcanvasDefaultComponent.ɵfac,
+  templateUrl: "templates/offcanvas-default.component-60ef7408.html",
+  controllerAs: "example"
+}).component("docsOffcanvasDemoContent", {
+  controller: OffcanvasDemoContentComponent.ɵfac,
+  templateUrl: "templates/offcanvas-demo-content.component-8d4707cf.html",
+  controllerAs: "$",
+  bindings: {
+    "ngbActiveOffcanvas": "<?"
   }
-])).component("docsCloseableToast", {
-  controller: CloseableToastComponent.ɵfac,
-  templateUrl: "templates/closeable-toast.component-b472da8f.html",
+}).component("docsOffcanvasFocus", {
+  controller: OffcanvasFocusComponent.ɵfac,
+  templateUrl: "templates/offcanvas-focus.component-efe1c651.html",
   controllerAs: "example"
-}).component("docsInlineToast", {
-  controller: InlineToastComponent.ɵfac,
-  templateUrl: "templates/inline-toast.component-0fd25d0f.html",
+}).component("docsOffcanvasFocusContent", {
+  controller: OffcanvasFocusContentComponent.ɵfac,
+  templateUrl: "templates/offcanvas-focus-content.component-6bb99332.html",
+  controllerAs: "$",
+  bindings: {
+    "ngbActiveOffcanvas": "<?",
+    "autofocus": "<?"
+  }
+}).component("docsOffcanvasGlobal", {
+  controller: OffcanvasGlobalComponent.ɵfac,
+  templateUrl: "templates/offcanvas-global.component-82adf11b.html",
   controllerAs: "example"
-}).component("docsPreventAutohideToast", {
-  controller: PreventAutohideToastComponent.ɵfac,
-  templateUrl: "templates/prevent-autohide-toast.component-765b737c.html",
+}).component("docsOffcanvasOptions", {
+  controller: OffcanvasOptionsComponent.ɵfac,
+  templateUrl: "templates/offcanvas-options.component-aa8f6093.html",
   controllerAs: "example"
-}).component("docsTemplateHeaderToast", {
-  controller: TemplateHeaderToastComponent.ɵfac,
-  templateUrl: "templates/template-header-toast.component-eeeb19a4.html",
-  controllerAs: "example"
-}).component("docsToastManagement", {
-  controller: ToastManagementComponent.ɵfac,
-  templateUrl: "templates/toast-management.component-36cd11a5.html",
-  controllerAs: "example"
-}).factory("ToastModule_f5c37a1b", ToastModule.ɵfac).run([
-  "ToastModule_f5c37a1b",
+}).factory("OffcanvasModule_9e69e12d", OffcanvasModule.ɵfac).run([
+  "OffcanvasModule_9e69e12d",
   function() {
   }
 ]);
 export {
-  ToastModule
+  OffcanvasModule
 };

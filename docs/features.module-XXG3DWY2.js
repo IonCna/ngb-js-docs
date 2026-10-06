@@ -352,16 +352,8 @@
   });
 })();
 import {
-  NgbNavModule
-} from "./chunk-S3STC4KD.js";
-import {
-  NgbScrollSpyModule
-} from "./chunk-R7GTDWT4.js";
-import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
-import "./chunk-BJK3QUXG.js";
-import "./chunk-U6UIHJCB.js";
+} from "./chunk-UVJQY4BU.js";
 import {
   require_angular
 } from "./chunk-PFCKLQSI.js";
@@ -369,121 +361,86 @@ import {
   __toESM
 } from "./chunk-57M53B5Q.js";
 
-// src/app/features/guide/guide.module.ts
+// src/app/features/features.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/guide/guide.routes.ts
+// src/app/features/features.routes.ts
 var routes = [
   {
-    path: "",
-    children: [
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "introduction"
-      },
-      {
-        path: "introduction",
-        loadComponent: () => import("./introduction-page.component-V4EARKXC.js").then((m) => m.IntroductionPageComponent),
-        data: {
-          header: false,
-          title: "Introduction",
-          sections: [
-            {
-              id: "origin",
-              name: "Origin"
-            },
-            {
-              id: "what-is-ngbjs",
-              name: "What is NgbJS?"
-            },
-            {
-              id: "who-is-it-for",
-              name: "Who is it for?"
-            },
-            {
-              id: "project-status",
-              name: "Project status"
-            },
-            {
-              id: "installation",
-              name: "Installation"
-            },
-            {
-              id: "acknowledgements",
-              name: "Acknowledgements"
-            }
-          ]
-        },
-        title: "Ngb-Js | Introduction"
-      },
-      {
-        path: "philosophy",
-        loadComponent: () => import("./philosophy-page.component-SHYM27TA.js").then((m) => m.PhilosophyPageComponent),
-        data: {
-          header: false,
-          title: "Philosophy",
-          sections: [
-            {
-              id: "parity-is-priority",
-              name: "Parity is Priority"
-            },
-            {
-              id: "what-parity-means",
-              name: "What parity means"
-            },
-            {
-              id: "familiar-by-design",
-              name: "Familiar by design"
-            },
-            {
-              id: "a-migration-bridge",
-              name: "A migration bridge"
-            },
-            {
-              id: "when-parity-is-hard",
-              name: "When parity is hard"
-            }
-          ]
-        },
-        title: "Ngb-Js | Philosophy"
-      },
-      {
-        path: "why-ngbjs",
-        loadComponent: () => import("./why-ngbjs-page.component-SXWB2IJN.js").then((m) => m.WhyNgbJsPageComponent),
-        data: {
-          header: false,
-          title: "Why NgbJS?",
-          sections: [
-            {
-              id: "the-legacy-reality",
-              name: "The legacy reality"
-            },
-            {
-              id: "before-and-after",
-              name: "Before and after"
-            },
-            {
-              id: "what-it-unlocks",
-              name: "What NgbJS unlocks"
-            },
-            {
-              id: "when-to-use-ngbjs",
-              name: "When to use NgbJS"
-            },
-            {
-              id: "a-bridge-not-a-destination",
-              name: "A bridge, not a destination"
-            }
-          ]
-        },
-        title: "Why NgbJS?"
-      }
-    ]
+    path: "alert",
+    loadChildren: () => import("./alert.module-WLBBDISC.js").then((m) => m.AlertModule)
+  },
+  {
+    path: "accordion",
+    loadChildren: () => import("./accordion.module-ZD5LN5AJ.js").then((m) => m.AccordionModule)
+  },
+  {
+    path: "carousel",
+    loadChildren: () => import("./carousel.module-LKQQQUDC.js").then((m) => m.CarouselModule)
+  },
+  {
+    path: "collapse",
+    loadChildren: () => import("./collapse.module-56RKWXTL.js").then((m) => m.CollapseModule)
+  },
+  {
+    path: "datepicker",
+    loadChildren: () => import("./datepicker.module-PIQVCUMM.js").then((m) => m.DatepickerModule)
+  },
+  {
+    path: "dropdown",
+    loadChildren: () => import("./dropdown.module-EMZV6KI5.js").then((m) => m.DropdownModule)
+  },
+  {
+    path: "modal",
+    loadChildren: () => import("./modal.module-766RHUAJ.js").then((m) => m.ModalModule)
+  },
+  {
+    path: "nav",
+    loadChildren: () => import("./nav.module-SR5RM4J7.js").then((m) => m.NavModule)
+  },
+  {
+    path: "offcanvas",
+    loadChildren: () => import("./offcanvas.module-BJ2JNLWG.js").then((m) => m.OffcanvasModule)
+  },
+  {
+    path: "pagination",
+    loadChildren: () => import("./pagination.module-BVBYFRNJ.js").then((m) => m.PaginationModule)
+  },
+  {
+    path: "popover",
+    loadChildren: () => import("./popover.module-WL67PP3M.js").then((m) => m.PopoverModule)
+  },
+  {
+    path: "progressbar",
+    loadChildren: () => import("./progressbar.module-LUZOAXE5.js").then((m) => m.ProgressbarModule)
+  },
+  {
+    path: "rating",
+    loadChildren: () => import("./rating.module-64MAVTOX.js").then((m) => m.RatingModule)
+  },
+  {
+    path: "scrollspy",
+    loadChildren: () => import("./scrollspy.module-FRUTZMD7.js").then((m) => m.ScrollspyModule)
+  },
+  {
+    path: "timepicker",
+    loadChildren: () => import("./timepicker.module-SA7OCHYU.js").then((m) => m.TimepickerModule)
+  },
+  {
+    path: "toast",
+    loadChildren: () => import("./toast.module-4EQTKP2B.js").then((m) => m.ToastModule)
+  },
+  {
+    path: "tooltip",
+    loadChildren: () => import("./tooltip.module-75TGX7V5.js").then((m) => m.TooltipModule)
+  },
+  {
+    path: "typeahead",
+    loadChildren: () => import("./typeahead.module-4I557MT3.js").then((m) => m.TypeaheadModule)
   }
 ];
 
-// src/app/features/guide/guide.module.ts
+// src/app/features/features.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -598,28 +555,26 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var GuideModule = class {
+var FeaturesModule = class {
 };
-GuideModule.ɵfac = [
-  function GuideModule_Factory() {
-    return new (this && this.ɵT || GuideModule)();
+FeaturesModule.ɵfac = [
+  function FeaturesModule_Factory() {
+    return new (this && this.ɵT || FeaturesModule)();
   }
 ];
-var ɵGuideModule_import0 = RouterModule.forChild(routes);
-GuideModule.ɵmod = {
-  id: "GuideModule_87fb03f7"
+var ɵFeaturesModule_import0 = RouterModule.forChild(routes);
+FeaturesModule.ɵmod = {
+  id: "FeaturesModule_ac665e6f"
 };
-ɵimportProviders(import_angular.default.module("GuideModule_87fb03f7", [
-  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
-  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵGuideModule_import0)
+ɵimportProviders(import_angular.default.module("FeaturesModule_ac665e6f", [
+  ɵimportedModuleName(ɵFeaturesModule_import0)
 ]), [
-  ɵGuideModule_import0
-]).factory("GuideModule_27eade11", GuideModule.ɵfac).run([
-  "GuideModule_27eade11",
+  ɵFeaturesModule_import0
+]).factory("FeaturesModule_1e9dd68c", FeaturesModule.ɵfac).run([
+  "FeaturesModule_1e9dd68c",
   function() {
   }
 ]);
 export {
-  GuideModule
+  FeaturesModule
 };

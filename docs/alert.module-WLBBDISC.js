@@ -352,51 +352,56 @@
   });
 })();
 import {
-  NgbTooltipModule
-} from "./chunk-ACCHARCX.js";
-import {
   NgbCollapseModule
 } from "./chunk-Y3STFSLE.js";
 import {
   NgbNavModule
 } from "./chunk-S3STC4KD.js";
 import {
+  NgbConfig,
   NgbScrollSpyModule
 } from "./chunk-R7GTDWT4.js";
 import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
 import "./chunk-BJK3QUXG.js";
-import "./chunk-U6UIHJCB.js";
 import {
+  NgZone,
+  inject,
+  ngbRunTransition
+} from "./chunk-U6UIHJCB.js";
+import {
+  CommonModule,
+  ElementRef,
+  EventEmitter,
   require_angular
 } from "./chunk-PFCKLQSI.js";
 import {
   __toESM
 } from "./chunk-57M53B5Q.js";
 
-// src/app/features/tooltip/tooltip.module.ts
-var import_angular = __toESM(require_angular(), 1);
+// src/app/features/alert/alert.module.ts
+var import_angular2 = __toESM(require_angular(), 1);
 
-// src/app/features/tooltip/tooltip.routes.ts
+// src/app/features/alert/alert.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Tooltip",
+      title: "Alert",
       tabs: [
         {
           name: "Examples",
-          to: "/components/tooltip/examples"
+          to: "/components/alert/examples"
         },
         {
           name: "Api",
-          to: "/components/tooltip/api"
+          to: "/components/alert/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/tooltips/",
-        ngBootstrap: "components/tooltip/overview"
+        bootstrap: "components/alerts/",
+        ngBootstrap: "components/alert/overview"
       }
     },
     children: [
@@ -410,443 +415,609 @@ var routes = [
         data: {
           sections: [
             {
-              id: "tooltip-placements",
-              name: "Quick and easy tooltips"
+              id: "simple-alert",
+              name: "Simple alert"
             },
             {
-              id: "tooltip-template",
-              name: "HTML and bindings"
+              id: "alert-closeable",
+              name: "Closeable alerts"
             },
             {
-              id: "tooltip-triggers",
-              name: "Custom and manual triggers"
+              id: "self-closing-alert",
+              name: "Self-closing alert"
             },
             {
-              id: "tooltip-autoclose",
-              name: "Automatic closing"
+              id: "alert-custom",
+              name: "Custom alert"
             },
             {
-              id: "tooltip-context",
-              name: "Context and manual triggers"
-            },
-            {
-              id: "tooltip-custom-target",
-              name: "Custom target"
-            },
-            {
-              id: "tooltip-delays",
-              name: "Open and close delays"
-            },
-            {
-              id: "tooltip-body",
-              name: "Append to body"
-            },
-            {
-              id: "tooltip-custom-class",
-              name: "Custom class"
-            },
-            {
-              id: "tooltip-global",
+              id: "alert-global",
               name: "Global configuration"
             }
           ]
         },
-        loadComponent: () => import("./tooltip-examples-page.component-7KYZIB6G.js").then((m) => m.TooltipExamplesPageComponent)
+        loadComponent: () => import("./alert-examples-page.component-XZUA6WMY.js").then((m) => m.AlertExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-tooltip",
-              name: "NgbTooltip"
+              id: "ngb-alert",
+              name: "NgbAlert"
             },
             {
-              id: "ngb-tooltip-config",
-              name: "NgbTooltipConfig"
+              id: "ngb-alert-config",
+              name: "NgbAlertConfig"
             }
           ]
         },
-        loadComponent: () => import("./tooltip-api-page.component-N52V477H.js").then((m) => m.TooltipApiPageComponent)
+        loadComponent: () => import("./alert-api-page.component-JGBWD52P.js").then((m) => m.AlertApiPageComponent)
       }
-    ]
+    ],
+    title: "Ngb-Js | Alert"
   }
 ];
 
-// src/app/features/tooltip/components/tooltip-autoclose/tooltip-autoclose.component.ts
-var TooltipAutocloseComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-79b7b970],.card[_content-79b7b970],.dropdown-menu[_content-79b7b970],.list-group-item[_content-79b7b970],.form-control[_content-79b7b970],.form-select[_content-79b7b970]{border-color:var(--bs-border-color)}.alert-light[_content-79b7b970]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-79b7b970],.list-group[_content-79b7b970],.dropdown-menu[_content-79b7b970]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-79b7b970],.btn-outline-secondary[_content-79b7b970]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-79b7b970],.form-select[_content-79b7b970]{background-color:var(--bs-body-bg)}code[_content-79b7b970]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-TooltipAutocloseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function TooltipAutocloseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipAutocloseComponent)();
-    return instance;
+// src/app/features/alert/components/alert-closeable/alert-closeable.component.ts
+var createAlerts = () => [
+  {
+    id: 1,
+    type: "success",
+    message: "Your changes were saved successfully.",
+    animation: true
+  },
+  {
+    id: 2,
+    type: "danger",
+    message: "Something needs your attention.",
+    animation: true
+  },
+  {
+    id: 3,
+    type: "warning",
+    message: "This alert closes without animation.",
+    animation: false
+  },
+  {
+    id: 4,
+    type: "info",
+    message: "This one also closes immediately.",
+    animation: false
   }
 ];
-TooltipAutocloseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-tooltip-autoclose"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/tooltip-autoclose.component-fe6bae32.html",
-    "controllerAs": "example"
+var AlertCloseableComponent = class {
+  close(id) {
+    this.alerts = this.alerts.filter((alert) => alert.id !== id);
   }
-};
-TooltipAutocloseComponent.ɵfac.ɵcomponent = true;
-TooltipAutocloseComponent.ɵfac.ɵtype = TooltipAutocloseComponent;
-
-// src/app/features/tooltip/components/tooltip-body/tooltip-body.component.ts
-var TooltipBodyComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-adc3dcf8],.card[_content-adc3dcf8],.dropdown-menu[_content-adc3dcf8],.list-group-item[_content-adc3dcf8],.form-control[_content-adc3dcf8],.form-select[_content-adc3dcf8]{border-color:var(--bs-border-color)}.alert-light[_content-adc3dcf8]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-adc3dcf8],.list-group[_content-adc3dcf8],.dropdown-menu[_content-adc3dcf8]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-adc3dcf8],.btn-outline-secondary[_content-adc3dcf8]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-adc3dcf8],.form-select[_content-adc3dcf8]{background-color:var(--bs-body-bg)}code[_content-adc3dcf8]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-TooltipBodyComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function TooltipBodyComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipBodyComponent)();
-    return instance;
-  }
-];
-TooltipBodyComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-tooltip-body"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/tooltip-body.component-265fea3a.html",
-    "controllerAs": "example"
-  }
-};
-TooltipBodyComponent.ɵfac.ɵcomponent = true;
-TooltipBodyComponent.ɵfac.ɵtype = TooltipBodyComponent;
-
-// src/app/features/tooltip/components/tooltip-context/tooltip-context.component.ts
-var TooltipContextComponent = class {
-  toggleWithGreeting(tooltip, greeting) {
-    tooltip.isOpen() ? tooltip.close() : tooltip.open({
-      greeting
-    });
+  reset() {
+    this.alerts = createAlerts();
   }
   constructor() {
-    this.name = "World";
+    this.alerts = createAlerts();
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-1e37f484],.card[_content-1e37f484],.dropdown-menu[_content-1e37f484],.list-group-item[_content-1e37f484],.form-control[_content-1e37f484],.form-select[_content-1e37f484]{border-color:var(--bs-border-color)}.alert-light[_content-1e37f484]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1e37f484],.list-group[_content-1e37f484],.dropdown-menu[_content-1e37f484]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1e37f484],.btn-outline-secondary[_content-1e37f484]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1e37f484],.form-select[_content-1e37f484]{background-color:var(--bs-body-bg)}code[_content-1e37f484]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-07187b5c],.card[_content-07187b5c],.dropdown-menu[_content-07187b5c],.list-group-item[_content-07187b5c],.form-control[_content-07187b5c],.form-select[_content-07187b5c]{border-color:var(--bs-border-color)}.alert-light[_content-07187b5c]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-07187b5c],.list-group[_content-07187b5c],.dropdown-menu[_content-07187b5c]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-07187b5c],.btn-outline-secondary[_content-07187b5c]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-07187b5c],.form-select[_content-07187b5c]{background-color:var(--bs-body-bg)}code[_content-07187b5c]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-TooltipContextComponent.ɵfac = [
+AlertCloseableComponent.ɵfac = [
   "$element",
   "$scope",
-  function TooltipContextComponent_Factory($element, $scope) {
+  function AlertCloseableComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipContextComponent)();
+    var instance = new (this && this.ɵT || AlertCloseableComponent)();
     return instance;
   }
 ];
-TooltipContextComponent.ɵcmp = {
+AlertCloseableComponent.ɵcmp = {
   selectors: [
     [
-      "docs-tooltip-context"
+      "docs-alert-closeable"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/tooltip-context.component-6c135d42.html",
+    "templateUrl": "templates/alert-closeable.component-11c46194.html",
     "controllerAs": "example"
   }
 };
-TooltipContextComponent.ɵfac.ɵcomponent = true;
-TooltipContextComponent.ɵfac.ɵtype = TooltipContextComponent;
+AlertCloseableComponent.ɵfac.ɵcomponent = true;
+AlertCloseableComponent.ɵfac.ɵtype = AlertCloseableComponent;
 
-// src/app/features/tooltip/components/tooltip-custom-class/tooltip-custom-class.component.ts
-var TooltipCustomClassComponent = class {
+// src/app/features/alert/components/alert-custom/alert-custom.component.ts
+var AlertCustomComponent = class {
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".tooltip-custom[_content-826b3f2b]{--bs-tooltip-bg: var(--bs-primary-bg-subtle);--bs-tooltip-color: var(--bs-primary-text-emphasis);--bs-tooltip-opacity: 1;filter:drop-shadow(0 .35rem .8rem rgba(var(--bs-body-color-rgb),.18))}";
+  s.textContent = ".alert-custom[_content-2aa9c46d]{--bs-alert-color: var(--bs-emphasis-color);--bs-alert-bg: color-mix(in srgb, var(--bs-primary-bg-subtle) 45%, var(--bs-body-bg));--bs-alert-border-color: var(--bs-primary-border-subtle);--bs-alert-link-color: var(--bs-primary-text-emphasis);border-left:.3rem solid var(--bs-primary);box-shadow:0 .75rem 2rem rgba(var(--bs-primary-rgb),.08)}.alert-custom .bi[_content-2aa9c46d]{color:var(--bs-primary)}.alert-custom code[_content-2aa9c46d]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-TooltipCustomClassComponent.ɵfac = [
+AlertCustomComponent.ɵfac = [
   "$element",
   "$scope",
-  function TooltipCustomClassComponent_Factory($element, $scope) {
+  function AlertCustomComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipCustomClassComponent)();
+    var instance = new (this && this.ɵT || AlertCustomComponent)();
     return instance;
   }
 ];
-TooltipCustomClassComponent.ɵcmp = {
+AlertCustomComponent.ɵcmp = {
   selectors: [
     [
-      "docs-tooltip-custom-class"
+      "docs-alert-custom"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/tooltip-custom-class.component-f125a3b8.html",
+    "templateUrl": "templates/alert-custom.component-553762c2.html",
     "controllerAs": "example"
   }
 };
-TooltipCustomClassComponent.ɵfac.ɵcomponent = true;
-TooltipCustomClassComponent.ɵfac.ɵtype = TooltipCustomClassComponent;
+AlertCustomComponent.ɵfac.ɵcomponent = true;
+AlertCustomComponent.ɵfac.ɵtype = AlertCustomComponent;
 
-// src/app/features/tooltip/components/tooltip-custom-target/tooltip-custom-target.component.ts
-var TooltipCustomTargetComponent = class {
+// ../ngb-js/dist/chunk-IAL525UN.js
+var import_angular = __toESM(require_angular(), 1);
+var NgbAlertConfig = class {
+  get animation() {
+    return this._animation ?? this._config.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  constructor() {
+    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlertConfig"] ? globalThis.ɵngjsInjected["NgbAlertConfig"][0] : inject(NgbConfig);
+    this.dismissible = true;
+    this.type = "warning";
+  }
 };
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-0af935f0],.card[_content-0af935f0],.dropdown-menu[_content-0af935f0],.list-group-item[_content-0af935f0],.form-control[_content-0af935f0],.form-select[_content-0af935f0]{border-color:var(--bs-border-color)}.alert-light[_content-0af935f0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0af935f0],.list-group[_content-0af935f0],.dropdown-menu[_content-0af935f0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0af935f0],.btn-outline-secondary[_content-0af935f0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0af935f0],.form-select[_content-0af935f0]{background-color:var(--bs-body-bg)}code[_content-0af935f0]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-TooltipCustomTargetComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function TooltipCustomTargetComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipCustomTargetComponent)();
+NgbAlertConfig.ɵfac = [
+  "NgbConfig_c7257787",
+  function NgbAlertConfig_Factory(i0) {
+    var ɵprevious = globalThis.ɵngjsInjected;
+    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
+      "NgbAlertConfig": [
+        i0
+      ]
+    });
+    try {
+      var instance = new (this && this.ɵT || NgbAlertConfig)();
+    } finally {
+      globalThis.ɵngjsInjected = ɵprevious;
+    }
     return instance;
   }
 ];
-TooltipCustomTargetComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-tooltip-custom-target"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/tooltip-custom-target.component-2cea8626.html",
-    "controllerAs": "example"
-  }
+NgbAlertConfig.ɵprov = {
+  token: "NgbAlertConfig_992fd230",
+  providedIn: "root"
 };
-TooltipCustomTargetComponent.ɵfac.ɵcomponent = true;
-TooltipCustomTargetComponent.ɵfac.ɵtype = TooltipCustomTargetComponent;
-
-// src/app/features/tooltip/components/tooltip-delays/tooltip-delays.component.ts
-var TooltipDelaysComponent = class {
+(globalThis.ɵngjsRootProviders = globalThis.ɵngjsRootProviders || []).push([
+  "NgbAlertConfig_992fd230",
+  NgbAlertConfig.ɵfac
+]);
+var ngbAlertFadingTransition = ({ classList }) => {
+  classList.remove("show");
+};
+var NgbAlert = class {
+  get _hostClass() {
+    return `alert show${this.type ? ` alert-${this.type}` : ""}`;
+  }
+  get _fade() {
+    return this.animation;
+  }
+  get _dismissibleClass() {
+    return this.dismissible;
+  }
+  close() {
+    const transition = ngbRunTransition(this._zone, this._elementRef.nativeElement, ngbAlertFadingTransition, {
+      animation: this.animation,
+      runningTransition: "continue"
+    });
+    transition.subscribe(() => {
+      this.closed.emit();
+    });
+    return transition;
+  }
+  constructor() {
+    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlert"] ? globalThis.ɵngjsInjected["NgbAlert"][0] : inject(NgbAlertConfig);
+    this._elementRef = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlert"] ? globalThis.ɵngjsInjected["NgbAlert"][1] : inject(ElementRef);
+    this._zone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlert"] ? globalThis.ɵngjsInjected["NgbAlert"][2] : inject(NgZone);
+    this.animation = this._config.animation;
+    this.dismissible = this._config.dismissible;
+    this.type = this._config.type;
+    this.closed = new EventEmitter();
+    this._role = "alert";
+  }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-96ffd772],.card[_content-96ffd772],.dropdown-menu[_content-96ffd772],.list-group-item[_content-96ffd772],.form-control[_content-96ffd772],.form-select[_content-96ffd772]{border-color:var(--bs-border-color)}.alert-light[_content-96ffd772]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-96ffd772],.list-group[_content-96ffd772],.dropdown-menu[_content-96ffd772]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-96ffd772],.btn-outline-secondary[_content-96ffd772]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-96ffd772],.form-select[_content-96ffd772]{background-color:var(--bs-body-bg)}code[_content-96ffd772]{color:var(--ngbjs-code-color)}";
+  s.textContent = "ngb-alert{display:block}";
   document.head.appendChild(s);
 })();
-TooltipDelaysComponent.ɵfac = [
+NgbAlert.ɵfac = [
+  "NgbAlertConfig_992fd230",
+  "ElementRef_927308a2",
+  "NgZone_31031859",
   "$element",
   "$scope",
-  function TooltipDelaysComponent_Factory($element, $scope) {
+  function NgbAlert_Factory(i0, i1, i2, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipDelaysComponent)();
+    var ɵprevious = globalThis.ɵngjsInjected;
+    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
+      "NgbAlert": [
+        i0,
+        i1,
+        i2
+      ]
+    });
+    try {
+      var instance = new (this && this.ɵT || NgbAlert)();
+    } finally {
+      globalThis.ɵngjsInjected = ɵprevious;
+    }
+    var ɵunwatch0 = $scope.$watch(function() {
+      return instance._role;
+    }, function(v) {
+      v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
+    });
+    var ɵunwatch1 = $scope.$watch(function() {
+      return instance._hostClass;
+    }, function(v, old) {
+      var ɵnames = function(value) {
+        if (!value) return "";
+        if (typeof value === "string") return value;
+        if (Array.isArray(value)) return value.join(" ");
+        return Object.keys(value).filter(function(key) {
+          return value[key];
+        }).join(" ");
+      };
+      if (v !== old) $element.removeClass(ɵnames(old));
+      $element.addClass(ɵnames(v));
+    }, true);
+    var ɵunwatch2 = $scope.$watch(function() {
+      return instance._fade;
+    }, function(v) {
+      v ? $element.addClass("fade") : $element.removeClass("fade");
+    });
+    var ɵunwatch3 = $scope.$watch(function() {
+      return instance._dismissibleClass;
+    }, function(v) {
+      v ? $element.addClass("alert-dismissible") : $element.removeClass("alert-dismissible");
+    });
+    var ɵhostOnInit = instance.$onInit;
+    instance.$onInit = function() {
+      var ɵresult = ɵhostOnInit ? ɵhostOnInit.apply(this, arguments) : void 0;
+      (function(v) {
+        v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
+      })(instance._role);
+      (function(v) {
+        var ɵnames = function(value) {
+          if (!value) return "";
+          if (typeof value === "string") return value;
+          if (Array.isArray(value)) return value.join(" ");
+          return Object.keys(value).filter(function(key) {
+            return value[key];
+          }).join(" ");
+        };
+        if (v !== void 0) $element.removeClass(ɵnames(void 0));
+        $element.addClass(ɵnames(v));
+      })(instance._hostClass);
+      (function(v) {
+        v ? $element.addClass("fade") : $element.removeClass("fade");
+      })(instance._fade);
+      (function(v) {
+        v ? $element.addClass("alert-dismissible") : $element.removeClass("alert-dismissible");
+      })(instance._dismissibleClass);
+      return ɵresult;
+    };
+    $scope.$on("$destroy", function() {
+      ɵunwatch0();
+      ɵunwatch1();
+      ɵunwatch2();
+      ɵunwatch3();
+    });
     return instance;
   }
 ];
-TooltipDelaysComponent.ɵcmp = {
+NgbAlert.ɵcmp = {
   selectors: [
     [
-      "docs-tooltip-delays"
+      "ngb-alert"
     ]
   ],
-  inputs: {},
-  outputs: {},
+  inputs: {
+    "animation": "animation",
+    "dismissible": "dismissible",
+    "type": "type"
+  },
+  outputs: {
+    "closed": "closed"
+  },
+  exportAs: [
+    "ngbAlert"
+  ],
   definition: {
-    "templateUrl": "templates/tooltip-delays.component-0406bbc7.html",
-    "controllerAs": "example"
+    "template": '<ng-content _content-60d96c0e=""></ng-content>\n\n<button ng-if="$.dismissible" ng-click="$.close()" type="button" class="btn-close" aria-label="Close" _content-60d96c0e="">\n</button>',
+    "bindings": {
+      "animation": "<?",
+      "dismissible": "<?",
+      "type": "@?",
+      "closed": "&?"
+    },
+    "transclude": true
   }
 };
-TooltipDelaysComponent.ɵfac.ɵcomponent = true;
-TooltipDelaysComponent.ɵfac.ɵtype = TooltipDelaysComponent;
+NgbAlert.ɵfac.ɵcomponent = true;
+NgbAlert.ɵfac.ɵtype = NgbAlert;
+function ɵlazyController($delegate, $injector) {
+  if ($injector.ɵngjsLazyController) return $delegate;
+  $injector.ɵngjsLazyController = true;
+  return function(expression, locals, later, ident) {
+    var init = $delegate.apply(this, arguments);
+    if (!later || !expression || !expression.ɵtype || typeof init !== "function" || !init.instance) return init;
+    var state = 0, built;
+    var lazy = function() {
+      if (state === 2) return built;
+      if (state === 1) throw new Error('NG0200: dependencia circular — "' + expression.ɵtype.name + '" se pidió a sí misma mientras se construía (directivas del mismo elemento que se inyectan entre sí).');
+      state = 1;
+      try {
+        built = init();
+        state = 2;
+      } finally {
+        if (state !== 2) state = 0;
+      }
+      return built;
+    };
+    Object.defineProperty(init.instance, "ɵngjsBuild", {
+      value: lazy,
+      configurable: true
+    });
+    lazy.instance = init.instance;
+    lazy.identifier = init.identifier;
+    return lazy;
+  };
+}
+var NgbAlertModule = class {
+};
+NgbAlertModule.ɵfac = [
+  function NgbAlertModule_Factory() {
+    return new (this && this.ɵT || NgbAlertModule)();
+  }
+];
+NgbAlertModule.ɵmod = {
+  id: "NgbAlertModule_4b914a14",
+  controllerAs: "$"
+};
+import_angular.default.module("NgbAlertModule_4b914a14", [
+  typeof CommonModule === "string" ? CommonModule : CommonModule.ɵmod ? CommonModule.ɵmod.id : CommonModule.name
+]).factory("ɵresolve", [
+  "$injector",
+  function($injector) {
+    return function(name, flags, element) {
+      flags = flags || {};
+      var bounded = element && (flags.self || flags.host);
+      if (!bounded && $injector.has(name)) return $injector.get(name);
+      if (flags.optional) return null;
+      throw new Error('ɵresolve: no hay provider para "' + name + '"' + (bounded ? " con { " + (flags.self ? "self" : "host") + ": true } (sin injector de elemento)" : "") + ".");
+    };
+  }
+]).decorator("$controller", [
+  "$delegate",
+  "$injector",
+  ɵlazyController
+]).component("ngbAlert", {
+  controller: NgbAlert.ɵfac,
+  template: '<ng-content _content-60d96c0e=""></ng-content>\n\n<button ng-if="$.dismissible" ng-click="$.close()" type="button" class="btn-close" aria-label="Close" _content-60d96c0e="">\n</button>',
+  controllerAs: "$",
+  transclude: true,
+  bindings: {
+    "animation": "<?",
+    "dismissible": "<?",
+    "type": "@?",
+    "closed": "&?"
+  }
+}).directive("ngbAlert", function() {
+  return {
+    restrict: "E",
+    link: {
+      pre: function(scope, element) {
+        [
+          "closed"
+        ].forEach(function(name) {
+          element[0].removeAttribute(name);
+        });
+      }
+    }
+  };
+}).factory("NgbAlertModule_88050415", NgbAlertModule.ɵfac).run([
+  "NgbAlertModule_88050415",
+  function() {
+  }
+]);
 
-// src/app/features/tooltip/components/tooltip-global/tooltip-global.component.ts
-var TooltipGlobalComponent = class {
+// src/app/features/alert/components/alert-global/alert-global.component.ts
+var AlertGlobalComponent = class {
   constructor(config) {
     this.config = config;
     this.initialConfig = {
-      container: config.container,
-      openDelay: config.openDelay,
-      placement: config.placement,
-      triggers: config.triggers
+      animation: config.animation,
+      dismissible: config.dismissible,
+      type: config.type
     };
-    config.container = "body";
-    config.openDelay = 300;
-    config.placement = "end";
-    config.triggers = "mouseenter:mouseleave";
-  }
-  ngAfterViewInit() {
-    this.restoreConfig();
+    config.animation = false;
+    config.dismissible = false;
+    config.type = "success";
   }
   ngOnDestroy() {
-    this.restoreConfig();
-  }
-  restoreConfig() {
-    this.config.container = this.initialConfig.container;
-    this.config.openDelay = this.initialConfig.openDelay;
-    this.config.placement = this.initialConfig.placement;
-    this.config.triggers = this.initialConfig.triggers;
+    this.config.animation = this.initialConfig.animation;
+    this.config.dismissible = this.initialConfig.dismissible;
+    this.config.type = this.initialConfig.type;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-cbd389cf],.card[_content-cbd389cf],.dropdown-menu[_content-cbd389cf],.list-group-item[_content-cbd389cf],.form-control[_content-cbd389cf],.form-select[_content-cbd389cf]{border-color:var(--bs-border-color)}.alert-light[_content-cbd389cf]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-cbd389cf],.list-group[_content-cbd389cf],.dropdown-menu[_content-cbd389cf]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-cbd389cf],.btn-outline-secondary[_content-cbd389cf]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-cbd389cf],.form-select[_content-cbd389cf]{background-color:var(--bs-body-bg)}code[_content-cbd389cf]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-1297cfdf],.card[_content-1297cfdf],.dropdown-menu[_content-1297cfdf],.list-group-item[_content-1297cfdf],.form-control[_content-1297cfdf],.form-select[_content-1297cfdf]{border-color:var(--bs-border-color)}.alert-light[_content-1297cfdf]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1297cfdf],.list-group[_content-1297cfdf],.dropdown-menu[_content-1297cfdf]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1297cfdf],.btn-outline-secondary[_content-1297cfdf]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1297cfdf],.form-select[_content-1297cfdf]{background-color:var(--bs-body-bg)}code[_content-1297cfdf]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-TooltipGlobalComponent.ɵfac = [
-  "NgbTooltipConfig_1833b747",
+AlertGlobalComponent.ɵfac = [
+  "NgbAlertConfig_992fd230",
   "$element",
   "$scope",
-  function TooltipGlobalComponent_Factory(a0, $element, $scope) {
+  function AlertGlobalComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipGlobalComponent)(a0);
+    var instance = new (this && this.ɵT || AlertGlobalComponent)(a0);
     return instance;
   }
 ];
-TooltipGlobalComponent.ɵcmp = {
+AlertGlobalComponent.ɵcmp = {
   selectors: [
     [
-      "docs-tooltip-global"
+      "docs-alert-global"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/tooltip-global.component-9ae1b343.html",
+    "templateUrl": "templates/alert-global.component-5500f088.html",
     "controllerAs": "example"
   }
 };
-TooltipGlobalComponent.ɵfac.ɵcomponent = true;
-TooltipGlobalComponent.ɵfac.ɵtype = TooltipGlobalComponent;
-TooltipGlobalComponent.prototype.$onDestroy = function() {
+AlertGlobalComponent.ɵfac.ɵcomponent = true;
+AlertGlobalComponent.ɵfac.ɵtype = AlertGlobalComponent;
+AlertGlobalComponent.prototype.$onDestroy = function() {
   this.ngOnDestroy();
 };
-TooltipGlobalComponent.prototype.$postLink = function() {
-  this.ngAfterViewInit();
-};
 
-// src/app/features/tooltip/components/tooltip-placements/tooltip-placements.component.ts
-var TooltipPlacementsComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-1c6715f8],.card[_content-1c6715f8],.dropdown-menu[_content-1c6715f8],.list-group-item[_content-1c6715f8],.form-control[_content-1c6715f8],.form-select[_content-1c6715f8]{border-color:var(--bs-border-color)}.alert-light[_content-1c6715f8]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1c6715f8],.list-group[_content-1c6715f8],.dropdown-menu[_content-1c6715f8]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1c6715f8],.btn-outline-secondary[_content-1c6715f8]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1c6715f8],.form-select[_content-1c6715f8]{background-color:var(--bs-body-bg)}code[_content-1c6715f8]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-TooltipPlacementsComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function TooltipPlacementsComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipPlacementsComponent)();
-    return instance;
+// src/app/features/alert/components/self-closing-alert/self-closing-alert.component.ts
+var SelfClosingAlertComponent = class {
+  ngOnInit() {
+    this.startTimer();
   }
-];
-TooltipPlacementsComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-tooltip-placements"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/tooltip-placements.component-9d833485.html",
-    "controllerAs": "example"
+  ngOnDestroy() {
+    this.cancelTimer();
   }
-};
-TooltipPlacementsComponent.ɵfac.ɵcomponent = true;
-TooltipPlacementsComponent.ɵfac.ɵtype = TooltipPlacementsComponent;
-
-// src/app/features/tooltip/components/tooltip-template/tooltip-template.component.ts
-var TooltipTemplateComponent = class {
+  restart() {
+    this.cancelTimer();
+    this.remaining = this.initialSeconds;
+    this.visible = true;
+    this.startTimer();
+  }
+  onClosed() {
+    this.visible = false;
+    this.cancelTimer();
+  }
+  startTimer() {
+    this.timer = setTimeout(() => {
+      this.remaining--;
+      if (this.remaining <= 0) {
+        if (this.alert) {
+          this.alert.close();
+        } else {
+          this.visible = false;
+        }
+        return;
+      }
+      this.startTimer();
+    }, 1e3);
+  }
+  cancelTimer() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = void 0;
+    }
+  }
   constructor() {
-    this.name = "NgbJS";
+    this.initialSeconds = 5;
+    this.remaining = this.initialSeconds;
+    this.visible = true;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-2f12a0a7],.card[_content-2f12a0a7],.dropdown-menu[_content-2f12a0a7],.list-group-item[_content-2f12a0a7],.form-control[_content-2f12a0a7],.form-select[_content-2f12a0a7]{border-color:var(--bs-border-color)}.alert-light[_content-2f12a0a7]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2f12a0a7],.list-group[_content-2f12a0a7],.dropdown-menu[_content-2f12a0a7]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2f12a0a7],.btn-outline-secondary[_content-2f12a0a7]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2f12a0a7],.form-select[_content-2f12a0a7]{background-color:var(--bs-body-bg)}code[_content-2f12a0a7]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-33543651],.card[_content-33543651],.dropdown-menu[_content-33543651],.list-group-item[_content-33543651],.form-control[_content-33543651],.form-select[_content-33543651]{border-color:var(--bs-border-color)}.alert-light[_content-33543651]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-33543651],.list-group[_content-33543651],.dropdown-menu[_content-33543651]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-33543651],.btn-outline-secondary[_content-33543651]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-33543651],.form-select[_content-33543651]{background-color:var(--bs-body-bg)}code[_content-33543651]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-TooltipTemplateComponent.ɵfac = [
+SelfClosingAlertComponent.ɵfac = [
   "$element",
   "$scope",
-  function TooltipTemplateComponent_Factory($element, $scope) {
+  function SelfClosingAlertComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipTemplateComponent)();
+    var instance = new (this && this.ɵT || SelfClosingAlertComponent)();
     return instance;
   }
 ];
-TooltipTemplateComponent.ɵcmp = {
+SelfClosingAlertComponent.ɵcmp = {
   selectors: [
     [
-      "docs-tooltip-template"
+      "docs-self-closing-alert"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  viewQueries: [
+    {
+      propertyName: "alert",
+      first: true,
+      descendants: true,
+      static: false,
+      predicate: [
+        "alert"
+      ]
+    }
+  ],
+  definition: {
+    "templateUrl": "templates/self-closing-alert.component-a407b7cd.html",
+    "controllerAs": "example"
+  }
+};
+SelfClosingAlertComponent.ɵfac.ɵcomponent = true;
+SelfClosingAlertComponent.ɵfac.ɵtype = SelfClosingAlertComponent;
+SelfClosingAlertComponent.prototype.$onInit = function() {
+  this.ngOnInit();
+};
+SelfClosingAlertComponent.prototype.$onDestroy = function() {
+  this.ngOnDestroy();
+};
+
+// src/app/features/alert/components/simple-alert/simple-alert.component.ts
+var SimpleAlertComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-c63e7b0d],.card[_content-c63e7b0d],.dropdown-menu[_content-c63e7b0d],.list-group-item[_content-c63e7b0d],.form-control[_content-c63e7b0d],.form-select[_content-c63e7b0d]{border-color:var(--bs-border-color)}.alert-light[_content-c63e7b0d]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-c63e7b0d],.list-group[_content-c63e7b0d],.dropdown-menu[_content-c63e7b0d]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-c63e7b0d],.btn-outline-secondary[_content-c63e7b0d]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-c63e7b0d],.form-select[_content-c63e7b0d]{background-color:var(--bs-body-bg)}code[_content-c63e7b0d]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+SimpleAlertComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function SimpleAlertComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || SimpleAlertComponent)();
+    return instance;
+  }
+];
+SimpleAlertComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-simple-alert"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/tooltip-template.component-7261e045.html",
+    "templateUrl": "templates/simple-alert.component-f9b05b4c.html",
     "controllerAs": "example"
   }
 };
-TooltipTemplateComponent.ɵfac.ɵcomponent = true;
-TooltipTemplateComponent.ɵfac.ɵtype = TooltipTemplateComponent;
+SimpleAlertComponent.ɵfac.ɵcomponent = true;
+SimpleAlertComponent.ɵfac.ɵtype = SimpleAlertComponent;
 
-// src/app/features/tooltip/components/tooltip-triggers/tooltip-triggers.component.ts
-var TooltipTriggersComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-82a4dfab],.card[_content-82a4dfab],.dropdown-menu[_content-82a4dfab],.list-group-item[_content-82a4dfab],.form-control[_content-82a4dfab],.form-select[_content-82a4dfab]{border-color:var(--bs-border-color)}.alert-light[_content-82a4dfab]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-82a4dfab],.list-group[_content-82a4dfab],.dropdown-menu[_content-82a4dfab]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-82a4dfab],.btn-outline-secondary[_content-82a4dfab]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-82a4dfab],.form-select[_content-82a4dfab]{background-color:var(--bs-body-bg)}code[_content-82a4dfab]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-TooltipTriggersComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function TooltipTriggersComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TooltipTriggersComponent)();
-    return instance;
-  }
-];
-TooltipTriggersComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-tooltip-triggers"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/tooltip-triggers.component-80fd132a.html",
-    "controllerAs": "example"
-  }
-};
-TooltipTriggersComponent.ɵfac.ɵcomponent = true;
-TooltipTriggersComponent.ɵfac.ɵtype = TooltipTriggersComponent;
-
-// src/app/features/tooltip/tooltip.module.ts
+// src/app/features/alert/alert.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -961,70 +1132,50 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var TooltipModule = class {
+var AlertModule = class {
 };
-TooltipModule.ɵfac = [
-  function TooltipModule_Factory() {
-    return new (this && this.ɵT || TooltipModule)();
+AlertModule.ɵfac = [
+  function AlertModule_Factory() {
+    return new (this && this.ɵT || AlertModule)();
   }
 ];
-var ɵTooltipModule_import0 = RouterModule.forChild(routes);
-TooltipModule.ɵmod = {
-  id: "TooltipModule_de512f0b"
+var ɵAlertModule_import0 = RouterModule.forChild(routes);
+AlertModule.ɵmod = {
+  id: "AlertModule_816e9736"
 };
-ɵimportProviders(import_angular.default.module("TooltipModule_de512f0b", [
-  typeof NgbTooltipModule === "string" ? NgbTooltipModule : NgbTooltipModule.ɵmod ? NgbTooltipModule.ɵmod.id : NgbTooltipModule.name,
-  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+ɵimportProviders(import_angular2.default.module("AlertModule_816e9736", [
+  typeof NgbAlertModule === "string" ? NgbAlertModule : NgbAlertModule.ɵmod ? NgbAlertModule.ɵmod.id : NgbAlertModule.name,
   typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
   typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
-  ɵimportedModuleName(ɵTooltipModule_import0)
+  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+  ɵimportedModuleName(ɵAlertModule_import0)
 ]), [
-  ɵTooltipModule_import0
-]).component("docsTooltipAutoclose", {
-  controller: TooltipAutocloseComponent.ɵfac,
-  templateUrl: "templates/tooltip-autoclose.component-fe6bae32.html",
+  ɵAlertModule_import0
+]).component("docsAlertCloseable", {
+  controller: AlertCloseableComponent.ɵfac,
+  templateUrl: "templates/alert-closeable.component-11c46194.html",
   controllerAs: "example"
-}).component("docsTooltipBody", {
-  controller: TooltipBodyComponent.ɵfac,
-  templateUrl: "templates/tooltip-body.component-265fea3a.html",
+}).component("docsAlertCustom", {
+  controller: AlertCustomComponent.ɵfac,
+  templateUrl: "templates/alert-custom.component-553762c2.html",
   controllerAs: "example"
-}).component("docsTooltipContext", {
-  controller: TooltipContextComponent.ɵfac,
-  templateUrl: "templates/tooltip-context.component-6c135d42.html",
+}).component("docsAlertGlobal", {
+  controller: AlertGlobalComponent.ɵfac,
+  templateUrl: "templates/alert-global.component-5500f088.html",
   controllerAs: "example"
-}).component("docsTooltipCustomClass", {
-  controller: TooltipCustomClassComponent.ɵfac,
-  templateUrl: "templates/tooltip-custom-class.component-f125a3b8.html",
+}).component("docsSelfClosingAlert", {
+  controller: SelfClosingAlertComponent.ɵfac,
+  templateUrl: "templates/self-closing-alert.component-a407b7cd.html",
   controllerAs: "example"
-}).component("docsTooltipCustomTarget", {
-  controller: TooltipCustomTargetComponent.ɵfac,
-  templateUrl: "templates/tooltip-custom-target.component-2cea8626.html",
+}).component("docsSimpleAlert", {
+  controller: SimpleAlertComponent.ɵfac,
+  templateUrl: "templates/simple-alert.component-f9b05b4c.html",
   controllerAs: "example"
-}).component("docsTooltipDelays", {
-  controller: TooltipDelaysComponent.ɵfac,
-  templateUrl: "templates/tooltip-delays.component-0406bbc7.html",
-  controllerAs: "example"
-}).component("docsTooltipGlobal", {
-  controller: TooltipGlobalComponent.ɵfac,
-  templateUrl: "templates/tooltip-global.component-9ae1b343.html",
-  controllerAs: "example"
-}).component("docsTooltipPlacements", {
-  controller: TooltipPlacementsComponent.ɵfac,
-  templateUrl: "templates/tooltip-placements.component-9d833485.html",
-  controllerAs: "example"
-}).component("docsTooltipTemplate", {
-  controller: TooltipTemplateComponent.ɵfac,
-  templateUrl: "templates/tooltip-template.component-7261e045.html",
-  controllerAs: "example"
-}).component("docsTooltipTriggers", {
-  controller: TooltipTriggersComponent.ɵfac,
-  templateUrl: "templates/tooltip-triggers.component-80fd132a.html",
-  controllerAs: "example"
-}).factory("TooltipModule_13b86790", TooltipModule.ɵfac).run([
-  "TooltipModule_13b86790",
+}).factory("AlertModule_b9ee769c", AlertModule.ɵfac).run([
+  "AlertModule_b9ee769c",
   function() {
   }
 ]);
 export {
-  TooltipModule
+  AlertModule
 };

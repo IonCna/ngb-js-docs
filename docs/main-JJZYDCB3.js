@@ -373,7 +373,7 @@ import {
 import {
   NavigationEnd,
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
 import "./chunk-BJK3QUXG.js";
 import {
   bootstrapApplication,
@@ -4884,11 +4884,11 @@ var routes = [
     children: [
       {
         path: "guide",
-        loadChildren: () => import("./guide.module-FC4BID44.js").then((m) => m.GuideModule)
+        loadChildren: () => import("./guide.module-CYCJ75OF.js").then((m) => m.GuideModule)
       },
       {
         path: "components",
-        loadChildren: () => import("./features.module-I3RAEA7D.js").then((m) => m.FeaturesModule)
+        loadChildren: () => import("./features.module-XXG3DWY2.js").then((m) => m.FeaturesModule)
       }
     ]
   }

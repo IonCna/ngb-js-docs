@@ -8135,7 +8135,10 @@ BootstrapListeners.add(($injector2) => {
   if (!forRootInjectors.has($injector2)) return;
   const urlService = $injector2.get("$urlService");
   const $rootScope = $injector2.get("$rootScope");
+  const $location = $injector2.get("$location");
+  const useHash = $injector2.get(injectionTokenName(LocationStrategy)) instanceof HashLocationStrategy;
   const start = () => {
+    if (useHash && $location.path() === "") $location.path("/").replace();
     urlService.listen();
     urlService.sync();
   };

@@ -352,14 +352,21 @@
   });
 })();
 import {
+  NgbTooltipModule
+} from "./chunk-ACCHARCX.js";
+import {
   NgbCollapseModule
 } from "./chunk-Y3STFSLE.js";
+import {
+  NgbNavModule
+} from "./chunk-S3STC4KD.js";
 import {
   NgbScrollSpyModule
 } from "./chunk-R7GTDWT4.js";
 import {
   RouterModule
-} from "./chunk-JSJOQJIT.js";
+} from "./chunk-UVJQY4BU.js";
+import "./chunk-BJK3QUXG.js";
 import "./chunk-U6UIHJCB.js";
 import {
   require_angular
@@ -368,162 +375,28 @@ import {
   __toESM
 } from "./chunk-57M53B5Q.js";
 
-// src/app/features/collapse/collapse.module.ts
+// src/app/features/tooltip/tooltip.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/collapse/components/horizontal-collapse/horizontal-collapse.component.ts
-var HorizontalCollapseComponent = class {
-  toggle() {
-    this.collapsed = !this.collapsed;
-  }
-  constructor() {
-    this.collapsed = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-2c0cecd0],.card[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0],.list-group-item[_content-2c0cecd0],.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{border-color:var(--bs-border-color)}.alert-light[_content-2c0cecd0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2c0cecd0],.list-group[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2c0cecd0],.btn-outline-secondary[_content-2c0cecd0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{background-color:var(--bs-body-bg)}code[_content-2c0cecd0]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-HorizontalCollapseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function HorizontalCollapseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || HorizontalCollapseComponent)();
-    return instance;
-  }
-];
-HorizontalCollapseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-horizontal-collapse"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/horizontal-collapse.component-f0dd72af.html",
-    "controllerAs": "example"
-  }
-};
-HorizontalCollapseComponent.ɵfac.ɵcomponent = true;
-HorizontalCollapseComponent.ɵfac.ɵtype = HorizontalCollapseComponent;
-
-// src/app/features/collapse/components/navbar-collapse/navbar-collapse.component.ts
-var NavbarCollapseComponent = class {
-  toggleMenu() {
-    this.menuCollapsed = !this.menuCollapsed;
-  }
-  closeMenu() {
-    this.menuCollapsed = true;
-  }
-  constructor() {
-    this.menuCollapsed = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-c86be629],.card[_content-c86be629],.dropdown-menu[_content-c86be629],.list-group-item[_content-c86be629],.form-control[_content-c86be629],.form-select[_content-c86be629]{border-color:var(--bs-border-color)}.alert-light[_content-c86be629]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-c86be629],.list-group[_content-c86be629],.dropdown-menu[_content-c86be629]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-c86be629],.btn-outline-secondary[_content-c86be629]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-c86be629],.form-select[_content-c86be629]{background-color:var(--bs-body-bg)}code[_content-c86be629]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-NavbarCollapseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function NavbarCollapseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || NavbarCollapseComponent)();
-    return instance;
-  }
-];
-NavbarCollapseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-navbar-collapse"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/navbar-collapse.component-36e20d5c.html",
-    "controllerAs": "example"
-  }
-};
-NavbarCollapseComponent.ɵfac.ɵcomponent = true;
-NavbarCollapseComponent.ɵfac.ɵtype = NavbarCollapseComponent;
-
-// src/app/features/collapse/components/simple-collapse/simple-collapse.component.ts
-var SimpleCollapseComponent = class {
-  toggleWithController() {
-    this.collapse.toggle();
-  }
-  toggleWithBinding() {
-    this.collapsed = !this.collapsed;
-  }
-  constructor() {
-    this.collapsed = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-bfd88986],.card[_content-bfd88986],.dropdown-menu[_content-bfd88986],.list-group-item[_content-bfd88986],.form-control[_content-bfd88986],.form-select[_content-bfd88986]{border-color:var(--bs-border-color)}.alert-light[_content-bfd88986]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-bfd88986],.list-group[_content-bfd88986],.dropdown-menu[_content-bfd88986]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-bfd88986],.btn-outline-secondary[_content-bfd88986]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-bfd88986],.form-select[_content-bfd88986]{background-color:var(--bs-body-bg)}code[_content-bfd88986]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-SimpleCollapseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function SimpleCollapseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || SimpleCollapseComponent)();
-    return instance;
-  }
-];
-SimpleCollapseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-simple-collapse"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  viewQueries: [
-    {
-      propertyName: "collapse",
-      first: true,
-      descendants: true,
-      static: true,
-      predicate: [
-        "collapse"
-      ]
-    }
-  ],
-  definition: {
-    "templateUrl": "templates/simple-collapse.component-da5f376c.html",
-    "controllerAs": "example"
-  }
-};
-SimpleCollapseComponent.ɵfac.ɵcomponent = true;
-SimpleCollapseComponent.ɵfac.ɵtype = SimpleCollapseComponent;
-
-// src/app/features/collapse/collapse.routes.ts
+// src/app/features/tooltip/tooltip.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Collapse",
+      title: "Tooltip",
       tabs: [
         {
           name: "Examples",
-          to: "/components/collapse/examples"
+          to: "/components/tooltip/examples"
         },
         {
           name: "Api",
-          to: "/components/collapse/api"
+          to: "/components/tooltip/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/collapse/",
-        ngBootstrap: "components/collapse/overview"
+        bootstrap: "components/tooltips/",
+        ngBootstrap: "components/tooltip/overview"
       }
     },
     children: [
@@ -537,42 +410,443 @@ var routes = [
         data: {
           sections: [
             {
-              id: "simple-collapse",
-              name: "Simple collapse"
+              id: "tooltip-placements",
+              name: "Quick and easy tooltips"
             },
             {
-              id: "horizontal-collapse",
-              name: "Horizontal collapse"
+              id: "tooltip-template",
+              name: "HTML and bindings"
             },
             {
-              id: "navbar-collapse",
-              name: "Responsive navbar"
+              id: "tooltip-triggers",
+              name: "Custom and manual triggers"
+            },
+            {
+              id: "tooltip-autoclose",
+              name: "Automatic closing"
+            },
+            {
+              id: "tooltip-context",
+              name: "Context and manual triggers"
+            },
+            {
+              id: "tooltip-custom-target",
+              name: "Custom target"
+            },
+            {
+              id: "tooltip-delays",
+              name: "Open and close delays"
+            },
+            {
+              id: "tooltip-body",
+              name: "Append to body"
+            },
+            {
+              id: "tooltip-custom-class",
+              name: "Custom class"
+            },
+            {
+              id: "tooltip-global",
+              name: "Global configuration"
             }
           ]
         },
-        loadComponent: () => import("./collapse-examples-page.component-LHKCN6VO.js").then((m) => m.CollapseExamplesPageComponent)
+        loadComponent: () => import("./tooltip-examples-page.component-7KYZIB6G.js").then((m) => m.TooltipExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-collapse",
-              name: "NgbCollapse"
+              id: "ngb-tooltip",
+              name: "NgbTooltip"
             },
             {
-              id: "ngb-collapse-config",
-              name: "NgbCollapseConfig"
+              id: "ngb-tooltip-config",
+              name: "NgbTooltipConfig"
             }
           ]
         },
-        loadComponent: () => import("./collapse-api-page.component-67KXYJO2.js").then((m) => m.CollapseApiPageComponent)
+        loadComponent: () => import("./tooltip-api-page.component-N52V477H.js").then((m) => m.TooltipApiPageComponent)
       }
     ]
   }
 ];
 
-// src/app/features/collapse/collapse.module.ts
+// src/app/features/tooltip/components/tooltip-autoclose/tooltip-autoclose.component.ts
+var TooltipAutocloseComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-79b7b970],.card[_content-79b7b970],.dropdown-menu[_content-79b7b970],.list-group-item[_content-79b7b970],.form-control[_content-79b7b970],.form-select[_content-79b7b970]{border-color:var(--bs-border-color)}.alert-light[_content-79b7b970]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-79b7b970],.list-group[_content-79b7b970],.dropdown-menu[_content-79b7b970]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-79b7b970],.btn-outline-secondary[_content-79b7b970]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-79b7b970],.form-select[_content-79b7b970]{background-color:var(--bs-body-bg)}code[_content-79b7b970]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipAutocloseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipAutocloseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipAutocloseComponent)();
+    return instance;
+  }
+];
+TooltipAutocloseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-autoclose"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-autoclose.component-fe6bae32.html",
+    "controllerAs": "example"
+  }
+};
+TooltipAutocloseComponent.ɵfac.ɵcomponent = true;
+TooltipAutocloseComponent.ɵfac.ɵtype = TooltipAutocloseComponent;
+
+// src/app/features/tooltip/components/tooltip-body/tooltip-body.component.ts
+var TooltipBodyComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-adc3dcf8],.card[_content-adc3dcf8],.dropdown-menu[_content-adc3dcf8],.list-group-item[_content-adc3dcf8],.form-control[_content-adc3dcf8],.form-select[_content-adc3dcf8]{border-color:var(--bs-border-color)}.alert-light[_content-adc3dcf8]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-adc3dcf8],.list-group[_content-adc3dcf8],.dropdown-menu[_content-adc3dcf8]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-adc3dcf8],.btn-outline-secondary[_content-adc3dcf8]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-adc3dcf8],.form-select[_content-adc3dcf8]{background-color:var(--bs-body-bg)}code[_content-adc3dcf8]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipBodyComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipBodyComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipBodyComponent)();
+    return instance;
+  }
+];
+TooltipBodyComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-body"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-body.component-265fea3a.html",
+    "controllerAs": "example"
+  }
+};
+TooltipBodyComponent.ɵfac.ɵcomponent = true;
+TooltipBodyComponent.ɵfac.ɵtype = TooltipBodyComponent;
+
+// src/app/features/tooltip/components/tooltip-context/tooltip-context.component.ts
+var TooltipContextComponent = class {
+  toggleWithGreeting(tooltip, greeting) {
+    tooltip.isOpen() ? tooltip.close() : tooltip.open({
+      greeting
+    });
+  }
+  constructor() {
+    this.name = "World";
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-1e37f484],.card[_content-1e37f484],.dropdown-menu[_content-1e37f484],.list-group-item[_content-1e37f484],.form-control[_content-1e37f484],.form-select[_content-1e37f484]{border-color:var(--bs-border-color)}.alert-light[_content-1e37f484]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1e37f484],.list-group[_content-1e37f484],.dropdown-menu[_content-1e37f484]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1e37f484],.btn-outline-secondary[_content-1e37f484]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1e37f484],.form-select[_content-1e37f484]{background-color:var(--bs-body-bg)}code[_content-1e37f484]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipContextComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipContextComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipContextComponent)();
+    return instance;
+  }
+];
+TooltipContextComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-context"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-context.component-6c135d42.html",
+    "controllerAs": "example"
+  }
+};
+TooltipContextComponent.ɵfac.ɵcomponent = true;
+TooltipContextComponent.ɵfac.ɵtype = TooltipContextComponent;
+
+// src/app/features/tooltip/components/tooltip-custom-class/tooltip-custom-class.component.ts
+var TooltipCustomClassComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".tooltip-custom[_content-826b3f2b]{--bs-tooltip-bg: var(--bs-primary-bg-subtle);--bs-tooltip-color: var(--bs-primary-text-emphasis);--bs-tooltip-opacity: 1;filter:drop-shadow(0 .35rem .8rem rgba(var(--bs-body-color-rgb),.18))}";
+  document.head.appendChild(s);
+})();
+TooltipCustomClassComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipCustomClassComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipCustomClassComponent)();
+    return instance;
+  }
+];
+TooltipCustomClassComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-custom-class"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-custom-class.component-f125a3b8.html",
+    "controllerAs": "example"
+  }
+};
+TooltipCustomClassComponent.ɵfac.ɵcomponent = true;
+TooltipCustomClassComponent.ɵfac.ɵtype = TooltipCustomClassComponent;
+
+// src/app/features/tooltip/components/tooltip-custom-target/tooltip-custom-target.component.ts
+var TooltipCustomTargetComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-0af935f0],.card[_content-0af935f0],.dropdown-menu[_content-0af935f0],.list-group-item[_content-0af935f0],.form-control[_content-0af935f0],.form-select[_content-0af935f0]{border-color:var(--bs-border-color)}.alert-light[_content-0af935f0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0af935f0],.list-group[_content-0af935f0],.dropdown-menu[_content-0af935f0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0af935f0],.btn-outline-secondary[_content-0af935f0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0af935f0],.form-select[_content-0af935f0]{background-color:var(--bs-body-bg)}code[_content-0af935f0]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipCustomTargetComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipCustomTargetComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipCustomTargetComponent)();
+    return instance;
+  }
+];
+TooltipCustomTargetComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-custom-target"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-custom-target.component-2cea8626.html",
+    "controllerAs": "example"
+  }
+};
+TooltipCustomTargetComponent.ɵfac.ɵcomponent = true;
+TooltipCustomTargetComponent.ɵfac.ɵtype = TooltipCustomTargetComponent;
+
+// src/app/features/tooltip/components/tooltip-delays/tooltip-delays.component.ts
+var TooltipDelaysComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-96ffd772],.card[_content-96ffd772],.dropdown-menu[_content-96ffd772],.list-group-item[_content-96ffd772],.form-control[_content-96ffd772],.form-select[_content-96ffd772]{border-color:var(--bs-border-color)}.alert-light[_content-96ffd772]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-96ffd772],.list-group[_content-96ffd772],.dropdown-menu[_content-96ffd772]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-96ffd772],.btn-outline-secondary[_content-96ffd772]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-96ffd772],.form-select[_content-96ffd772]{background-color:var(--bs-body-bg)}code[_content-96ffd772]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipDelaysComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipDelaysComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipDelaysComponent)();
+    return instance;
+  }
+];
+TooltipDelaysComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-delays"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-delays.component-0406bbc7.html",
+    "controllerAs": "example"
+  }
+};
+TooltipDelaysComponent.ɵfac.ɵcomponent = true;
+TooltipDelaysComponent.ɵfac.ɵtype = TooltipDelaysComponent;
+
+// src/app/features/tooltip/components/tooltip-global/tooltip-global.component.ts
+var TooltipGlobalComponent = class {
+  constructor(config) {
+    this.config = config;
+    this.initialConfig = {
+      container: config.container,
+      openDelay: config.openDelay,
+      placement: config.placement,
+      triggers: config.triggers
+    };
+    config.container = "body";
+    config.openDelay = 300;
+    config.placement = "end";
+    config.triggers = "mouseenter:mouseleave";
+  }
+  ngAfterViewInit() {
+    this.restoreConfig();
+  }
+  ngOnDestroy() {
+    this.restoreConfig();
+  }
+  restoreConfig() {
+    this.config.container = this.initialConfig.container;
+    this.config.openDelay = this.initialConfig.openDelay;
+    this.config.placement = this.initialConfig.placement;
+    this.config.triggers = this.initialConfig.triggers;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-cbd389cf],.card[_content-cbd389cf],.dropdown-menu[_content-cbd389cf],.list-group-item[_content-cbd389cf],.form-control[_content-cbd389cf],.form-select[_content-cbd389cf]{border-color:var(--bs-border-color)}.alert-light[_content-cbd389cf]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-cbd389cf],.list-group[_content-cbd389cf],.dropdown-menu[_content-cbd389cf]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-cbd389cf],.btn-outline-secondary[_content-cbd389cf]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-cbd389cf],.form-select[_content-cbd389cf]{background-color:var(--bs-body-bg)}code[_content-cbd389cf]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipGlobalComponent.ɵfac = [
+  "NgbTooltipConfig_1833b747",
+  "$element",
+  "$scope",
+  function TooltipGlobalComponent_Factory(a0, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipGlobalComponent)(a0);
+    return instance;
+  }
+];
+TooltipGlobalComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-global"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-global.component-9ae1b343.html",
+    "controllerAs": "example"
+  }
+};
+TooltipGlobalComponent.ɵfac.ɵcomponent = true;
+TooltipGlobalComponent.ɵfac.ɵtype = TooltipGlobalComponent;
+TooltipGlobalComponent.prototype.$onDestroy = function() {
+  this.ngOnDestroy();
+};
+TooltipGlobalComponent.prototype.$postLink = function() {
+  this.ngAfterViewInit();
+};
+
+// src/app/features/tooltip/components/tooltip-placements/tooltip-placements.component.ts
+var TooltipPlacementsComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-1c6715f8],.card[_content-1c6715f8],.dropdown-menu[_content-1c6715f8],.list-group-item[_content-1c6715f8],.form-control[_content-1c6715f8],.form-select[_content-1c6715f8]{border-color:var(--bs-border-color)}.alert-light[_content-1c6715f8]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1c6715f8],.list-group[_content-1c6715f8],.dropdown-menu[_content-1c6715f8]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1c6715f8],.btn-outline-secondary[_content-1c6715f8]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1c6715f8],.form-select[_content-1c6715f8]{background-color:var(--bs-body-bg)}code[_content-1c6715f8]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipPlacementsComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipPlacementsComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipPlacementsComponent)();
+    return instance;
+  }
+];
+TooltipPlacementsComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-placements"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-placements.component-9d833485.html",
+    "controllerAs": "example"
+  }
+};
+TooltipPlacementsComponent.ɵfac.ɵcomponent = true;
+TooltipPlacementsComponent.ɵfac.ɵtype = TooltipPlacementsComponent;
+
+// src/app/features/tooltip/components/tooltip-template/tooltip-template.component.ts
+var TooltipTemplateComponent = class {
+  constructor() {
+    this.name = "NgbJS";
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-2f12a0a7],.card[_content-2f12a0a7],.dropdown-menu[_content-2f12a0a7],.list-group-item[_content-2f12a0a7],.form-control[_content-2f12a0a7],.form-select[_content-2f12a0a7]{border-color:var(--bs-border-color)}.alert-light[_content-2f12a0a7]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2f12a0a7],.list-group[_content-2f12a0a7],.dropdown-menu[_content-2f12a0a7]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2f12a0a7],.btn-outline-secondary[_content-2f12a0a7]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2f12a0a7],.form-select[_content-2f12a0a7]{background-color:var(--bs-body-bg)}code[_content-2f12a0a7]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipTemplateComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipTemplateComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipTemplateComponent)();
+    return instance;
+  }
+];
+TooltipTemplateComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-template"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-template.component-7261e045.html",
+    "controllerAs": "example"
+  }
+};
+TooltipTemplateComponent.ɵfac.ɵcomponent = true;
+TooltipTemplateComponent.ɵfac.ɵtype = TooltipTemplateComponent;
+
+// src/app/features/tooltip/components/tooltip-triggers/tooltip-triggers.component.ts
+var TooltipTriggersComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-82a4dfab],.card[_content-82a4dfab],.dropdown-menu[_content-82a4dfab],.list-group-item[_content-82a4dfab],.form-control[_content-82a4dfab],.form-select[_content-82a4dfab]{border-color:var(--bs-border-color)}.alert-light[_content-82a4dfab]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-82a4dfab],.list-group[_content-82a4dfab],.dropdown-menu[_content-82a4dfab]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-82a4dfab],.btn-outline-secondary[_content-82a4dfab]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-82a4dfab],.form-select[_content-82a4dfab]{background-color:var(--bs-body-bg)}code[_content-82a4dfab]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipTriggersComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipTriggersComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipTriggersComponent)();
+    return instance;
+  }
+];
+TooltipTriggersComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-triggers"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-triggers.component-80fd132a.html",
+    "controllerAs": "example"
+  }
+};
+TooltipTriggersComponent.ɵfac.ɵcomponent = true;
+TooltipTriggersComponent.ɵfac.ɵtype = TooltipTriggersComponent;
+
+// src/app/features/tooltip/tooltip.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -687,40 +961,70 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var CollapseModule = class {
+var TooltipModule = class {
 };
-CollapseModule.ɵfac = [
-  function CollapseModule_Factory() {
-    return new (this && this.ɵT || CollapseModule)();
+TooltipModule.ɵfac = [
+  function TooltipModule_Factory() {
+    return new (this && this.ɵT || TooltipModule)();
   }
 ];
-var ɵCollapseModule_import0 = RouterModule.forChild(routes);
-CollapseModule.ɵmod = {
-  id: "CollapseModule_045ce82f"
+var ɵTooltipModule_import0 = RouterModule.forChild(routes);
+TooltipModule.ɵmod = {
+  id: "TooltipModule_de512f0b"
 };
-ɵimportProviders(import_angular.default.module("CollapseModule_045ce82f", [
-  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+ɵimportProviders(import_angular.default.module("TooltipModule_de512f0b", [
+  typeof NgbTooltipModule === "string" ? NgbTooltipModule : NgbTooltipModule.ɵmod ? NgbTooltipModule.ɵmod.id : NgbTooltipModule.name,
   typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵCollapseModule_import0)
+  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
+  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+  ɵimportedModuleName(ɵTooltipModule_import0)
 ]), [
-  ɵCollapseModule_import0
-]).component("docsHorizontalCollapse", {
-  controller: HorizontalCollapseComponent.ɵfac,
-  templateUrl: "templates/horizontal-collapse.component-f0dd72af.html",
+  ɵTooltipModule_import0
+]).component("docsTooltipAutoclose", {
+  controller: TooltipAutocloseComponent.ɵfac,
+  templateUrl: "templates/tooltip-autoclose.component-fe6bae32.html",
   controllerAs: "example"
-}).component("docsNavbarCollapse", {
-  controller: NavbarCollapseComponent.ɵfac,
-  templateUrl: "templates/navbar-collapse.component-36e20d5c.html",
+}).component("docsTooltipBody", {
+  controller: TooltipBodyComponent.ɵfac,
+  templateUrl: "templates/tooltip-body.component-265fea3a.html",
   controllerAs: "example"
-}).component("docsSimpleCollapse", {
-  controller: SimpleCollapseComponent.ɵfac,
-  templateUrl: "templates/simple-collapse.component-da5f376c.html",
+}).component("docsTooltipContext", {
+  controller: TooltipContextComponent.ɵfac,
+  templateUrl: "templates/tooltip-context.component-6c135d42.html",
   controllerAs: "example"
-}).factory("CollapseModule_a263c103", CollapseModule.ɵfac).run([
-  "CollapseModule_a263c103",
+}).component("docsTooltipCustomClass", {
+  controller: TooltipCustomClassComponent.ɵfac,
+  templateUrl: "templates/tooltip-custom-class.component-f125a3b8.html",
+  controllerAs: "example"
+}).component("docsTooltipCustomTarget", {
+  controller: TooltipCustomTargetComponent.ɵfac,
+  templateUrl: "templates/tooltip-custom-target.component-2cea8626.html",
+  controllerAs: "example"
+}).component("docsTooltipDelays", {
+  controller: TooltipDelaysComponent.ɵfac,
+  templateUrl: "templates/tooltip-delays.component-0406bbc7.html",
+  controllerAs: "example"
+}).component("docsTooltipGlobal", {
+  controller: TooltipGlobalComponent.ɵfac,
+  templateUrl: "templates/tooltip-global.component-9ae1b343.html",
+  controllerAs: "example"
+}).component("docsTooltipPlacements", {
+  controller: TooltipPlacementsComponent.ɵfac,
+  templateUrl: "templates/tooltip-placements.component-9d833485.html",
+  controllerAs: "example"
+}).component("docsTooltipTemplate", {
+  controller: TooltipTemplateComponent.ɵfac,
+  templateUrl: "templates/tooltip-template.component-7261e045.html",
+  controllerAs: "example"
+}).component("docsTooltipTriggers", {
+  controller: TooltipTriggersComponent.ɵfac,
+  templateUrl: "templates/tooltip-triggers.component-80fd132a.html",
+  controllerAs: "example"
+}).factory("TooltipModule_13b86790", TooltipModule.ɵfac).run([
+  "TooltipModule_13b86790",
   function() {
   }
 ]);
 export {
-  CollapseModule
+  TooltipModule
 };
