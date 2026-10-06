@@ -352,229 +352,279 @@
   });
 })();
 import {
-  RouterModule
-} from "./chunk-44BCS2Q7.js";
+  NgbConfig
+} from "./chunk-TYQFYSAF.js";
 import {
+  NgZone,
+  inject,
+  ngbCollapsingTransition,
+  ngbRunTransition
+} from "./chunk-7GLALTP4.js";
+import {
+  ElementRef,
+  EventEmitter,
   require_angular
 } from "./chunk-K6VJMEI3.js";
 import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// src/app/features/features.module.ts
+// ../ngb-js/dist/chunk-B47VAOJ4.js
 var import_angular = __toESM(require_angular(), 1);
-
-// src/app/features/features.routes.ts
-var routes = [
-  {
-    path: "alert",
-    loadChildren: () => import("./alert.module-ZFXCIZSE.js").then((m) => m.AlertModule)
-  },
-  {
-    path: "accordion",
-    loadChildren: () => import("./accordion.module-WHDIZGBI.js").then((m) => m.AccordionModule)
-  },
-  {
-    path: "carousel",
-    loadChildren: () => import("./carousel.module-I23YUUNE.js").then((m) => m.CarouselModule)
-  },
-  {
-    path: "collapse",
-    loadChildren: () => import("./collapse.module-DJDETWZA.js").then((m) => m.CollapseModule)
-  },
-  {
-    path: "datepicker",
-    loadChildren: () => import("./datepicker.module-7CBF6Y2L.js").then((m) => m.DatepickerModule)
-  },
-  {
-    path: "dropdown",
-    loadChildren: () => import("./dropdown.module-WBQYWWK7.js").then((m) => m.DropdownModule)
-  },
-  {
-    path: "modal",
-    loadChildren: () => import("./modal.module-E7F7523X.js").then((m) => m.ModalModule)
-  },
-  {
-    path: "nav",
-    loadChildren: () => import("./nav.module-WQH646LT.js").then((m) => m.NavModule)
-  },
-  {
-    path: "offcanvas",
-    loadChildren: () => import("./offcanvas.module-GTTI4HRB.js").then((m) => m.OffcanvasModule)
-  },
-  {
-    path: "pagination",
-    loadChildren: () => import("./pagination.module-4QMHPK76.js").then((m) => m.PaginationModule)
-  },
-  {
-    path: "popover",
-    loadChildren: () => import("./popover.module-SMA3DUCC.js").then((m) => m.PopoverModule)
-  },
-  {
-    path: "progressbar",
-    loadChildren: () => import("./progressbar.module-M2G6EJ4V.js").then((m) => m.ProgressbarModule)
-  },
-  {
-    path: "rating",
-    loadChildren: () => import("./rating.module-SYJAUEFC.js").then((m) => m.RatingModule)
-  },
-  {
-    path: "scrollspy",
-    loadChildren: () => import("./scrollspy.module-VVGHV46P.js").then((m) => m.ScrollspyModule)
-  },
-  {
-    path: "timepicker",
-    loadChildren: () => import("./timepicker.module-KL5G3PIR.js").then((m) => m.TimepickerModule)
-  },
-  {
-    path: "toast",
-    loadChildren: () => import("./toast.module-2TL3WYW6.js").then((m) => m.ToastModule)
-  },
-  {
-    path: "tooltip",
-    loadChildren: () => import("./tooltip.module-FLMBPWYO.js").then((m) => m.TooltipModule)
-  },
-  {
-    path: "typeahead",
-    loadChildren: () => import("./typeahead.module-S2LENCGR.js").then((m) => m.TypeaheadModule)
+var NgbCollapseConfig = class {
+  get animation() {
+    return this._animation ?? this._ngbConfig.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  constructor() {
+    this._ngbConfig = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapseConfig"] ? globalThis.ɵngjsInjected["NgbCollapseConfig"][0] : inject(NgbConfig);
+    this.horizontal = false;
+  }
+};
+NgbCollapseConfig.ɵfac = [
+  "NgbConfig_c7257787",
+  function NgbCollapseConfig_Factory(i0) {
+    var ɵprevious = globalThis.ɵngjsInjected;
+    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
+      "NgbCollapseConfig": [
+        i0
+      ]
+    });
+    try {
+      var instance = new (this && this.ɵT || NgbCollapseConfig)();
+    } finally {
+      globalThis.ɵngjsInjected = ɵprevious;
+    }
+    return instance;
   }
 ];
-
-// src/app/features/features.module.ts
-function ɵtokenName(token) {
-  if (typeof token === "string") return token;
-  if (token && token.ɵprov) return token.ɵprov.token;
-  throw new Error("ModuleWithProviders: el token " + String(token && token.name || token) + " no tiene nombre de DI en runtime (solo un string, una clase con @Injectable o un InjectionToken) — si es una clase, agregale @Injectable().");
-}
-function ɵownFactory(cls) {
-  if (Object.prototype.hasOwnProperty.call(cls, "ɵfac")) return cls.ɵfac;
-  if (cls.ɵfac) throw new Error('"' + cls.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
-  return [
-    function() {
-      return new cls();
+NgbCollapseConfig.ɵprov = {
+  token: "NgbCollapseConfig_3caf328c",
+  providedIn: "root"
+};
+(globalThis.ɵngjsRootProviders = globalThis.ɵngjsRootProviders || []).push([
+  "NgbCollapseConfig_3caf328c",
+  NgbCollapseConfig.ɵfac
+]);
+var NgbCollapse = class {
+  set collapsed(isCollapsed) {
+    if (this._isCollapsed !== isCollapsed) {
+      this._isCollapsed = isCollapsed;
+      if (this._afterInit) {
+        this._runTransitionWithEvents(isCollapsed, this.animation);
+      }
     }
-  ];
-}
-function ɵimportedModuleName(imported) {
-  var module = imported && imported.ngModule ? imported.ngModule : imported;
-  if (typeof module === "string") return module;
-  return module.ɵmod ? module.ɵmod.id : module.name;
-}
-function ɵregisterProvider(module, key, provider) {
-  if ("useValue" in provider) return module.value(key, provider.useValue);
-  if (provider.useFactory) return module.factory(key, (provider.deps || []).map(ɵtokenName).concat([
-    provider.useFactory
-  ]));
-  if (provider.useExisting) return module.factory(key, [
-    ɵtokenName(provider.useExisting),
-    function(existing) {
-      return existing;
-    }
-  ]);
-  var cls = provider.useClass || provider.provide;
-  if (typeof cls !== "function") throw new Error('ModuleWithProviders: provider de "' + key + '" sin receta y sin clase en provide.');
-  if (!provider.deps) return module.factory(key, provider.ɵbare && Object.prototype.hasOwnProperty.call(cls, "ɵprov") && cls.ɵprov.factory || ɵownFactory(cls));
-  return module.factory(key, provider.deps.map(ɵtokenName).concat([
-    function() {
-      return new (Function.prototype.bind.apply(cls, [
-        null
-      ].concat(Array.prototype.slice.call(arguments))))();
-    }
-  ]));
-}
-function ɵimportProviders(module, imports) {
-  var providers = [];
-  var flatten = function(list) {
-    for (var i2 = 0; i2 < list.length; i2++) Array.isArray(list[i2]) ? flatten(list[i2]) : providers.push(list[i2]);
-  };
-  for (var i = 0; i < imports.length; i++) if (imports[i] && imports[i].ngModule) flatten(imports[i].providers || []);
-  var single = {};
-  var multi = {};
-  for (var j = 0; j < providers.length; j++) {
-    var raw = providers[j];
-    var provider = typeof raw === "function" ? {
-      provide: raw,
-      ɵbare: true
-    } : raw;
-    var token = ɵtokenName(provider.provide);
-    if (provider.multi ? single[token] : multi[token]) {
-      throw new Error('ModuleWithProviders: mezcla providers multi y no-multi para el token "' + token + '".');
-    }
-    if (provider.multi) (multi[token] = multi[token] || []).push(provider);
-    else single[token] = provider;
   }
-  for (var name in single) ɵregisterProvider(module, name, single[name]);
-  for (var multiName in multi) {
-    var members = multi[multiName].map(function(_, index) {
-      return multiName + "#multi#" + module.name + "#import#" + index;
+  get _collapseHorizontal() {
+    return this.horizontal;
+  }
+  ngOnInit() {
+    this._runTransition(this._isCollapsed, false);
+    this._afterInit = true;
+  }
+  toggle(open = this._isCollapsed) {
+    this.collapsed = !open;
+    this.ngbCollapseChange.next(this._isCollapsed);
+  }
+  _runTransition(collapsed, animation) {
+    return ngbRunTransition(this._zone, this._element.nativeElement, ngbCollapsingTransition, {
+      animation,
+      runningTransition: "stop",
+      context: {
+        direction: collapsed ? "hide" : "show",
+        dimension: this.horizontal ? "width" : "height"
+      }
     });
-    for (var k = 0; k < members.length; k++) ɵregisterProvider(module, members[k], multi[multiName][k]);
-    module.config(ɵmultiConfig(multiName, members));
   }
-  return module;
-}
-function ɵmultiMixError(token) {
-  return new Error('Multi-providers: mezcla providers multi y no-multi para el token "' + token + '" entre módulos.');
-}
-function ɵmultiProviders($provide, providers, token, members) {
-  var state = providers.ɵmulti;
-  if (!state) {
-    state = providers.ɵmulti = {
-      tokens: {},
-      factory: $provide.factory
+  _runTransitionWithEvents(collapsed, animation) {
+    this._runTransition(collapsed, animation).subscribe(() => {
+      if (collapsed) {
+        this.hidden.emit();
+      } else {
+        this.shown.emit();
+      }
+    });
+  }
+  constructor() {
+    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapse"] ? globalThis.ɵngjsInjected["NgbCollapse"][0] : inject(NgbCollapseConfig);
+    this._element = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapse"] ? globalThis.ɵngjsInjected["NgbCollapse"][1] : inject(ElementRef);
+    this._zone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapse"] ? globalThis.ɵngjsInjected["NgbCollapse"][2] : inject(NgZone);
+    this._afterInit = false;
+    this._isCollapsed = false;
+    this.animation = this._config.animation;
+    this.ngbCollapseChange = new EventEmitter();
+    this.horizontal = this._config.horizontal;
+    this.shown = new EventEmitter();
+    this.hidden = new EventEmitter();
+  }
+};
+NgbCollapse.ɵfac = [
+  "NgbCollapseConfig_3caf328c",
+  "ElementRef_927308a2",
+  "NgZone_31031859",
+  "$element",
+  "$scope",
+  function NgbCollapse_Factory(i0, i1, i2, $element, $scope) {
+    var ɵprevious = globalThis.ɵngjsInjected;
+    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
+      "NgbCollapse": [
+        i0,
+        i1,
+        i2
+      ]
+    });
+    try {
+      var instance = new (this && this.ɵT || NgbCollapse)();
+    } finally {
+      globalThis.ɵngjsInjected = ɵprevious;
+    }
+    var ɵunwatch0 = $scope.$watch(function() {
+      return instance._collapseHorizontal;
+    }, function(v) {
+      v ? $element.addClass("collapse-horizontal") : $element.removeClass("collapse-horizontal");
+    });
+    var ɵhostOnInit = instance.$onInit;
+    instance.$onInit = function() {
+      var ɵresult = ɵhostOnInit ? ɵhostOnInit.apply(this, arguments) : void 0;
+      (function(v) {
+        v ? $element.addClass("collapse-horizontal") : $element.removeClass("collapse-horizontal");
+      })(instance._collapseHorizontal);
+      return ɵresult;
     };
-    [
-      "provider",
-      "factory",
-      "service",
-      "value",
-      "constant"
-    ].forEach(function(method) {
-      var original = $provide[method];
-      $provide[method] = function(name) {
-        if (typeof name === "string" && Object.prototype.hasOwnProperty.call(state.tokens, name)) throw ɵmultiMixError(name);
-        return original.apply(this, arguments);
-      };
+    $scope.$on("$destroy", function() {
+      ɵunwatch0();
     });
-  }
-  var rootDefault = providers.ɵrootDefaults && providers.ɵrootDefaults[token];
-  if (!state.tokens[token] && providers.has(token + "Provider") && !rootDefault) throw ɵmultiMixError(token);
-  state.tokens[token] = (state.tokens[token] || []).concat(members);
-  state.factory(token, state.tokens[token].concat([
-    function() {
-      return Array.prototype.slice.call(arguments);
-    }
-  ]));
-}
-function ɵmultiConfig(token, members) {
-  return [
-    "$provide",
-    "$injector",
-    function($provide, providers) {
-      ɵmultiProviders($provide, providers, token, members);
-    }
-  ];
-}
-var FeaturesModule = class {
-};
-FeaturesModule.ɵfac = [
-  function FeaturesModule_Factory() {
-    return new (this && this.ɵT || FeaturesModule)();
+    return instance;
   }
 ];
-var ɵFeaturesModule_import0 = RouterModule.forChild(routes);
-FeaturesModule.ɵmod = {
-  id: "FeaturesModule_ac665e6f"
+NgbCollapse.ɵdir = {
+  selectors: [
+    [
+      "",
+      "ngbCollapse",
+      ""
+    ]
+  ],
+  inputs: {
+    "animation": "animation",
+    "ngbCollapse": "collapsed",
+    "horizontal": "horizontal"
+  },
+  outputs: {
+    "ngbCollapseChange": "ngbCollapseChange",
+    "shown": "shown",
+    "hidden": "hidden"
+  },
+  exportAs: [
+    "ngbCollapse"
+  ],
+  definition: {
+    "bindings": {
+      "animation": "<?",
+      "collapsed": "<?ngbCollapse",
+      "horizontal": "<?",
+      "ngbCollapseChange": "&?",
+      "shown": "&?",
+      "hidden": "&?"
+    }
+  }
 };
-ɵimportProviders(import_angular.default.module("FeaturesModule_ac665e6f", [
-  ɵimportedModuleName(ɵFeaturesModule_import0)
-]), [
-  ɵFeaturesModule_import0
-]).factory("FeaturesModule_1e9dd68c", FeaturesModule.ɵfac).run([
-  "FeaturesModule_1e9dd68c",
+NgbCollapse.ɵfac.ɵtype = NgbCollapse;
+NgbCollapse.prototype.$onInit = function() {
+  this.ngOnInit();
+};
+function ɵlazyController($delegate, $injector) {
+  if ($injector.ɵngjsLazyController) return $delegate;
+  $injector.ɵngjsLazyController = true;
+  return function(expression, locals, later, ident) {
+    var init = $delegate.apply(this, arguments);
+    if (!later || !expression || !expression.ɵtype || typeof init !== "function" || !init.instance) return init;
+    var state = 0, built;
+    var lazy = function() {
+      if (state === 2) return built;
+      if (state === 1) throw new Error('NG0200: dependencia circular — "' + expression.ɵtype.name + '" se pidió a sí misma mientras se construía (directivas del mismo elemento que se inyectan entre sí).');
+      state = 1;
+      try {
+        built = init();
+        state = 2;
+      } finally {
+        if (state !== 2) state = 0;
+      }
+      return built;
+    };
+    Object.defineProperty(init.instance, "ɵngjsBuild", {
+      value: lazy,
+      configurable: true
+    });
+    lazy.instance = init.instance;
+    lazy.identifier = init.identifier;
+    return lazy;
+  };
+}
+var NgbCollapseModule = class {
+};
+NgbCollapseModule.ɵfac = [
+  function NgbCollapseModule_Factory() {
+    return new (this && this.ɵT || NgbCollapseModule)();
+  }
+];
+NgbCollapseModule.ɵmod = {
+  id: "NgbCollapseModule_1b8c6570",
+  controllerAs: "$"
+};
+import_angular.default.module("NgbCollapseModule_1b8c6570", []).factory("ɵresolve", [
+  "$injector",
+  function($injector) {
+    return function(name, flags, element) {
+      flags = flags || {};
+      var bounded = element && (flags.self || flags.host);
+      if (!bounded && $injector.has(name)) return $injector.get(name);
+      if (flags.optional) return null;
+      throw new Error('ɵresolve: no hay provider para "' + name + '"' + (bounded ? " con { " + (flags.self ? "self" : "host") + ": true } (sin injector de elemento)" : "") + ".");
+    };
+  }
+]).decorator("$controller", [
+  "$delegate",
+  "$injector",
+  ɵlazyController
+]).directive("ngbCollapse", function() {
+  return {
+    controller: NgbCollapse.ɵfac,
+    restrict: "A",
+    bindToController: {
+      "animation": "<?",
+      "collapsed": "<?ngbCollapse",
+      "horizontal": "<?",
+      "ngbCollapseChange": "&?",
+      "shown": "&?",
+      "hidden": "&?"
+    },
+    controllerAs: "ngbCollapse"
+  };
+}).directive("ngbCollapse", function() {
+  return {
+    restrict: "A",
+    link: {
+      pre: function(scope, element) {
+        [
+          "ngb-collapse-change",
+          "shown",
+          "hidden"
+        ].forEach(function(name) {
+          element[0].removeAttribute(name);
+        });
+      }
+    }
+  };
+}).factory("NgbCollapseModule_c38a6dea", NgbCollapseModule.ɵfac).run([
+  "NgbCollapseModule_c38a6dea",
   function() {
   }
 ]);
+
 export {
-  FeaturesModule
+  NgbCollapse,
+  NgbCollapseModule
 };

@@ -352,274 +352,181 @@
   });
 })();
 import {
-  NgbNavModule
-} from "./chunk-GBQCJSNK.js";
-import {
-  NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
-import {
-  RouterModule
-} from "./chunk-44BCS2Q7.js";
+  NgbCalendarBuddhist,
+  NgbCalendarEthiopian,
+  NgbCalendarGregorian,
+  NgbCalendarHebrew,
+  NgbCalendarIslamicCivil,
+  NgbCalendarIslamicUmalqura,
+  NgbCalendarPersian,
+  NgbDatepickerI18n,
+  NgbDatepickerI18nAmharic,
+  NgbDatepickerI18nHebrew
+} from "./chunk-C7NAJ2D4.js";
 import "./chunk-YZVMAT3C.js";
-import "./chunk-DXKD6ZA6.js";
-import {
-  require_angular
-} from "./chunk-K6VJMEI3.js";
-import {
-  __toESM
-} from "./chunk-MTQV7FVC.js";
+import "./chunk-7GLALTP4.js";
+import "./chunk-K6VJMEI3.js";
+import "./chunk-MTQV7FVC.js";
 
-// src/app/features/guide/guide.module.ts
-var import_angular = __toESM(require_angular(), 1);
-
-// src/app/features/guide/guide.routes.ts
-var routes = [
-  {
-    path: "",
-    children: [
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "introduction"
-      },
-      {
-        path: "introduction",
-        loadComponent: () => import("./introduction-page.component-LYUUAA6S.js").then((m) => m.IntroductionPageComponent),
-        data: {
-          header: false,
-          title: "Introduction",
-          sections: [
-            {
-              id: "origin",
-              name: "Origin"
-            },
-            {
-              id: "what-is-ngbjs",
-              name: "What is NgbJS?"
-            },
-            {
-              id: "who-is-it-for",
-              name: "Who is it for?"
-            },
-            {
-              id: "project-status",
-              name: "Project status"
-            },
-            {
-              id: "installation",
-              name: "Installation"
-            },
-            {
-              id: "acknowledgements",
-              name: "Acknowledgements"
-            }
-          ]
-        },
-        title: "Ngb-Js | Introduction"
-      },
-      {
-        path: "philosophy",
-        loadComponent: () => import("./philosophy-page.component-G6KBIMMR.js").then((m) => m.PhilosophyPageComponent),
-        data: {
-          header: false,
-          title: "Philosophy",
-          sections: [
-            {
-              id: "parity-is-priority",
-              name: "Parity is Priority"
-            },
-            {
-              id: "what-parity-means",
-              name: "What parity means"
-            },
-            {
-              id: "familiar-by-design",
-              name: "Familiar by design"
-            },
-            {
-              id: "a-migration-bridge",
-              name: "A migration bridge"
-            },
-            {
-              id: "when-parity-is-hard",
-              name: "When parity is hard"
-            }
-          ]
-        },
-        title: "Ngb-Js | Philosophy"
-      },
-      {
-        path: "why-ngbjs",
-        loadComponent: () => import("./why-ngbjs-page.component-V5URPNUE.js").then((m) => m.WhyNgbJsPageComponent),
-        data: {
-          header: false,
-          title: "Why NgbJS?",
-          sections: [
-            {
-              id: "the-legacy-reality",
-              name: "The legacy reality"
-            },
-            {
-              id: "before-and-after",
-              name: "Before and after"
-            },
-            {
-              id: "what-it-unlocks",
-              name: "What NgbJS unlocks"
-            },
-            {
-              id: "when-to-use-ngbjs",
-              name: "When to use NgbJS"
-            },
-            {
-              id: "a-bridge-not-a-destination",
-              name: "A bridge, not a destination"
-            }
-          ]
-        },
-        title: "Why NgbJS?"
-      }
-    ]
+// src/app/features/datepicker/pages/datepicker-calendars-page/datepicker-calendars-page.component.ts
+var CalendarI18n = class extends NgbDatepickerI18n {
+  constructor(months, weekdays, localeName) {
+    super(), this.months = months, this.weekdays = weekdays, this.localeName = localeName;
   }
+  getWeekdayLabel(weekday) {
+    return this.weekdays[weekday - 1] ?? "";
+  }
+  getMonthShortName(month) {
+    return this.months[month - 1]?.slice(0, 3) ?? "";
+  }
+  getMonthFullName(month) {
+    return this.months[month - 1] ?? "";
+  }
+  getDayAriaLabel(date) {
+    return `${this.localeName}: ${date.day} ${this.getMonthFullName(date.month)} ${date.year}`;
+  }
+};
+var PERSIAN_WEEKDAYS = [
+  "د",
+  "س",
+  "چ",
+  "پ",
+  "ج",
+  "ش",
+  "ی"
 ];
-
-// src/app/features/guide/guide.module.ts
-function ɵtokenName(token) {
-  if (typeof token === "string") return token;
-  if (token && token.ɵprov) return token.ɵprov.token;
-  throw new Error("ModuleWithProviders: el token " + String(token && token.name || token) + " no tiene nombre de DI en runtime (solo un string, una clase con @Injectable o un InjectionToken) — si es una clase, agregale @Injectable().");
-}
-function ɵownFactory(cls) {
-  if (Object.prototype.hasOwnProperty.call(cls, "ɵfac")) return cls.ɵfac;
-  if (cls.ɵfac) throw new Error('"' + cls.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
-  return [
-    function() {
-      return new cls();
-    }
-  ];
-}
-function ɵimportedModuleName(imported) {
-  var module = imported && imported.ngModule ? imported.ngModule : imported;
-  if (typeof module === "string") return module;
-  return module.ɵmod ? module.ɵmod.id : module.name;
-}
-function ɵregisterProvider(module, key, provider) {
-  if ("useValue" in provider) return module.value(key, provider.useValue);
-  if (provider.useFactory) return module.factory(key, (provider.deps || []).map(ɵtokenName).concat([
-    provider.useFactory
-  ]));
-  if (provider.useExisting) return module.factory(key, [
-    ɵtokenName(provider.useExisting),
-    function(existing) {
-      return existing;
-    }
-  ]);
-  var cls = provider.useClass || provider.provide;
-  if (typeof cls !== "function") throw new Error('ModuleWithProviders: provider de "' + key + '" sin receta y sin clase en provide.');
-  if (!provider.deps) return module.factory(key, provider.ɵbare && Object.prototype.hasOwnProperty.call(cls, "ɵprov") && cls.ɵprov.factory || ɵownFactory(cls));
-  return module.factory(key, provider.deps.map(ɵtokenName).concat([
-    function() {
-      return new (Function.prototype.bind.apply(cls, [
-        null
-      ].concat(Array.prototype.slice.call(arguments))))();
-    }
-  ]));
-}
-function ɵimportProviders(module, imports) {
-  var providers = [];
-  var flatten = function(list) {
-    for (var i2 = 0; i2 < list.length; i2++) Array.isArray(list[i2]) ? flatten(list[i2]) : providers.push(list[i2]);
-  };
-  for (var i = 0; i < imports.length; i++) if (imports[i] && imports[i].ngModule) flatten(imports[i].providers || []);
-  var single = {};
-  var multi = {};
-  for (var j = 0; j < providers.length; j++) {
-    var raw = providers[j];
-    var provider = typeof raw === "function" ? {
-      provide: raw,
-      ɵbare: true
-    } : raw;
-    var token = ɵtokenName(provider.provide);
-    if (provider.multi ? single[token] : multi[token]) {
-      throw new Error('ModuleWithProviders: mezcla providers multi y no-multi para el token "' + token + '".');
-    }
-    if (provider.multi) (multi[token] = multi[token] || []).push(provider);
-    else single[token] = provider;
-  }
-  for (var name in single) ɵregisterProvider(module, name, single[name]);
-  for (var multiName in multi) {
-    var members = multi[multiName].map(function(_, index) {
-      return multiName + "#multi#" + module.name + "#import#" + index;
-    });
-    for (var k = 0; k < members.length; k++) ɵregisterProvider(module, members[k], multi[multiName][k]);
-    module.config(ɵmultiConfig(multiName, members));
-  }
-  return module;
-}
-function ɵmultiMixError(token) {
-  return new Error('Multi-providers: mezcla providers multi y no-multi para el token "' + token + '" entre módulos.');
-}
-function ɵmultiProviders($provide, providers, token, members) {
-  var state = providers.ɵmulti;
-  if (!state) {
-    state = providers.ɵmulti = {
-      tokens: {},
-      factory: $provide.factory
+var PERSIAN_MONTHS = [
+  "فروردین",
+  "اردیبهشت",
+  "خرداد",
+  "تیر",
+  "مرداد",
+  "شهریور",
+  "مهر",
+  "آبان",
+  "آذر",
+  "دی",
+  "بهمن",
+  "اسفند"
+];
+var ARABIC_WEEKDAYS = [
+  "ن",
+  "ث",
+  "ر",
+  "خ",
+  "ج",
+  "س",
+  "ح"
+];
+var ISLAMIC_MONTHS = [
+  "محرّم",
+  "صفر",
+  "ربيع الأول",
+  "ربيع الآخر",
+  "جمادى الأولى",
+  "جمادى الآخرة",
+  "رجب",
+  "شعبان",
+  "رمضان",
+  "شوّال",
+  "ذو القعدة",
+  "ذو الحجة"
+];
+var THAI_WEEKDAYS = [
+  "จ",
+  "อ",
+  "พ",
+  "พฤ",
+  "ศ",
+  "ส",
+  "อา"
+];
+var THAI_MONTHS = [
+  "มกราคม",
+  "กุมภาพันธ์",
+  "มีนาคม",
+  "เมษายน",
+  "พฤษภาคม",
+  "มิถุนายน",
+  "กรกฎาคม",
+  "สิงหาคม",
+  "กันยายน",
+  "ตุลาคม",
+  "พฤศจิกายน",
+  "ธันวาคม"
+];
+var GALACTIC_MONTHS = [
+  "ᔑリ⊣⚍ᔑ∷||",
+  "⎓ᒷʖ∷⚍ᔑ∷||",
+  "ᒲᔑ∷ᓵ⍑",
+  "ᔑ!¡∷╎ꖎ",
+  "ᒲᔑ||",
+  "⋮⚍リᒷ",
+  "⋮⚍ꖎ||",
+  "ᔑ⚍⊣⚍ᓭℸ̣",
+  "ᓭᒷ!¡ℸ̣ᒷᒲʖᒷ∷",
+  "𝙹ᓵℸ̣𝙹ʖᒷ∷",
+  "リ𝙹⍊ᒷᒲʖᒷ∷",
+  "↸ᒷᓵᒷᒲʖᒷ∷"
+];
+var GALACTIC_WEEKDAYS = [
+  "ᒲ",
+  "ℸ̣",
+  "∴",
+  "ℸ̣",
+  "⎓",
+  "ᓭ",
+  "ᓭ"
+];
+var DatepickerCalendarsPageComponent = class {
+  create(calendar, i18n) {
+    return {
+      calendar,
+      i18n,
+      date: calendar.getToday()
     };
-    [
-      "provider",
-      "factory",
-      "service",
-      "value",
-      "constant"
-    ].forEach(function(method) {
-      var original = $provide[method];
-      $provide[method] = function(name) {
-        if (typeof name === "string" && Object.prototype.hasOwnProperty.call(state.tokens, name)) throw ɵmultiMixError(name);
-        return original.apply(this, arguments);
-      };
-    });
   }
-  var rootDefault = providers.ɵrootDefaults && providers.ɵrootDefaults[token];
-  if (!state.tokens[token] && providers.has(token + "Provider") && !rootDefault) throw ɵmultiMixError(token);
-  state.tokens[token] = (state.tokens[token] || []).concat(members);
-  state.factory(token, state.tokens[token].concat([
-    function() {
-      return Array.prototype.slice.call(arguments);
-    }
-  ]));
-}
-function ɵmultiConfig(token, members) {
-  return [
-    "$provide",
-    "$injector",
-    function($provide, providers) {
-      ɵmultiProviders($provide, providers, token, members);
-    }
-  ];
-}
-var GuideModule = class {
+  constructor() {
+    this.calendars = {
+      hebrew: this.create(new NgbCalendarHebrew(), new NgbDatepickerI18nHebrew()),
+      jalali: this.create(new NgbCalendarPersian(), new CalendarI18n(PERSIAN_MONTHS, PERSIAN_WEEKDAYS, "Jalali")),
+      islamicCivil: this.create(new NgbCalendarIslamicCivil(), new CalendarI18n(ISLAMIC_MONTHS, ARABIC_WEEKDAYS, "Islamic Civil")),
+      islamicUmalqura: this.create(new NgbCalendarIslamicUmalqura(), new CalendarI18n(ISLAMIC_MONTHS, ARABIC_WEEKDAYS, "Islamic Umm al-Qura")),
+      buddhist: this.create(new NgbCalendarBuddhist(), new CalendarI18n(THAI_MONTHS, THAI_WEEKDAYS, "Buddhist")),
+      ethiopian: this.create(new NgbCalendarEthiopian(), new NgbDatepickerI18nAmharic()),
+      intergalactic: this.create(new NgbCalendarGregorian(), new CalendarI18n(GALACTIC_MONTHS, GALACTIC_WEEKDAYS, "Intergalactic Standard"))
+    };
+  }
 };
-GuideModule.ɵfac = [
-  function GuideModule_Factory() {
-    return new (this && this.ɵT || GuideModule)();
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-f074bae2],.card[_content-f074bae2],.dropdown-menu[_content-f074bae2],.list-group-item[_content-f074bae2],.form-control[_content-f074bae2],.form-select[_content-f074bae2]{border-color:var(--bs-border-color)}.alert-light[_content-f074bae2]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-f074bae2],.list-group[_content-f074bae2],.dropdown-menu[_content-f074bae2]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-f074bae2],.btn-outline-secondary[_content-f074bae2]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-f074bae2],.form-select[_content-f074bae2]{background-color:var(--bs-body-bg)}code[_content-f074bae2]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+DatepickerCalendarsPageComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function DatepickerCalendarsPageComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || DatepickerCalendarsPageComponent)();
+    return instance;
   }
 ];
-var ɵGuideModule_import0 = RouterModule.forChild(routes);
-GuideModule.ɵmod = {
-  id: "GuideModule_87fb03f7"
-};
-ɵimportProviders(import_angular.default.module("GuideModule_87fb03f7", [
-  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
-  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵGuideModule_import0)
-]), [
-  ɵGuideModule_import0
-]).factory("GuideModule_27eade11", GuideModule.ɵfac).run([
-  "GuideModule_27eade11",
-  function() {
+DatepickerCalendarsPageComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-datepicker-calendars-page"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/datepicker-calendars-page.component-9c3a2913.html",
+    "controllerAs": "$"
   }
-]);
+};
+DatepickerCalendarsPageComponent.ɵfac.ɵcomponent = true;
+DatepickerCalendarsPageComponent.ɵfac.ɵtype = DatepickerCalendarsPageComponent;
 export {
-  GuideModule
+  DatepickerCalendarsPageComponent
 };

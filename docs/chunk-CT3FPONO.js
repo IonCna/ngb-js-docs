@@ -353,14 +353,22 @@
 })();
 import {
   NgbConfig
-} from "./chunk-T2KZSIKQ.js";
+} from "./chunk-TYQFYSAF.js";
 import {
+  ChangeDetectorRef,
   NgZone,
+  PopupService,
+  Subject,
+  addPopperOffset,
   inject,
-  ngbCollapsingTransition,
-  ngbRunTransition
-} from "./chunk-DXKD6ZA6.js";
+  isString,
+  listenToTriggers,
+  ngbAutoClose,
+  ngbPositioning
+} from "./chunk-7GLALTP4.js";
 import {
+  CommonModule,
+  DOCUMENT,
   ElementRef,
   EventEmitter,
   require_angular
@@ -369,9 +377,9 @@ import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// ../ngb-js/dist/chunk-B47VAOJ4.js
+// ../ngb-js/dist/chunk-3KTSMM5T.js
 var import_angular = __toESM(require_angular(), 1);
-var NgbCollapseConfig = class {
+var NgbTooltipConfig = class {
   get animation() {
     return this._animation ?? this._ngbConfig.animation;
   }
@@ -379,161 +387,589 @@ var NgbCollapseConfig = class {
     this._animation = animation;
   }
   constructor() {
-    this._ngbConfig = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapseConfig"] ? globalThis.ɵngjsInjected["NgbCollapseConfig"][0] : inject(NgbConfig);
-    this.horizontal = false;
+    this._ngbConfig = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbTooltipConfig"] ? globalThis.ɵngjsInjected["NgbTooltipConfig"][0] : inject(NgbConfig);
+    this.autoClose = true;
+    this.placement = "auto";
+    this.popperOptions = (options) => options;
+    this.triggers = "hover focus";
+    this.disableTooltip = false;
+    this.openDelay = 0;
+    this.closeDelay = 0;
   }
 };
-NgbCollapseConfig.ɵfac = [
+NgbTooltipConfig.ɵfac = [
   "NgbConfig_c7257787",
-  function NgbCollapseConfig_Factory(i0) {
+  function NgbTooltipConfig_Factory(i0) {
     var ɵprevious = globalThis.ɵngjsInjected;
     globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbCollapseConfig": [
+      "NgbTooltipConfig": [
         i0
       ]
     });
     try {
-      var instance = new (this && this.ɵT || NgbCollapseConfig)();
+      var instance = new (this && this.ɵT || NgbTooltipConfig)();
     } finally {
       globalThis.ɵngjsInjected = ɵprevious;
     }
     return instance;
   }
 ];
-NgbCollapseConfig.ɵprov = {
-  token: "NgbCollapseConfig_3caf328c",
+NgbTooltipConfig.ɵprov = {
+  token: "NgbTooltipConfig_1833b747",
   providedIn: "root"
 };
 (globalThis.ɵngjsRootProviders = globalThis.ɵngjsRootProviders || []).push([
-  "NgbCollapseConfig_3caf328c",
-  NgbCollapseConfig.ɵfac
+  "NgbTooltipConfig_1833b747",
+  NgbTooltipConfig.ɵfac
 ]);
-var NgbCollapse = class {
-  set collapsed(isCollapsed) {
-    if (this._isCollapsed !== isCollapsed) {
-      this._isCollapsed = isCollapsed;
-      if (this._afterInit) {
-        this._runTransitionWithEvents(isCollapsed, this.animation);
-      }
-    }
+var NgbTooltipWindow = class {
+  get hostId() {
+    return this.id;
   }
-  get _collapseHorizontal() {
-    return this.horizontal;
+  get hostClass() {
+    return `tooltip${this.tooltipClass ? ` ${this.tooltipClass}` : ""}`;
   }
-  ngOnInit() {
-    this._runTransition(this._isCollapsed, false);
-    this._afterInit = true;
+  get hostFade() {
+    return this.animation;
   }
-  toggle(open = this._isCollapsed) {
-    this.collapsed = !open;
-    this.ngbCollapseChange.next(this._isCollapsed);
+  handleMouseEnter() {
+    this.onMouseEnter?.();
   }
-  _runTransition(collapsed, animation) {
-    return ngbRunTransition(this._zone, this._element.nativeElement, ngbCollapsingTransition, {
-      animation,
-      runningTransition: "stop",
-      context: {
-        direction: collapsed ? "hide" : "show",
-        dimension: this.horizontal ? "width" : "height"
-      }
-    });
-  }
-  _runTransitionWithEvents(collapsed, animation) {
-    this._runTransition(collapsed, animation).subscribe(() => {
-      if (collapsed) {
-        this.hidden.emit();
-      } else {
-        this.shown.emit();
-      }
-    });
+  handleMouseLeave() {
+    this.onMouseLeave?.();
   }
   constructor() {
-    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapse"] ? globalThis.ɵngjsInjected["NgbCollapse"][0] : inject(NgbCollapseConfig);
-    this._element = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapse"] ? globalThis.ɵngjsInjected["NgbCollapse"][1] : inject(ElementRef);
-    this._zone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbCollapse"] ? globalThis.ɵngjsInjected["NgbCollapse"][2] : inject(NgZone);
-    this._afterInit = false;
-    this._isCollapsed = false;
-    this.animation = this._config.animation;
-    this.ngbCollapseChange = new EventEmitter();
-    this.horizontal = this._config.horizontal;
-    this.shown = new EventEmitter();
-    this.hidden = new EventEmitter();
+    this.role = "tooltip";
   }
 };
-NgbCollapse.ɵfac = [
-  "NgbCollapseConfig_3caf328c",
-  "ElementRef_927308a2",
-  "NgZone_31031859",
+(function() {
+  var s = document.createElement("style");
+  s.textContent = "ngb-tooltip-window{pointer-events:none;position:absolute}ngb-tooltip-window .tooltip-inner[_content-27bd51a5]{pointer-events:none}ngb-tooltip-window.show .tooltip-inner[_content-27bd51a5]{pointer-events:auto}ngb-tooltip-window.bs-tooltip-top,ngb-tooltip-window.bs-tooltip-bottom{padding-left:0;padding-right:0}ngb-tooltip-window.bs-tooltip-start,ngb-tooltip-window.bs-tooltip-end{padding-top:0;padding-bottom:0}";
+  document.head.appendChild(s);
+})();
+NgbTooltipWindow.ɵfac = [
   "$element",
   "$scope",
-  function NgbCollapse_Factory(i0, i1, i2, $element, $scope) {
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbCollapse": [
-        i0,
-        i1,
-        i2
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbCollapse)();
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
+  function NgbTooltipWindow_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || NgbTooltipWindow)();
     var ɵunwatch0 = $scope.$watch(function() {
-      return instance._collapseHorizontal;
+      return instance.role;
     }, function(v) {
-      v ? $element.addClass("collapse-horizontal") : $element.removeClass("collapse-horizontal");
+      v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
+    });
+    var ɵunwatch1 = $scope.$watch(function() {
+      return instance.hostId;
+    }, function(v) {
+      $element.prop("id", v);
+    });
+    var ɵunwatch2 = $scope.$watch(function() {
+      return instance.hostClass;
+    }, function(v, old) {
+      var ɵnames = function(value) {
+        if (!value) return "";
+        if (typeof value === "string") return value;
+        if (Array.isArray(value)) return value.join(" ");
+        return Object.keys(value).filter(function(key) {
+          return value[key];
+        }).join(" ");
+      };
+      if (v !== old) $element.removeClass(ɵnames(old));
+      $element.addClass(ɵnames(v));
+    }, true);
+    var ɵunwatch3 = $scope.$watch(function() {
+      return instance.hostFade;
+    }, function(v) {
+      v ? $element.addClass("fade") : $element.removeClass("fade");
     });
     var ɵhostOnInit = instance.$onInit;
     instance.$onInit = function() {
       var ɵresult = ɵhostOnInit ? ɵhostOnInit.apply(this, arguments) : void 0;
       (function(v) {
-        v ? $element.addClass("collapse-horizontal") : $element.removeClass("collapse-horizontal");
-      })(instance._collapseHorizontal);
+        v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
+      })(instance.role);
+      (function(v) {
+        $element.prop("id", v);
+      })(instance.hostId);
+      (function(v) {
+        var ɵnames = function(value) {
+          if (!value) return "";
+          if (typeof value === "string") return value;
+          if (Array.isArray(value)) return value.join(" ");
+          return Object.keys(value).filter(function(key) {
+            return value[key];
+          }).join(" ");
+        };
+        if (v !== void 0) $element.removeClass(ɵnames(void 0));
+        $element.addClass(ɵnames(v));
+      })(instance.hostClass);
+      (function(v) {
+        v ? $element.addClass("fade") : $element.removeClass("fade");
+      })(instance.hostFade);
       return ɵresult;
     };
+    var ɵhandler0 = function(event) {
+      var ɵphase = $scope.$root.$$phase;
+      if (ɵphase === "$apply" || ɵphase === "$digest") {
+        instance.handleMouseEnter();
+      } else {
+        $scope.$apply(function() {
+          instance.handleMouseEnter();
+        });
+      }
+    };
+    $element.on("mouseenter", ɵhandler0);
+    var ɵhandler1 = function(event) {
+      var ɵphase = $scope.$root.$$phase;
+      if (ɵphase === "$apply" || ɵphase === "$digest") {
+        instance.handleMouseLeave();
+      } else {
+        $scope.$apply(function() {
+          instance.handleMouseLeave();
+        });
+      }
+    };
+    $element.on("mouseleave", ɵhandler1);
     $scope.$on("$destroy", function() {
       ɵunwatch0();
+      ɵunwatch1();
+      ɵunwatch2();
+      ɵunwatch3();
+      $element.off("mouseenter", ɵhandler0);
+      $element.off("mouseleave", ɵhandler1);
     });
     return instance;
   }
 ];
-NgbCollapse.ɵdir = {
+NgbTooltipWindow.ɵcmp = {
+  selectors: [
+    [
+      "ngb-tooltip-window"
+    ]
+  ],
+  inputs: {
+    "animation": "animation",
+    "id": "id",
+    "tooltipClass": "tooltipClass",
+    "onMouseEnter": "onMouseEnter",
+    "onMouseLeave": "onMouseLeave"
+  },
+  outputs: {},
+  definition: {
+    "template": '<div class="tooltip-arrow" data-popper-arrow="" _content-27bd51a5=""></div>\n<div class="tooltip-inner" _content-27bd51a5=""><ng-content _content-27bd51a5=""></ng-content></div>',
+    "bindings": {
+      "animation": "<?",
+      "id": "<?ngId",
+      "tooltipClass": "<?",
+      "onMouseEnter": "<?",
+      "onMouseLeave": "<?"
+    },
+    "transclude": true
+  }
+};
+NgbTooltipWindow.ɵfac.ɵcomponent = true;
+NgbTooltipWindow.ɵfac.ɵtype = NgbTooltipWindow;
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) resolve(value);
+  else Promise.resolve(value).then(_next, _throw);
+}
+function _async_to_generator(fn) {
+  return function() {
+    var self = this, args = arguments;
+    return new Promise(function(resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(void 0);
+    });
+  };
+}
+var nextId = 0;
+var NgbTooltip = class {
+  set ngbTooltip(value) {
+    this._ngbTooltip = value;
+    if (!value && this._windowRef) {
+      this.close();
+    }
+  }
+  get ngbTooltip() {
+    return this._ngbTooltip;
+  }
+  open(context) {
+    return _async_to_generator(function* () {
+      if (this._opening) {
+        this._openCancelled = false;
+        return;
+      }
+      if (!this._windowRef && this._ngbTooltip && !this.disableTooltip) {
+        this._openCancelled = false;
+        this._opening = this._popupService.open(this._ngbTooltip, context ?? this.tooltipContext, this.animation);
+        const { windowRef, transition$ } = yield this._opening;
+        this._opening = null;
+        if (this._openCancelled) {
+          this._popupService.close(false).subscribe();
+          return;
+        }
+        this._windowRef = windowRef;
+        this._windowRef.setInput("animation", this.animation);
+        this._windowRef.setInput("tooltipClass", this.tooltipClass);
+        this._windowRef.setInput("id", this._ngbTooltipWindowId);
+        this._windowRef.setInput("onMouseEnter", () => this._mouseEnterTooltip.next());
+        this._windowRef.setInput("onMouseLeave", () => this._mouseLeaveTooltip.next());
+        this._getPositionTargetElement().setAttribute("aria-describedby", this._ngbTooltipWindowId);
+        if (this.container === "body") {
+          this._document.body.appendChild(this._windowRef.location.nativeElement);
+        }
+        this._windowRef.changeDetectorRef.detectChanges();
+        this._windowRef.changeDetectorRef.markForCheck();
+        this._ngZone.runOutsideAngular(() => {
+          this._positioning.createPopper({
+            hostElement: this._getPositionTargetElement(),
+            targetElement: this._windowRef.location.nativeElement,
+            placement: this.placement,
+            appendToBody: this.container === "body",
+            baseClass: "bs-tooltip",
+            updatePopperOptions: (options) => this.popperOptions(addPopperOffset([
+              0,
+              6
+            ])(options))
+          });
+          Promise.resolve().then(() => {
+            this._positioning.update();
+            this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+          });
+        });
+        ngbAutoClose(this._ngZone, this._document, this.autoClose, () => this.close(), this.hidden, [
+          this._windowRef.location.nativeElement
+        ], [
+          this._nativeElement
+        ]);
+        transition$.subscribe(() => {
+          this.shown.emit();
+        });
+      }
+    }).call(this);
+  }
+  close(animation = this.animation) {
+    if (this._opening) this._openCancelled = true;
+    if (this._windowRef != null) {
+      this._getPositionTargetElement().removeAttribute("aria-describedby");
+      this._popupService.close(animation).subscribe(() => {
+        this._windowRef = null;
+        this._positioning.destroy();
+        this._zoneSubscription?.unsubscribe();
+        this.hidden.emit();
+        this._changeDetector.markForCheck();
+      });
+    }
+  }
+  toggle() {
+    if (this._windowRef) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+  isOpen() {
+    return this._windowRef != null;
+  }
+  ngOnInit() {
+    this._unregisterListenersFn = listenToTriggers(this._nativeElement, this.triggers, this.isOpen.bind(this), this.open.bind(this), this.close.bind(this), +this.openDelay, +this.closeDelay, this._mouseEnterTooltip, this._mouseLeaveTooltip);
+  }
+  ngOnChanges({ tooltipClass }) {
+    if (tooltipClass && this.isOpen()) {
+      this._windowRef.setInput("tooltipClass", tooltipClass.currentValue);
+    }
+  }
+  ngOnDestroy() {
+    this.close(false);
+    this._unregisterListenersFn?.();
+  }
+  _getPositionTargetElement() {
+    return (isString(this.positionTarget) ? this._document.querySelector(this.positionTarget) : this.positionTarget) || this._nativeElement;
+  }
+  constructor() {
+    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbTooltip"] ? globalThis.ɵngjsInjected["NgbTooltip"][0] : inject(NgbTooltipConfig);
+    this.animation = this._config.animation;
+    this.autoClose = this._config.autoClose;
+    this.placement = this._config.placement;
+    this.popperOptions = this._config.popperOptions;
+    this.triggers = this._config.triggers;
+    this.container = this._config.container;
+    this.disableTooltip = this._config.disableTooltip;
+    this.tooltipClass = this._config.tooltipClass;
+    this.openDelay = this._config.openDelay;
+    this.closeDelay = this._config.closeDelay;
+    this.shown = new EventEmitter();
+    this.hidden = new EventEmitter();
+    this._nativeElement = (globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbTooltip"] ? globalThis.ɵngjsInjected["NgbTooltip"][1] : inject(ElementRef)).nativeElement;
+    this._ngZone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbTooltip"] ? globalThis.ɵngjsInjected["NgbTooltip"][2] : inject(NgZone);
+    this._document = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbTooltip"] ? globalThis.ɵngjsInjected["NgbTooltip"][3] : inject(DOCUMENT);
+    this._changeDetector = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbTooltip"] ? globalThis.ɵngjsInjected["NgbTooltip"][4] : inject(ChangeDetectorRef);
+    this._ngbTooltipWindowId = `ngb-tooltip-${nextId++}`;
+    this._popupService = new PopupService(NgbTooltipWindow);
+    this._windowRef = null;
+    this._positioning = ngbPositioning();
+    this._opening = null;
+    this._openCancelled = false;
+    this._mouseEnterTooltip = new Subject();
+    this._mouseLeaveTooltip = new Subject();
+  }
+};
+NgbTooltip.ɵfac = [
+  "NgbTooltipConfig_1833b747",
+  "ElementRef_927308a2",
+  "NgZone_31031859",
+  "DOCUMENT_a3a362b8",
+  "ChangeDetectorRef_e2bfcbab",
+  "$element",
+  "$scope",
+  function NgbTooltip_Factory(i0, i1, i2, i3, i4, $element, $scope) {
+    var ɵprevious = globalThis.ɵngjsInjected;
+    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
+      "NgbTooltip": [
+        i0,
+        i1,
+        i2,
+        i3,
+        i4
+      ]
+    });
+    try {
+      var instance = new (this && this.ɵT || NgbTooltip)();
+    } finally {
+      globalThis.ɵngjsInjected = ɵprevious;
+    }
+    return instance;
+  }
+];
+NgbTooltip.ɵdir = {
   selectors: [
     [
       "",
-      "ngbCollapse",
+      "ngbTooltip",
       ""
     ]
   ],
   inputs: {
     "animation": "animation",
-    "ngbCollapse": "collapsed",
-    "horizontal": "horizontal"
+    "autoClose": "autoClose",
+    "placement": "placement",
+    "popperOptions": "popperOptions",
+    "triggers": "triggers",
+    "positionTarget": "positionTarget",
+    "container": "container",
+    "disableTooltip": "disableTooltip",
+    "tooltipClass": "tooltipClass",
+    "tooltipContext": "tooltipContext",
+    "openDelay": "openDelay",
+    "closeDelay": "closeDelay",
+    "ngbTooltip": "ngbTooltip"
   },
   outputs: {
-    "ngbCollapseChange": "ngbCollapseChange",
     "shown": "shown",
     "hidden": "hidden"
   },
   exportAs: [
-    "ngbCollapse"
+    "ngbTooltip"
   ],
   definition: {
     "bindings": {
       "animation": "<?",
-      "collapsed": "<?ngbCollapse",
-      "horizontal": "<?",
-      "ngbCollapseChange": "&?",
+      "autoClose": "<?",
+      "placement": "@?",
+      "popperOptions": "<?",
+      "triggers": "@?",
+      "positionTarget": "@?",
+      "container": "@?",
+      "disableTooltip": "<?",
+      "tooltipClass": "@?",
+      "tooltipContext": "<?",
+      "openDelay": "<?",
+      "closeDelay": "<?",
+      "ngbTooltip": "<?",
       "shown": "&?",
       "hidden": "&?"
     }
   }
 };
-NgbCollapse.ɵfac.ɵtype = NgbCollapse;
-NgbCollapse.prototype.$onInit = function() {
+NgbTooltip.ɵfac.ɵtype = NgbTooltip;
+NgbTooltip.prototype.$onInit = function() {
   this.ngOnInit();
+};
+NgbTooltip.prototype.$onDestroy = function() {
+  this.ngOnDestroy();
+};
+NgbTooltip.prototype.$onChanges = function(changesObj) {
+  var changes = {};
+  (function() {
+    var c = changesObj["animation"];
+    if (!c) return;
+    changes["animation"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["autoClose"];
+    if (!c) return;
+    changes["autoClose"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["placement"];
+    if (!c) return;
+    changes["placement"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["popperOptions"];
+    if (!c) return;
+    changes["popperOptions"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["triggers"];
+    if (!c) return;
+    changes["triggers"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["positionTarget"];
+    if (!c) return;
+    changes["positionTarget"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["container"];
+    if (!c) return;
+    changes["container"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["disableTooltip"];
+    if (!c) return;
+    changes["disableTooltip"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["tooltipClass"];
+    if (!c) return;
+    changes["tooltipClass"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["tooltipContext"];
+    if (!c) return;
+    changes["tooltipContext"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["openDelay"];
+    if (!c) return;
+    changes["openDelay"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["closeDelay"];
+    if (!c) return;
+    changes["closeDelay"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  (function() {
+    var c = changesObj["ngbTooltip"];
+    if (!c) return;
+    changes["ngbTooltip"] = {
+      previousValue: c.previousValue,
+      currentValue: c.currentValue,
+      firstChange: c.isFirstChange(),
+      isFirstChange: function() {
+        return c.isFirstChange();
+      }
+    };
+  })();
+  this.ngOnChanges(changes);
 };
 function ɵlazyController($delegate, $injector) {
   if ($injector.ɵngjsLazyController) return $delegate;
@@ -563,18 +999,20 @@ function ɵlazyController($delegate, $injector) {
     return lazy;
   };
 }
-var NgbCollapseModule = class {
+var NgbTooltipModule = class {
 };
-NgbCollapseModule.ɵfac = [
-  function NgbCollapseModule_Factory() {
-    return new (this && this.ɵT || NgbCollapseModule)();
+NgbTooltipModule.ɵfac = [
+  function NgbTooltipModule_Factory() {
+    return new (this && this.ɵT || NgbTooltipModule)();
   }
 ];
-NgbCollapseModule.ɵmod = {
-  id: "NgbCollapseModule_1b8c6570",
+NgbTooltipModule.ɵmod = {
+  id: "NgbTooltipModule_593649e3",
   controllerAs: "$"
 };
-import_angular.default.module("NgbCollapseModule_1b8c6570", []).factory("ɵresolve", [
+import_angular.default.module("NgbTooltipModule_593649e3", [
+  typeof CommonModule === "string" ? CommonModule : CommonModule.ɵmod ? CommonModule.ɵmod.id : CommonModule.name
+]).factory("ɵresolve", [
   "$injector",
   function($injector) {
     return function(name, flags, element) {
@@ -589,27 +1027,47 @@ import_angular.default.module("NgbCollapseModule_1b8c6570", []).factory("ɵresol
   "$delegate",
   "$injector",
   ɵlazyController
-]).directive("ngbCollapse", function() {
+]).component("ngbTooltipWindow", {
+  controller: NgbTooltipWindow.ɵfac,
+  template: '<div class="tooltip-arrow" data-popper-arrow="" _content-27bd51a5=""></div>\n<div class="tooltip-inner" _content-27bd51a5=""><ng-content _content-27bd51a5=""></ng-content></div>',
+  controllerAs: "$",
+  transclude: true,
+  bindings: {
+    "animation": "<?",
+    "id": "<?ngId",
+    "tooltipClass": "<?",
+    "onMouseEnter": "<?",
+    "onMouseLeave": "<?"
+  }
+}).directive("ngbTooltip", function() {
   return {
-    controller: NgbCollapse.ɵfac,
+    controller: NgbTooltip.ɵfac,
     restrict: "A",
     bindToController: {
       "animation": "<?",
-      "collapsed": "<?ngbCollapse",
-      "horizontal": "<?",
-      "ngbCollapseChange": "&?",
+      "autoClose": "<?",
+      "placement": "@?",
+      "popperOptions": "<?",
+      "triggers": "@?",
+      "positionTarget": "@?",
+      "container": "@?",
+      "disableTooltip": "<?",
+      "tooltipClass": "@?",
+      "tooltipContext": "<?",
+      "openDelay": "<?",
+      "closeDelay": "<?",
+      "ngbTooltip": "<?",
       "shown": "&?",
       "hidden": "&?"
     },
-    controllerAs: "ngbCollapse"
+    controllerAs: "ngbTooltip"
   };
-}).directive("ngbCollapse", function() {
+}).directive("ngbTooltip", function() {
   return {
     restrict: "A",
     link: {
       pre: function(scope, element) {
         [
-          "ngb-collapse-change",
           "shown",
           "hidden"
         ].forEach(function(name) {
@@ -618,13 +1076,12 @@ import_angular.default.module("NgbCollapseModule_1b8c6570", []).factory("ɵresol
       }
     }
   };
-}).factory("NgbCollapseModule_c38a6dea", NgbCollapseModule.ɵfac).run([
-  "NgbCollapseModule_c38a6dea",
+}).factory("NgbTooltipModule_5572f976", NgbTooltipModule.ɵfac).run([
+  "NgbTooltipModule_5572f976",
   function() {
   }
 ]);
 
 export {
-  NgbCollapse,
-  NgbCollapseModule
+  NgbTooltipModule
 };

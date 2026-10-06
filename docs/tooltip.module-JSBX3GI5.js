@@ -352,506 +352,51 @@
   });
 })();
 import {
+  NgbTooltipModule
+} from "./chunk-CT3FPONO.js";
+import {
   NgbCollapseModule
-} from "./chunk-EP2AMMBI.js";
+} from "./chunk-WXFOXQQP.js";
 import {
   NgbNavModule
-} from "./chunk-GBQCJSNK.js";
+} from "./chunk-SGQK3IOF.js";
 import {
-  NgbConfig,
   NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
+} from "./chunk-TYQFYSAF.js";
 import {
   RouterModule
 } from "./chunk-44BCS2Q7.js";
 import "./chunk-YZVMAT3C.js";
+import "./chunk-7GLALTP4.js";
 import {
-  NgZone,
-  TemplateRef,
-  inject,
-  ngbRunTransition,
-  reflow,
-  take
-} from "./chunk-DXKD6ZA6.js";
-import {
-  CommonModule,
-  ElementRef,
-  EventEmitter,
   require_angular
 } from "./chunk-K6VJMEI3.js";
 import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// src/app/features/toast/toast.module.ts
-var import_angular2 = __toESM(require_angular(), 1);
-
-// ../ngb-js/dist/chunk-DZSZTOZM.js
+// src/app/features/tooltip/tooltip.module.ts
 var import_angular = __toESM(require_angular(), 1);
-var NgbToastConfig = class {
-  get animation() {
-    return this._animation ?? this._ngbConfig.animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  constructor() {
-    this._ngbConfig = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToastConfig"] ? globalThis.ɵngjsInjected["NgbToastConfig"][0] : inject(NgbConfig);
-    this.autohide = true;
-    this.delay = 5e3;
-    this.ariaLive = "polite";
-  }
-};
-NgbToastConfig.ɵfac = [
-  "NgbConfig_c7257787",
-  function NgbToastConfig_Factory(i0) {
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbToastConfig": [
-        i0
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbToastConfig)();
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
-    return instance;
-  }
-];
-NgbToastConfig.ɵprov = {
-  token: "NgbToastConfig_cf333917",
-  providedIn: "root"
-};
-(globalThis.ɵngjsRootProviders = globalThis.ɵngjsRootProviders || []).push([
-  "NgbToastConfig_cf333917",
-  NgbToastConfig.ɵfac
-]);
-var NgbToastHeader = class {
-};
-NgbToastHeader.ɵfac = [
-  "$element",
-  "$scope",
-  function NgbToastHeader_Factory($element, $scope) {
-    var instance = new (this && this.ɵT || NgbToastHeader)();
-    return instance;
-  }
-];
-NgbToastHeader.ɵdir = {
-  selectors: [
-    [
-      "",
-      "ngbToastHeader",
-      ""
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {}
-};
-NgbToastHeader.ɵfac.ɵtype = NgbToastHeader;
-var ngbToastFadeInTransition = (element, animation) => {
-  const { classList } = element;
-  if (animation) {
-    classList.add("fade");
-  } else {
-    classList.add("show");
-    return;
-  }
-  reflow(element);
-  classList.add("show", "showing");
-  return () => {
-    classList.remove("showing");
-  };
-};
-var ngbToastFadeOutTransition = ({ classList }) => {
-  classList.add("showing");
-  return () => {
-    classList.remove("show", "showing");
-  };
-};
-var NgbToast = class {
-  get _ariaLive() {
-    return this.ariaLive;
-  }
-  get _fade() {
-    return this.animation;
-  }
-  constructor(ariaLive) {
-    this.ariaLive = ariaLive;
-    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToast"] ? globalThis.ɵngjsInjected["NgbToast"][0] : inject(NgbToastConfig);
-    this._zone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToast"] ? globalThis.ɵngjsInjected["NgbToast"][1] : inject(NgZone);
-    this._element = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbToast"] ? globalThis.ɵngjsInjected["NgbToast"][2] : inject(ElementRef);
-    this._timeoutID = null;
-    this.animation = this._config.animation;
-    this.delay = this._config.delay;
-    this.autohide = this._config.autohide;
-    this.contentHeaderTpl = null;
-    this.shown = new EventEmitter();
-    this.hidden = new EventEmitter();
-    this._role = "alert";
-    this._ariaAtomic = "true";
-    this._toast = true;
-    this.ariaLive ??= this._config.ariaLive;
-  }
-  ngAfterContentInit() {
-    this._zone.onStable.pipe(take(1)).subscribe(() => {
-      this._init();
-      this.show();
-    });
-  }
-  ngOnChanges(changes) {
-    if ("autohide" in changes) {
-      this._clearTimeout();
-      this._init();
-    }
-  }
-  hide() {
-    this._clearTimeout();
-    const transition = ngbRunTransition(this._zone, this._element.nativeElement, ngbToastFadeOutTransition, {
-      animation: this.animation,
-      runningTransition: "stop"
-    });
-    transition.subscribe(() => {
-      this.hidden.emit();
-    });
-    return transition;
-  }
-  show() {
-    const transition = ngbRunTransition(this._zone, this._element.nativeElement, ngbToastFadeInTransition, {
-      animation: this.animation,
-      runningTransition: "continue"
-    });
-    transition.subscribe(() => {
-      this.shown.emit();
-    });
-    return transition;
-  }
-  _init() {
-    if (this.autohide && !this._timeoutID) {
-      this._timeoutID = setTimeout(() => this.hide(), this.delay);
-    }
-  }
-  _clearTimeout() {
-    if (this._timeoutID) {
-      clearTimeout(this._timeoutID);
-      this._timeoutID = null;
-    }
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = "ngb-toast{display:block}ngb-toast .toast-header .close[_content-dd14d3e9]{margin-left:auto;margin-bottom:0.25rem}";
-  document.head.appendChild(s);
-})();
-NgbToast.ɵfac = [
-  "NgbToastConfig_cf333917",
-  "NgZone_31031859",
-  "ElementRef_927308a2",
-  "$element",
-  "$scope",
-  function NgbToast_Factory(i0, i1, i2, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbToast": [
-        i0,
-        i1,
-        i2
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbToast)($element[0].getAttribute("aria-live"));
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
-    var ɵunwatch0 = $scope.$watch(function() {
-      return instance._role;
-    }, function(v) {
-      v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
-    });
-    var ɵunwatch1 = $scope.$watch(function() {
-      return instance._ariaAtomic;
-    }, function(v) {
-      v == null ? $element.removeAttr("aria-atomic") : $element.attr("aria-atomic", String(v));
-    });
-    var ɵunwatch2 = $scope.$watch(function() {
-      return instance._toast;
-    }, function(v) {
-      v ? $element.addClass("toast") : $element.removeClass("toast");
-    });
-    var ɵunwatch3 = $scope.$watch(function() {
-      return instance._ariaLive;
-    }, function(v) {
-      v == null ? $element.removeAttr("aria-live") : $element.attr("aria-live", String(v));
-    });
-    var ɵunwatch4 = $scope.$watch(function() {
-      return instance._fade;
-    }, function(v) {
-      v ? $element.addClass("fade") : $element.removeClass("fade");
-    });
-    var ɵhostOnInit = instance.$onInit;
-    instance.$onInit = function() {
-      var ɵresult = ɵhostOnInit ? ɵhostOnInit.apply(this, arguments) : void 0;
-      (function(v) {
-        v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
-      })(instance._role);
-      (function(v) {
-        v == null ? $element.removeAttr("aria-atomic") : $element.attr("aria-atomic", String(v));
-      })(instance._ariaAtomic);
-      (function(v) {
-        v ? $element.addClass("toast") : $element.removeClass("toast");
-      })(instance._toast);
-      (function(v) {
-        v == null ? $element.removeAttr("aria-live") : $element.attr("aria-live", String(v));
-      })(instance._ariaLive);
-      (function(v) {
-        v ? $element.addClass("fade") : $element.removeClass("fade");
-      })(instance._fade);
-      return ɵresult;
-    };
-    $scope.$on("$destroy", function() {
-      ɵunwatch0();
-      ɵunwatch1();
-      ɵunwatch2();
-      ɵunwatch3();
-      ɵunwatch4();
-    });
-    return instance;
-  }
-];
-NgbToast.ɵcmp = {
-  selectors: [
-    [
-      "ngb-toast"
-    ]
-  ],
-  inputs: {
-    "animation": "animation",
-    "delay": "delay",
-    "autohide": "autohide",
-    "header": "header"
-  },
-  outputs: {
-    "shown": "shown",
-    "hidden": "hidden"
-  },
-  exportAs: [
-    "ngbToast"
-  ],
-  queries: [
-    {
-      propertyName: "contentHeaderTpl",
-      first: true,
-      descendants: true,
-      static: true,
-      get predicate() {
-        return NgbToastHeader;
-      },
-      get read() {
-        return TemplateRef;
-      }
-    }
-  ],
-  viewQueries: [
-    {
-      propertyName: "headerTpl",
-      first: true,
-      descendants: true,
-      static: true,
-      predicate: [
-        "headerTpl"
-      ],
-      get read() {
-        return TemplateRef;
-      }
-    }
-  ],
-  definition: {
-    "template": '<ng-template ng-ref="headerTpl" _content-dd14d3e9="">\n    <strong class="me-auto" _content-dd14d3e9="">{{ $.header }}</strong>\n</ng-template>\n\n<div ng-if="$.contentHeaderTpl || $.header" class="toast-header" _content-dd14d3e9="">\n    <ng-container ng-template-outlet="$.contentHeaderTpl || $.headerTpl" _content-dd14d3e9=""></ng-container>\n    <button type="button" class="btn-close" aria-label="Close" ng-click="$.hide()" _content-dd14d3e9=""></button>\n</div>\n\n<div class="toast-body" _content-dd14d3e9="">\n    <ng-content _content-dd14d3e9=""></ng-content>\n</div>',
-    "bindings": {
-      "animation": "<?",
-      "delay": "<?",
-      "autohide": "<?",
-      "header": "@?",
-      "shown": "&?",
-      "hidden": "&?"
-    },
-    "transclude": true
-  }
-};
-NgbToast.ɵfac.ɵcomponent = true;
-NgbToast.ɵfac.ɵtype = NgbToast;
-NgbToast.prototype.$onChanges = function(changesObj) {
-  var changes = {};
-  (function() {
-    var c = changesObj["animation"];
-    if (!c) return;
-    changes["animation"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  (function() {
-    var c = changesObj["delay"];
-    if (!c) return;
-    changes["delay"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  (function() {
-    var c = changesObj["autohide"];
-    if (!c) return;
-    changes["autohide"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  (function() {
-    var c = changesObj["header"];
-    if (!c) return;
-    changes["header"] = {
-      previousValue: c.previousValue,
-      currentValue: c.currentValue,
-      firstChange: c.isFirstChange(),
-      isFirstChange: function() {
-        return c.isFirstChange();
-      }
-    };
-  })();
-  this.ngOnChanges(changes);
-};
-NgbToast.prototype.$postLink = function() {
-  this.ngAfterContentInit();
-};
-function ɵlazyController($delegate, $injector) {
-  if ($injector.ɵngjsLazyController) return $delegate;
-  $injector.ɵngjsLazyController = true;
-  return function(expression, locals, later, ident) {
-    var init = $delegate.apply(this, arguments);
-    if (!later || !expression || !expression.ɵtype || typeof init !== "function" || !init.instance) return init;
-    var state = 0, built;
-    var lazy = function() {
-      if (state === 2) return built;
-      if (state === 1) throw new Error('NG0200: dependencia circular — "' + expression.ɵtype.name + '" se pidió a sí misma mientras se construía (directivas del mismo elemento que se inyectan entre sí).');
-      state = 1;
-      try {
-        built = init();
-        state = 2;
-      } finally {
-        if (state !== 2) state = 0;
-      }
-      return built;
-    };
-    Object.defineProperty(init.instance, "ɵngjsBuild", {
-      value: lazy,
-      configurable: true
-    });
-    lazy.instance = init.instance;
-    lazy.identifier = init.identifier;
-    return lazy;
-  };
-}
-var NgbToastModule = class {
-};
-NgbToastModule.ɵfac = [
-  function NgbToastModule_Factory() {
-    return new (this && this.ɵT || NgbToastModule)();
-  }
-];
-NgbToastModule.ɵmod = {
-  id: "NgbToastModule_90bbc7b7",
-  controllerAs: "$"
-};
-import_angular.default.module("NgbToastModule_90bbc7b7", [
-  typeof CommonModule === "string" ? CommonModule : CommonModule.ɵmod ? CommonModule.ɵmod.id : CommonModule.name
-]).factory("ɵresolve", [
-  "$injector",
-  function($injector) {
-    return function(name, flags, element) {
-      flags = flags || {};
-      var bounded = element && (flags.self || flags.host);
-      if (!bounded && $injector.has(name)) return $injector.get(name);
-      if (flags.optional) return null;
-      throw new Error('ɵresolve: no hay provider para "' + name + '"' + (bounded ? " con { " + (flags.self ? "self" : "host") + ": true } (sin injector de elemento)" : "") + ".");
-    };
-  }
-]).decorator("$controller", [
-  "$delegate",
-  "$injector",
-  ɵlazyController
-]).component("ngbToast", {
-  controller: NgbToast.ɵfac,
-  template: '<ng-template ng-ref="headerTpl" _content-dd14d3e9="">\n    <strong class="me-auto" _content-dd14d3e9="">{{ $.header }}</strong>\n</ng-template>\n\n<div ng-if="$.contentHeaderTpl || $.header" class="toast-header" _content-dd14d3e9="">\n    <ng-container ng-template-outlet="$.contentHeaderTpl || $.headerTpl" _content-dd14d3e9=""></ng-container>\n    <button type="button" class="btn-close" aria-label="Close" ng-click="$.hide()" _content-dd14d3e9=""></button>\n</div>\n\n<div class="toast-body" _content-dd14d3e9="">\n    <ng-content _content-dd14d3e9=""></ng-content>\n</div>',
-  controllerAs: "$",
-  transclude: true,
-  bindings: {
-    "animation": "<?",
-    "delay": "<?",
-    "autohide": "<?",
-    "header": "@?",
-    "shown": "&?",
-    "hidden": "&?"
-  }
-}).directive("ngbToast", function() {
-  return {
-    restrict: "E",
-    link: {
-      pre: function(scope, element) {
-        [
-          "shown",
-          "hidden"
-        ].forEach(function(name) {
-          element[0].removeAttribute(name);
-        });
-      }
-    }
-  };
-}).directive("ngbToastHeader", function() {
-  return {
-    controller: NgbToastHeader.ɵfac,
-    restrict: "A",
-    bindToController: true,
-    controllerAs: "ngbToastHeader"
-  };
-}).factory("NgbToastModule_b8dfc097", NgbToastModule.ɵfac).run([
-  "NgbToastModule_b8dfc097",
-  function() {
-  }
-]);
 
-// src/app/features/toast/toast.routes.ts
+// src/app/features/tooltip/tooltip.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Toast",
+      title: "Tooltip",
       tabs: [
         {
           name: "Examples",
-          to: "/components/toast/examples"
+          to: "/components/tooltip/examples"
         },
         {
           name: "Api",
-          to: "/components/toast/api"
+          to: "/components/tooltip/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/toasts/",
-        ngBootstrap: "components/toast/overview"
+        bootstrap: "components/tooltips/",
+        ngBootstrap: "components/tooltip/overview"
       }
     },
     children: [
@@ -865,306 +410,443 @@ var routes = [
         data: {
           sections: [
             {
-              id: "inline-toast",
-              name: "Declarative inline usage"
+              id: "tooltip-placements",
+              name: "Quick and easy tooltips"
             },
             {
-              id: "template-header-toast",
-              name: "Template header"
+              id: "tooltip-template",
+              name: "HTML and bindings"
             },
             {
-              id: "closeable-toast",
-              name: "Closeable toast"
+              id: "tooltip-triggers",
+              name: "Custom and manual triggers"
             },
             {
-              id: "prevent-autohide-toast",
-              name: "Prevent autohide"
+              id: "tooltip-autoclose",
+              name: "Automatic closing"
             },
             {
-              id: "toast-management",
-              name: "Management service"
+              id: "tooltip-context",
+              name: "Context and manual triggers"
+            },
+            {
+              id: "tooltip-custom-target",
+              name: "Custom target"
+            },
+            {
+              id: "tooltip-delays",
+              name: "Open and close delays"
+            },
+            {
+              id: "tooltip-body",
+              name: "Append to body"
+            },
+            {
+              id: "tooltip-custom-class",
+              name: "Custom class"
+            },
+            {
+              id: "tooltip-global",
+              name: "Global configuration"
             }
           ]
         },
-        loadComponent: () => import("./toast-examples-page.component-2C3YRQDG.js").then((m) => m.ToastExamplesPageComponent)
+        loadComponent: () => import("./tooltip-examples-page.component-UD6HWRNX.js").then((m) => m.TooltipExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-toast",
-              name: "NgbToast"
+              id: "ngb-tooltip",
+              name: "NgbTooltip"
             },
             {
-              id: "ngb-toast-header",
-              name: "NgbToastHeader"
-            },
-            {
-              id: "ngb-toast-config",
-              name: "NgbToastConfig"
+              id: "ngb-tooltip-config",
+              name: "NgbTooltipConfig"
             }
           ]
         },
-        loadComponent: () => import("./toast-api-page.component-KI3FPTUK.js").then((m) => m.ToastApiPageComponent)
+        loadComponent: () => import("./tooltip-api-page.component-KYGOQAWL.js").then((m) => m.TooltipApiPageComponent)
       }
     ]
   }
 ];
 
-// src/app/features/toast/components/closeable-toast/closeable-toast.component.ts
-var CloseableToastComponent = class {
-  close() {
-    this.visible = false;
-    this.reopenTimer = setTimeout(() => {
-      this.visible = true;
-    }, 3e3);
+// src/app/features/tooltip/components/tooltip-autoclose/tooltip-autoclose.component.ts
+var TooltipAutocloseComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-79b7b970],.card[_content-79b7b970],.dropdown-menu[_content-79b7b970],.list-group-item[_content-79b7b970],.form-control[_content-79b7b970],.form-select[_content-79b7b970]{border-color:var(--bs-border-color)}.alert-light[_content-79b7b970]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-79b7b970],.list-group[_content-79b7b970],.dropdown-menu[_content-79b7b970]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-79b7b970],.btn-outline-secondary[_content-79b7b970]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-79b7b970],.form-select[_content-79b7b970]{background-color:var(--bs-body-bg)}code[_content-79b7b970]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipAutocloseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipAutocloseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipAutocloseComponent)();
+    return instance;
+  }
+];
+TooltipAutocloseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-autoclose"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-autoclose.component-fe6bae32.html",
+    "controllerAs": "example"
+  }
+};
+TooltipAutocloseComponent.ɵfac.ɵcomponent = true;
+TooltipAutocloseComponent.ɵfac.ɵtype = TooltipAutocloseComponent;
+
+// src/app/features/tooltip/components/tooltip-body/tooltip-body.component.ts
+var TooltipBodyComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-adc3dcf8],.card[_content-adc3dcf8],.dropdown-menu[_content-adc3dcf8],.list-group-item[_content-adc3dcf8],.form-control[_content-adc3dcf8],.form-select[_content-adc3dcf8]{border-color:var(--bs-border-color)}.alert-light[_content-adc3dcf8]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-adc3dcf8],.list-group[_content-adc3dcf8],.dropdown-menu[_content-adc3dcf8]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-adc3dcf8],.btn-outline-secondary[_content-adc3dcf8]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-adc3dcf8],.form-select[_content-adc3dcf8]{background-color:var(--bs-body-bg)}code[_content-adc3dcf8]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipBodyComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipBodyComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipBodyComponent)();
+    return instance;
+  }
+];
+TooltipBodyComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-body"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-body.component-265fea3a.html",
+    "controllerAs": "example"
+  }
+};
+TooltipBodyComponent.ɵfac.ɵcomponent = true;
+TooltipBodyComponent.ɵfac.ɵtype = TooltipBodyComponent;
+
+// src/app/features/tooltip/components/tooltip-context/tooltip-context.component.ts
+var TooltipContextComponent = class {
+  toggleWithGreeting(tooltip, greeting) {
+    tooltip.isOpen() ? tooltip.close() : tooltip.open({
+      greeting
+    });
+  }
+  constructor() {
+    this.name = "World";
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-1e37f484],.card[_content-1e37f484],.dropdown-menu[_content-1e37f484],.list-group-item[_content-1e37f484],.form-control[_content-1e37f484],.form-select[_content-1e37f484]{border-color:var(--bs-border-color)}.alert-light[_content-1e37f484]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1e37f484],.list-group[_content-1e37f484],.dropdown-menu[_content-1e37f484]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1e37f484],.btn-outline-secondary[_content-1e37f484]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1e37f484],.form-select[_content-1e37f484]{background-color:var(--bs-body-bg)}code[_content-1e37f484]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipContextComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipContextComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipContextComponent)();
+    return instance;
+  }
+];
+TooltipContextComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-context"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-context.component-6c135d42.html",
+    "controllerAs": "example"
+  }
+};
+TooltipContextComponent.ɵfac.ɵcomponent = true;
+TooltipContextComponent.ɵfac.ɵtype = TooltipContextComponent;
+
+// src/app/features/tooltip/components/tooltip-custom-class/tooltip-custom-class.component.ts
+var TooltipCustomClassComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".tooltip-custom[_content-826b3f2b]{--bs-tooltip-bg: var(--bs-primary-bg-subtle);--bs-tooltip-color: var(--bs-primary-text-emphasis);--bs-tooltip-opacity: 1;filter:drop-shadow(0 .35rem .8rem rgba(var(--bs-body-color-rgb),.18))}";
+  document.head.appendChild(s);
+})();
+TooltipCustomClassComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipCustomClassComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipCustomClassComponent)();
+    return instance;
+  }
+];
+TooltipCustomClassComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-custom-class"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-custom-class.component-f125a3b8.html",
+    "controllerAs": "example"
+  }
+};
+TooltipCustomClassComponent.ɵfac.ɵcomponent = true;
+TooltipCustomClassComponent.ɵfac.ɵtype = TooltipCustomClassComponent;
+
+// src/app/features/tooltip/components/tooltip-custom-target/tooltip-custom-target.component.ts
+var TooltipCustomTargetComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-0af935f0],.card[_content-0af935f0],.dropdown-menu[_content-0af935f0],.list-group-item[_content-0af935f0],.form-control[_content-0af935f0],.form-select[_content-0af935f0]{border-color:var(--bs-border-color)}.alert-light[_content-0af935f0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0af935f0],.list-group[_content-0af935f0],.dropdown-menu[_content-0af935f0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0af935f0],.btn-outline-secondary[_content-0af935f0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0af935f0],.form-select[_content-0af935f0]{background-color:var(--bs-body-bg)}code[_content-0af935f0]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipCustomTargetComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipCustomTargetComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipCustomTargetComponent)();
+    return instance;
+  }
+];
+TooltipCustomTargetComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-custom-target"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-custom-target.component-2cea8626.html",
+    "controllerAs": "example"
+  }
+};
+TooltipCustomTargetComponent.ɵfac.ɵcomponent = true;
+TooltipCustomTargetComponent.ɵfac.ɵtype = TooltipCustomTargetComponent;
+
+// src/app/features/tooltip/components/tooltip-delays/tooltip-delays.component.ts
+var TooltipDelaysComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-96ffd772],.card[_content-96ffd772],.dropdown-menu[_content-96ffd772],.list-group-item[_content-96ffd772],.form-control[_content-96ffd772],.form-select[_content-96ffd772]{border-color:var(--bs-border-color)}.alert-light[_content-96ffd772]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-96ffd772],.list-group[_content-96ffd772],.dropdown-menu[_content-96ffd772]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-96ffd772],.btn-outline-secondary[_content-96ffd772]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-96ffd772],.form-select[_content-96ffd772]{background-color:var(--bs-body-bg)}code[_content-96ffd772]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+TooltipDelaysComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function TooltipDelaysComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || TooltipDelaysComponent)();
+    return instance;
+  }
+];
+TooltipDelaysComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-tooltip-delays"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/tooltip-delays.component-0406bbc7.html",
+    "controllerAs": "example"
+  }
+};
+TooltipDelaysComponent.ɵfac.ɵcomponent = true;
+TooltipDelaysComponent.ɵfac.ɵtype = TooltipDelaysComponent;
+
+// src/app/features/tooltip/components/tooltip-global/tooltip-global.component.ts
+var TooltipGlobalComponent = class {
+  constructor(config) {
+    this.config = config;
+    this.initialConfig = {
+      container: config.container,
+      openDelay: config.openDelay,
+      placement: config.placement,
+      triggers: config.triggers
+    };
+    config.container = "body";
+    config.openDelay = 300;
+    config.placement = "end";
+    config.triggers = "mouseenter:mouseleave";
+  }
+  ngAfterViewInit() {
+    this.restoreConfig();
   }
   ngOnDestroy() {
-    if (this.reopenTimer) clearTimeout(this.reopenTimer);
+    this.restoreConfig();
   }
-  constructor() {
-    this.visible = true;
+  restoreConfig() {
+    this.config.container = this.initialConfig.container;
+    this.config.openDelay = this.initialConfig.openDelay;
+    this.config.placement = this.initialConfig.placement;
+    this.config.triggers = this.initialConfig.triggers;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-4071c1ea],.card[_content-4071c1ea],.dropdown-menu[_content-4071c1ea],.list-group-item[_content-4071c1ea],.form-control[_content-4071c1ea],.form-select[_content-4071c1ea]{border-color:var(--bs-border-color)}.alert-light[_content-4071c1ea]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-4071c1ea],.list-group[_content-4071c1ea],.dropdown-menu[_content-4071c1ea]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-4071c1ea],.btn-outline-secondary[_content-4071c1ea]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-4071c1ea],.form-select[_content-4071c1ea]{background-color:var(--bs-body-bg)}code[_content-4071c1ea]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-cbd389cf],.card[_content-cbd389cf],.dropdown-menu[_content-cbd389cf],.list-group-item[_content-cbd389cf],.form-control[_content-cbd389cf],.form-select[_content-cbd389cf]{border-color:var(--bs-border-color)}.alert-light[_content-cbd389cf]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-cbd389cf],.list-group[_content-cbd389cf],.dropdown-menu[_content-cbd389cf]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-cbd389cf],.btn-outline-secondary[_content-cbd389cf]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-cbd389cf],.form-select[_content-cbd389cf]{background-color:var(--bs-body-bg)}code[_content-cbd389cf]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-CloseableToastComponent.ɵfac = [
+TooltipGlobalComponent.ɵfac = [
+  "NgbTooltipConfig_1833b747",
   "$element",
   "$scope",
-  function CloseableToastComponent_Factory($element, $scope) {
+  function TooltipGlobalComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || CloseableToastComponent)();
+    var instance = new (this && this.ɵT || TooltipGlobalComponent)(a0);
     return instance;
   }
 ];
-CloseableToastComponent.ɵcmp = {
+TooltipGlobalComponent.ɵcmp = {
   selectors: [
     [
-      "docs-closeable-toast"
+      "docs-tooltip-global"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/closeable-toast.component-b472da8f.html",
+    "templateUrl": "templates/tooltip-global.component-9ae1b343.html",
     "controllerAs": "example"
   }
 };
-CloseableToastComponent.ɵfac.ɵcomponent = true;
-CloseableToastComponent.ɵfac.ɵtype = CloseableToastComponent;
-CloseableToastComponent.prototype.$onDestroy = function() {
+TooltipGlobalComponent.ɵfac.ɵcomponent = true;
+TooltipGlobalComponent.ɵfac.ɵtype = TooltipGlobalComponent;
+TooltipGlobalComponent.prototype.$onDestroy = function() {
   this.ngOnDestroy();
 };
+TooltipGlobalComponent.prototype.$postLink = function() {
+  this.ngAfterViewInit();
+};
 
-// src/app/features/toast/components/inline-toast/inline-toast.component.ts
-var InlineToastComponent = class {
-  constructor() {
-    this.showHeaderToast = true;
-  }
+// src/app/features/tooltip/components/tooltip-placements/tooltip-placements.component.ts
+var TooltipPlacementsComponent = class {
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-3379857c],.card[_content-3379857c],.dropdown-menu[_content-3379857c],.list-group-item[_content-3379857c],.form-control[_content-3379857c],.form-select[_content-3379857c]{border-color:var(--bs-border-color)}.alert-light[_content-3379857c]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-3379857c],.list-group[_content-3379857c],.dropdown-menu[_content-3379857c]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-3379857c],.btn-outline-secondary[_content-3379857c]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-3379857c],.form-select[_content-3379857c]{background-color:var(--bs-body-bg)}code[_content-3379857c]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-1c6715f8],.card[_content-1c6715f8],.dropdown-menu[_content-1c6715f8],.list-group-item[_content-1c6715f8],.form-control[_content-1c6715f8],.form-select[_content-1c6715f8]{border-color:var(--bs-border-color)}.alert-light[_content-1c6715f8]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1c6715f8],.list-group[_content-1c6715f8],.dropdown-menu[_content-1c6715f8]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1c6715f8],.btn-outline-secondary[_content-1c6715f8]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1c6715f8],.form-select[_content-1c6715f8]{background-color:var(--bs-body-bg)}code[_content-1c6715f8]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-InlineToastComponent.ɵfac = [
+TooltipPlacementsComponent.ɵfac = [
   "$element",
   "$scope",
-  function InlineToastComponent_Factory($element, $scope) {
+  function TooltipPlacementsComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || InlineToastComponent)();
+    var instance = new (this && this.ɵT || TooltipPlacementsComponent)();
     return instance;
   }
 ];
-InlineToastComponent.ɵcmp = {
+TooltipPlacementsComponent.ɵcmp = {
   selectors: [
     [
-      "docs-inline-toast"
+      "docs-tooltip-placements"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/inline-toast.component-0fd25d0f.html",
+    "templateUrl": "templates/tooltip-placements.component-9d833485.html",
     "controllerAs": "example"
   }
 };
-InlineToastComponent.ɵfac.ɵcomponent = true;
-InlineToastComponent.ɵfac.ɵtype = InlineToastComponent;
+TooltipPlacementsComponent.ɵfac.ɵcomponent = true;
+TooltipPlacementsComponent.ɵfac.ɵtype = TooltipPlacementsComponent;
 
-// src/app/features/toast/components/prevent-autohide-toast/prevent-autohide-toast.component.ts
-var PreventAutohideToastComponent = class {
-  show() {
-    this.visible = false;
-    this.autohide = true;
-    setTimeout(() => this.visible = true);
-  }
-  hide() {
-    this.visible = false;
-    this.autohide = true;
-  }
+// src/app/features/tooltip/components/tooltip-template/tooltip-template.component.ts
+var TooltipTemplateComponent = class {
   constructor() {
-    this.visible = false;
-    this.autohide = true;
+    this.name = "NgbJS";
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-0e132756],.card[_content-0e132756],.dropdown-menu[_content-0e132756],.list-group-item[_content-0e132756],.form-control[_content-0e132756],.form-select[_content-0e132756]{border-color:var(--bs-border-color)}.alert-light[_content-0e132756]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0e132756],.list-group[_content-0e132756],.dropdown-menu[_content-0e132756]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0e132756],.btn-outline-secondary[_content-0e132756]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0e132756],.form-select[_content-0e132756]{background-color:var(--bs-body-bg)}code[_content-0e132756]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-2f12a0a7],.card[_content-2f12a0a7],.dropdown-menu[_content-2f12a0a7],.list-group-item[_content-2f12a0a7],.form-control[_content-2f12a0a7],.form-select[_content-2f12a0a7]{border-color:var(--bs-border-color)}.alert-light[_content-2f12a0a7]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2f12a0a7],.list-group[_content-2f12a0a7],.dropdown-menu[_content-2f12a0a7]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2f12a0a7],.btn-outline-secondary[_content-2f12a0a7]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2f12a0a7],.form-select[_content-2f12a0a7]{background-color:var(--bs-body-bg)}code[_content-2f12a0a7]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-PreventAutohideToastComponent.ɵfac = [
+TooltipTemplateComponent.ɵfac = [
   "$element",
   "$scope",
-  function PreventAutohideToastComponent_Factory($element, $scope) {
+  function TooltipTemplateComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || PreventAutohideToastComponent)();
+    var instance = new (this && this.ɵT || TooltipTemplateComponent)();
     return instance;
   }
 ];
-PreventAutohideToastComponent.ɵcmp = {
+TooltipTemplateComponent.ɵcmp = {
   selectors: [
     [
-      "docs-prevent-autohide-toast"
+      "docs-tooltip-template"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/prevent-autohide-toast.component-765b737c.html",
+    "templateUrl": "templates/tooltip-template.component-7261e045.html",
     "controllerAs": "example"
   }
 };
-PreventAutohideToastComponent.ɵfac.ɵcomponent = true;
-PreventAutohideToastComponent.ɵfac.ɵtype = PreventAutohideToastComponent;
+TooltipTemplateComponent.ɵfac.ɵcomponent = true;
+TooltipTemplateComponent.ɵfac.ɵtype = TooltipTemplateComponent;
 
-// src/app/features/toast/components/template-header-toast/template-header-toast.component.ts
-var TemplateHeaderToastComponent = class {
-  constructor() {
-    this.visible = true;
-  }
+// src/app/features/tooltip/components/tooltip-triggers/tooltip-triggers.component.ts
+var TooltipTriggersComponent = class {
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-f89b1a3c],.card[_content-f89b1a3c],.dropdown-menu[_content-f89b1a3c],.list-group-item[_content-f89b1a3c],.form-control[_content-f89b1a3c],.form-select[_content-f89b1a3c]{border-color:var(--bs-border-color)}.alert-light[_content-f89b1a3c]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-f89b1a3c],.list-group[_content-f89b1a3c],.dropdown-menu[_content-f89b1a3c]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-f89b1a3c],.btn-outline-secondary[_content-f89b1a3c]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-f89b1a3c],.form-select[_content-f89b1a3c]{background-color:var(--bs-body-bg)}code[_content-f89b1a3c]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-82a4dfab],.card[_content-82a4dfab],.dropdown-menu[_content-82a4dfab],.list-group-item[_content-82a4dfab],.form-control[_content-82a4dfab],.form-select[_content-82a4dfab]{border-color:var(--bs-border-color)}.alert-light[_content-82a4dfab]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-82a4dfab],.list-group[_content-82a4dfab],.dropdown-menu[_content-82a4dfab]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-82a4dfab],.btn-outline-secondary[_content-82a4dfab]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-82a4dfab],.form-select[_content-82a4dfab]{background-color:var(--bs-body-bg)}code[_content-82a4dfab]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-TemplateHeaderToastComponent.ɵfac = [
+TooltipTriggersComponent.ɵfac = [
   "$element",
   "$scope",
-  function TemplateHeaderToastComponent_Factory($element, $scope) {
+  function TooltipTriggersComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || TemplateHeaderToastComponent)();
+    var instance = new (this && this.ɵT || TooltipTriggersComponent)();
     return instance;
   }
 ];
-TemplateHeaderToastComponent.ɵcmp = {
+TooltipTriggersComponent.ɵcmp = {
   selectors: [
     [
-      "docs-template-header-toast"
+      "docs-tooltip-triggers"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/template-header-toast.component-eeeb19a4.html",
+    "templateUrl": "templates/tooltip-triggers.component-80fd132a.html",
     "controllerAs": "example"
   }
 };
-TemplateHeaderToastComponent.ɵfac.ɵcomponent = true;
-TemplateHeaderToastComponent.ɵfac.ɵtype = TemplateHeaderToastComponent;
+TooltipTriggersComponent.ɵfac.ɵcomponent = true;
+TooltipTriggersComponent.ɵfac.ɵtype = TooltipTriggersComponent;
 
-// src/app/features/toast/components/toast-management/toast-management.component.ts
-var DocsToastService = class {
-  show(body, options = {}) {
-    this.toasts.push({
-      id: ++this.nextId,
-      body,
-      ...options
-    });
-  }
-  remove(toast) {
-    const index = this.toasts.indexOf(toast);
-    if (index >= 0) this.toasts.splice(index, 1);
-  }
-  clear() {
-    this.toasts.length = 0;
-  }
-  constructor() {
-    this.toasts = [];
-    this.nextId = 0;
-  }
-};
-var ToastManagementComponent = class {
-  constructor(toastService) {
-    this.toastService = toastService;
-  }
-  showStandard() {
-    this.toastService.show("I am a standard toast.");
-  }
-  showSuccess() {
-    this.toastService.show("Your changes were saved.", {
-      className: "bg-success text-white",
-      delay: 8e3
-    });
-  }
-  showDanger() {
-    this.toastService.show("The operation could not be completed.", {
-      className: "bg-danger text-white",
-      delay: 1e4
-    });
-  }
-  ngOnDestroy() {
-    this.toastService.clear();
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-4c229589],.card[_content-4c229589],.dropdown-menu[_content-4c229589],.list-group-item[_content-4c229589],.form-control[_content-4c229589],.form-select[_content-4c229589]{border-color:var(--bs-border-color)}.alert-light[_content-4c229589]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-4c229589],.list-group[_content-4c229589],.dropdown-menu[_content-4c229589]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-4c229589],.btn-outline-secondary[_content-4c229589]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-4c229589],.form-select[_content-4c229589]{background-color:var(--bs-body-bg)}code[_content-4c229589]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-DocsToastService.ɵfac = [
-  function DocsToastService_Factory() {
-    return new (this && this.ɵT || DocsToastService)();
-  }
-];
-DocsToastService.ɵprov = {
-  token: "DocsToastService_8bbd794d"
-};
-ToastManagementComponent.ɵfac = [
-  "DocsToastService_8bbd794d",
-  "$element",
-  "$scope",
-  function ToastManagementComponent_Factory(a0, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || ToastManagementComponent)(a0);
-    return instance;
-  }
-];
-ToastManagementComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-toast-management"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/toast-management.component-36cd11a5.html",
-    "controllerAs": "example"
-  }
-};
-ToastManagementComponent.ɵfac.ɵcomponent = true;
-ToastManagementComponent.ɵfac.ɵtype = ToastManagementComponent;
-ToastManagementComponent.prototype.$onDestroy = function() {
-  this.ngOnDestroy();
-};
-
-// src/app/features/toast/toast.module.ts
+// src/app/features/tooltip/tooltip.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -1279,56 +961,70 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var ToastModule = class {
+var TooltipModule = class {
 };
-ToastModule.ɵfac = [
-  function ToastModule_Factory() {
-    return new (this && this.ɵT || ToastModule)();
+TooltipModule.ɵfac = [
+  function TooltipModule_Factory() {
+    return new (this && this.ɵT || TooltipModule)();
   }
 ];
-var ɵToastModule_import0 = RouterModule.forChild(routes);
-ToastModule.ɵmod = {
-  id: "ToastModule_0901b02f"
+var ɵTooltipModule_import0 = RouterModule.forChild(routes);
+TooltipModule.ɵmod = {
+  id: "TooltipModule_de512f0b"
 };
-ɵimportProviders(import_angular2.default.module("ToastModule_0901b02f", [
-  typeof NgbToastModule === "string" ? NgbToastModule : NgbToastModule.ɵmod ? NgbToastModule.ɵmod.id : NgbToastModule.name,
+ɵimportProviders(import_angular.default.module("TooltipModule_de512f0b", [
+  typeof NgbTooltipModule === "string" ? NgbTooltipModule : NgbTooltipModule.ɵmod ? NgbTooltipModule.ɵmod.id : NgbTooltipModule.name,
   typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
   typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
   typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
-  ɵimportedModuleName(ɵToastModule_import0)
+  ɵimportedModuleName(ɵTooltipModule_import0)
 ]), [
-  ɵToastModule_import0
-]).factory("DocsToastService_8bbd794d", Object.prototype.hasOwnProperty.call(DocsToastService, "ɵprov") && DocsToastService.ɵprov.factory || (Object.prototype.hasOwnProperty.call(DocsToastService, "ɵfac") ? DocsToastService.ɵfac : DocsToastService.ɵfac ? (function() {
-  throw new Error('"' + DocsToastService.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
-})() : [
-  function() {
-    return new DocsToastService();
-  }
-])).component("docsCloseableToast", {
-  controller: CloseableToastComponent.ɵfac,
-  templateUrl: "templates/closeable-toast.component-b472da8f.html",
+  ɵTooltipModule_import0
+]).component("docsTooltipAutoclose", {
+  controller: TooltipAutocloseComponent.ɵfac,
+  templateUrl: "templates/tooltip-autoclose.component-fe6bae32.html",
   controllerAs: "example"
-}).component("docsInlineToast", {
-  controller: InlineToastComponent.ɵfac,
-  templateUrl: "templates/inline-toast.component-0fd25d0f.html",
+}).component("docsTooltipBody", {
+  controller: TooltipBodyComponent.ɵfac,
+  templateUrl: "templates/tooltip-body.component-265fea3a.html",
   controllerAs: "example"
-}).component("docsPreventAutohideToast", {
-  controller: PreventAutohideToastComponent.ɵfac,
-  templateUrl: "templates/prevent-autohide-toast.component-765b737c.html",
+}).component("docsTooltipContext", {
+  controller: TooltipContextComponent.ɵfac,
+  templateUrl: "templates/tooltip-context.component-6c135d42.html",
   controllerAs: "example"
-}).component("docsTemplateHeaderToast", {
-  controller: TemplateHeaderToastComponent.ɵfac,
-  templateUrl: "templates/template-header-toast.component-eeeb19a4.html",
+}).component("docsTooltipCustomClass", {
+  controller: TooltipCustomClassComponent.ɵfac,
+  templateUrl: "templates/tooltip-custom-class.component-f125a3b8.html",
   controllerAs: "example"
-}).component("docsToastManagement", {
-  controller: ToastManagementComponent.ɵfac,
-  templateUrl: "templates/toast-management.component-36cd11a5.html",
+}).component("docsTooltipCustomTarget", {
+  controller: TooltipCustomTargetComponent.ɵfac,
+  templateUrl: "templates/tooltip-custom-target.component-2cea8626.html",
   controllerAs: "example"
-}).factory("ToastModule_f5c37a1b", ToastModule.ɵfac).run([
-  "ToastModule_f5c37a1b",
+}).component("docsTooltipDelays", {
+  controller: TooltipDelaysComponent.ɵfac,
+  templateUrl: "templates/tooltip-delays.component-0406bbc7.html",
+  controllerAs: "example"
+}).component("docsTooltipGlobal", {
+  controller: TooltipGlobalComponent.ɵfac,
+  templateUrl: "templates/tooltip-global.component-9ae1b343.html",
+  controllerAs: "example"
+}).component("docsTooltipPlacements", {
+  controller: TooltipPlacementsComponent.ɵfac,
+  templateUrl: "templates/tooltip-placements.component-9d833485.html",
+  controllerAs: "example"
+}).component("docsTooltipTemplate", {
+  controller: TooltipTemplateComponent.ɵfac,
+  templateUrl: "templates/tooltip-template.component-7261e045.html",
+  controllerAs: "example"
+}).component("docsTooltipTriggers", {
+  controller: TooltipTriggersComponent.ɵfac,
+  templateUrl: "templates/tooltip-triggers.component-80fd132a.html",
+  controllerAs: "example"
+}).factory("TooltipModule_13b86790", TooltipModule.ɵfac).run([
+  "TooltipModule_13b86790",
   function() {
   }
 ]);
 export {
-  ToastModule
+  TooltipModule
 };

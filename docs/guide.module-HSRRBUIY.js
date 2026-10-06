@@ -352,672 +352,138 @@
   });
 })();
 import {
-  NgbCollapseModule
-} from "./chunk-EP2AMMBI.js";
-import {
   NgbNavModule
-} from "./chunk-GBQCJSNK.js";
+} from "./chunk-SGQK3IOF.js";
 import {
-  NgbConfig,
   NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
+} from "./chunk-TYQFYSAF.js";
 import {
   RouterModule
 } from "./chunk-44BCS2Q7.js";
 import "./chunk-YZVMAT3C.js";
+import "./chunk-7GLALTP4.js";
 import {
-  NgZone,
-  inject,
-  ngbRunTransition
-} from "./chunk-DXKD6ZA6.js";
-import {
-  CommonModule,
-  ElementRef,
-  EventEmitter,
   require_angular
 } from "./chunk-K6VJMEI3.js";
 import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// src/app/features/alert/alert.module.ts
-var import_angular2 = __toESM(require_angular(), 1);
+// src/app/features/guide/guide.module.ts
+var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/alert/alert.routes.ts
+// src/app/features/guide/guide.routes.ts
 var routes = [
   {
     path: "",
-    data: {
-      title: "Alert",
-      tabs: [
-        {
-          name: "Examples",
-          to: "/components/alert/examples"
-        },
-        {
-          name: "Api",
-          to: "/components/alert/api"
-        }
-      ],
-      externalLinks: {
-        bootstrap: "components/alerts/",
-        ngBootstrap: "components/alert/overview"
-      }
-    },
     children: [
       {
         path: "",
         pathMatch: "full",
-        redirectTo: "examples"
+        redirectTo: "introduction"
       },
       {
-        path: "examples",
+        path: "introduction",
+        loadComponent: () => import("./introduction-page.component-LYUUAA6S.js").then((m) => m.IntroductionPageComponent),
         data: {
+          header: false,
+          title: "Introduction",
           sections: [
             {
-              id: "simple-alert",
-              name: "Simple alert"
+              id: "origin",
+              name: "Origin"
             },
             {
-              id: "alert-closeable",
-              name: "Closeable alerts"
+              id: "what-is-ngbjs",
+              name: "What is NgbJS?"
             },
             {
-              id: "self-closing-alert",
-              name: "Self-closing alert"
+              id: "who-is-it-for",
+              name: "Who is it for?"
             },
             {
-              id: "alert-custom",
-              name: "Custom alert"
+              id: "project-status",
+              name: "Project status"
             },
             {
-              id: "alert-global",
-              name: "Global configuration"
+              id: "installation",
+              name: "Installation"
+            },
+            {
+              id: "acknowledgements",
+              name: "Acknowledgements"
             }
           ]
         },
-        loadComponent: () => import("./alert-examples-page.component-XHBVIY37.js").then((m) => m.AlertExamplesPageComponent)
+        title: "Ngb-Js | Introduction"
       },
       {
-        path: "api",
+        path: "philosophy",
+        loadComponent: () => import("./philosophy-page.component-G6KBIMMR.js").then((m) => m.PhilosophyPageComponent),
         data: {
+          header: false,
+          title: "Philosophy",
           sections: [
             {
-              id: "ngb-alert",
-              name: "NgbAlert"
+              id: "parity-is-priority",
+              name: "Parity is Priority"
             },
             {
-              id: "ngb-alert-config",
-              name: "NgbAlertConfig"
+              id: "what-parity-means",
+              name: "What parity means"
+            },
+            {
+              id: "familiar-by-design",
+              name: "Familiar by design"
+            },
+            {
+              id: "a-migration-bridge",
+              name: "A migration bridge"
+            },
+            {
+              id: "when-parity-is-hard",
+              name: "When parity is hard"
             }
           ]
         },
-        loadComponent: () => import("./alert-api-page.component-4J2DACJU.js").then((m) => m.AlertApiPageComponent)
+        title: "Ngb-Js | Philosophy"
+      },
+      {
+        path: "why-ngbjs",
+        loadComponent: () => import("./why-ngbjs-page.component-V5URPNUE.js").then((m) => m.WhyNgbJsPageComponent),
+        data: {
+          header: false,
+          title: "Why NgbJS?",
+          sections: [
+            {
+              id: "the-legacy-reality",
+              name: "The legacy reality"
+            },
+            {
+              id: "before-and-after",
+              name: "Before and after"
+            },
+            {
+              id: "what-it-unlocks",
+              name: "What NgbJS unlocks"
+            },
+            {
+              id: "when-to-use-ngbjs",
+              name: "When to use NgbJS"
+            },
+            {
+              id: "a-bridge-not-a-destination",
+              name: "A bridge, not a destination"
+            }
+          ]
+        },
+        title: "Why NgbJS?"
       }
-    ],
-    title: "Ngb-Js | Alert"
-  }
-];
-
-// src/app/features/alert/components/alert-closeable/alert-closeable.component.ts
-var createAlerts = () => [
-  {
-    id: 1,
-    type: "success",
-    message: "Your changes were saved successfully.",
-    animation: true
-  },
-  {
-    id: 2,
-    type: "danger",
-    message: "Something needs your attention.",
-    animation: true
-  },
-  {
-    id: 3,
-    type: "warning",
-    message: "This alert closes without animation.",
-    animation: false
-  },
-  {
-    id: 4,
-    type: "info",
-    message: "This one also closes immediately.",
-    animation: false
-  }
-];
-var AlertCloseableComponent = class {
-  close(id) {
-    this.alerts = this.alerts.filter((alert) => alert.id !== id);
-  }
-  reset() {
-    this.alerts = createAlerts();
-  }
-  constructor() {
-    this.alerts = createAlerts();
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-07187b5c],.card[_content-07187b5c],.dropdown-menu[_content-07187b5c],.list-group-item[_content-07187b5c],.form-control[_content-07187b5c],.form-select[_content-07187b5c]{border-color:var(--bs-border-color)}.alert-light[_content-07187b5c]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-07187b5c],.list-group[_content-07187b5c],.dropdown-menu[_content-07187b5c]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-07187b5c],.btn-outline-secondary[_content-07187b5c]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-07187b5c],.form-select[_content-07187b5c]{background-color:var(--bs-body-bg)}code[_content-07187b5c]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-AlertCloseableComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function AlertCloseableComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || AlertCloseableComponent)();
-    return instance;
-  }
-];
-AlertCloseableComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-alert-closeable"
     ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/alert-closeable.component-11c46194.html",
-    "controllerAs": "example"
   }
-};
-AlertCloseableComponent.ɵfac.ɵcomponent = true;
-AlertCloseableComponent.ɵfac.ɵtype = AlertCloseableComponent;
+];
 
-// src/app/features/alert/components/alert-custom/alert-custom.component.ts
-var AlertCustomComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert-custom[_content-2aa9c46d]{--bs-alert-color: var(--bs-emphasis-color);--bs-alert-bg: color-mix(in srgb, var(--bs-primary-bg-subtle) 45%, var(--bs-body-bg));--bs-alert-border-color: var(--bs-primary-border-subtle);--bs-alert-link-color: var(--bs-primary-text-emphasis);border-left:.3rem solid var(--bs-primary);box-shadow:0 .75rem 2rem rgba(var(--bs-primary-rgb),.08)}.alert-custom .bi[_content-2aa9c46d]{color:var(--bs-primary)}.alert-custom code[_content-2aa9c46d]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-AlertCustomComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function AlertCustomComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || AlertCustomComponent)();
-    return instance;
-  }
-];
-AlertCustomComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-alert-custom"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/alert-custom.component-553762c2.html",
-    "controllerAs": "example"
-  }
-};
-AlertCustomComponent.ɵfac.ɵcomponent = true;
-AlertCustomComponent.ɵfac.ɵtype = AlertCustomComponent;
-
-// ../ngb-js/dist/chunk-IAL525UN.js
-var import_angular = __toESM(require_angular(), 1);
-var NgbAlertConfig = class {
-  get animation() {
-    return this._animation ?? this._config.animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  constructor() {
-    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlertConfig"] ? globalThis.ɵngjsInjected["NgbAlertConfig"][0] : inject(NgbConfig);
-    this.dismissible = true;
-    this.type = "warning";
-  }
-};
-NgbAlertConfig.ɵfac = [
-  "NgbConfig_c7257787",
-  function NgbAlertConfig_Factory(i0) {
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbAlertConfig": [
-        i0
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbAlertConfig)();
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
-    return instance;
-  }
-];
-NgbAlertConfig.ɵprov = {
-  token: "NgbAlertConfig_992fd230",
-  providedIn: "root"
-};
-(globalThis.ɵngjsRootProviders = globalThis.ɵngjsRootProviders || []).push([
-  "NgbAlertConfig_992fd230",
-  NgbAlertConfig.ɵfac
-]);
-var ngbAlertFadingTransition = ({ classList }) => {
-  classList.remove("show");
-};
-var NgbAlert = class {
-  get _hostClass() {
-    return `alert show${this.type ? ` alert-${this.type}` : ""}`;
-  }
-  get _fade() {
-    return this.animation;
-  }
-  get _dismissibleClass() {
-    return this.dismissible;
-  }
-  close() {
-    const transition = ngbRunTransition(this._zone, this._elementRef.nativeElement, ngbAlertFadingTransition, {
-      animation: this.animation,
-      runningTransition: "continue"
-    });
-    transition.subscribe(() => {
-      this.closed.emit();
-    });
-    return transition;
-  }
-  constructor() {
-    this._config = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlert"] ? globalThis.ɵngjsInjected["NgbAlert"][0] : inject(NgbAlertConfig);
-    this._elementRef = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlert"] ? globalThis.ɵngjsInjected["NgbAlert"][1] : inject(ElementRef);
-    this._zone = globalThis.ɵngjsInjected && globalThis.ɵngjsInjected["NgbAlert"] ? globalThis.ɵngjsInjected["NgbAlert"][2] : inject(NgZone);
-    this.animation = this._config.animation;
-    this.dismissible = this._config.dismissible;
-    this.type = this._config.type;
-    this.closed = new EventEmitter();
-    this._role = "alert";
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = "ngb-alert{display:block}";
-  document.head.appendChild(s);
-})();
-NgbAlert.ɵfac = [
-  "NgbAlertConfig_992fd230",
-  "ElementRef_927308a2",
-  "NgZone_31031859",
-  "$element",
-  "$scope",
-  function NgbAlert_Factory(i0, i1, i2, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var ɵprevious = globalThis.ɵngjsInjected;
-    globalThis.ɵngjsInjected = Object.assign({}, ɵprevious, {
-      "NgbAlert": [
-        i0,
-        i1,
-        i2
-      ]
-    });
-    try {
-      var instance = new (this && this.ɵT || NgbAlert)();
-    } finally {
-      globalThis.ɵngjsInjected = ɵprevious;
-    }
-    var ɵunwatch0 = $scope.$watch(function() {
-      return instance._role;
-    }, function(v) {
-      v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
-    });
-    var ɵunwatch1 = $scope.$watch(function() {
-      return instance._hostClass;
-    }, function(v, old) {
-      var ɵnames = function(value) {
-        if (!value) return "";
-        if (typeof value === "string") return value;
-        if (Array.isArray(value)) return value.join(" ");
-        return Object.keys(value).filter(function(key) {
-          return value[key];
-        }).join(" ");
-      };
-      if (v !== old) $element.removeClass(ɵnames(old));
-      $element.addClass(ɵnames(v));
-    }, true);
-    var ɵunwatch2 = $scope.$watch(function() {
-      return instance._fade;
-    }, function(v) {
-      v ? $element.addClass("fade") : $element.removeClass("fade");
-    });
-    var ɵunwatch3 = $scope.$watch(function() {
-      return instance._dismissibleClass;
-    }, function(v) {
-      v ? $element.addClass("alert-dismissible") : $element.removeClass("alert-dismissible");
-    });
-    var ɵhostOnInit = instance.$onInit;
-    instance.$onInit = function() {
-      var ɵresult = ɵhostOnInit ? ɵhostOnInit.apply(this, arguments) : void 0;
-      (function(v) {
-        v == null ? $element.removeAttr("role") : $element.attr("role", String(v));
-      })(instance._role);
-      (function(v) {
-        var ɵnames = function(value) {
-          if (!value) return "";
-          if (typeof value === "string") return value;
-          if (Array.isArray(value)) return value.join(" ");
-          return Object.keys(value).filter(function(key) {
-            return value[key];
-          }).join(" ");
-        };
-        if (v !== void 0) $element.removeClass(ɵnames(void 0));
-        $element.addClass(ɵnames(v));
-      })(instance._hostClass);
-      (function(v) {
-        v ? $element.addClass("fade") : $element.removeClass("fade");
-      })(instance._fade);
-      (function(v) {
-        v ? $element.addClass("alert-dismissible") : $element.removeClass("alert-dismissible");
-      })(instance._dismissibleClass);
-      return ɵresult;
-    };
-    $scope.$on("$destroy", function() {
-      ɵunwatch0();
-      ɵunwatch1();
-      ɵunwatch2();
-      ɵunwatch3();
-    });
-    return instance;
-  }
-];
-NgbAlert.ɵcmp = {
-  selectors: [
-    [
-      "ngb-alert"
-    ]
-  ],
-  inputs: {
-    "animation": "animation",
-    "dismissible": "dismissible",
-    "type": "type"
-  },
-  outputs: {
-    "closed": "closed"
-  },
-  exportAs: [
-    "ngbAlert"
-  ],
-  definition: {
-    "template": '<ng-content _content-60d96c0e=""></ng-content>\n\n<button ng-if="$.dismissible" ng-click="$.close()" type="button" class="btn-close" aria-label="Close" _content-60d96c0e="">\n</button>',
-    "bindings": {
-      "animation": "<?",
-      "dismissible": "<?",
-      "type": "@?",
-      "closed": "&?"
-    },
-    "transclude": true
-  }
-};
-NgbAlert.ɵfac.ɵcomponent = true;
-NgbAlert.ɵfac.ɵtype = NgbAlert;
-function ɵlazyController($delegate, $injector) {
-  if ($injector.ɵngjsLazyController) return $delegate;
-  $injector.ɵngjsLazyController = true;
-  return function(expression, locals, later, ident) {
-    var init = $delegate.apply(this, arguments);
-    if (!later || !expression || !expression.ɵtype || typeof init !== "function" || !init.instance) return init;
-    var state = 0, built;
-    var lazy = function() {
-      if (state === 2) return built;
-      if (state === 1) throw new Error('NG0200: dependencia circular — "' + expression.ɵtype.name + '" se pidió a sí misma mientras se construía (directivas del mismo elemento que se inyectan entre sí).');
-      state = 1;
-      try {
-        built = init();
-        state = 2;
-      } finally {
-        if (state !== 2) state = 0;
-      }
-      return built;
-    };
-    Object.defineProperty(init.instance, "ɵngjsBuild", {
-      value: lazy,
-      configurable: true
-    });
-    lazy.instance = init.instance;
-    lazy.identifier = init.identifier;
-    return lazy;
-  };
-}
-var NgbAlertModule = class {
-};
-NgbAlertModule.ɵfac = [
-  function NgbAlertModule_Factory() {
-    return new (this && this.ɵT || NgbAlertModule)();
-  }
-];
-NgbAlertModule.ɵmod = {
-  id: "NgbAlertModule_4b914a14",
-  controllerAs: "$"
-};
-import_angular.default.module("NgbAlertModule_4b914a14", [
-  typeof CommonModule === "string" ? CommonModule : CommonModule.ɵmod ? CommonModule.ɵmod.id : CommonModule.name
-]).factory("ɵresolve", [
-  "$injector",
-  function($injector) {
-    return function(name, flags, element) {
-      flags = flags || {};
-      var bounded = element && (flags.self || flags.host);
-      if (!bounded && $injector.has(name)) return $injector.get(name);
-      if (flags.optional) return null;
-      throw new Error('ɵresolve: no hay provider para "' + name + '"' + (bounded ? " con { " + (flags.self ? "self" : "host") + ": true } (sin injector de elemento)" : "") + ".");
-    };
-  }
-]).decorator("$controller", [
-  "$delegate",
-  "$injector",
-  ɵlazyController
-]).component("ngbAlert", {
-  controller: NgbAlert.ɵfac,
-  template: '<ng-content _content-60d96c0e=""></ng-content>\n\n<button ng-if="$.dismissible" ng-click="$.close()" type="button" class="btn-close" aria-label="Close" _content-60d96c0e="">\n</button>',
-  controllerAs: "$",
-  transclude: true,
-  bindings: {
-    "animation": "<?",
-    "dismissible": "<?",
-    "type": "@?",
-    "closed": "&?"
-  }
-}).directive("ngbAlert", function() {
-  return {
-    restrict: "E",
-    link: {
-      pre: function(scope, element) {
-        [
-          "closed"
-        ].forEach(function(name) {
-          element[0].removeAttribute(name);
-        });
-      }
-    }
-  };
-}).factory("NgbAlertModule_88050415", NgbAlertModule.ɵfac).run([
-  "NgbAlertModule_88050415",
-  function() {
-  }
-]);
-
-// src/app/features/alert/components/alert-global/alert-global.component.ts
-var AlertGlobalComponent = class {
-  constructor(config) {
-    this.config = config;
-    this.initialConfig = {
-      animation: config.animation,
-      dismissible: config.dismissible,
-      type: config.type
-    };
-    config.animation = false;
-    config.dismissible = false;
-    config.type = "success";
-  }
-  ngOnDestroy() {
-    this.config.animation = this.initialConfig.animation;
-    this.config.dismissible = this.initialConfig.dismissible;
-    this.config.type = this.initialConfig.type;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-1297cfdf],.card[_content-1297cfdf],.dropdown-menu[_content-1297cfdf],.list-group-item[_content-1297cfdf],.form-control[_content-1297cfdf],.form-select[_content-1297cfdf]{border-color:var(--bs-border-color)}.alert-light[_content-1297cfdf]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1297cfdf],.list-group[_content-1297cfdf],.dropdown-menu[_content-1297cfdf]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1297cfdf],.btn-outline-secondary[_content-1297cfdf]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1297cfdf],.form-select[_content-1297cfdf]{background-color:var(--bs-body-bg)}code[_content-1297cfdf]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-AlertGlobalComponent.ɵfac = [
-  "NgbAlertConfig_992fd230",
-  "$element",
-  "$scope",
-  function AlertGlobalComponent_Factory(a0, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || AlertGlobalComponent)(a0);
-    return instance;
-  }
-];
-AlertGlobalComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-alert-global"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/alert-global.component-5500f088.html",
-    "controllerAs": "example"
-  }
-};
-AlertGlobalComponent.ɵfac.ɵcomponent = true;
-AlertGlobalComponent.ɵfac.ɵtype = AlertGlobalComponent;
-AlertGlobalComponent.prototype.$onDestroy = function() {
-  this.ngOnDestroy();
-};
-
-// src/app/features/alert/components/self-closing-alert/self-closing-alert.component.ts
-var SelfClosingAlertComponent = class {
-  ngOnInit() {
-    this.startTimer();
-  }
-  ngOnDestroy() {
-    this.cancelTimer();
-  }
-  restart() {
-    this.cancelTimer();
-    this.remaining = this.initialSeconds;
-    this.visible = true;
-    this.startTimer();
-  }
-  onClosed() {
-    this.visible = false;
-    this.cancelTimer();
-  }
-  startTimer() {
-    this.timer = setTimeout(() => {
-      this.remaining--;
-      if (this.remaining <= 0) {
-        if (this.alert) {
-          this.alert.close();
-        } else {
-          this.visible = false;
-        }
-        return;
-      }
-      this.startTimer();
-    }, 1e3);
-  }
-  cancelTimer() {
-    if (this.timer) {
-      clearTimeout(this.timer);
-      this.timer = void 0;
-    }
-  }
-  constructor() {
-    this.initialSeconds = 5;
-    this.remaining = this.initialSeconds;
-    this.visible = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-33543651],.card[_content-33543651],.dropdown-menu[_content-33543651],.list-group-item[_content-33543651],.form-control[_content-33543651],.form-select[_content-33543651]{border-color:var(--bs-border-color)}.alert-light[_content-33543651]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-33543651],.list-group[_content-33543651],.dropdown-menu[_content-33543651]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-33543651],.btn-outline-secondary[_content-33543651]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-33543651],.form-select[_content-33543651]{background-color:var(--bs-body-bg)}code[_content-33543651]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-SelfClosingAlertComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function SelfClosingAlertComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || SelfClosingAlertComponent)();
-    return instance;
-  }
-];
-SelfClosingAlertComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-self-closing-alert"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  viewQueries: [
-    {
-      propertyName: "alert",
-      first: true,
-      descendants: true,
-      static: false,
-      predicate: [
-        "alert"
-      ]
-    }
-  ],
-  definition: {
-    "templateUrl": "templates/self-closing-alert.component-a407b7cd.html",
-    "controllerAs": "example"
-  }
-};
-SelfClosingAlertComponent.ɵfac.ɵcomponent = true;
-SelfClosingAlertComponent.ɵfac.ɵtype = SelfClosingAlertComponent;
-SelfClosingAlertComponent.prototype.$onInit = function() {
-  this.ngOnInit();
-};
-SelfClosingAlertComponent.prototype.$onDestroy = function() {
-  this.ngOnDestroy();
-};
-
-// src/app/features/alert/components/simple-alert/simple-alert.component.ts
-var SimpleAlertComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-c63e7b0d],.card[_content-c63e7b0d],.dropdown-menu[_content-c63e7b0d],.list-group-item[_content-c63e7b0d],.form-control[_content-c63e7b0d],.form-select[_content-c63e7b0d]{border-color:var(--bs-border-color)}.alert-light[_content-c63e7b0d]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-c63e7b0d],.list-group[_content-c63e7b0d],.dropdown-menu[_content-c63e7b0d]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-c63e7b0d],.btn-outline-secondary[_content-c63e7b0d]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-c63e7b0d],.form-select[_content-c63e7b0d]{background-color:var(--bs-body-bg)}code[_content-c63e7b0d]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-SimpleAlertComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function SimpleAlertComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || SimpleAlertComponent)();
-    return instance;
-  }
-];
-SimpleAlertComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-simple-alert"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/simple-alert.component-f9b05b4c.html",
-    "controllerAs": "example"
-  }
-};
-SimpleAlertComponent.ɵfac.ɵcomponent = true;
-SimpleAlertComponent.ɵfac.ɵtype = SimpleAlertComponent;
-
-// src/app/features/alert/alert.module.ts
+// src/app/features/guide/guide.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -1132,50 +598,28 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var AlertModule = class {
+var GuideModule = class {
 };
-AlertModule.ɵfac = [
-  function AlertModule_Factory() {
-    return new (this && this.ɵT || AlertModule)();
+GuideModule.ɵfac = [
+  function GuideModule_Factory() {
+    return new (this && this.ɵT || GuideModule)();
   }
 ];
-var ɵAlertModule_import0 = RouterModule.forChild(routes);
-AlertModule.ɵmod = {
-  id: "AlertModule_816e9736"
+var ɵGuideModule_import0 = RouterModule.forChild(routes);
+GuideModule.ɵmod = {
+  id: "GuideModule_87fb03f7"
 };
-ɵimportProviders(import_angular2.default.module("AlertModule_816e9736", [
-  typeof NgbAlertModule === "string" ? NgbAlertModule : NgbAlertModule.ɵmod ? NgbAlertModule.ɵmod.id : NgbAlertModule.name,
+ɵimportProviders(import_angular.default.module("GuideModule_87fb03f7", [
   typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
-  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
   typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵAlertModule_import0)
+  ɵimportedModuleName(ɵGuideModule_import0)
 ]), [
-  ɵAlertModule_import0
-]).component("docsAlertCloseable", {
-  controller: AlertCloseableComponent.ɵfac,
-  templateUrl: "templates/alert-closeable.component-11c46194.html",
-  controllerAs: "example"
-}).component("docsAlertCustom", {
-  controller: AlertCustomComponent.ɵfac,
-  templateUrl: "templates/alert-custom.component-553762c2.html",
-  controllerAs: "example"
-}).component("docsAlertGlobal", {
-  controller: AlertGlobalComponent.ɵfac,
-  templateUrl: "templates/alert-global.component-5500f088.html",
-  controllerAs: "example"
-}).component("docsSelfClosingAlert", {
-  controller: SelfClosingAlertComponent.ɵfac,
-  templateUrl: "templates/self-closing-alert.component-a407b7cd.html",
-  controllerAs: "example"
-}).component("docsSimpleAlert", {
-  controller: SimpleAlertComponent.ɵfac,
-  templateUrl: "templates/simple-alert.component-f9b05b4c.html",
-  controllerAs: "example"
-}).factory("AlertModule_b9ee769c", AlertModule.ɵfac).run([
-  "AlertModule_b9ee769c",
+  ɵGuideModule_import0
+]).factory("GuideModule_27eade11", GuideModule.ɵfac).run([
+  "GuideModule_27eade11",
   function() {
   }
 ]);
 export {
-  AlertModule
+  GuideModule
 };

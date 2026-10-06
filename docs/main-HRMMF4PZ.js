@@ -360,16 +360,16 @@ import {
 } from "./chunk-GIOLWBI5.js";
 import {
   NgbOffcanvasModule
-} from "./chunk-H7WRX254.js";
+} from "./chunk-PCXZDXJE.js";
 import {
   NgbModalModule
-} from "./chunk-W3UVXHCI.js";
+} from "./chunk-34NZXSJI.js";
 import {
   NgbTooltipModule
-} from "./chunk-BA3F6PK4.js";
+} from "./chunk-CT3FPONO.js";
 import {
   NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
+} from "./chunk-TYQFYSAF.js";
 import {
   NavigationEnd,
   RouterModule
@@ -378,7 +378,7 @@ import "./chunk-YZVMAT3C.js";
 import {
   bootstrapApplication,
   inject
-} from "./chunk-DXKD6ZA6.js";
+} from "./chunk-7GLALTP4.js";
 import {
   InjectionToken,
   require_angular
@@ -4884,11 +4884,11 @@ var routes = [
     children: [
       {
         path: "guide",
-        loadChildren: () => import("./guide.module-BYZCKDNW.js").then((m) => m.GuideModule)
+        loadChildren: () => import("./guide.module-HSRRBUIY.js").then((m) => m.GuideModule)
       },
       {
         path: "components",
-        loadChildren: () => import("./features.module-RFW3EX3C.js").then((m) => m.FeaturesModule)
+        loadChildren: () => import("./features.module-OPS2LS7D.js").then((m) => m.FeaturesModule)
       }
     ]
   }

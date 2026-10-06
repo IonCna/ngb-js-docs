@@ -352,181 +352,375 @@
   });
 })();
 import {
-  NgbCalendarBuddhist,
-  NgbCalendarEthiopian,
-  NgbCalendarGregorian,
-  NgbCalendarHebrew,
-  NgbCalendarIslamicCivil,
-  NgbCalendarIslamicUmalqura,
-  NgbCalendarPersian,
-  NgbDatepickerI18n,
-  NgbDatepickerI18nAmharic,
-  NgbDatepickerI18nHebrew
-} from "./chunk-6P7Y5DZA.js";
-import "./chunk-YZVMAT3C.js";
-import "./chunk-DXKD6ZA6.js";
-import "./chunk-K6VJMEI3.js";
-import "./chunk-MTQV7FVC.js";
+  NgbCollapseModule
+} from "./chunk-WXFOXQQP.js";
+import {
+  NgbScrollSpyModule
+} from "./chunk-TYQFYSAF.js";
+import {
+  RouterModule
+} from "./chunk-44BCS2Q7.js";
+import "./chunk-7GLALTP4.js";
+import {
+  require_angular
+} from "./chunk-K6VJMEI3.js";
+import {
+  __toESM
+} from "./chunk-MTQV7FVC.js";
 
-// src/app/features/datepicker/pages/datepicker-calendars-page/datepicker-calendars-page.component.ts
-var CalendarI18n = class extends NgbDatepickerI18n {
-  constructor(months, weekdays, localeName) {
-    super(), this.months = months, this.weekdays = weekdays, this.localeName = localeName;
-  }
-  getWeekdayLabel(weekday) {
-    return this.weekdays[weekday - 1] ?? "";
-  }
-  getMonthShortName(month) {
-    return this.months[month - 1]?.slice(0, 3) ?? "";
-  }
-  getMonthFullName(month) {
-    return this.months[month - 1] ?? "";
-  }
-  getDayAriaLabel(date) {
-    return `${this.localeName}: ${date.day} ${this.getMonthFullName(date.month)} ${date.year}`;
-  }
-};
-var PERSIAN_WEEKDAYS = [
-  "د",
-  "س",
-  "چ",
-  "پ",
-  "ج",
-  "ش",
-  "ی"
-];
-var PERSIAN_MONTHS = [
-  "فروردین",
-  "اردیبهشت",
-  "خرداد",
-  "تیر",
-  "مرداد",
-  "شهریور",
-  "مهر",
-  "آبان",
-  "آذر",
-  "دی",
-  "بهمن",
-  "اسفند"
-];
-var ARABIC_WEEKDAYS = [
-  "ن",
-  "ث",
-  "ر",
-  "خ",
-  "ج",
-  "س",
-  "ح"
-];
-var ISLAMIC_MONTHS = [
-  "محرّم",
-  "صفر",
-  "ربيع الأول",
-  "ربيع الآخر",
-  "جمادى الأولى",
-  "جمادى الآخرة",
-  "رجب",
-  "شعبان",
-  "رمضان",
-  "شوّال",
-  "ذو القعدة",
-  "ذو الحجة"
-];
-var THAI_WEEKDAYS = [
-  "จ",
-  "อ",
-  "พ",
-  "พฤ",
-  "ศ",
-  "ส",
-  "อา"
-];
-var THAI_MONTHS = [
-  "มกราคม",
-  "กุมภาพันธ์",
-  "มีนาคม",
-  "เมษายน",
-  "พฤษภาคม",
-  "มิถุนายน",
-  "กรกฎาคม",
-  "สิงหาคม",
-  "กันยายน",
-  "ตุลาคม",
-  "พฤศจิกายน",
-  "ธันวาคม"
-];
-var GALACTIC_MONTHS = [
-  "ᔑリ⊣⚍ᔑ∷||",
-  "⎓ᒷʖ∷⚍ᔑ∷||",
-  "ᒲᔑ∷ᓵ⍑",
-  "ᔑ!¡∷╎ꖎ",
-  "ᒲᔑ||",
-  "⋮⚍リᒷ",
-  "⋮⚍ꖎ||",
-  "ᔑ⚍⊣⚍ᓭℸ̣",
-  "ᓭᒷ!¡ℸ̣ᒷᒲʖᒷ∷",
-  "𝙹ᓵℸ̣𝙹ʖᒷ∷",
-  "リ𝙹⍊ᒷᒲʖᒷ∷",
-  "↸ᒷᓵᒷᒲʖᒷ∷"
-];
-var GALACTIC_WEEKDAYS = [
-  "ᒲ",
-  "ℸ̣",
-  "∴",
-  "ℸ̣",
-  "⎓",
-  "ᓭ",
-  "ᓭ"
-];
-var DatepickerCalendarsPageComponent = class {
-  create(calendar, i18n) {
-    return {
-      calendar,
-      i18n,
-      date: calendar.getToday()
-    };
+// src/app/features/collapse/collapse.module.ts
+var import_angular = __toESM(require_angular(), 1);
+
+// src/app/features/collapse/components/horizontal-collapse/horizontal-collapse.component.ts
+var HorizontalCollapseComponent = class {
+  toggle() {
+    this.collapsed = !this.collapsed;
   }
   constructor() {
-    this.calendars = {
-      hebrew: this.create(new NgbCalendarHebrew(), new NgbDatepickerI18nHebrew()),
-      jalali: this.create(new NgbCalendarPersian(), new CalendarI18n(PERSIAN_MONTHS, PERSIAN_WEEKDAYS, "Jalali")),
-      islamicCivil: this.create(new NgbCalendarIslamicCivil(), new CalendarI18n(ISLAMIC_MONTHS, ARABIC_WEEKDAYS, "Islamic Civil")),
-      islamicUmalqura: this.create(new NgbCalendarIslamicUmalqura(), new CalendarI18n(ISLAMIC_MONTHS, ARABIC_WEEKDAYS, "Islamic Umm al-Qura")),
-      buddhist: this.create(new NgbCalendarBuddhist(), new CalendarI18n(THAI_MONTHS, THAI_WEEKDAYS, "Buddhist")),
-      ethiopian: this.create(new NgbCalendarEthiopian(), new NgbDatepickerI18nAmharic()),
-      intergalactic: this.create(new NgbCalendarGregorian(), new CalendarI18n(GALACTIC_MONTHS, GALACTIC_WEEKDAYS, "Intergalactic Standard"))
-    };
+    this.collapsed = true;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-f074bae2],.card[_content-f074bae2],.dropdown-menu[_content-f074bae2],.list-group-item[_content-f074bae2],.form-control[_content-f074bae2],.form-select[_content-f074bae2]{border-color:var(--bs-border-color)}.alert-light[_content-f074bae2]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-f074bae2],.list-group[_content-f074bae2],.dropdown-menu[_content-f074bae2]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-f074bae2],.btn-outline-secondary[_content-f074bae2]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-f074bae2],.form-select[_content-f074bae2]{background-color:var(--bs-body-bg)}code[_content-f074bae2]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-2c0cecd0],.card[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0],.list-group-item[_content-2c0cecd0],.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{border-color:var(--bs-border-color)}.alert-light[_content-2c0cecd0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2c0cecd0],.list-group[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2c0cecd0],.btn-outline-secondary[_content-2c0cecd0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{background-color:var(--bs-body-bg)}code[_content-2c0cecd0]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-DatepickerCalendarsPageComponent.ɵfac = [
+HorizontalCollapseComponent.ɵfac = [
   "$element",
   "$scope",
-  function DatepickerCalendarsPageComponent_Factory($element, $scope) {
+  function HorizontalCollapseComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || DatepickerCalendarsPageComponent)();
+    var instance = new (this && this.ɵT || HorizontalCollapseComponent)();
     return instance;
   }
 ];
-DatepickerCalendarsPageComponent.ɵcmp = {
+HorizontalCollapseComponent.ɵcmp = {
   selectors: [
     [
-      "docs-datepicker-calendars-page"
+      "docs-horizontal-collapse"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/datepicker-calendars-page.component-9c3a2913.html",
-    "controllerAs": "$"
+    "templateUrl": "templates/horizontal-collapse.component-f0dd72af.html",
+    "controllerAs": "example"
   }
 };
-DatepickerCalendarsPageComponent.ɵfac.ɵcomponent = true;
-DatepickerCalendarsPageComponent.ɵfac.ɵtype = DatepickerCalendarsPageComponent;
+HorizontalCollapseComponent.ɵfac.ɵcomponent = true;
+HorizontalCollapseComponent.ɵfac.ɵtype = HorizontalCollapseComponent;
+
+// src/app/features/collapse/components/navbar-collapse/navbar-collapse.component.ts
+var NavbarCollapseComponent = class {
+  toggleMenu() {
+    this.menuCollapsed = !this.menuCollapsed;
+  }
+  closeMenu() {
+    this.menuCollapsed = true;
+  }
+  constructor() {
+    this.menuCollapsed = true;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-c86be629],.card[_content-c86be629],.dropdown-menu[_content-c86be629],.list-group-item[_content-c86be629],.form-control[_content-c86be629],.form-select[_content-c86be629]{border-color:var(--bs-border-color)}.alert-light[_content-c86be629]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-c86be629],.list-group[_content-c86be629],.dropdown-menu[_content-c86be629]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-c86be629],.btn-outline-secondary[_content-c86be629]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-c86be629],.form-select[_content-c86be629]{background-color:var(--bs-body-bg)}code[_content-c86be629]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+NavbarCollapseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function NavbarCollapseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || NavbarCollapseComponent)();
+    return instance;
+  }
+];
+NavbarCollapseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-navbar-collapse"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/navbar-collapse.component-36e20d5c.html",
+    "controllerAs": "example"
+  }
+};
+NavbarCollapseComponent.ɵfac.ɵcomponent = true;
+NavbarCollapseComponent.ɵfac.ɵtype = NavbarCollapseComponent;
+
+// src/app/features/collapse/components/simple-collapse/simple-collapse.component.ts
+var SimpleCollapseComponent = class {
+  toggleWithController() {
+    this.collapse.toggle();
+  }
+  toggleWithBinding() {
+    this.collapsed = !this.collapsed;
+  }
+  constructor() {
+    this.collapsed = true;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-bfd88986],.card[_content-bfd88986],.dropdown-menu[_content-bfd88986],.list-group-item[_content-bfd88986],.form-control[_content-bfd88986],.form-select[_content-bfd88986]{border-color:var(--bs-border-color)}.alert-light[_content-bfd88986]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-bfd88986],.list-group[_content-bfd88986],.dropdown-menu[_content-bfd88986]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-bfd88986],.btn-outline-secondary[_content-bfd88986]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-bfd88986],.form-select[_content-bfd88986]{background-color:var(--bs-body-bg)}code[_content-bfd88986]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+SimpleCollapseComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function SimpleCollapseComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || SimpleCollapseComponent)();
+    return instance;
+  }
+];
+SimpleCollapseComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-simple-collapse"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  viewQueries: [
+    {
+      propertyName: "collapse",
+      first: true,
+      descendants: true,
+      static: true,
+      predicate: [
+        "collapse"
+      ]
+    }
+  ],
+  definition: {
+    "templateUrl": "templates/simple-collapse.component-da5f376c.html",
+    "controllerAs": "example"
+  }
+};
+SimpleCollapseComponent.ɵfac.ɵcomponent = true;
+SimpleCollapseComponent.ɵfac.ɵtype = SimpleCollapseComponent;
+
+// src/app/features/collapse/collapse.routes.ts
+var routes = [
+  {
+    path: "",
+    data: {
+      title: "Collapse",
+      tabs: [
+        {
+          name: "Examples",
+          to: "/components/collapse/examples"
+        },
+        {
+          name: "Api",
+          to: "/components/collapse/api"
+        }
+      ],
+      externalLinks: {
+        bootstrap: "components/collapse/",
+        ngBootstrap: "components/collapse/overview"
+      }
+    },
+    children: [
+      {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "examples"
+      },
+      {
+        path: "examples",
+        data: {
+          sections: [
+            {
+              id: "simple-collapse",
+              name: "Simple collapse"
+            },
+            {
+              id: "horizontal-collapse",
+              name: "Horizontal collapse"
+            },
+            {
+              id: "navbar-collapse",
+              name: "Responsive navbar"
+            }
+          ]
+        },
+        loadComponent: () => import("./collapse-examples-page.component-WATWICAR.js").then((m) => m.CollapseExamplesPageComponent)
+      },
+      {
+        path: "api",
+        data: {
+          sections: [
+            {
+              id: "ngb-collapse",
+              name: "NgbCollapse"
+            },
+            {
+              id: "ngb-collapse-config",
+              name: "NgbCollapseConfig"
+            }
+          ]
+        },
+        loadComponent: () => import("./collapse-api-page.component-ON25OTPI.js").then((m) => m.CollapseApiPageComponent)
+      }
+    ]
+  }
+];
+
+// src/app/features/collapse/collapse.module.ts
+function ɵtokenName(token) {
+  if (typeof token === "string") return token;
+  if (token && token.ɵprov) return token.ɵprov.token;
+  throw new Error("ModuleWithProviders: el token " + String(token && token.name || token) + " no tiene nombre de DI en runtime (solo un string, una clase con @Injectable o un InjectionToken) — si es una clase, agregale @Injectable().");
+}
+function ɵownFactory(cls) {
+  if (Object.prototype.hasOwnProperty.call(cls, "ɵfac")) return cls.ɵfac;
+  if (cls.ɵfac) throw new Error('"' + cls.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
+  return [
+    function() {
+      return new cls();
+    }
+  ];
+}
+function ɵimportedModuleName(imported) {
+  var module = imported && imported.ngModule ? imported.ngModule : imported;
+  if (typeof module === "string") return module;
+  return module.ɵmod ? module.ɵmod.id : module.name;
+}
+function ɵregisterProvider(module, key, provider) {
+  if ("useValue" in provider) return module.value(key, provider.useValue);
+  if (provider.useFactory) return module.factory(key, (provider.deps || []).map(ɵtokenName).concat([
+    provider.useFactory
+  ]));
+  if (provider.useExisting) return module.factory(key, [
+    ɵtokenName(provider.useExisting),
+    function(existing) {
+      return existing;
+    }
+  ]);
+  var cls = provider.useClass || provider.provide;
+  if (typeof cls !== "function") throw new Error('ModuleWithProviders: provider de "' + key + '" sin receta y sin clase en provide.');
+  if (!provider.deps) return module.factory(key, provider.ɵbare && Object.prototype.hasOwnProperty.call(cls, "ɵprov") && cls.ɵprov.factory || ɵownFactory(cls));
+  return module.factory(key, provider.deps.map(ɵtokenName).concat([
+    function() {
+      return new (Function.prototype.bind.apply(cls, [
+        null
+      ].concat(Array.prototype.slice.call(arguments))))();
+    }
+  ]));
+}
+function ɵimportProviders(module, imports) {
+  var providers = [];
+  var flatten = function(list) {
+    for (var i2 = 0; i2 < list.length; i2++) Array.isArray(list[i2]) ? flatten(list[i2]) : providers.push(list[i2]);
+  };
+  for (var i = 0; i < imports.length; i++) if (imports[i] && imports[i].ngModule) flatten(imports[i].providers || []);
+  var single = {};
+  var multi = {};
+  for (var j = 0; j < providers.length; j++) {
+    var raw = providers[j];
+    var provider = typeof raw === "function" ? {
+      provide: raw,
+      ɵbare: true
+    } : raw;
+    var token = ɵtokenName(provider.provide);
+    if (provider.multi ? single[token] : multi[token]) {
+      throw new Error('ModuleWithProviders: mezcla providers multi y no-multi para el token "' + token + '".');
+    }
+    if (provider.multi) (multi[token] = multi[token] || []).push(provider);
+    else single[token] = provider;
+  }
+  for (var name in single) ɵregisterProvider(module, name, single[name]);
+  for (var multiName in multi) {
+    var members = multi[multiName].map(function(_, index) {
+      return multiName + "#multi#" + module.name + "#import#" + index;
+    });
+    for (var k = 0; k < members.length; k++) ɵregisterProvider(module, members[k], multi[multiName][k]);
+    module.config(ɵmultiConfig(multiName, members));
+  }
+  return module;
+}
+function ɵmultiMixError(token) {
+  return new Error('Multi-providers: mezcla providers multi y no-multi para el token "' + token + '" entre módulos.');
+}
+function ɵmultiProviders($provide, providers, token, members) {
+  var state = providers.ɵmulti;
+  if (!state) {
+    state = providers.ɵmulti = {
+      tokens: {},
+      factory: $provide.factory
+    };
+    [
+      "provider",
+      "factory",
+      "service",
+      "value",
+      "constant"
+    ].forEach(function(method) {
+      var original = $provide[method];
+      $provide[method] = function(name) {
+        if (typeof name === "string" && Object.prototype.hasOwnProperty.call(state.tokens, name)) throw ɵmultiMixError(name);
+        return original.apply(this, arguments);
+      };
+    });
+  }
+  var rootDefault = providers.ɵrootDefaults && providers.ɵrootDefaults[token];
+  if (!state.tokens[token] && providers.has(token + "Provider") && !rootDefault) throw ɵmultiMixError(token);
+  state.tokens[token] = (state.tokens[token] || []).concat(members);
+  state.factory(token, state.tokens[token].concat([
+    function() {
+      return Array.prototype.slice.call(arguments);
+    }
+  ]));
+}
+function ɵmultiConfig(token, members) {
+  return [
+    "$provide",
+    "$injector",
+    function($provide, providers) {
+      ɵmultiProviders($provide, providers, token, members);
+    }
+  ];
+}
+var CollapseModule = class {
+};
+CollapseModule.ɵfac = [
+  function CollapseModule_Factory() {
+    return new (this && this.ɵT || CollapseModule)();
+  }
+];
+var ɵCollapseModule_import0 = RouterModule.forChild(routes);
+CollapseModule.ɵmod = {
+  id: "CollapseModule_045ce82f"
+};
+ɵimportProviders(import_angular.default.module("CollapseModule_045ce82f", [
+  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
+  ɵimportedModuleName(ɵCollapseModule_import0)
+]), [
+  ɵCollapseModule_import0
+]).component("docsHorizontalCollapse", {
+  controller: HorizontalCollapseComponent.ɵfac,
+  templateUrl: "templates/horizontal-collapse.component-f0dd72af.html",
+  controllerAs: "example"
+}).component("docsNavbarCollapse", {
+  controller: NavbarCollapseComponent.ɵfac,
+  templateUrl: "templates/navbar-collapse.component-36e20d5c.html",
+  controllerAs: "example"
+}).component("docsSimpleCollapse", {
+  controller: SimpleCollapseComponent.ɵfac,
+  templateUrl: "templates/simple-collapse.component-da5f376c.html",
+  controllerAs: "example"
+}).factory("CollapseModule_a263c103", CollapseModule.ɵfac).run([
+  "CollapseModule_a263c103",
+  function() {
+  }
+]);
 export {
-  DatepickerCalendarsPageComponent
+  CollapseModule
 };

@@ -352,24 +352,8 @@
   });
 })();
 import {
-  NgbOffcanvasModule
-} from "./chunk-H7WRX254.js";
-import {
-  NgbCollapseModule
-} from "./chunk-EP2AMMBI.js";
-import {
-  NgbNavModule
-} from "./chunk-GBQCJSNK.js";
-import {
-  NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
-import {
   RouterModule
 } from "./chunk-44BCS2Q7.js";
-import "./chunk-YZVMAT3C.js";
-import {
-  TemplateRef
-} from "./chunk-DXKD6ZA6.js";
 import {
   require_angular
 } from "./chunk-K6VJMEI3.js";
@@ -377,533 +361,86 @@ import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// src/app/features/offcanvas/offcanvas.module.ts
+// src/app/features/features.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/offcanvas/offcanvas.routes.ts
+// src/app/features/features.routes.ts
 var routes = [
   {
-    path: "",
-    data: {
-      title: "Offcanvas",
-      tabs: [
-        {
-          name: "Examples",
-          to: "/components/offcanvas/examples"
-        },
-        {
-          name: "Api",
-          to: "/components/offcanvas/api"
-        }
-      ],
-      externalLinks: {
-        bootstrap: "components/offcanvas/",
-        ngBootstrap: "components/offcanvas/overview"
-      }
-    },
-    children: [
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "examples"
-      },
-      {
-        path: "examples",
-        data: {
-          sections: [
-            {
-              id: "offcanvas-default",
-              name: "Default options"
-            },
-            {
-              id: "offcanvas-component-content",
-              name: "Component content"
-            },
-            {
-              id: "offcanvas-focus",
-              name: "Focus management"
-            },
-            {
-              id: "offcanvas-options",
-              name: "Offcanvas options"
-            },
-            {
-              id: "offcanvas-global",
-              name: "Global configuration"
-            }
-          ]
-        },
-        loadComponent: () => import("./offcanvas-examples-page.component-YQ4DBMRK.js").then((m) => m.OffcanvasExamplesPageComponent)
-      },
-      {
-        path: "api",
-        data: {
-          sections: [
-            {
-              id: "ngb-offcanvas",
-              name: "NgbOffcanvas"
-            },
-            {
-              id: "ngb-offcanvas-ref",
-              name: "NgbOffcanvasRef"
-            },
-            {
-              id: "ngb-active-offcanvas",
-              name: "NgbActiveOffcanvas"
-            },
-            {
-              id: "ngb-offcanvas-config",
-              name: "NgbOffcanvasConfig"
-            }
-          ]
-        },
-        loadComponent: () => import("./offcanvas-api-page.component-5AWVTISQ.js").then((m) => m.OffcanvasApiPageComponent)
-      }
-    ]
-  }
-];
-
-// src/app/features/offcanvas/components/offcanvas-demo-content/offcanvas-demo-content.component.ts
-var OffcanvasDemoContentComponent = class {
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-68f3d054],.card[_content-68f3d054],.dropdown-menu[_content-68f3d054],.list-group-item[_content-68f3d054],.form-control[_content-68f3d054],.form-select[_content-68f3d054]{border-color:var(--bs-border-color)}.alert-light[_content-68f3d054]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-68f3d054],.list-group[_content-68f3d054],.dropdown-menu[_content-68f3d054]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-68f3d054],.btn-outline-secondary[_content-68f3d054]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-68f3d054],.form-select[_content-68f3d054]{background-color:var(--bs-body-bg)}code[_content-68f3d054]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-OffcanvasDemoContentComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function OffcanvasDemoContentComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasDemoContentComponent)();
-    return instance;
-  }
-];
-OffcanvasDemoContentComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-demo-content"
-    ]
-  ],
-  inputs: {
-    "ngbActiveOffcanvas": "ngbActiveOffcanvas"
+    path: "alert",
+    loadChildren: () => import("./alert.module-RWYRI7HL.js").then((m) => m.AlertModule)
   },
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/offcanvas-demo-content.component-8d4707cf.html",
-    "controllerAs": "$",
-    "bindings": {
-      "ngbActiveOffcanvas": "<?"
-    }
-  }
-};
-OffcanvasDemoContentComponent.ɵfac.ɵcomponent = true;
-OffcanvasDemoContentComponent.ɵfac.ɵtype = OffcanvasDemoContentComponent;
-
-// src/app/features/offcanvas/components/offcanvas-component-content/offcanvas-component-content.component.ts
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) resolve(value);
-  else Promise.resolve(value).then(_next, _throw);
-}
-function _async_to_generator(fn) {
-  return function() {
-    var self = this, args = arguments;
-    return new Promise(function(resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(void 0);
-    });
-  };
-}
-var OffcanvasComponentContentComponent = class {
-  constructor(offcanvas) {
-    this.offcanvas = offcanvas;
-    this.lastResult = "No result yet";
-  }
-  open() {
-    return _async_to_generator(function* () {
-      const offcanvasRef = yield this.offcanvas.open(OffcanvasDemoContentComponent);
-      offcanvasRef.closed.subscribe((result) => {
-        this.lastResult = `Closed with: ${result}`;
-      });
-      offcanvasRef.dismissed.subscribe((reason) => {
-        this.lastResult = `Dismissed with: ${reason}`;
-      });
-    }).call(this);
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-0a2d56f9],.card[_content-0a2d56f9],.dropdown-menu[_content-0a2d56f9],.list-group-item[_content-0a2d56f9],.form-control[_content-0a2d56f9],.form-select[_content-0a2d56f9]{border-color:var(--bs-border-color)}.alert-light[_content-0a2d56f9]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0a2d56f9],.list-group[_content-0a2d56f9],.dropdown-menu[_content-0a2d56f9]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0a2d56f9],.btn-outline-secondary[_content-0a2d56f9]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0a2d56f9],.form-select[_content-0a2d56f9]{background-color:var(--bs-body-bg)}code[_content-0a2d56f9]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-OffcanvasComponentContentComponent.ɵfac = [
-  "NgbOffcanvas_51c49d46",
-  "$element",
-  "$scope",
-  function OffcanvasComponentContentComponent_Factory(a0, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasComponentContentComponent)(a0);
-    return instance;
-  }
-];
-OffcanvasComponentContentComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-component-content"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/offcanvas-component-content.component-ae337a6f.html",
-    "controllerAs": "example"
-  }
-};
-OffcanvasComponentContentComponent.ɵfac.ɵcomponent = true;
-OffcanvasComponentContentComponent.ɵfac.ɵtype = OffcanvasComponentContentComponent;
-
-// src/app/features/offcanvas/components/offcanvas-default/offcanvas-default.component.ts
-var OffcanvasDefaultComponent = class {
-  constructor(offcanvas) {
-    this.offcanvas = offcanvas;
-  }
-  open() {
-    this.offcanvas.open(this.content);
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-5448087f],.card[_content-5448087f],.dropdown-menu[_content-5448087f],.list-group-item[_content-5448087f],.form-control[_content-5448087f],.form-select[_content-5448087f]{border-color:var(--bs-border-color)}.alert-light[_content-5448087f]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-5448087f],.list-group[_content-5448087f],.dropdown-menu[_content-5448087f]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-5448087f],.btn-outline-secondary[_content-5448087f]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-5448087f],.form-select[_content-5448087f]{background-color:var(--bs-body-bg)}code[_content-5448087f]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-OffcanvasDefaultComponent.ɵfac = [
-  "NgbOffcanvas_51c49d46",
-  "$element",
-  "$scope",
-  function OffcanvasDefaultComponent_Factory(a0, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasDefaultComponent)(a0);
-    return instance;
-  }
-];
-OffcanvasDefaultComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-default"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  viewQueries: [
-    {
-      propertyName: "content",
-      first: true,
-      descendants: true,
-      static: true,
-      predicate: [
-        "content"
-      ],
-      get read() {
-        return TemplateRef;
-      }
-    }
-  ],
-  definition: {
-    "templateUrl": "templates/offcanvas-default.component-60ef7408.html",
-    "controllerAs": "example"
-  }
-};
-OffcanvasDefaultComponent.ɵfac.ɵcomponent = true;
-OffcanvasDefaultComponent.ɵfac.ɵtype = OffcanvasDefaultComponent;
-
-// src/app/features/offcanvas/components/offcanvas-focus-content/offcanvas-focus-content.component.ts
-var OffcanvasFocusContentComponent = class {
-  constructor() {
-    this.autofocus = false;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-486788d3],.card[_content-486788d3],.dropdown-menu[_content-486788d3],.list-group-item[_content-486788d3],.form-control[_content-486788d3],.form-select[_content-486788d3]{border-color:var(--bs-border-color)}.alert-light[_content-486788d3]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-486788d3],.list-group[_content-486788d3],.dropdown-menu[_content-486788d3]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-486788d3],.btn-outline-secondary[_content-486788d3]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-486788d3],.form-select[_content-486788d3]{background-color:var(--bs-body-bg)}code[_content-486788d3]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-OffcanvasFocusContentComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function OffcanvasFocusContentComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasFocusContentComponent)();
-    return instance;
-  }
-];
-OffcanvasFocusContentComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-focus-content"
-    ]
-  ],
-  inputs: {
-    "ngbActiveOffcanvas": "ngbActiveOffcanvas",
-    "autofocus": "autofocus"
+  {
+    path: "accordion",
+    loadChildren: () => import("./accordion.module-TO6GOZJS.js").then((m) => m.AccordionModule)
   },
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/offcanvas-focus-content.component-6bb99332.html",
-    "controllerAs": "$",
-    "bindings": {
-      "ngbActiveOffcanvas": "<?",
-      "autofocus": "<?"
-    }
-  }
-};
-OffcanvasFocusContentComponent.ɵfac.ɵcomponent = true;
-OffcanvasFocusContentComponent.ɵfac.ɵtype = OffcanvasFocusContentComponent;
-
-// src/app/features/offcanvas/components/offcanvas-focus/offcanvas-focus.component.ts
-var OffcanvasFocusComponent = class {
-  constructor(offcanvas) {
-    this.offcanvas = offcanvas;
-  }
-  openDefaultFocus() {
-    this.offcanvas.open(OffcanvasFocusContentComponent, {
-      ariaLabelledBy: "offcanvas-focus-title",
-      bindings: {
-        autofocus: false
-      }
-    });
-  }
-  openCustomFocus() {
-    this.offcanvas.open(OffcanvasFocusContentComponent, {
-      ariaLabelledBy: "offcanvas-focus-title",
-      bindings: {
-        autofocus: true
-      }
-    });
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-1d6f37eb],.card[_content-1d6f37eb],.dropdown-menu[_content-1d6f37eb],.list-group-item[_content-1d6f37eb],.form-control[_content-1d6f37eb],.form-select[_content-1d6f37eb]{border-color:var(--bs-border-color)}.alert-light[_content-1d6f37eb]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1d6f37eb],.list-group[_content-1d6f37eb],.dropdown-menu[_content-1d6f37eb]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1d6f37eb],.btn-outline-secondary[_content-1d6f37eb]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1d6f37eb],.form-select[_content-1d6f37eb]{background-color:var(--bs-body-bg)}code[_content-1d6f37eb]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-OffcanvasFocusComponent.ɵfac = [
-  "NgbOffcanvas_51c49d46",
-  "$element",
-  "$scope",
-  function OffcanvasFocusComponent_Factory(a0, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasFocusComponent)(a0);
-    return instance;
-  }
-];
-OffcanvasFocusComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-focus"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/offcanvas-focus.component-efe1c651.html",
-    "controllerAs": "example"
-  }
-};
-OffcanvasFocusComponent.ɵfac.ɵcomponent = true;
-OffcanvasFocusComponent.ɵfac.ɵtype = OffcanvasFocusComponent;
-
-// src/app/features/offcanvas/components/offcanvas-global/offcanvas-global.component.ts
-function asyncGeneratorStep2(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) resolve(value);
-  else Promise.resolve(value).then(_next, _throw);
-}
-function _async_to_generator2(fn) {
-  return function() {
-    var self = this, args = arguments;
-    return new Promise(function(resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep2(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep2(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(void 0);
-    });
-  };
-}
-var OffcanvasGlobalComponent = class {
-  constructor(offcanvas, config) {
-    this.offcanvas = offcanvas;
-    this.config = config;
-    this.initialConfig = {
-      backdrop: config.backdrop,
-      keyboard: config.keyboard,
-      position: config.position,
-      scroll: config.scroll
-    };
-  }
-  open() {
-    return _async_to_generator2(function* () {
-      this.applyConfig();
-      try {
-        yield this.offcanvas.open(OffcanvasDemoContentComponent);
-      } finally {
-        this.restoreConfig();
-      }
-    }).call(this);
-  }
-  ngOnDestroy() {
-    this.restoreConfig();
-  }
-  applyConfig() {
-    this.config.backdrop = "static";
-    this.config.keyboard = false;
-    this.config.position = "end";
-    this.config.scroll = true;
-  }
-  restoreConfig() {
-    this.config.backdrop = this.initialConfig.backdrop;
-    this.config.keyboard = this.initialConfig.keyboard;
-    this.config.position = this.initialConfig.position;
-    this.config.scroll = this.initialConfig.scroll;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-56330ce4],.card[_content-56330ce4],.dropdown-menu[_content-56330ce4],.list-group-item[_content-56330ce4],.form-control[_content-56330ce4],.form-select[_content-56330ce4]{border-color:var(--bs-border-color)}.alert-light[_content-56330ce4]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-56330ce4],.list-group[_content-56330ce4],.dropdown-menu[_content-56330ce4]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-56330ce4],.btn-outline-secondary[_content-56330ce4]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-56330ce4],.form-select[_content-56330ce4]{background-color:var(--bs-body-bg)}code[_content-56330ce4]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-OffcanvasGlobalComponent.ɵfac = [
-  "NgbOffcanvas_51c49d46",
-  "NgbOffcanvasConfig_b4ec4aca",
-  "$element",
-  "$scope",
-  function OffcanvasGlobalComponent_Factory(a0, a1, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasGlobalComponent)(a0, a1);
-    return instance;
+  {
+    path: "carousel",
+    loadChildren: () => import("./carousel.module-HS65SMC2.js").then((m) => m.CarouselModule)
+  },
+  {
+    path: "collapse",
+    loadChildren: () => import("./collapse.module-F7MLHVX7.js").then((m) => m.CollapseModule)
+  },
+  {
+    path: "datepicker",
+    loadChildren: () => import("./datepicker.module-FIY7WP7B.js").then((m) => m.DatepickerModule)
+  },
+  {
+    path: "dropdown",
+    loadChildren: () => import("./dropdown.module-RQA3KWFG.js").then((m) => m.DropdownModule)
+  },
+  {
+    path: "modal",
+    loadChildren: () => import("./modal.module-B2YXDRLN.js").then((m) => m.ModalModule)
+  },
+  {
+    path: "nav",
+    loadChildren: () => import("./nav.module-SXRZGOHZ.js").then((m) => m.NavModule)
+  },
+  {
+    path: "offcanvas",
+    loadChildren: () => import("./offcanvas.module-ENBEF4ZH.js").then((m) => m.OffcanvasModule)
+  },
+  {
+    path: "pagination",
+    loadChildren: () => import("./pagination.module-XA4OD5JC.js").then((m) => m.PaginationModule)
+  },
+  {
+    path: "popover",
+    loadChildren: () => import("./popover.module-UF3XPWUK.js").then((m) => m.PopoverModule)
+  },
+  {
+    path: "progressbar",
+    loadChildren: () => import("./progressbar.module-QO7Y7PBL.js").then((m) => m.ProgressbarModule)
+  },
+  {
+    path: "rating",
+    loadChildren: () => import("./rating.module-5TAA3IHC.js").then((m) => m.RatingModule)
+  },
+  {
+    path: "scrollspy",
+    loadChildren: () => import("./scrollspy.module-7N2E7PTF.js").then((m) => m.ScrollspyModule)
+  },
+  {
+    path: "timepicker",
+    loadChildren: () => import("./timepicker.module-J6HWT4P2.js").then((m) => m.TimepickerModule)
+  },
+  {
+    path: "toast",
+    loadChildren: () => import("./toast.module-NQ5GTC3A.js").then((m) => m.ToastModule)
+  },
+  {
+    path: "tooltip",
+    loadChildren: () => import("./tooltip.module-JSBX3GI5.js").then((m) => m.TooltipModule)
+  },
+  {
+    path: "typeahead",
+    loadChildren: () => import("./typeahead.module-IZ3EWJ3F.js").then((m) => m.TypeaheadModule)
   }
 ];
-OffcanvasGlobalComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-global"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/offcanvas-global.component-82adf11b.html",
-    "controllerAs": "example"
-  }
-};
-OffcanvasGlobalComponent.ɵfac.ɵcomponent = true;
-OffcanvasGlobalComponent.ɵfac.ɵtype = OffcanvasGlobalComponent;
-OffcanvasGlobalComponent.prototype.$onDestroy = function() {
-  this.ngOnDestroy();
-};
 
-// src/app/features/offcanvas/components/offcanvas-options/offcanvas-options.component.ts
-var OffcanvasOptionsComponent = class {
-  constructor(offcanvas) {
-    this.offcanvas = offcanvas;
-  }
-  openCustomPanel() {
-    this.open({
-      panelClass: "panel"
-    });
-  }
-  openStaticBackdrop() {
-    this.open({
-      backdrop: "static",
-      backdropClass: "backdrop",
-      keyboard: false
-    });
-  }
-  openStart() {
-    this.open({
-      position: "start"
-    });
-  }
-  openEnd() {
-    this.open({
-      position: "end"
-    });
-  }
-  openTop() {
-    this.open({
-      position: "top"
-    });
-  }
-  openBottom() {
-    this.open({
-      position: "bottom"
-    });
-  }
-  openScrollableBody() {
-    this.open({
-      scroll: true,
-      backdrop: false
-    });
-  }
-  open(options) {
-    this.offcanvas.open(OffcanvasDemoContentComponent, options);
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".panel[_content-67fdd7da]{--bs-offcanvas-width: 28rem;border-color:var(--bs-primary-border-subtle);box-shadow:0 1rem 3rem rgba(var(--bs-primary-rgb),.14)}.panel .offcanvas-header[_content-67fdd7da]{background:color-mix(in srgb,var(--bs-primary-bg-subtle) 55%,var(--bs-body-bg))}.backdrop[_content-67fdd7da]{--bs-backdrop-bg: var(--bs-danger);--bs-backdrop-opacity: .35}";
-  document.head.appendChild(s);
-})();
-OffcanvasOptionsComponent.ɵfac = [
-  "NgbOffcanvas_51c49d46",
-  "$element",
-  "$scope",
-  function OffcanvasOptionsComponent_Factory(a0, $element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || OffcanvasOptionsComponent)(a0);
-    return instance;
-  }
-];
-OffcanvasOptionsComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-offcanvas-options"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/offcanvas-options.component-aa8f6093.html",
-    "controllerAs": "example"
-  }
-};
-OffcanvasOptionsComponent.ɵfac.ɵcomponent = true;
-OffcanvasOptionsComponent.ɵfac.ɵtype = OffcanvasOptionsComponent;
-
-// src/app/features/offcanvas/offcanvas.module.ts
+// src/app/features/features.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -1018,65 +555,26 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var OffcanvasModule = class {
+var FeaturesModule = class {
 };
-OffcanvasModule.ɵfac = [
-  function OffcanvasModule_Factory() {
-    return new (this && this.ɵT || OffcanvasModule)();
+FeaturesModule.ɵfac = [
+  function FeaturesModule_Factory() {
+    return new (this && this.ɵT || FeaturesModule)();
   }
 ];
-var ɵOffcanvasModule_import0 = RouterModule.forChild(routes);
-OffcanvasModule.ɵmod = {
-  id: "OffcanvasModule_4b532f0e"
+var ɵFeaturesModule_import0 = RouterModule.forChild(routes);
+FeaturesModule.ɵmod = {
+  id: "FeaturesModule_ac665e6f"
 };
-ɵimportProviders(import_angular.default.module("OffcanvasModule_4b532f0e", [
-  typeof NgbOffcanvasModule === "string" ? NgbOffcanvasModule : NgbOffcanvasModule.ɵmod ? NgbOffcanvasModule.ɵmod.id : NgbOffcanvasModule.name,
-  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
-  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
-  typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵOffcanvasModule_import0)
+ɵimportProviders(import_angular.default.module("FeaturesModule_ac665e6f", [
+  ɵimportedModuleName(ɵFeaturesModule_import0)
 ]), [
-  ɵOffcanvasModule_import0
-]).component("docsOffcanvasComponentContent", {
-  controller: OffcanvasComponentContentComponent.ɵfac,
-  templateUrl: "templates/offcanvas-component-content.component-ae337a6f.html",
-  controllerAs: "example"
-}).component("docsOffcanvasDefault", {
-  controller: OffcanvasDefaultComponent.ɵfac,
-  templateUrl: "templates/offcanvas-default.component-60ef7408.html",
-  controllerAs: "example"
-}).component("docsOffcanvasDemoContent", {
-  controller: OffcanvasDemoContentComponent.ɵfac,
-  templateUrl: "templates/offcanvas-demo-content.component-8d4707cf.html",
-  controllerAs: "$",
-  bindings: {
-    "ngbActiveOffcanvas": "<?"
-  }
-}).component("docsOffcanvasFocus", {
-  controller: OffcanvasFocusComponent.ɵfac,
-  templateUrl: "templates/offcanvas-focus.component-efe1c651.html",
-  controllerAs: "example"
-}).component("docsOffcanvasFocusContent", {
-  controller: OffcanvasFocusContentComponent.ɵfac,
-  templateUrl: "templates/offcanvas-focus-content.component-6bb99332.html",
-  controllerAs: "$",
-  bindings: {
-    "ngbActiveOffcanvas": "<?",
-    "autofocus": "<?"
-  }
-}).component("docsOffcanvasGlobal", {
-  controller: OffcanvasGlobalComponent.ɵfac,
-  templateUrl: "templates/offcanvas-global.component-82adf11b.html",
-  controllerAs: "example"
-}).component("docsOffcanvasOptions", {
-  controller: OffcanvasOptionsComponent.ɵfac,
-  templateUrl: "templates/offcanvas-options.component-aa8f6093.html",
-  controllerAs: "example"
-}).factory("OffcanvasModule_9e69e12d", OffcanvasModule.ɵfac).run([
-  "OffcanvasModule_9e69e12d",
+  ɵFeaturesModule_import0
+]).factory("FeaturesModule_1e9dd68c", FeaturesModule.ɵfac).run([
+  "FeaturesModule_1e9dd68c",
   function() {
   }
 ]);
 export {
-  OffcanvasModule
+  FeaturesModule
 };

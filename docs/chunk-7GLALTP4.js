@@ -384,7 +384,7 @@ import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// ../ngjs-core/dist/chunk-ZOQF6DPP.js
+// ../ngjs-core/dist/chunk-JNGY67HO.js
 var import_angular = __toESM(require_angular(), 1);
 var import_angular2 = __toESM(require_angular(), 1);
 var ChangeDetectorRef = class {
@@ -567,7 +567,9 @@ var TemplateRefImpl = class _TemplateRefImpl extends TemplateRef {
     };
   }
 };
-var compileNgTemplate = (_element, attrs) => {
+var compileNgTemplate = (element, attrs) => {
+  const anchor = element[0];
+  if (anchor?.nodeType === 8 && !/ngTemplate/.test(anchor.nodeValue ?? "")) anchor.nodeValue = " ngTemplate: ";
   const declarations = /* @__PURE__ */ new Map();
   for (const [name, value] of Object.entries(attrs)) {
     if (!name.startsWith(DECLARATION_PREFIX)) continue;
@@ -578,7 +580,7 @@ var compileNgTemplate = (_element, attrs) => {
     declarations.set(localName, value || "$implicit");
   }
   return {
-    pre: (_scope, _element2, _attrs, ctrl) => {
+    pre: (_scope, _element, _attrs, ctrl) => {
       ctrl.registerDeclarations(declarations);
     }
   };
@@ -1310,7 +1312,7 @@ DestroyRef.ɵprov = {
   token: "DestroyRef_a5c7a091"
 };
 
-// ../ngjs-core/dist/chunk-KKI4D6GU.js
+// ../ngjs-core/dist/chunk-DSUMXAD6.js
 var import_angular3 = __toESM(require_angular(), 1);
 var import_angular4 = __toESM(require_angular(), 1);
 var NgDisabled = class {
@@ -2751,7 +2753,7 @@ ApplicationRef.ɵprov = {
   ApplicationRef.ɵprov.factory
 ]);
 
-// ../ngjs-core/dist/chunk-FMTAO3LQ.js
+// ../ngjs-core/dist/chunk-XTNONYDZ.js
 var import_angular5 = __toESM(require_angular(), 1);
 var PlatformRef = class {
 };
@@ -3931,7 +3933,7 @@ import_angular7.default.module("HttpClientXsrfModule_5c34a9c1", []).factory("ɵr
   }
 ]);
 
-// ../ngjs-core/dist/chunk-BPZWSW6A.js
+// ../ngjs-core/dist/chunk-XYVQUOZ3.js
 var import_angular8 = __toESM(require_angular(), 1);
 var NgHidden = class {
   get _hidden() {

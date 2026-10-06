@@ -353,14 +353,19 @@
 })();
 import {
   NgbCollapseModule
-} from "./chunk-EP2AMMBI.js";
+} from "./chunk-WXFOXQQP.js";
 import {
-  NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
+  NgbNavModule
+} from "./chunk-SGQK3IOF.js";
+import {
+  NgbScrollSpyModule,
+  NgbScrollSpyService
+} from "./chunk-TYQFYSAF.js";
 import {
   RouterModule
 } from "./chunk-44BCS2Q7.js";
-import "./chunk-DXKD6ZA6.js";
+import "./chunk-YZVMAT3C.js";
+import "./chunk-7GLALTP4.js";
 import {
   require_angular
 } from "./chunk-K6VJMEI3.js";
@@ -368,162 +373,28 @@ import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// src/app/features/collapse/collapse.module.ts
+// src/app/features/scrollspy/scrollspy.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/collapse/components/horizontal-collapse/horizontal-collapse.component.ts
-var HorizontalCollapseComponent = class {
-  toggle() {
-    this.collapsed = !this.collapsed;
-  }
-  constructor() {
-    this.collapsed = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-2c0cecd0],.card[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0],.list-group-item[_content-2c0cecd0],.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{border-color:var(--bs-border-color)}.alert-light[_content-2c0cecd0]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-2c0cecd0],.list-group[_content-2c0cecd0],.dropdown-menu[_content-2c0cecd0]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-2c0cecd0],.btn-outline-secondary[_content-2c0cecd0]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-2c0cecd0],.form-select[_content-2c0cecd0]{background-color:var(--bs-body-bg)}code[_content-2c0cecd0]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-HorizontalCollapseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function HorizontalCollapseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || HorizontalCollapseComponent)();
-    return instance;
-  }
-];
-HorizontalCollapseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-horizontal-collapse"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/horizontal-collapse.component-f0dd72af.html",
-    "controllerAs": "example"
-  }
-};
-HorizontalCollapseComponent.ɵfac.ɵcomponent = true;
-HorizontalCollapseComponent.ɵfac.ɵtype = HorizontalCollapseComponent;
-
-// src/app/features/collapse/components/navbar-collapse/navbar-collapse.component.ts
-var NavbarCollapseComponent = class {
-  toggleMenu() {
-    this.menuCollapsed = !this.menuCollapsed;
-  }
-  closeMenu() {
-    this.menuCollapsed = true;
-  }
-  constructor() {
-    this.menuCollapsed = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-c86be629],.card[_content-c86be629],.dropdown-menu[_content-c86be629],.list-group-item[_content-c86be629],.form-control[_content-c86be629],.form-select[_content-c86be629]{border-color:var(--bs-border-color)}.alert-light[_content-c86be629]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-c86be629],.list-group[_content-c86be629],.dropdown-menu[_content-c86be629]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-c86be629],.btn-outline-secondary[_content-c86be629]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-c86be629],.form-select[_content-c86be629]{background-color:var(--bs-body-bg)}code[_content-c86be629]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-NavbarCollapseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function NavbarCollapseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || NavbarCollapseComponent)();
-    return instance;
-  }
-];
-NavbarCollapseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-navbar-collapse"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/navbar-collapse.component-36e20d5c.html",
-    "controllerAs": "example"
-  }
-};
-NavbarCollapseComponent.ɵfac.ɵcomponent = true;
-NavbarCollapseComponent.ɵfac.ɵtype = NavbarCollapseComponent;
-
-// src/app/features/collapse/components/simple-collapse/simple-collapse.component.ts
-var SimpleCollapseComponent = class {
-  toggleWithController() {
-    this.collapse.toggle();
-  }
-  toggleWithBinding() {
-    this.collapsed = !this.collapsed;
-  }
-  constructor() {
-    this.collapsed = true;
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-bfd88986],.card[_content-bfd88986],.dropdown-menu[_content-bfd88986],.list-group-item[_content-bfd88986],.form-control[_content-bfd88986],.form-select[_content-bfd88986]{border-color:var(--bs-border-color)}.alert-light[_content-bfd88986]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-bfd88986],.list-group[_content-bfd88986],.dropdown-menu[_content-bfd88986]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-bfd88986],.btn-outline-secondary[_content-bfd88986]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-bfd88986],.form-select[_content-bfd88986]{background-color:var(--bs-body-bg)}code[_content-bfd88986]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-SimpleCollapseComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function SimpleCollapseComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || SimpleCollapseComponent)();
-    return instance;
-  }
-];
-SimpleCollapseComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-simple-collapse"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  viewQueries: [
-    {
-      propertyName: "collapse",
-      first: true,
-      descendants: true,
-      static: true,
-      predicate: [
-        "collapse"
-      ]
-    }
-  ],
-  definition: {
-    "templateUrl": "templates/simple-collapse.component-da5f376c.html",
-    "controllerAs": "example"
-  }
-};
-SimpleCollapseComponent.ɵfac.ɵcomponent = true;
-SimpleCollapseComponent.ɵfac.ɵtype = SimpleCollapseComponent;
-
-// src/app/features/collapse/collapse.routes.ts
+// src/app/features/scrollspy/scrollspy.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Collapse",
+      title: "Scrollspy",
       tabs: [
         {
           name: "Examples",
-          to: "/components/collapse/examples"
+          to: "/components/scrollspy/examples"
         },
         {
           name: "Api",
-          to: "/components/collapse/api"
+          to: "/components/scrollspy/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/collapse/",
-        ngBootstrap: "components/collapse/overview"
+        bootstrap: "components/scrollspy/",
+        ngBootstrap: "components/scrollspy/overview"
       }
     },
     children: [
@@ -537,42 +408,436 @@ var routes = [
         data: {
           sections: [
             {
-              id: "simple-collapse",
-              name: "Simple collapse"
+              id: "basic-scrollspy",
+              name: "Basic"
             },
             {
-              id: "horizontal-collapse",
-              name: "Horizontal collapse"
+              id: "scrollspy-menu-items",
+              name: "Menu items"
             },
             {
-              id: "navbar-collapse",
-              name: "Responsive navbar"
+              id: "nested-scrollspy",
+              name: "Nested items"
+            },
+            {
+              id: "navbar-scrollspy",
+              name: "Navbar"
+            },
+            {
+              id: "scrollspy-service",
+              name: "Using the service"
             }
           ]
         },
-        loadComponent: () => import("./collapse-examples-page.component-WATWICAR.js").then((m) => m.CollapseExamplesPageComponent)
+        loadComponent: () => import("./scrollspy-examples-page.component-3OWTODL7.js").then((m) => m.ScrollspyExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-collapse",
-              name: "NgbCollapse"
+              id: "ngb-scrollspy",
+              name: "NgbScrollSpy"
             },
             {
-              id: "ngb-collapse-config",
-              name: "NgbCollapseConfig"
+              id: "ngb-scrollspy-fragment",
+              name: "NgbScrollSpyFragment"
+            },
+            {
+              id: "ngb-scrollspy-menu",
+              name: "NgbScrollSpyMenu"
+            },
+            {
+              id: "ngb-scrollspy-item",
+              name: "NgbScrollSpyItem"
+            },
+            {
+              id: "ngb-scrollspy-service",
+              name: "NgbScrollSpyService"
+            },
+            {
+              id: "ngb-scrollspy-config",
+              name: "NgbScrollSpyConfig"
             }
           ]
         },
-        loadComponent: () => import("./collapse-api-page.component-ON25OTPI.js").then((m) => m.CollapseApiPageComponent)
+        loadComponent: () => import("./scrollspy-api-page.component-4IFPHWF6.js").then((m) => m.ScrollspyApiPageComponent)
       }
     ]
   }
 ];
 
-// src/app/features/collapse/collapse.module.ts
+// src/app/features/scrollspy/components/basic-scrollspy/basic-scrollspy.component.ts
+var BasicScrollspyComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-27962885],.card[_content-27962885],.dropdown-menu[_content-27962885],.list-group-item[_content-27962885],.form-control[_content-27962885],.form-select[_content-27962885]{border-color:var(--bs-border-color)}.alert-light[_content-27962885]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-27962885],.list-group[_content-27962885],.dropdown-menu[_content-27962885]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-27962885],.btn-outline-secondary[_content-27962885]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-27962885],.form-select[_content-27962885]{background-color:var(--bs-body-bg)}code[_content-27962885]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+BasicScrollspyComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function BasicScrollspyComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || BasicScrollspyComponent)();
+    return instance;
+  }
+];
+BasicScrollspyComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-basic-scrollspy"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/basic-scrollspy.component-9c1c2807.html",
+    "controllerAs": "example"
+  }
+};
+BasicScrollspyComponent.ɵfac.ɵcomponent = true;
+BasicScrollspyComponent.ɵfac.ɵtype = BasicScrollspyComponent;
+
+// src/app/features/scrollspy/components/navbar-scrollspy/navbar-scrollspy.component.ts
+var NavbarScrollspyComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-b57f37e2],.card[_content-b57f37e2],.dropdown-menu[_content-b57f37e2],.list-group-item[_content-b57f37e2],.form-control[_content-b57f37e2],.form-select[_content-b57f37e2]{border-color:var(--bs-border-color)}.alert-light[_content-b57f37e2]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-b57f37e2],.list-group[_content-b57f37e2],.dropdown-menu[_content-b57f37e2]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-b57f37e2],.btn-outline-secondary[_content-b57f37e2]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-b57f37e2],.form-select[_content-b57f37e2]{background-color:var(--bs-body-bg)}code[_content-b57f37e2]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+NavbarScrollspyComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function NavbarScrollspyComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || NavbarScrollspyComponent)();
+    return instance;
+  }
+];
+NavbarScrollspyComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-navbar-scrollspy"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/navbar-scrollspy.component-7455b46d.html",
+    "controllerAs": "example"
+  }
+};
+NavbarScrollspyComponent.ɵfac.ɵcomponent = true;
+NavbarScrollspyComponent.ɵfac.ɵtype = NavbarScrollspyComponent;
+
+// src/app/features/scrollspy/components/nested-scrollspy/nested-scrollspy.component.ts
+var NestedScrollspyComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-fa991de9],.card[_content-fa991de9],.dropdown-menu[_content-fa991de9],.list-group-item[_content-fa991de9],.form-control[_content-fa991de9],.form-select[_content-fa991de9]{border-color:var(--bs-border-color)}.alert-light[_content-fa991de9]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-fa991de9],.list-group[_content-fa991de9],.dropdown-menu[_content-fa991de9]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-fa991de9],.btn-outline-secondary[_content-fa991de9]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-fa991de9],.form-select[_content-fa991de9]{background-color:var(--bs-body-bg)}code[_content-fa991de9]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+NestedScrollspyComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function NestedScrollspyComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || NestedScrollspyComponent)();
+    return instance;
+  }
+];
+NestedScrollspyComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-nested-scrollspy"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/nested-scrollspy.component-e0ce1197.html",
+    "controllerAs": "example"
+  }
+};
+NestedScrollspyComponent.ɵfac.ɵcomponent = true;
+NestedScrollspyComponent.ɵfac.ɵtype = NestedScrollspyComponent;
+
+// src/app/features/scrollspy/components/scrollspy-menu-items/scrollspy-menu-items.component.ts
+var ScrollspyMenuItemsComponent = class {
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-39867fc1],.card[_content-39867fc1],.dropdown-menu[_content-39867fc1],.list-group-item[_content-39867fc1],.form-control[_content-39867fc1],.form-select[_content-39867fc1]{border-color:var(--bs-border-color)}.alert-light[_content-39867fc1]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-39867fc1],.list-group[_content-39867fc1],.dropdown-menu[_content-39867fc1]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-39867fc1],.btn-outline-secondary[_content-39867fc1]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-39867fc1],.form-select[_content-39867fc1]{background-color:var(--bs-body-bg)}code[_content-39867fc1]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+ScrollspyMenuItemsComponent.ɵfac = [
+  "$element",
+  "$scope",
+  function ScrollspyMenuItemsComponent_Factory($element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || ScrollspyMenuItemsComponent)();
+    return instance;
+  }
+];
+ScrollspyMenuItemsComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-scrollspy-menu-items"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/scrollspy-menu-items.component-0f2f39fa.html",
+    "controllerAs": "example"
+  }
+};
+ScrollspyMenuItemsComponent.ɵfac.ɵcomponent = true;
+ScrollspyMenuItemsComponent.ɵfac.ɵtype = ScrollspyMenuItemsComponent;
+
+// src/app/features/scrollspy/components/scrollspy-service-demo/scrollspy-service-demo.component.ts
+var ScrollspyServiceDemoComponent = class {
+  constructor(elementRef, scrollSpy) {
+    this.elementRef = elementRef;
+    this.scrollSpy = scrollSpy;
+    this.fragments = [
+      "service-introduction",
+      "service-options",
+      "service-finish"
+    ];
+    this.running = false;
+    this.observingFinish = true;
+  }
+  ngAfterViewInit() {
+    this.root = this.elementRef.nativeElement.querySelector("[data-service-scrollspy]") ?? void 0;
+    this.start();
+  }
+  ngOnDestroy() {
+    this.scrollSpy.stop();
+  }
+  start() {
+    if (!this.root) return;
+    this.scrollSpy.start({
+      root: this.root,
+      fragments: this.fragments,
+      rootMargin: "0px 0px -45%"
+    });
+    this.running = true;
+    this.observingFinish = true;
+  }
+  stop() {
+    this.scrollSpy.stop();
+    this.running = false;
+  }
+  toggleFinish() {
+    if (this.observingFinish) {
+      this.scrollSpy.unobserve("service-finish");
+    } else {
+      this.scrollSpy.observe("service-finish");
+    }
+    this.observingFinish = !this.observingFinish;
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-650bf150],.card[_content-650bf150],.dropdown-menu[_content-650bf150],.list-group-item[_content-650bf150],.form-control[_content-650bf150],.form-select[_content-650bf150]{border-color:var(--bs-border-color)}.alert-light[_content-650bf150]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-650bf150],.list-group[_content-650bf150],.dropdown-menu[_content-650bf150]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-650bf150],.btn-outline-secondary[_content-650bf150]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-650bf150],.form-select[_content-650bf150]{background-color:var(--bs-body-bg)}code[_content-650bf150]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+ScrollspyServiceDemoComponent.ɵfac = [
+  "ElementRef_927308a2",
+  "NgbScrollSpyService_c5e43f01",
+  "$element",
+  "$scope",
+  function ScrollspyServiceDemoComponent_Factory(a0, a1, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || ScrollspyServiceDemoComponent)(a0, a1);
+    return instance;
+  }
+];
+ScrollspyServiceDemoComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-scrollspy-service-demo"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/scrollspy-service-demo.component-f6f51d05.html",
+    "controllerAs": "example"
+  }
+};
+ScrollspyServiceDemoComponent.ɵfac.ɵcomponent = true;
+ScrollspyServiceDemoComponent.ɵfac.ɵtype = ScrollspyServiceDemoComponent;
+ScrollspyServiceDemoComponent.ɵfac.ɵproviders = [
+  {
+    token: "NgbScrollSpyService_c5e43f01",
+    kind: "class",
+    ctor: NgbScrollSpyService
+  }
+];
+ScrollspyServiceDemoComponent.prototype.$onDestroy = function() {
+  this.ngOnDestroy();
+};
+ScrollspyServiceDemoComponent.prototype.$postLink = function() {
+  this.ngAfterViewInit();
+};
+
+// src/app/features/scrollspy/scrollspy.module.ts
+function ɵElementInjectorNode(providers, parent, $injector, element, boundary) {
+  this.parent = parent;
+  this.$injector = $injector;
+  this.element = element;
+  this.boundary = boundary;
+  this.singles = {};
+  this.multis = {};
+  this.cache = {};
+  for (var i = 0; i < providers.length; i++) {
+    var p = providers[i];
+    if (p.multi) {
+      (this.multis[p.token] = this.multis[p.token] || []).push(p);
+    } else {
+      this.singles[p.token] = p;
+    }
+  }
+}
+var ɵNOT_FOUND = {};
+ɵElementInjectorNode.prototype.resolve = function(name) {
+  if (name === "ɵresolve") return this.resolverFor(this.boundary);
+  return this.resolveWith(name, {});
+};
+ɵElementInjectorNode.prototype.resolverFor = function(boundary) {
+  var self = this;
+  return function(token, flags) {
+    flags = flags || {};
+    return flags.host ? self.resolveHost(token, flags, boundary) : self.resolveWith(token, flags);
+  };
+};
+ɵElementInjectorNode.prototype.resolveWith = function(name, flags) {
+  if (flags.host) return this.resolveHost(name, flags, this.boundary);
+  if (!flags.skipSelf) {
+    var own = this.resolveOwn(name);
+    if (own !== ɵNOT_FOUND) return own;
+    if (flags.self) {
+      if (flags.optional) return null;
+      throw new Error('ɵElementInjectorNode: no hay provider para "' + name + '" con { self: true }.');
+    }
+  }
+  if (this.parent) return this.parent.resolveWith(name, {
+    optional: flags.optional
+  });
+  if (!flags.optional) return this.$injector.get(name);
+  return this.$injector.has(name) ? this.$injector.get(name) : null;
+};
+ɵElementInjectorNode.prototype.resolveHost = function(name, flags, boundary) {
+  var within = function(node2) {
+    return !boundary || !node2.element || node2.element === boundary || boundary.contains(node2.element);
+  };
+  for (var node = flags.skipSelf ? this.parent : this; node && within(node); node = node.parent) {
+    var own = node.resolveOwn(name);
+    if (own !== ɵNOT_FOUND) return own;
+  }
+  if (flags.optional) return null;
+  throw new Error('ɵElementInjectorNode: no hay provider para "' + name + '" con { host: true } (entre este elemento y su host).');
+};
+ɵElementInjectorNode.prototype.provides = function(name) {
+  for (var node = this; node; node = node.parent) {
+    if (Object.prototype.hasOwnProperty.call(node.singles, name) || Object.prototype.hasOwnProperty.call(node.multis, name)) return true;
+  }
+  return false;
+};
+ɵElementInjectorNode.prototype.resolveOwn = function(name) {
+  if (Object.prototype.hasOwnProperty.call(this.cache, name)) return this.cache[name];
+  if (Object.prototype.hasOwnProperty.call(this.multis, name)) {
+    var resolved = this.multis[name].map(this.instantiate, this);
+    this.cache[name] = resolved;
+    return resolved;
+  }
+  if (Object.prototype.hasOwnProperty.call(this.singles, name)) {
+    var resolved = this.instantiate(this.singles[name]);
+    this.cache[name] = resolved;
+    return resolved;
+  }
+  return ɵNOT_FOUND;
+};
+ɵElementInjectorNode.prototype.instantiate = function(descriptor) {
+  var self = this;
+  var resolve = function(name) {
+    return self.resolve(name);
+  };
+  if (descriptor.kind === "useValue") return descriptor.value;
+  if (descriptor.kind === "useFactory") return descriptor.factory.apply(null, descriptor.deps.map(resolve));
+  if (descriptor.kind === "useExisting") return resolve(descriptor.existing);
+  if (descriptor.deps) return new (Function.prototype.bind.apply(descriptor.ctor, [
+    null
+  ].concat(descriptor.deps.map(resolve))))();
+  var ctor = descriptor.ctor;
+  var own = Object.prototype.hasOwnProperty;
+  var fac = descriptor.kind === "class" && own.call(ctor, "ɵprov") && ctor.ɵprov.factory || (own.call(ctor, "ɵfac") ? ctor.ɵfac : null);
+  if (!fac && ctor.ɵfac) throw new Error('"' + ctor.name + '" hereda el factory de su clase padre — agregale @Injectable() (Angular también lo exige).');
+  if (!fac) return new ctor();
+  return fac[fac.length - 1].apply(null, fac.slice(0, -1).map(resolve));
+};
+ɵElementInjectorNode.prototype.destroy = function() {
+  var cache = this.cache;
+  this.cache = {};
+  for (var name in cache) {
+    var values = Object.prototype.hasOwnProperty.call(this.multis, name) ? cache[name] : [
+      cache[name]
+    ];
+    for (var i = 0; i < values.length; i++) {
+      var value = values[i];
+      if (value && typeof value.ngOnDestroy === "function" && !this.isAlias(name)) value.ngOnDestroy();
+    }
+  }
+};
+ɵElementInjectorNode.prototype.isAlias = function(name) {
+  var single = this.singles[name];
+  return Boolean(single && (single.kind === "useExisting" || single.kind === "useValue"));
+};
+function ɵscopedController($delegate, $injector) {
+  if ($injector.ɵngjsScopedController) return $delegate;
+  $injector.ɵngjsScopedController = true;
+  return function(expression, locals, later, ident) {
+    var $element = locals && locals.$element;
+    if (!$element) return $delegate(expression, locals, later, ident);
+    var isComponent = Boolean(expression && expression.ɵcomponent);
+    var boundary = isComponent ? $element[0] : $element.parent ? $element.parent().inheritedData("$ngjsHost") : void 0;
+    var ownProviders = expression && expression.ɵproviders;
+    var node = $element.inheritedData("$ngjsScopedInjector");
+    if (ownProviders && ownProviders.length) {
+      node = new ɵElementInjectorNode(ownProviders, node, $injector, $element[0], boundary);
+      $element.data("$ngjsScopedInjector", node);
+      var $scope = locals.$scope;
+      if ($scope && $scope.$on) {
+        (function(ownNode) {
+          $scope.$on("$destroy", function() {
+            ownNode.destroy();
+          });
+        })(node);
+      }
+    }
+    if (!node) return $delegate(expression, locals, later, ident);
+    var depNames = Array.isArray(expression) ? expression.slice(0, -1) : expression && expression.$inject || [];
+    var extra;
+    for (var i = 0; i < depNames.length; i++) {
+      var name = depNames[i];
+      if (locals && Object.prototype.hasOwnProperty.call(locals, name)) continue;
+      if (name !== "ɵresolve" && !node.provides(name)) continue;
+      extra = extra || {};
+      extra[name] = name === "ɵresolve" ? node.resolverFor(boundary) : node.resolve(name);
+    }
+    if (!extra) return $delegate(expression, locals, later, ident);
+    var merged = {};
+    for (var k in locals) merged[k] = locals[k];
+    for (var k2 in extra) merged[k2] = extra[k2];
+    return $delegate(expression, merged, later, ident);
+  };
+}
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -687,40 +952,53 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var CollapseModule = class {
+var ScrollspyModule = class {
 };
-CollapseModule.ɵfac = [
-  function CollapseModule_Factory() {
-    return new (this && this.ɵT || CollapseModule)();
+ScrollspyModule.ɵfac = [
+  function ScrollspyModule_Factory() {
+    return new (this && this.ɵT || ScrollspyModule)();
   }
 ];
-var ɵCollapseModule_import0 = RouterModule.forChild(routes);
-CollapseModule.ɵmod = {
-  id: "CollapseModule_045ce82f"
+var ɵScrollspyModule_import0 = RouterModule.forChild(routes);
+ScrollspyModule.ɵmod = {
+  id: "ScrollspyModule_d422318a"
 };
-ɵimportProviders(import_angular.default.module("CollapseModule_045ce82f", [
-  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+ɵimportProviders(import_angular.default.module("ScrollspyModule_d422318a", [
   typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵCollapseModule_import0)
+  typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
+  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+  ɵimportedModuleName(ɵScrollspyModule_import0)
 ]), [
-  ɵCollapseModule_import0
-]).component("docsHorizontalCollapse", {
-  controller: HorizontalCollapseComponent.ɵfac,
-  templateUrl: "templates/horizontal-collapse.component-f0dd72af.html",
+  ɵScrollspyModule_import0
+]).decorator("$controller", [
+  "$delegate",
+  "$injector",
+  ɵscopedController
+]).component("docsBasicScrollspy", {
+  controller: BasicScrollspyComponent.ɵfac,
+  templateUrl: "templates/basic-scrollspy.component-9c1c2807.html",
   controllerAs: "example"
-}).component("docsNavbarCollapse", {
-  controller: NavbarCollapseComponent.ɵfac,
-  templateUrl: "templates/navbar-collapse.component-36e20d5c.html",
+}).component("docsNavbarScrollspy", {
+  controller: NavbarScrollspyComponent.ɵfac,
+  templateUrl: "templates/navbar-scrollspy.component-7455b46d.html",
   controllerAs: "example"
-}).component("docsSimpleCollapse", {
-  controller: SimpleCollapseComponent.ɵfac,
-  templateUrl: "templates/simple-collapse.component-da5f376c.html",
+}).component("docsNestedScrollspy", {
+  controller: NestedScrollspyComponent.ɵfac,
+  templateUrl: "templates/nested-scrollspy.component-e0ce1197.html",
   controllerAs: "example"
-}).factory("CollapseModule_a263c103", CollapseModule.ɵfac).run([
-  "CollapseModule_a263c103",
+}).component("docsScrollspyMenuItems", {
+  controller: ScrollspyMenuItemsComponent.ɵfac,
+  templateUrl: "templates/scrollspy-menu-items.component-0f2f39fa.html",
+  controllerAs: "example"
+}).component("docsScrollspyServiceDemo", {
+  controller: ScrollspyServiceDemoComponent.ɵfac,
+  templateUrl: "templates/scrollspy-service-demo.component-f6f51d05.html",
+  controllerAs: "example"
+}).factory("ScrollspyModule_bf74b1f9", ScrollspyModule.ɵfac).run([
+  "ScrollspyModule_bf74b1f9",
   function() {
   }
 ]);
 export {
-  CollapseModule
+  ScrollspyModule
 };

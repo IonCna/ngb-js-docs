@@ -352,19 +352,24 @@
   });
 })();
 import {
+  NgbOffcanvasModule
+} from "./chunk-PCXZDXJE.js";
+import {
   NgbCollapseModule
-} from "./chunk-EP2AMMBI.js";
+} from "./chunk-WXFOXQQP.js";
 import {
   NgbNavModule
-} from "./chunk-GBQCJSNK.js";
+} from "./chunk-SGQK3IOF.js";
 import {
   NgbScrollSpyModule
-} from "./chunk-T2KZSIKQ.js";
+} from "./chunk-TYQFYSAF.js";
 import {
   RouterModule
 } from "./chunk-44BCS2Q7.js";
 import "./chunk-YZVMAT3C.js";
-import "./chunk-DXKD6ZA6.js";
+import {
+  TemplateRef
+} from "./chunk-7GLALTP4.js";
 import {
   require_angular
 } from "./chunk-K6VJMEI3.js";
@@ -372,28 +377,28 @@ import {
   __toESM
 } from "./chunk-MTQV7FVC.js";
 
-// src/app/features/nav/nav.module.ts
+// src/app/features/offcanvas/offcanvas.module.ts
 var import_angular = __toESM(require_angular(), 1);
 
-// src/app/features/nav/nav.routes.ts
+// src/app/features/offcanvas/offcanvas.routes.ts
 var routes = [
   {
     path: "",
     data: {
-      title: "Nav",
+      title: "Offcanvas",
       tabs: [
         {
           name: "Examples",
-          to: "/components/nav/examples"
+          to: "/components/offcanvas/examples"
         },
         {
           name: "Api",
-          to: "/components/nav/api"
+          to: "/components/offcanvas/api"
         }
       ],
       externalLinks: {
-        bootstrap: "components/navs-tabs/",
-        ngBootstrap: "components/nav/overview"
+        bootstrap: "components/offcanvas/",
+        ngBootstrap: "components/offcanvas/overview"
       }
     },
     children: [
@@ -407,434 +412,498 @@ var routes = [
         data: {
           sections: [
             {
-              id: "simple-nav",
-              name: "Simple nav"
+              id: "offcanvas-default",
+              name: "Default options"
             },
             {
-              id: "alternative-nav",
-              name: "Alternative markup"
+              id: "offcanvas-component-content",
+              name: "Component content"
             },
             {
-              id: "vertical-nav",
-              name: "Vertical pills"
+              id: "offcanvas-focus",
+              name: "Focus management"
             },
             {
-              id: "selecting-nav",
-              name: "Selecting navs"
+              id: "offcanvas-options",
+              name: "Offcanvas options"
             },
             {
-              id: "keep-content-nav",
-              name: "Keep content"
-            },
-            {
-              id: "dynamic-nav",
-              name: "Dynamic navs"
-            },
-            {
-              id: "custom-nav",
-              name: "Custom style"
-            },
-            {
-              id: "nav-global",
+              id: "offcanvas-global",
               name: "Global configuration"
             }
           ]
         },
-        loadComponent: () => import("./nav-examples-page.component-63NM2KJZ.js").then((m) => m.NavExamplesPageComponent)
+        loadComponent: () => import("./offcanvas-examples-page.component-YQ4DBMRK.js").then((m) => m.OffcanvasExamplesPageComponent)
       },
       {
         path: "api",
         data: {
           sections: [
             {
-              id: "ngb-nav",
-              name: "NgbNav"
+              id: "ngb-offcanvas",
+              name: "NgbOffcanvas"
             },
             {
-              id: "ngb-nav-item",
-              name: "NgbNavItem"
+              id: "ngb-offcanvas-ref",
+              name: "NgbOffcanvasRef"
             },
             {
-              id: "ngb-nav-link",
-              name: "NgbNavLink"
+              id: "ngb-active-offcanvas",
+              name: "NgbActiveOffcanvas"
             },
             {
-              id: "ngb-nav-content",
-              name: "NgbNavContent"
-            },
-            {
-              id: "ngb-nav-outlet",
-              name: "NgbNavOutlet"
-            },
-            {
-              id: "ngb-nav-config",
-              name: "NgbNavConfig"
+              id: "ngb-offcanvas-config",
+              name: "NgbOffcanvasConfig"
             }
           ]
         },
-        loadComponent: () => import("./nav-api-page.component-WI7E5ODC.js").then((m) => m.NavApiPageComponent)
+        loadComponent: () => import("./offcanvas-api-page.component-5AWVTISQ.js").then((m) => m.OffcanvasApiPageComponent)
       }
     ]
   }
 ];
 
-// src/app/features/nav/components/alternative-nav/alternative-nav.component.ts
-var AlternativeNavComponent = class {
-  constructor() {
-    this.activeId = "alternative-home";
-  }
+// src/app/features/offcanvas/components/offcanvas-demo-content/offcanvas-demo-content.component.ts
+var OffcanvasDemoContentComponent = class {
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-38dd9848],.card[_content-38dd9848],.dropdown-menu[_content-38dd9848],.list-group-item[_content-38dd9848],.form-control[_content-38dd9848],.form-select[_content-38dd9848]{border-color:var(--bs-border-color)}.alert-light[_content-38dd9848]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-38dd9848],.list-group[_content-38dd9848],.dropdown-menu[_content-38dd9848]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-38dd9848],.btn-outline-secondary[_content-38dd9848]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-38dd9848],.form-select[_content-38dd9848]{background-color:var(--bs-body-bg)}code[_content-38dd9848]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-68f3d054],.card[_content-68f3d054],.dropdown-menu[_content-68f3d054],.list-group-item[_content-68f3d054],.form-control[_content-68f3d054],.form-select[_content-68f3d054]{border-color:var(--bs-border-color)}.alert-light[_content-68f3d054]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-68f3d054],.list-group[_content-68f3d054],.dropdown-menu[_content-68f3d054]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-68f3d054],.btn-outline-secondary[_content-68f3d054]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-68f3d054],.form-select[_content-68f3d054]{background-color:var(--bs-body-bg)}code[_content-68f3d054]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-AlternativeNavComponent.ɵfac = [
+OffcanvasDemoContentComponent.ɵfac = [
   "$element",
   "$scope",
-  function AlternativeNavComponent_Factory($element, $scope) {
+  function OffcanvasDemoContentComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || AlternativeNavComponent)();
+    var instance = new (this && this.ɵT || OffcanvasDemoContentComponent)();
     return instance;
   }
 ];
-AlternativeNavComponent.ɵcmp = {
+OffcanvasDemoContentComponent.ɵcmp = {
   selectors: [
     [
-      "docs-alternative-nav"
+      "docs-offcanvas-demo-content"
     ]
   ],
-  inputs: {},
+  inputs: {
+    "ngbActiveOffcanvas": "ngbActiveOffcanvas"
+  },
   outputs: {},
   definition: {
-    "templateUrl": "templates/alternative-nav.component-95d2c8d1.html",
-    "controllerAs": "example"
+    "templateUrl": "templates/offcanvas-demo-content.component-8d4707cf.html",
+    "controllerAs": "$",
+    "bindings": {
+      "ngbActiveOffcanvas": "<?"
+    }
   }
 };
-AlternativeNavComponent.ɵfac.ɵcomponent = true;
-AlternativeNavComponent.ɵfac.ɵtype = AlternativeNavComponent;
+OffcanvasDemoContentComponent.ɵfac.ɵcomponent = true;
+OffcanvasDemoContentComponent.ɵfac.ɵtype = OffcanvasDemoContentComponent;
 
-// src/app/features/nav/components/custom-nav/custom-nav.component.ts
-var CustomNavComponent = class {
-  constructor() {
-    this.activeId = "custom-weekly";
+// src/app/features/offcanvas/components/offcanvas-component-content/offcanvas-component-content.component.ts
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
   }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".nav-demo[_content-0afcbdad]{gap:.35rem;padding:.4rem;border:1px solid var(--bs-border-color);border-radius:999px;background:color-mix(in srgb,var(--bs-tertiary-bg) 82%,var(--bs-body-bg));box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}.nav-demo .nav-link[_content-0afcbdad]{border-radius:999px;color:var(--bs-secondary-color)}.nav-demo .nav-link:hover[_content-0afcbdad]{color:var(--bs-emphasis-color);background:var(--bs-body-bg)}.nav-demo .nav-link.active[_content-0afcbdad]{color:var(--bs-primary-text-emphasis);background:var(--bs-primary-bg-subtle);box-shadow:0 .35rem 1rem rgba(var(--bs-body-color-rgb),.08)}";
-  document.head.appendChild(s);
-})();
-CustomNavComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function CustomNavComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || CustomNavComponent)();
-    return instance;
-  }
-];
-CustomNavComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-custom-nav"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/custom-nav.component-a5b50992.html",
-    "controllerAs": "example"
-  }
-};
-CustomNavComponent.ɵfac.ɵcomponent = true;
-CustomNavComponent.ɵfac.ɵtype = CustomNavComponent;
-
-// src/app/features/nav/components/dynamic-nav/dynamic-nav.component.ts
-var DynamicNavComponent = class {
-  add() {
-    const item = {
-      id: `dynamic-${this.nextId}`,
-      title: `Tab ${this.nextId}`
-    };
-    this.nextId++;
-    this.items.push(item);
-    this.activeId = item.id;
-  }
-  removeActive() {
-    if (this.items.length === 1) return;
-    const activeIndex = this.items.findIndex(({ id }) => id === this.activeId);
-    const replacement = this.items[activeIndex === 0 ? 1 : activeIndex - 1];
-    this.activeId = replacement.id;
-    this.items = this.items.filter(({ id }) => id !== this.items[activeIndex].id);
-  }
-  constructor() {
-    this.items = [
-      {
-        id: "dynamic-1",
-        title: "Tab 1"
-      },
-      {
-        id: "dynamic-2",
-        title: "Tab 2"
-      },
-      {
-        id: "dynamic-3",
-        title: "Tab 3"
+  if (info.done) resolve(value);
+  else Promise.resolve(value).then(_next, _throw);
+}
+function _async_to_generator(fn) {
+  return function() {
+    var self = this, args = arguments;
+    return new Promise(function(resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
       }
-    ];
-    this.activeId = "dynamic-1";
-    this.nextId = 4;
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(void 0);
+    });
+  };
+}
+var OffcanvasComponentContentComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
+    this.lastResult = "No result yet";
+  }
+  open() {
+    return _async_to_generator(function* () {
+      const offcanvasRef = yield this.offcanvas.open(OffcanvasDemoContentComponent);
+      offcanvasRef.closed.subscribe((result) => {
+        this.lastResult = `Closed with: ${result}`;
+      });
+      offcanvasRef.dismissed.subscribe((reason) => {
+        this.lastResult = `Dismissed with: ${reason}`;
+      });
+    }).call(this);
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-6433c04a],.card[_content-6433c04a],.dropdown-menu[_content-6433c04a],.list-group-item[_content-6433c04a],.form-control[_content-6433c04a],.form-select[_content-6433c04a]{border-color:var(--bs-border-color)}.alert-light[_content-6433c04a]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-6433c04a],.list-group[_content-6433c04a],.dropdown-menu[_content-6433c04a]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-6433c04a],.btn-outline-secondary[_content-6433c04a]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-6433c04a],.form-select[_content-6433c04a]{background-color:var(--bs-body-bg)}code[_content-6433c04a]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-0a2d56f9],.card[_content-0a2d56f9],.dropdown-menu[_content-0a2d56f9],.list-group-item[_content-0a2d56f9],.form-control[_content-0a2d56f9],.form-select[_content-0a2d56f9]{border-color:var(--bs-border-color)}.alert-light[_content-0a2d56f9]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0a2d56f9],.list-group[_content-0a2d56f9],.dropdown-menu[_content-0a2d56f9]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0a2d56f9],.btn-outline-secondary[_content-0a2d56f9]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0a2d56f9],.form-select[_content-0a2d56f9]{background-color:var(--bs-body-bg)}code[_content-0a2d56f9]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-DynamicNavComponent.ɵfac = [
+OffcanvasComponentContentComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
   "$element",
   "$scope",
-  function DynamicNavComponent_Factory($element, $scope) {
+  function OffcanvasComponentContentComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || DynamicNavComponent)();
+    var instance = new (this && this.ɵT || OffcanvasComponentContentComponent)(a0);
     return instance;
   }
 ];
-DynamicNavComponent.ɵcmp = {
+OffcanvasComponentContentComponent.ɵcmp = {
   selectors: [
     [
-      "docs-dynamic-nav"
+      "docs-offcanvas-component-content"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/dynamic-nav.component-cc472c86.html",
+    "templateUrl": "templates/offcanvas-component-content.component-ae337a6f.html",
     "controllerAs": "example"
   }
 };
-DynamicNavComponent.ɵfac.ɵcomponent = true;
-DynamicNavComponent.ɵfac.ɵtype = DynamicNavComponent;
+OffcanvasComponentContentComponent.ɵfac.ɵcomponent = true;
+OffcanvasComponentContentComponent.ɵfac.ɵtype = OffcanvasComponentContentComponent;
 
-// src/app/features/nav/components/keep-content-nav/keep-content-nav.component.ts
-var KeepContentNavComponent = class {
+// src/app/features/offcanvas/components/offcanvas-default/offcanvas-default.component.ts
+var OffcanvasDefaultComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
+  }
+  open() {
+    this.offcanvas.open(this.content);
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-5448087f],.card[_content-5448087f],.dropdown-menu[_content-5448087f],.list-group-item[_content-5448087f],.form-control[_content-5448087f],.form-select[_content-5448087f]{border-color:var(--bs-border-color)}.alert-light[_content-5448087f]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-5448087f],.list-group[_content-5448087f],.dropdown-menu[_content-5448087f]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-5448087f],.btn-outline-secondary[_content-5448087f]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-5448087f],.form-select[_content-5448087f]{background-color:var(--bs-body-bg)}code[_content-5448087f]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasDefaultComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
+  "$element",
+  "$scope",
+  function OffcanvasDefaultComponent_Factory(a0, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasDefaultComponent)(a0);
+    return instance;
+  }
+];
+OffcanvasDefaultComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-default"
+    ]
+  ],
+  inputs: {},
+  outputs: {},
+  viewQueries: [
+    {
+      propertyName: "content",
+      first: true,
+      descendants: true,
+      static: true,
+      predicate: [
+        "content"
+      ],
+      get read() {
+        return TemplateRef;
+      }
+    }
+  ],
+  definition: {
+    "templateUrl": "templates/offcanvas-default.component-60ef7408.html",
+    "controllerAs": "example"
+  }
+};
+OffcanvasDefaultComponent.ɵfac.ɵcomponent = true;
+OffcanvasDefaultComponent.ɵfac.ɵtype = OffcanvasDefaultComponent;
+
+// src/app/features/offcanvas/components/offcanvas-focus-content/offcanvas-focus-content.component.ts
+var OffcanvasFocusContentComponent = class {
   constructor() {
-    this.activeId = "keep-editor";
-    this.draft = "This value survives tab changes.";
+    this.autofocus = false;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-f6279610],.card[_content-f6279610],.dropdown-menu[_content-f6279610],.list-group-item[_content-f6279610],.form-control[_content-f6279610],.form-select[_content-f6279610]{border-color:var(--bs-border-color)}.alert-light[_content-f6279610]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-f6279610],.list-group[_content-f6279610],.dropdown-menu[_content-f6279610]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-f6279610],.btn-outline-secondary[_content-f6279610]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-f6279610],.form-select[_content-f6279610]{background-color:var(--bs-body-bg)}code[_content-f6279610]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-486788d3],.card[_content-486788d3],.dropdown-menu[_content-486788d3],.list-group-item[_content-486788d3],.form-control[_content-486788d3],.form-select[_content-486788d3]{border-color:var(--bs-border-color)}.alert-light[_content-486788d3]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-486788d3],.list-group[_content-486788d3],.dropdown-menu[_content-486788d3]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-486788d3],.btn-outline-secondary[_content-486788d3]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-486788d3],.form-select[_content-486788d3]{background-color:var(--bs-body-bg)}code[_content-486788d3]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-KeepContentNavComponent.ɵfac = [
+OffcanvasFocusContentComponent.ɵfac = [
   "$element",
   "$scope",
-  function KeepContentNavComponent_Factory($element, $scope) {
+  function OffcanvasFocusContentComponent_Factory($element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || KeepContentNavComponent)();
+    var instance = new (this && this.ɵT || OffcanvasFocusContentComponent)();
     return instance;
   }
 ];
-KeepContentNavComponent.ɵcmp = {
+OffcanvasFocusContentComponent.ɵcmp = {
   selectors: [
     [
-      "docs-keep-content-nav"
+      "docs-offcanvas-focus-content"
+    ]
+  ],
+  inputs: {
+    "ngbActiveOffcanvas": "ngbActiveOffcanvas",
+    "autofocus": "autofocus"
+  },
+  outputs: {},
+  definition: {
+    "templateUrl": "templates/offcanvas-focus-content.component-6bb99332.html",
+    "controllerAs": "$",
+    "bindings": {
+      "ngbActiveOffcanvas": "<?",
+      "autofocus": "<?"
+    }
+  }
+};
+OffcanvasFocusContentComponent.ɵfac.ɵcomponent = true;
+OffcanvasFocusContentComponent.ɵfac.ɵtype = OffcanvasFocusContentComponent;
+
+// src/app/features/offcanvas/components/offcanvas-focus/offcanvas-focus.component.ts
+var OffcanvasFocusComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
+  }
+  openDefaultFocus() {
+    this.offcanvas.open(OffcanvasFocusContentComponent, {
+      ariaLabelledBy: "offcanvas-focus-title",
+      bindings: {
+        autofocus: false
+      }
+    });
+  }
+  openCustomFocus() {
+    this.offcanvas.open(OffcanvasFocusContentComponent, {
+      ariaLabelledBy: "offcanvas-focus-title",
+      bindings: {
+        autofocus: true
+      }
+    });
+  }
+};
+(function() {
+  var s = document.createElement("style");
+  s.textContent = ".alert[_content-1d6f37eb],.card[_content-1d6f37eb],.dropdown-menu[_content-1d6f37eb],.list-group-item[_content-1d6f37eb],.form-control[_content-1d6f37eb],.form-select[_content-1d6f37eb]{border-color:var(--bs-border-color)}.alert-light[_content-1d6f37eb]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-1d6f37eb],.list-group[_content-1d6f37eb],.dropdown-menu[_content-1d6f37eb]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-1d6f37eb],.btn-outline-secondary[_content-1d6f37eb]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-1d6f37eb],.form-select[_content-1d6f37eb]{background-color:var(--bs-body-bg)}code[_content-1d6f37eb]{color:var(--ngbjs-code-color)}";
+  document.head.appendChild(s);
+})();
+OffcanvasFocusComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
+  "$element",
+  "$scope",
+  function OffcanvasFocusComponent_Factory(a0, $element, $scope) {
+    $element.data("$ngjsHost", $element[0]);
+    var instance = new (this && this.ɵT || OffcanvasFocusComponent)(a0);
+    return instance;
+  }
+];
+OffcanvasFocusComponent.ɵcmp = {
+  selectors: [
+    [
+      "docs-offcanvas-focus"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/keep-content-nav.component-a25913b9.html",
+    "templateUrl": "templates/offcanvas-focus.component-efe1c651.html",
     "controllerAs": "example"
   }
 };
-KeepContentNavComponent.ɵfac.ɵcomponent = true;
-KeepContentNavComponent.ɵfac.ɵtype = KeepContentNavComponent;
+OffcanvasFocusComponent.ɵfac.ɵcomponent = true;
+OffcanvasFocusComponent.ɵfac.ɵtype = OffcanvasFocusComponent;
 
-// src/app/features/nav/components/nav-global/nav-global.component.ts
-var NavGlobalComponent = class {
-  constructor(config) {
+// src/app/features/offcanvas/components/offcanvas-global/offcanvas-global.component.ts
+function asyncGeneratorStep2(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) resolve(value);
+  else Promise.resolve(value).then(_next, _throw);
+}
+function _async_to_generator2(fn) {
+  return function() {
+    var self = this, args = arguments;
+    return new Promise(function(resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep2(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep2(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(void 0);
+    });
+  };
+}
+var OffcanvasGlobalComponent = class {
+  constructor(offcanvas, config) {
+    this.offcanvas = offcanvas;
     this.config = config;
-    this.activeId = "global-account";
     this.initialConfig = {
-      animation: config.animation,
-      destroyOnHide: config.destroyOnHide,
+      backdrop: config.backdrop,
       keyboard: config.keyboard,
-      orientation: config.orientation,
-      roles: config.roles
+      position: config.position,
+      scroll: config.scroll
     };
-    config.animation = false;
-    config.destroyOnHide = false;
-    config.keyboard = "changeWithArrows";
-    config.orientation = "vertical";
-    config.roles = "tablist";
   }
-  ngAfterViewInit() {
-    this.restoreConfig();
+  open() {
+    return _async_to_generator2(function* () {
+      this.applyConfig();
+      try {
+        yield this.offcanvas.open(OffcanvasDemoContentComponent);
+      } finally {
+        this.restoreConfig();
+      }
+    }).call(this);
   }
   ngOnDestroy() {
     this.restoreConfig();
   }
+  applyConfig() {
+    this.config.backdrop = "static";
+    this.config.keyboard = false;
+    this.config.position = "end";
+    this.config.scroll = true;
+  }
   restoreConfig() {
-    this.config.animation = this.initialConfig.animation;
-    this.config.destroyOnHide = this.initialConfig.destroyOnHide;
+    this.config.backdrop = this.initialConfig.backdrop;
     this.config.keyboard = this.initialConfig.keyboard;
-    this.config.orientation = this.initialConfig.orientation;
-    this.config.roles = this.initialConfig.roles;
+    this.config.position = this.initialConfig.position;
+    this.config.scroll = this.initialConfig.scroll;
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-9370a994],.card[_content-9370a994],.dropdown-menu[_content-9370a994],.list-group-item[_content-9370a994],.form-control[_content-9370a994],.form-select[_content-9370a994]{border-color:var(--bs-border-color)}.alert-light[_content-9370a994]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-9370a994],.list-group[_content-9370a994],.dropdown-menu[_content-9370a994]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-9370a994],.btn-outline-secondary[_content-9370a994]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-9370a994],.form-select[_content-9370a994]{background-color:var(--bs-body-bg)}code[_content-9370a994]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".alert[_content-56330ce4],.card[_content-56330ce4],.dropdown-menu[_content-56330ce4],.list-group-item[_content-56330ce4],.form-control[_content-56330ce4],.form-select[_content-56330ce4]{border-color:var(--bs-border-color)}.alert-light[_content-56330ce4]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-56330ce4],.list-group[_content-56330ce4],.dropdown-menu[_content-56330ce4]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-56330ce4],.btn-outline-secondary[_content-56330ce4]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-56330ce4],.form-select[_content-56330ce4]{background-color:var(--bs-body-bg)}code[_content-56330ce4]{color:var(--ngbjs-code-color)}";
   document.head.appendChild(s);
 })();
-NavGlobalComponent.ɵfac = [
-  "NgbNavConfig_a43093eb",
+OffcanvasGlobalComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
+  "NgbOffcanvasConfig_b4ec4aca",
   "$element",
   "$scope",
-  function NavGlobalComponent_Factory(a0, $element, $scope) {
+  function OffcanvasGlobalComponent_Factory(a0, a1, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || NavGlobalComponent)(a0);
+    var instance = new (this && this.ɵT || OffcanvasGlobalComponent)(a0, a1);
     return instance;
   }
 ];
-NavGlobalComponent.ɵcmp = {
+OffcanvasGlobalComponent.ɵcmp = {
   selectors: [
     [
-      "docs-nav-global"
+      "docs-offcanvas-global"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/nav-global.component-f85933c2.html",
+    "templateUrl": "templates/offcanvas-global.component-82adf11b.html",
     "controllerAs": "example"
   }
 };
-NavGlobalComponent.ɵfac.ɵcomponent = true;
-NavGlobalComponent.ɵfac.ɵtype = NavGlobalComponent;
-NavGlobalComponent.prototype.$onDestroy = function() {
+OffcanvasGlobalComponent.ɵfac.ɵcomponent = true;
+OffcanvasGlobalComponent.ɵfac.ɵtype = OffcanvasGlobalComponent;
+OffcanvasGlobalComponent.prototype.$onDestroy = function() {
   this.ngOnDestroy();
 };
-NavGlobalComponent.prototype.$postLink = function() {
-  this.ngAfterViewInit();
-};
 
-// src/app/features/nav/components/selecting-nav/selecting-nav.component.ts
-var SelectingNavComponent = class {
-  select(id) {
-    this.nav.select(id);
+// src/app/features/offcanvas/components/offcanvas-options/offcanvas-options.component.ts
+var OffcanvasOptionsComponent = class {
+  constructor(offcanvas) {
+    this.offcanvas = offcanvas;
   }
-  constructor() {
-    this.activeId = "selecting-first";
+  openCustomPanel() {
+    this.open({
+      panelClass: "panel"
+    });
+  }
+  openStaticBackdrop() {
+    this.open({
+      backdrop: "static",
+      backdropClass: "backdrop",
+      keyboard: false
+    });
+  }
+  openStart() {
+    this.open({
+      position: "start"
+    });
+  }
+  openEnd() {
+    this.open({
+      position: "end"
+    });
+  }
+  openTop() {
+    this.open({
+      position: "top"
+    });
+  }
+  openBottom() {
+    this.open({
+      position: "bottom"
+    });
+  }
+  openScrollableBody() {
+    this.open({
+      scroll: true,
+      backdrop: false
+    });
+  }
+  open(options) {
+    this.offcanvas.open(OffcanvasDemoContentComponent, options);
   }
 };
 (function() {
   var s = document.createElement("style");
-  s.textContent = ".alert[_content-7dc7de89],.card[_content-7dc7de89],.dropdown-menu[_content-7dc7de89],.list-group-item[_content-7dc7de89],.form-control[_content-7dc7de89],.form-select[_content-7dc7de89]{border-color:var(--bs-border-color)}.alert-light[_content-7dc7de89]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-7dc7de89],.list-group[_content-7dc7de89],.dropdown-menu[_content-7dc7de89]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-7dc7de89],.btn-outline-secondary[_content-7dc7de89]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-7dc7de89],.form-select[_content-7dc7de89]{background-color:var(--bs-body-bg)}code[_content-7dc7de89]{color:var(--ngbjs-code-color)}";
+  s.textContent = ".panel[_content-67fdd7da]{--bs-offcanvas-width: 28rem;border-color:var(--bs-primary-border-subtle);box-shadow:0 1rem 3rem rgba(var(--bs-primary-rgb),.14)}.panel .offcanvas-header[_content-67fdd7da]{background:color-mix(in srgb,var(--bs-primary-bg-subtle) 55%,var(--bs-body-bg))}.backdrop[_content-67fdd7da]{--bs-backdrop-bg: var(--bs-danger);--bs-backdrop-opacity: .35}";
   document.head.appendChild(s);
 })();
-SelectingNavComponent.ɵfac = [
+OffcanvasOptionsComponent.ɵfac = [
+  "NgbOffcanvas_51c49d46",
   "$element",
   "$scope",
-  function SelectingNavComponent_Factory($element, $scope) {
+  function OffcanvasOptionsComponent_Factory(a0, $element, $scope) {
     $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || SelectingNavComponent)();
+    var instance = new (this && this.ɵT || OffcanvasOptionsComponent)(a0);
     return instance;
   }
 ];
-SelectingNavComponent.ɵcmp = {
+OffcanvasOptionsComponent.ɵcmp = {
   selectors: [
     [
-      "docs-selecting-nav"
+      "docs-offcanvas-options"
     ]
   ],
   inputs: {},
   outputs: {},
   definition: {
-    "templateUrl": "templates/selecting-nav.component-9978e2ff.html",
+    "templateUrl": "templates/offcanvas-options.component-aa8f6093.html",
     "controllerAs": "example"
   }
 };
-SelectingNavComponent.ɵfac.ɵcomponent = true;
-SelectingNavComponent.ɵfac.ɵtype = SelectingNavComponent;
+OffcanvasOptionsComponent.ɵfac.ɵcomponent = true;
+OffcanvasOptionsComponent.ɵfac.ɵtype = OffcanvasOptionsComponent;
 
-// src/app/features/nav/components/simple-nav/simple-nav.component.ts
-var SimpleNavComponent = class {
-  constructor() {
-    this.activeId = "simple-overview";
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-3ed9df54],.card[_content-3ed9df54],.dropdown-menu[_content-3ed9df54],.list-group-item[_content-3ed9df54],.form-control[_content-3ed9df54],.form-select[_content-3ed9df54]{border-color:var(--bs-border-color)}.alert-light[_content-3ed9df54]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-3ed9df54],.list-group[_content-3ed9df54],.dropdown-menu[_content-3ed9df54]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-3ed9df54],.btn-outline-secondary[_content-3ed9df54]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-3ed9df54],.form-select[_content-3ed9df54]{background-color:var(--bs-body-bg)}code[_content-3ed9df54]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-SimpleNavComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function SimpleNavComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || SimpleNavComponent)();
-    return instance;
-  }
-];
-SimpleNavComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-simple-nav"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/simple-nav.component-41ae52a3.html",
-    "controllerAs": "example"
-  }
-};
-SimpleNavComponent.ɵfac.ɵcomponent = true;
-SimpleNavComponent.ɵfac.ɵtype = SimpleNavComponent;
-
-// src/app/features/nav/components/vertical-nav/vertical-nav.component.ts
-var VerticalNavComponent = class {
-  constructor() {
-    this.activeId = "vertical-profile";
-  }
-};
-(function() {
-  var s = document.createElement("style");
-  s.textContent = ".alert[_content-0e800224],.card[_content-0e800224],.dropdown-menu[_content-0e800224],.list-group-item[_content-0e800224],.form-control[_content-0e800224],.form-select[_content-0e800224]{border-color:var(--bs-border-color)}.alert-light[_content-0e800224]{color:var(--bs-body-color);background:color-mix(in srgb,var(--bs-tertiary-bg) 86%,var(--bs-body-bg))}.card[_content-0e800224],.list-group[_content-0e800224],.dropdown-menu[_content-0e800224]{box-shadow:0 .75rem 2rem rgba(var(--bs-body-color-rgb),.05)}.btn-outline-primary[_content-0e800224],.btn-outline-secondary[_content-0e800224]{--bs-btn-border-color: color-mix(in srgb, var(--bs-border-color) 85%, currentColor)}.form-control[_content-0e800224],.form-select[_content-0e800224]{background-color:var(--bs-body-bg)}code[_content-0e800224]{color:var(--ngbjs-code-color)}";
-  document.head.appendChild(s);
-})();
-VerticalNavComponent.ɵfac = [
-  "$element",
-  "$scope",
-  function VerticalNavComponent_Factory($element, $scope) {
-    $element.data("$ngjsHost", $element[0]);
-    var instance = new (this && this.ɵT || VerticalNavComponent)();
-    return instance;
-  }
-];
-VerticalNavComponent.ɵcmp = {
-  selectors: [
-    [
-      "docs-vertical-nav"
-    ]
-  ],
-  inputs: {},
-  outputs: {},
-  definition: {
-    "templateUrl": "templates/vertical-nav.component-1d1c35f5.html",
-    "controllerAs": "example"
-  }
-};
-VerticalNavComponent.ɵfac.ɵcomponent = true;
-VerticalNavComponent.ɵfac.ɵtype = VerticalNavComponent;
-
-// src/app/features/nav/nav.module.ts
+// src/app/features/offcanvas/offcanvas.module.ts
 function ɵtokenName(token) {
   if (typeof token === "string") return token;
   if (token && token.ɵprov) return token.ɵprov.token;
@@ -949,61 +1018,65 @@ function ɵmultiConfig(token, members) {
     }
   ];
 }
-var NavModule = class {
+var OffcanvasModule = class {
 };
-NavModule.ɵfac = [
-  function NavModule_Factory() {
-    return new (this && this.ɵT || NavModule)();
+OffcanvasModule.ɵfac = [
+  function OffcanvasModule_Factory() {
+    return new (this && this.ɵT || OffcanvasModule)();
   }
 ];
-var ɵNavModule_import0 = RouterModule.forChild(routes);
-NavModule.ɵmod = {
-  id: "NavModule_e4c5865c"
+var ɵOffcanvasModule_import0 = RouterModule.forChild(routes);
+OffcanvasModule.ɵmod = {
+  id: "OffcanvasModule_4b532f0e"
 };
-ɵimportProviders(import_angular.default.module("NavModule_e4c5865c", [
-  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
+ɵimportProviders(import_angular.default.module("OffcanvasModule_4b532f0e", [
+  typeof NgbOffcanvasModule === "string" ? NgbOffcanvasModule : NgbOffcanvasModule.ɵmod ? NgbOffcanvasModule.ɵmod.id : NgbOffcanvasModule.name,
   typeof NgbNavModule === "string" ? NgbNavModule : NgbNavModule.ɵmod ? NgbNavModule.ɵmod.id : NgbNavModule.name,
+  typeof NgbCollapseModule === "string" ? NgbCollapseModule : NgbCollapseModule.ɵmod ? NgbCollapseModule.ɵmod.id : NgbCollapseModule.name,
   typeof NgbScrollSpyModule === "string" ? NgbScrollSpyModule : NgbScrollSpyModule.ɵmod ? NgbScrollSpyModule.ɵmod.id : NgbScrollSpyModule.name,
-  ɵimportedModuleName(ɵNavModule_import0)
+  ɵimportedModuleName(ɵOffcanvasModule_import0)
 ]), [
-  ɵNavModule_import0
-]).component("docsAlternativeNav", {
-  controller: AlternativeNavComponent.ɵfac,
-  templateUrl: "templates/alternative-nav.component-95d2c8d1.html",
+  ɵOffcanvasModule_import0
+]).component("docsOffcanvasComponentContent", {
+  controller: OffcanvasComponentContentComponent.ɵfac,
+  templateUrl: "templates/offcanvas-component-content.component-ae337a6f.html",
   controllerAs: "example"
-}).component("docsCustomNav", {
-  controller: CustomNavComponent.ɵfac,
-  templateUrl: "templates/custom-nav.component-a5b50992.html",
+}).component("docsOffcanvasDefault", {
+  controller: OffcanvasDefaultComponent.ɵfac,
+  templateUrl: "templates/offcanvas-default.component-60ef7408.html",
   controllerAs: "example"
-}).component("docsDynamicNav", {
-  controller: DynamicNavComponent.ɵfac,
-  templateUrl: "templates/dynamic-nav.component-cc472c86.html",
+}).component("docsOffcanvasDemoContent", {
+  controller: OffcanvasDemoContentComponent.ɵfac,
+  templateUrl: "templates/offcanvas-demo-content.component-8d4707cf.html",
+  controllerAs: "$",
+  bindings: {
+    "ngbActiveOffcanvas": "<?"
+  }
+}).component("docsOffcanvasFocus", {
+  controller: OffcanvasFocusComponent.ɵfac,
+  templateUrl: "templates/offcanvas-focus.component-efe1c651.html",
   controllerAs: "example"
-}).component("docsKeepContentNav", {
-  controller: KeepContentNavComponent.ɵfac,
-  templateUrl: "templates/keep-content-nav.component-a25913b9.html",
+}).component("docsOffcanvasFocusContent", {
+  controller: OffcanvasFocusContentComponent.ɵfac,
+  templateUrl: "templates/offcanvas-focus-content.component-6bb99332.html",
+  controllerAs: "$",
+  bindings: {
+    "ngbActiveOffcanvas": "<?",
+    "autofocus": "<?"
+  }
+}).component("docsOffcanvasGlobal", {
+  controller: OffcanvasGlobalComponent.ɵfac,
+  templateUrl: "templates/offcanvas-global.component-82adf11b.html",
   controllerAs: "example"
-}).component("docsNavGlobal", {
-  controller: NavGlobalComponent.ɵfac,
-  templateUrl: "templates/nav-global.component-f85933c2.html",
+}).component("docsOffcanvasOptions", {
+  controller: OffcanvasOptionsComponent.ɵfac,
+  templateUrl: "templates/offcanvas-options.component-aa8f6093.html",
   controllerAs: "example"
-}).component("docsSelectingNav", {
-  controller: SelectingNavComponent.ɵfac,
-  templateUrl: "templates/selecting-nav.component-9978e2ff.html",
-  controllerAs: "example"
-}).component("docsSimpleNav", {
-  controller: SimpleNavComponent.ɵfac,
-  templateUrl: "templates/simple-nav.component-41ae52a3.html",
-  controllerAs: "example"
-}).component("docsVerticalNav", {
-  controller: VerticalNavComponent.ɵfac,
-  templateUrl: "templates/vertical-nav.component-1d1c35f5.html",
-  controllerAs: "example"
-}).factory("NavModule_0e4ee266", NavModule.ɵfac).run([
-  "NavModule_0e4ee266",
+}).factory("OffcanvasModule_9e69e12d", OffcanvasModule.ɵfac).run([
+  "OffcanvasModule_9e69e12d",
   function() {
   }
 ]);
 export {
-  NavModule
+  OffcanvasModule
 };
