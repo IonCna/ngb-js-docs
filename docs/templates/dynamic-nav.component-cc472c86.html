@@ -1,0 +1,17 @@
+<div class="d-flex flex-wrap gap-2 mb-3" _content-6433c04a="">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="example.add()" _content-6433c04a="">Add tab</button>
+    <button type="button" class="btn btn-outline-danger btn-sm" ng-click="example.removeActive()" ng-disabled="example.items.length === 1" _content-6433c04a="">
+        Remove active tab
+    </button>
+</div>
+
+<ul ngb-nav="" ng-ref="example.nav" ng-ref-read="ngbNav" active-id="example.activeId" class="nav-tabs" _content-6433c04a="">
+    <li ng-repeat="item in example.items track by item.id" ngb-nav-item="item.id" _content-6433c04a="">
+        <button type="button" ngb-nav-link="" _content-6433c04a="">{{ item.title }}</button>
+        <ng-template ngb-nav-content="" _content-6433c04a="">
+            <p class="pt-3 mb-0" _content-6433c04a="">Dynamic content for {{ item.title }}.</p>
+        </ng-template>
+    </li>
+</ul>
+
+<div ngb-nav-outlet="example.nav" _content-6433c04a=""></div>

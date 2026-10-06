@@ -1,0 +1,71 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-af6d361c="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-af6d361c=""><code _content-af6d361c="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-af6d361c=""><code _content-af6d361c="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-dropdown" _content-af6d361c="">
+    <header class="mb-3" _content-af6d361c="">
+        <p class="small fw-semibold text-primary mb-1" _content-af6d361c="">Directive</p>
+        <h2 class="h3 mb-2" _content-af6d361c=""><code class="text-body" _content-af6d361c="">NgbDropdown</code></h2>
+        <p class="text-body-secondary mb-0" _content-af6d361c="">Root controller for open state, positioning, focus and auto-close behavior.</p>
+    </header>
+    <dl class="row gy-2 mb-0" _content-af6d361c=""><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Markup</dt><dd class="col-sm-9 mb-0" _content-af6d361c=""><code _content-af6d361c="">&lt;div ngb-dropdown&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-af6d361c="">Inputs</h3>
+    <div class="table-responsive" _content-af6d361c=""><table class="table table-sm align-middle" _content-af6d361c="">
+        <thead _content-af6d361c=""><tr _content-af6d361c=""><th _content-af6d361c="">Input</th><th _content-af6d361c="">Binding</th><th _content-af6d361c="">Type</th><th _content-af6d361c="">Default</th><th _content-af6d361c="">Description</th></tr></thead>
+        <tbody _content-af6d361c="">
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">auto-close</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">boolean | "inside" | "outside"</code></td><td _content-af6d361c=""><code _content-af6d361c="">true</code></td><td _content-af6d361c="">Controls which interactions close the menu.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">animation</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">boolean</code></td><td _content-af6d361c=""><code _content-af6d361c="">undefined</code></td><td _content-af6d361c="">Exposed by the directive factory; it currently has no runtime effect.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">container</code></td><td _content-af6d361c=""><code _content-af6d361c="">@?</code></td><td _content-af6d361c=""><code _content-af6d361c="">null | "body"</code></td><td _content-af6d361c=""><code _content-af6d361c="">null</code></td><td _content-af6d361c="">Moves the menu to the document body.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">display</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">"dynamic" | "static"</code></td><td _content-af6d361c="">Contextual</td><td _content-af6d361c="">Enables or bypasses Popper positioning.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">dropdown-class</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">string</code></td><td _content-af6d361c="">—</td><td _content-af6d361c="">Adds a class to the dropdown container.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">open</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">boolean</code></td><td _content-af6d361c=""><code _content-af6d361c="">false</code></td><td _content-af6d361c="">Sets the open state.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">placement</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">Placement[]</code></td><td _content-af6d361c=""><code _content-af6d361c="">$config.placement</code></td><td _content-af6d361c="">Preferred Popper placements.</td></tr>
+            <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">popper-options</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">function</code></td><td _content-af6d361c=""><code _content-af6d361c="">$config.popperOptions</code></td><td _content-af6d361c="">Transforms Popper options.</td></tr>
+        </tbody>
+    </table></div>
+    <h3 class="h5 mt-4 mb-3" _content-af6d361c="">Outputs</h3>
+    <div class="table-responsive" _content-af6d361c=""><table class="table table-sm align-middle mb-0" _content-af6d361c="">
+        <thead _content-af6d361c=""><tr _content-af6d361c=""><th _content-af6d361c="">Output</th><th _content-af6d361c="">Binding</th><th _content-af6d361c="">Payload</th><th _content-af6d361c="">Emitted when</th></tr></thead>
+        <tbody _content-af6d361c=""><tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">open-change</code></td><td _content-af6d361c=""><code _content-af6d361c="">&amp;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">$event: boolean</code></td><td _content-af6d361c="">The dropdown opens or closes.</td></tr></tbody>
+    </table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-dropdown-anchor" _content-af6d361c="">
+    <header class="mb-3" _content-af6d361c=""><p class="small fw-semibold text-primary mb-1" _content-af6d361c="">Directive</p><h2 class="h3 mb-2" _content-af6d361c=""><code class="text-body" _content-af6d361c="">NgbDropdownAnchor</code></h2><p class="text-body-secondary mb-0" _content-af6d361c="">Marks the element used for positioning without adding click behavior.</p></header>
+    <dl class="row gy-2 mb-0" _content-af6d361c=""><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Markup</dt><dd class="col-sm-9 mb-0" _content-af6d361c=""><code _content-af6d361c="">&lt;button ngb-dropdown-anchor&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Requires</dt><dd class="col-sm-9 mb-0" _content-af6d361c="">An ancestor <code _content-af6d361c="">ngb-dropdown</code>.</dd></dl>
+    <p class="small text-body-secondary mt-3 mb-0" _content-af6d361c="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-dropdown-toggle" _content-af6d361c="">
+    <header class="mb-3" _content-af6d361c=""><p class="small fw-semibold text-primary mb-1" _content-af6d361c="">Directive</p><h2 class="h3 mb-2" _content-af6d361c=""><code class="text-body" _content-af6d361c="">NgbDropdownToggle</code></h2><p class="text-body-secondary mb-0" _content-af6d361c="">Extends the anchor with click and keyboard toggle behavior.</p></header>
+    <dl class="row gy-2 mb-0" _content-af6d361c=""><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Markup</dt><dd class="col-sm-9 mb-0" _content-af6d361c=""><code _content-af6d361c="">&lt;button ngb-dropdown-toggle&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Requires</dt><dd class="col-sm-9 mb-0" _content-af6d361c="">An ancestor <code _content-af6d361c="">ngb-dropdown</code>.</dd></dl>
+    <p class="small text-body-secondary mt-3 mb-0" _content-af6d361c="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-dropdown-menu" _content-af6d361c="">
+    <header class="mb-3" _content-af6d361c=""><p class="small fw-semibold text-primary mb-1" _content-af6d361c="">Directive</p><h2 class="h3 mb-2" _content-af6d361c=""><code class="text-body" _content-af6d361c="">NgbDropdownMenu</code></h2><p class="text-body-secondary mb-0" _content-af6d361c="">Hosts menu items and coordinates keyboard navigation with the root dropdown.</p></header>
+    <dl class="row gy-2 mb-0" _content-af6d361c=""><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Markup</dt><dd class="col-sm-9 mb-0" _content-af6d361c=""><code _content-af6d361c="">&lt;div ngb-dropdown-menu&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Requires</dt><dd class="col-sm-9 mb-0" _content-af6d361c="">An ancestor <code _content-af6d361c="">ngb-dropdown</code>.</dd></dl>
+    <p class="small text-body-secondary mt-3 mb-0" _content-af6d361c="">No public inputs or outputs.</p>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-dropdown-item" _content-af6d361c="">
+    <header class="mb-3" _content-af6d361c=""><p class="small fw-semibold text-primary mb-1" _content-af6d361c="">Directive</p><h2 class="h3 mb-2" _content-af6d361c=""><code class="text-body" _content-af6d361c="">NgbDropdownItem</code></h2><p class="text-body-secondary mb-0" _content-af6d361c="">Marks an interactive menu entry and supports <code _content-af6d361c="">disabled</code>.</p></header>
+    <dl class="row gy-2 mb-0" _content-af6d361c=""><dt class="col-sm-3 fw-semibold" _content-af6d361c="">Markup</dt><dd class="col-sm-9 mb-0" _content-af6d361c=""><code _content-af6d361c="">&lt;button ngb-dropdown-item&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-af6d361c="">Inputs</h3>
+    <div class="table-responsive" _content-af6d361c=""><table class="table table-sm align-middle mb-0" _content-af6d361c=""><thead _content-af6d361c=""><tr _content-af6d361c=""><th _content-af6d361c="">Input</th><th _content-af6d361c="">Binding</th><th _content-af6d361c="">Type</th><th _content-af6d361c="">Default</th><th _content-af6d361c="">Description</th></tr></thead><tbody _content-af6d361c="">
+        <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">tabindex</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">string | number</code></td><td _content-af6d361c=""><code _content-af6d361c="">0</code></td><td _content-af6d361c="">Sets the enabled tab order.</td></tr>
+        <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">disabled</code></td><td _content-af6d361c=""><code _content-af6d361c="">&lt;?</code></td><td _content-af6d361c=""><code _content-af6d361c="">boolean</code></td><td _content-af6d361c=""><code _content-af6d361c="">false</code></td><td _content-af6d361c="">Disables focus and activation.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-dropdown-config" _content-af6d361c="">
+    <header class="mb-3" _content-af6d361c=""><p class="small fw-semibold text-primary mb-1" _content-af6d361c="">Service</p><h2 class="h3 mb-2" _content-af6d361c=""><code class="text-body" _content-af6d361c="">NgbDropdownConfig</code></h2><p class="text-body-secondary mb-0" _content-af6d361c="">Provides application-wide dropdown defaults.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-af6d361c="">Properties</h3>
+    <div class="table-responsive" _content-af6d361c=""><table class="table table-sm align-middle mb-0" _content-af6d361c=""><thead _content-af6d361c=""><tr _content-af6d361c=""><th _content-af6d361c="">Property</th><th _content-af6d361c="">Type</th><th _content-af6d361c="">Default</th></tr></thead><tbody _content-af6d361c="">
+        <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">autoClose</code></td><td _content-af6d361c=""><code _content-af6d361c="">boolean | "inside" | "outside"</code></td><td _content-af6d361c=""><code _content-af6d361c="">true</code></td></tr>
+        <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">container</code></td><td _content-af6d361c=""><code _content-af6d361c="">null | "body"</code></td><td _content-af6d361c=""><code _content-af6d361c="">null</code></td></tr>
+        <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">placement</code></td><td _content-af6d361c=""><code _content-af6d361c="">Placement[]</code></td><td _content-af6d361c=""><code _content-af6d361c="">["bottom-start", "bottom-end", "top-start", "top-end"]</code></td></tr>
+        <tr _content-af6d361c=""><td _content-af6d361c=""><code _content-af6d361c="">popperOptions</code></td><td _content-af6d361c=""><code _content-af6d361c="">function</code></td><td _content-af6d361c="">Identity transform</td></tr>
+    </tbody></table></div>
+</section>

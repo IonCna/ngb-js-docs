@@ -1,0 +1,19 @@
+<div class="modal-header" _content-a937b33f="">
+    <h2 class="modal-title fs-5" id="modal-focus-title" _content-a937b33f="">Focus management</h2>
+</div>
+
+<div class="modal-body" _content-a937b33f="">
+    <div class="mb-3" _content-a937b33f="">
+        <label class="form-label" for="modal-first-focusable" _content-a937b33f="">First focusable element</label>
+        <input id="modal-first-focusable" type="text" class="form-control" placeholder="Focused by default" _content-a937b33f="">
+    </div>
+
+    <div ng-if="$.autofocus" _content-a937b33f="">
+        <label class="form-label" for="modal-custom-autofocus" _content-a937b33f="">Custom autofocus target</label>
+        <input id="modal-custom-autofocus" type="text" class="form-control" placeholder="Focused through ngbAutofocus" ngbautofocus="" _content-a937b33f="">
+    </div>
+</div>
+
+<div class="modal-footer" _content-a937b33f="">
+    <button type="button" class="btn btn-primary" ng-click="$.ngbActiveModal.close()" _content-a937b33f="">Done</button>
+</div>

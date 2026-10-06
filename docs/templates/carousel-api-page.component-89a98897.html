@@ -1,0 +1,85 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-165c50ab="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-165c50ab=""><code _content-165c50ab="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-165c50ab=""><code _content-165c50ab="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-carousel" _content-165c50ab="">
+    <header class="mb-3" _content-165c50ab="">
+        <p class="small fw-semibold text-primary mb-1" _content-165c50ab="">Component</p>
+        <h2 class="h3 mb-2" _content-165c50ab=""><code class="text-body" _content-165c50ab="">NgbCarousel</code></h2>
+        <p class="text-body-secondary mb-0" _content-165c50ab="">Coordinates slides, navigation, cycling, pause behavior and transitions.</p>
+    </header>
+
+    <dl class="row gy-2 mb-0" _content-165c50ab=""><dt class="col-sm-3 fw-semibold" _content-165c50ab="">Markup</dt><dd class="col-sm-9 mb-0" _content-165c50ab=""><code _content-165c50ab="">&lt;ngb-carousel&gt;</code></dd></dl>
+
+    <h3 class="h5 mt-4 mb-3" _content-165c50ab="">Inputs</h3>
+    <div class="table-responsive" _content-165c50ab="">
+        <table class="table table-sm align-middle" _content-165c50ab="">
+            <thead _content-165c50ab=""><tr _content-165c50ab=""><th _content-165c50ab="">Input</th><th _content-165c50ab="">Binding</th><th _content-165c50ab="">Type</th><th _content-165c50ab="">Default</th><th _content-165c50ab="">Description</th></tr></thead>
+            <tbody _content-165c50ab="">
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">active-id</code></td><td _content-165c50ab=""><code _content-165c50ab="">@?</code></td><td _content-165c50ab=""><code _content-165c50ab="">string</code></td><td _content-165c50ab="">First slide</td><td _content-165c50ab="">Identifies the active slide.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">animation</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">$config.animation</code></td><td _content-165c50ab="">Enables slide transitions.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">interval</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">number</code></td><td _content-165c50ab=""><code _content-165c50ab="">5000</code></td><td _content-165c50ab="">Delay between automatic slides in milliseconds; <code _content-165c50ab="">0</code> disables cycling.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">keyboard</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td><td _content-165c50ab="">Enables keyboard navigation.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">pause-on-focus</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td><td _content-165c50ab="">Pauses cycling while focused.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">pause-on-hover</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td><td _content-165c50ab="">Pauses cycling while hovered.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">show-navigation-arrows</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td><td _content-165c50ab="">Displays previous and next controls.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">show-navigation-indicators</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td><td _content-165c50ab="">Displays slide indicators.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">wrap</code></td><td _content-165c50ab=""><code _content-165c50ab="">&lt;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td><td _content-165c50ab="">Wraps navigation at the first and last slide.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="h5 mt-4 mb-3" _content-165c50ab="">Outputs</h3>
+    <div class="table-responsive" _content-165c50ab="">
+        <table class="table table-sm align-middle mb-0" _content-165c50ab="">
+            <thead _content-165c50ab=""><tr _content-165c50ab=""><th _content-165c50ab="">Output</th><th _content-165c50ab="">Binding</th><th _content-165c50ab="">Payload</th><th _content-165c50ab="">Emitted when</th></tr></thead>
+            <tbody _content-165c50ab="">
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">slide</code></td><td _content-165c50ab=""><code _content-165c50ab="">&amp;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">$event: NgbSlideEvent</code></td><td _content-165c50ab="">A slide transition starts.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">slid</code></td><td _content-165c50ab=""><code _content-165c50ab="">&amp;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">$event: NgbSlideEvent</code></td><td _content-165c50ab="">A slide transition finishes.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-slide" _content-165c50ab="">
+    <header class="mb-3" _content-165c50ab="">
+        <p class="small fw-semibold text-primary mb-1" _content-165c50ab="">Directive</p>
+        <h2 class="h3 mb-2" _content-165c50ab=""><code class="text-body" _content-165c50ab="">NgbSlide</code></h2>
+        <p class="text-body-secondary mb-0" _content-165c50ab="">Marks projected content as a carousel slide.</p>
+    </header>
+    <dl class="row gy-2 mb-0" _content-165c50ab="">
+        <dt class="col-sm-3 fw-semibold" _content-165c50ab="">Markup</dt><dd class="col-sm-9 mb-0" _content-165c50ab=""><code _content-165c50ab="">&lt;ng-template ngb-slide&gt;</code></dd>
+        <dt class="col-sm-3 fw-semibold" _content-165c50ab="">Requires</dt><dd class="col-sm-9 mb-0" _content-165c50ab="">An ancestor <code _content-165c50ab="">ngb-carousel</code>.</dd>
+    </dl>
+    <h3 class="h5 mt-4 mb-3" _content-165c50ab="">Bindings</h3>
+    <div class="table-responsive" _content-165c50ab="">
+        <table class="table table-sm align-middle mb-0" _content-165c50ab="">
+            <thead _content-165c50ab=""><tr _content-165c50ab=""><th _content-165c50ab="">Name</th><th _content-165c50ab="">Binding</th><th _content-165c50ab="">Type</th><th _content-165c50ab="">Default</th><th _content-165c50ab="">Description</th></tr></thead>
+            <tbody _content-165c50ab="">
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">id</code></td><td _content-165c50ab=""><code _content-165c50ab="">@?</code></td><td _content-165c50ab=""><code _content-165c50ab="">string</code></td><td _content-165c50ab="">Generated id</td><td _content-165c50ab="">Identifies the slide.</td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">slid</code></td><td _content-165c50ab=""><code _content-165c50ab="">&amp;?</code></td><td _content-165c50ab=""><code _content-165c50ab="">$event: NgbSingleSlideEvent</code></td><td _content-165c50ab="">—</td><td _content-165c50ab="">Runs when this slide completes a transition.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-carousel-config" _content-165c50ab="">
+    <header class="mb-3" _content-165c50ab="">
+        <p class="small fw-semibold text-primary mb-1" _content-165c50ab="">Service</p>
+        <h2 class="h3 mb-2" _content-165c50ab=""><code class="text-body" _content-165c50ab="">NgbCarouselConfig</code></h2>
+        <p class="text-body-secondary mb-0" _content-165c50ab="">Provides application-wide carousel defaults.</p>
+    </header>
+    <h3 class="h5 mt-4 mb-3" _content-165c50ab="">Properties</h3>
+    <div class="table-responsive" _content-165c50ab="">
+        <table class="table table-sm align-middle mb-0" _content-165c50ab="">
+            <thead _content-165c50ab=""><tr _content-165c50ab=""><th _content-165c50ab="">Property</th><th _content-165c50ab="">Type</th><th _content-165c50ab="">Default</th></tr></thead>
+            <tbody _content-165c50ab="">
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">animation</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">$config.animation</code></td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">interval</code></td><td _content-165c50ab=""><code _content-165c50ab="">number</code></td><td _content-165c50ab=""><code _content-165c50ab="">5000</code></td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">wrap</code>, <code _content-165c50ab="">keyboard</code>, <code _content-165c50ab="">pauseOnFocus</code>, <code _content-165c50ab="">pauseOnHover</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td></tr>
+                <tr _content-165c50ab=""><td _content-165c50ab=""><code _content-165c50ab="">showNavigationArrows</code>, <code _content-165c50ab="">showNavigationIndicators</code></td><td _content-165c50ab=""><code _content-165c50ab="">boolean</code></td><td _content-165c50ab=""><code _content-165c50ab="">true</code></td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>

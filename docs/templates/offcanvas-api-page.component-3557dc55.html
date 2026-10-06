@@ -1,0 +1,55 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-ad13479b="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-ad13479b=""><code _content-ad13479b="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-ad13479b=""><code _content-ad13479b="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-offcanvas" _content-ad13479b="">
+    <header class="mb-3" _content-ad13479b=""><p class="small fw-semibold text-primary mb-1" _content-ad13479b="">Service</p><h2 class="h3 mb-2" _content-ad13479b=""><code class="text-body" _content-ad13479b="">NgbOffcanvas</code></h2><p class="text-body-secondary mb-0" _content-ad13479b="">Creates and coordinates offcanvas panels from a component class or a <code _content-ad13479b="">TemplateRef</code>.</p></header>
+    <div class="alert alert-info" role="note" _content-ad13479b="">
+        To open component content, pass its <code _content-ad13479b="">@Component</code> class directly: <code _content-ad13479b="">offcanvas.open(MyContentComponent)</code>.
+    </div>
+    <h3 class="h5 mt-4 mb-3" _content-ad13479b="">Members</h3>
+    <div class="table-responsive" _content-ad13479b=""><table class="table table-sm align-middle mb-0" _content-ad13479b=""><thead _content-ad13479b=""><tr _content-ad13479b=""><th _content-ad13479b="">Member</th><th _content-ad13479b="">Returns</th><th _content-ad13479b="">Description</th></tr></thead><tbody _content-ad13479b="">
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">open(component | templateRef, options?)</code></td><td _content-ad13479b=""><code _content-ad13479b="">NgbOffcanvasRef</code></td><td _content-ad13479b="">Opens a <code _content-ad13479b="">@Component</code> class or a <code _content-ad13479b="">TemplateRef</code>, with options merged over <code _content-ad13479b="">NgbOffcanvasConfig</code>.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">activeInstance</code></td><td _content-ad13479b="">Active instance</td><td _content-ad13479b="">Exposes the currently open offcanvas instance.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">dismiss(reason?)</code></td><td _content-ad13479b=""><code _content-ad13479b="">void</code></td><td _content-ad13479b="">Dismisses the active panel.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">hasOpenOffcanvas()</code></td><td _content-ad13479b=""><code _content-ad13479b="">boolean</code></td><td _content-ad13479b="">Reports whether a panel is open.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-offcanvas-ref" _content-ad13479b="">
+    <header class="mb-3" _content-ad13479b=""><p class="small fw-semibold text-primary mb-1" _content-ad13479b="">Class</p><h2 class="h3 mb-2" _content-ad13479b=""><code class="text-body" _content-ad13479b="">NgbOffcanvasRef</code></h2><p class="text-body-secondary mb-0" _content-ad13479b="">Controls one panel and exposes its result and lifecycle streams.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-ad13479b="">Members</h3>
+    <div class="table-responsive" _content-ad13479b=""><table class="table table-sm align-middle mb-0" _content-ad13479b=""><thead _content-ad13479b=""><tr _content-ad13479b=""><th _content-ad13479b="">Member</th><th _content-ad13479b="">Description</th></tr></thead><tbody _content-ad13479b="">
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">close(result?)</code></td><td _content-ad13479b="">Resolves <code _content-ad13479b="">result</code> and closes the panel.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">dismiss(reason?)</code></td><td _content-ad13479b="">Rejects <code _content-ad13479b="">result</code> and dismisses the panel.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">result</code></td><td _content-ad13479b="">AngularJS promise settled by close or dismiss.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">closed</code>, <code _content-ad13479b="">dismissed</code>, <code _content-ad13479b="">shown</code>, <code _content-ad13479b="">hidden</code></td><td _content-ad13479b="">Observable lifecycle streams.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">componentInstance</code></td><td _content-ad13479b="">Component controller instance when component content is used.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-active-offcanvas" _content-ad13479b="">
+    <header class="mb-3" _content-ad13479b=""><p class="small fw-semibold text-primary mb-1" _content-ad13479b="">Service</p><h2 class="h3 mb-2" _content-ad13479b=""><code class="text-body" _content-ad13479b="">NgbActiveOffcanvas</code></h2><p class="text-body-secondary mb-0" _content-ad13479b="">Allows offcanvas content to control the panel that contains it.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-ad13479b="">Methods</h3>
+    <div class="table-responsive" _content-ad13479b=""><table class="table table-sm align-middle mb-0" _content-ad13479b=""><thead _content-ad13479b=""><tr _content-ad13479b=""><th _content-ad13479b="">Method</th><th _content-ad13479b="">Description</th></tr></thead><tbody _content-ad13479b="">
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">close(result?)</code></td><td _content-ad13479b="">Closes with an optional result.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">dismiss(reason?)</code></td><td _content-ad13479b="">Dismisses with an optional reason.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-offcanvas-config" _content-ad13479b="">
+    <header class="mb-3" _content-ad13479b=""><p class="small fw-semibold text-primary mb-1" _content-ad13479b="">Service</p><h2 class="h3 mb-2" _content-ad13479b=""><code class="text-body" _content-ad13479b="">NgbOffcanvasConfig</code></h2><p class="text-body-secondary mb-0" _content-ad13479b="">Provides defaults merged into every <code _content-ad13479b="">open()</code> call.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-ad13479b="">Options</h3>
+    <div class="table-responsive" _content-ad13479b=""><table class="table table-sm align-middle mb-0" _content-ad13479b=""><thead _content-ad13479b=""><tr _content-ad13479b=""><th _content-ad13479b="">Option</th><th _content-ad13479b="">Default</th><th _content-ad13479b="">Description</th></tr></thead><tbody _content-ad13479b="">
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">animation</code></td><td _content-ad13479b=""><code _content-ad13479b="">$config.animation</code></td><td _content-ad13479b="">Enables panel and backdrop transitions.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">backdrop</code></td><td _content-ad13479b=""><code _content-ad13479b="">true</code></td><td _content-ad13479b="">Accepts <code _content-ad13479b="">true</code>, <code _content-ad13479b="">false</code> or <code _content-ad13479b="">"static"</code>.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">keyboard</code></td><td _content-ad13479b=""><code _content-ad13479b="">true</code></td><td _content-ad13479b="">Allows Escape-key dismissal.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">position</code></td><td _content-ad13479b=""><code _content-ad13479b="">"start"</code></td><td _content-ad13479b="">Accepts <code _content-ad13479b="">"start"</code>, <code _content-ad13479b="">"end"</code>, <code _content-ad13479b="">"top"</code> or <code _content-ad13479b="">"bottom"</code>.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">scroll</code></td><td _content-ad13479b=""><code _content-ad13479b="">false</code></td><td _content-ad13479b="">Allows body scrolling while open.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">ariaLabelledBy</code>, <code _content-ad13479b="">ariaDescribedBy</code></td><td _content-ad13479b=""><code _content-ad13479b="">undefined</code></td><td _content-ad13479b="">Connect accessible label and description elements.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">container</code>, <code _content-ad13479b="">bindings</code></td><td _content-ad13479b=""><code _content-ad13479b="">undefined</code></td><td _content-ad13479b="">Control content creation and placement.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">panelClass</code>, <code _content-ad13479b="">backdropClass</code></td><td _content-ad13479b=""><code _content-ad13479b="">undefined</code></td><td _content-ad13479b="">Add custom classes.</td></tr>
+        <tr _content-ad13479b=""><td _content-ad13479b=""><code _content-ad13479b="">beforeDismiss</code></td><td _content-ad13479b=""><code _content-ad13479b="">undefined</code></td><td _content-ad13479b="">Can cancel dismissal synchronously or asynchronously.</td></tr>
+    </tbody></table></div>
+</section>

@@ -1,0 +1,11 @@
+<ng-template ng-ref="example.titleTemplate" _content-bdf9a36a="">
+    <span class="d-flex align-items-center gap-2" _content-bdf9a36a=""><i class="bi bi-code-slash" aria-hidden="true" _content-bdf9a36a=""></i><strong _content-bdf9a36a="">Template content</strong></span>
+</ng-template>
+<ng-template ng-ref="example.contentTemplate" _content-bdf9a36a="">
+    <p class="mb-2" _content-bdf9a36a="">Hello, <strong _content-bdf9a36a="">{{ example.name }}</strong>!</p>
+    <button class="btn btn-sm btn-primary" type="button" ng-click="example.name = 'AngularJS'" _content-bdf9a36a="">Update binding</button>
+</ng-template>
+
+<button type="button" class="btn btn-outline-primary" ngb-popover="example.contentTemplate" popover-title="example.titleTemplate" _content-bdf9a36a="">
+    HTML and bindings
+</button>

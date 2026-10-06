@@ -1,0 +1,28 @@
+<div class="alert alert-light border d-flex gap-3 align-items-start" role="note" _content-9370a994="">
+    <i class="bi bi-gear text-primary mt-1" aria-hidden="true" _content-9370a994=""></i>
+    <div _content-9370a994="">
+        <p class="fw-semibold mb-1" _content-9370a994="">Global defaults used by this example</p>
+        <p class="small text-body-secondary mb-0" _content-9370a994="">
+            The nav is vertical, keeps hidden content and selects tabs while navigating with the arrow keys.
+        </p>
+    </div>
+</div>
+
+<div class="d-flex align-items-start gap-3" _content-9370a994="">
+    <div ngb-nav="" ng-ref="example.nav" ng-ref-read="ngbNav" active-id="example.activeId" class="nav-pills flex-column flex-shrink-0" _content-9370a994="">
+        <div ngb-nav-item="'global-account'" _content-9370a994="">
+            <button type="button" ngb-nav-link="" _content-9370a994="">Account</button>
+            <ng-template ngb-nav-content="" _content-9370a994=""><p class="mb-0" _content-9370a994="">Global account settings.</p></ng-template>
+        </div>
+        <div ngb-nav-item="'global-team'" _content-9370a994="">
+            <button type="button" ngb-nav-link="" _content-9370a994="">Team</button>
+            <ng-template ngb-nav-content="" _content-9370a994=""><p class="mb-0" _content-9370a994="">Global team settings.</p></ng-template>
+        </div>
+        <div ngb-nav-item="'global-billing'" _content-9370a994="">
+            <button type="button" ngb-nav-link="" _content-9370a994="">Billing</button>
+            <ng-template ngb-nav-content="" _content-9370a994=""><p class="mb-0" _content-9370a994="">Global billing settings.</p></ng-template>
+        </div>
+    </div>
+
+    <div class="border rounded p-3 flex-grow-1" ngb-nav-outlet="example.nav" _content-9370a994=""></div>
+</div>

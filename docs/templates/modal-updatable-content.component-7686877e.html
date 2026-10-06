@@ -1,0 +1,38 @@
+<div class="modal-header" _content-92f041ce="">
+    <h2 class="modal-title fs-5" id="updatable-modal-title" _content-92f041ce="">Updatable options</h2>
+    <button type="button" class="btn-close" aria-label="Close" ng-click="$.ngbActiveModal.dismiss('close')" _content-92f041ce=""></button>
+</div>
+
+<div class="modal-body" _content-92f041ce="">
+    <p id="updatable-modal-description" _content-92f041ce="">
+        Change the window, dialog, backdrop and accessibility options while this modal remains open.
+    </p>
+
+    <div class="d-flex flex-wrap gap-2" _content-92f041ce="">
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.toggleAriaReferences()" _content-92f041ce="">
+            ARIA references: {{ $.ariaReferences ? 'on' : 'off' }}
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.toggleCentered()" _content-92f041ce="">
+            Centered: {{ $.centered ? 'on' : 'off' }}
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.toggleFullscreen()" _content-92f041ce="">
+            Fullscreen: {{ $.fullscreen ? 'on' : 'off' }}
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.toggleBackdropClass()" _content-92f041ce="">
+            Backdrop class: {{ $.customBackdrop ? 'on' : 'off' }}
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.cycleSize()" _content-92f041ce="">
+            Size: {{ $.size }}
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.toggleWindowClass()" _content-92f041ce="">
+            Window class: {{ $.customWindow ? 'on' : 'off' }}
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm" ng-click="$.toggleDialogClass()" _content-92f041ce="">
+            Dialog class: {{ $.customDialog ? 'on' : 'off' }}
+        </button>
+    </div>
+</div>
+
+<div class="modal-footer" _content-92f041ce="">
+    <button type="button" class="btn btn-primary" ng-click="$.ngbActiveModal.close()" _content-92f041ce="">Done</button>
+</div>

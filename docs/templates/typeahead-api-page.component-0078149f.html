@@ -1,0 +1,56 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-d211490e="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-d211490e=""><code _content-d211490e="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-d211490e=""><code _content-d211490e="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-typeahead" _content-d211490e="">
+    <header class="mb-3" _content-d211490e=""><p class="small fw-semibold text-primary mb-1" _content-d211490e="">Directive</p><h2 class="h3 mb-2" _content-d211490e=""><code class="text-body" _content-d211490e="">NgbTypeahead</code></h2><p class="text-body-secondary mb-0" _content-d211490e="">Connects an input to an observable result source and manages the suggestion popup.</p></header>
+    <dl class="row gy-2 mb-0" _content-d211490e=""><dt class="col-sm-3 fw-semibold" _content-d211490e="">Markup</dt><dd class="col-sm-9 mb-0" _content-d211490e=""><code _content-d211490e="">&lt;input ng-model="value" ngb-typeahead="search"&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-d211490e="">Requires</dt><dd class="col-sm-9 mb-0" _content-d211490e=""><code _content-d211490e="">ng-model</code>.</dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-d211490e="">Inputs</h3>
+    <div class="table-responsive" _content-d211490e=""><table class="table table-sm align-middle" _content-d211490e="">
+        <thead _content-d211490e=""><tr _content-d211490e=""><th _content-d211490e="">Input</th><th _content-d211490e="">Binding</th><th _content-d211490e="">Default</th><th _content-d211490e="">Description</th></tr></thead>
+        <tbody _content-d211490e="">
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">ngb-typeahead</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e="">Required</td><td _content-d211490e="">Function that maps the text stream to an observable result collection.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">autocomplete</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e="">—</td><td _content-d211490e="">Sets the native autocomplete behavior.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">container</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">$config.container</code></td><td _content-d211490e="">Container used for the popup.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">editable</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">true</code></td><td _content-d211490e="">Allows values not present in the results.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">focus-first</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">true</code></td><td _content-d211490e="">Activates the first result when the popup opens.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">input-formatter</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e="">String conversion</td><td _content-d211490e="">Formats the selected model in the input.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">result-formatter</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e="">String conversion</td><td _content-d211490e="">Formats values in the result list.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">result-template</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e="">Default result</td><td _content-d211490e="">Provides custom result markup.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">placement</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">$config.placement</code></td><td _content-d211490e="">Preferred Popper placements.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">popper-options</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">$config.popperOptions</code></td><td _content-d211490e="">Transforms Popper options.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">popup-class</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e="">—</td><td _content-d211490e="">Adds a class to the results popup.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">select-on-exact</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">false</code></td><td _content-d211490e="">Selects automatically when only one exact result exists.</td></tr>
+            <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">show-hint</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">false</code></td><td _content-d211490e="">Shows the completion hint.</td></tr>
+        </tbody>
+    </table></div>
+    <h3 class="h5 mt-4 mb-3" _content-d211490e="">Outputs</h3>
+    <div class="table-responsive" _content-d211490e=""><table class="table table-sm align-middle mb-0" _content-d211490e=""><thead _content-d211490e=""><tr _content-d211490e=""><th _content-d211490e="">Output</th><th _content-d211490e="">Binding</th><th _content-d211490e="">Payload</th><th _content-d211490e="">Emitted when</th></tr></thead><tbody _content-d211490e="">
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">select-item</code></td><td _content-d211490e=""><code _content-d211490e="">&amp;?</code></td><td _content-d211490e=""><code _content-d211490e="">$event: NgbTypeaheadSelectItemEvent</code></td><td _content-d211490e="">A result is selected.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-highlight" _content-d211490e="">
+    <header class="mb-3" _content-d211490e=""><p class="small fw-semibold text-primary mb-1" _content-d211490e="">Component</p><h2 class="h3 mb-2" _content-d211490e=""><code class="text-body" _content-d211490e="">NgbHighlight</code></h2><p class="text-body-secondary mb-0" _content-d211490e="">Highlights matching portions of a result label.</p></header>
+    <dl class="row gy-2 mb-0" _content-d211490e=""><dt class="col-sm-3 fw-semibold" _content-d211490e="">Markup</dt><dd class="col-sm-9 mb-0" _content-d211490e=""><code _content-d211490e="">&lt;ngb-highlight result="label" term="query"&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-d211490e="">Inputs</h3>
+    <div class="table-responsive" _content-d211490e=""><table class="table table-sm align-middle mb-0" _content-d211490e=""><thead _content-d211490e=""><tr _content-d211490e=""><th _content-d211490e="">Input</th><th _content-d211490e="">Binding</th><th _content-d211490e="">Type</th><th _content-d211490e="">Default</th></tr></thead><tbody _content-d211490e="">
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">result</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;</code></td><td _content-d211490e=""><code _content-d211490e="">string</code></td><td _content-d211490e="">Required</td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">term</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;</code></td><td _content-d211490e=""><code _content-d211490e="">string</code></td><td _content-d211490e="">Required</td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">highlight-class</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">string</code></td><td _content-d211490e=""><code _content-d211490e="">"ngb-highlight"</code></td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">accent-sensitive</code></td><td _content-d211490e=""><code _content-d211490e="">&lt;?</code></td><td _content-d211490e=""><code _content-d211490e="">boolean</code></td><td _content-d211490e=""><code _content-d211490e="">true</code></td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-typeahead-config" _content-d211490e="">
+    <header class="mb-3" _content-d211490e=""><p class="small fw-semibold text-primary mb-1" _content-d211490e="">Service</p><h2 class="h3 mb-2" _content-d211490e=""><code class="text-body" _content-d211490e="">NgbTypeaheadConfig</code></h2><p class="text-body-secondary mb-0" _content-d211490e="">Provides application-wide typeahead defaults.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-d211490e="">Properties</h3>
+    <div class="table-responsive" _content-d211490e=""><table class="table table-sm align-middle mb-0" _content-d211490e=""><thead _content-d211490e=""><tr _content-d211490e=""><th _content-d211490e="">Property</th><th _content-d211490e="">Default</th></tr></thead><tbody _content-d211490e="">
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">container</code></td><td _content-d211490e=""><code _content-d211490e="">undefined</code></td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">editable</code>, <code _content-d211490e="">focusFirst</code></td><td _content-d211490e=""><code _content-d211490e="">true</code></td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">selectOnExact</code>, <code _content-d211490e="">showHint</code></td><td _content-d211490e=""><code _content-d211490e="">false</code></td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">placement</code></td><td _content-d211490e=""><code _content-d211490e="">["bottom-start", "bottom-end", "top-start", "top-end"]</code></td></tr>
+        <tr _content-d211490e=""><td _content-d211490e=""><code _content-d211490e="">popperOptions</code></td><td _content-d211490e="">Identity transform</td></tr>
+    </tbody></table></div>
+</section>

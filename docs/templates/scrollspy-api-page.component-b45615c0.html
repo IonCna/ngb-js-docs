@@ -1,0 +1,76 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-c6ac626c="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-c6ac626c=""><code _content-c6ac626c="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-c6ac626c=""><code _content-c6ac626c="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-scrollspy" _content-c6ac626c="">
+    <header class="mb-3" _content-c6ac626c=""><p class="small fw-semibold text-primary mb-1" _content-c6ac626c="">Directive</p><h2 class="h3 mb-2" _content-c6ac626c=""><code class="text-body" _content-c6ac626c="">NgbScrollSpy</code></h2><p class="text-body-secondary mb-0" _content-c6ac626c="">Turns a scrollable element into an observed container and tracks its active fragment.</p></header>
+    <dl class="row gy-2 mb-0" _content-c6ac626c=""><dt class="col-sm-3 fw-semibold" _content-c6ac626c="">Markup</dt><dd class="col-sm-9 mb-0" _content-c6ac626c=""><code _content-c6ac626c="">&lt;main ngb-scroll-spy&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Inputs</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle" _content-c6ac626c="">
+        <thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Input</th><th _content-c6ac626c="">Binding</th><th _content-c6ac626c="">Type</th><th _content-c6ac626c="">Default</th><th _content-c6ac626c="">Description</th></tr></thead><tbody _content-c6ac626c="">
+            <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">active</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@?</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">string</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">""</code></td><td _content-c6ac626c="">Initial or requested active fragment id.</td></tr>
+            <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">process-changes</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">&lt;?</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">NgbScrollSpyProcessChanges</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">$config.processChanges</code></td><td _content-c6ac626c="">Determines the active fragment from observer changes.</td></tr>
+            <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">root-margin</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@?</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">string</code></td><td _content-c6ac626c="">Browser default</td><td _content-c6ac626c="">IntersectionObserver root margin.</td></tr>
+            <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">scroll-behavior</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@?</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">"auto" | "smooth"</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">"smooth"</code></td><td _content-c6ac626c="">Default behavior for programmatic scrolling.</td></tr>
+            <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">threshold</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">&lt;?</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">number | number[]</code></td><td _content-c6ac626c="">Browser default</td><td _content-c6ac626c="">IntersectionObserver thresholds.</td></tr>
+        </tbody>
+    </table></div>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Outputs</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle mb-0" _content-c6ac626c=""><thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Output</th><th _content-c6ac626c="">Binding</th><th _content-c6ac626c="">Payload</th><th _content-c6ac626c="">Emitted when</th></tr></thead><tbody _content-c6ac626c="">
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">active-change</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">&amp;?</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">$event: string</code></td><td _content-c6ac626c="">The active fragment changes.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-scrollspy-fragment" _content-c6ac626c="">
+    <header class="mb-3" _content-c6ac626c=""><p class="small fw-semibold text-primary mb-1" _content-c6ac626c="">Directive</p><h2 class="h3 mb-2" _content-c6ac626c=""><code class="text-body" _content-c6ac626c="">NgbScrollSpyFragment</code></h2><p class="text-body-secondary mb-0" _content-c6ac626c="">Registers a section with its ancestor scrollspy and assigns its DOM id.</p></header>
+    <dl class="row gy-2 mb-0" _content-c6ac626c=""><dt class="col-sm-3 fw-semibold" _content-c6ac626c="">Markup</dt><dd class="col-sm-9 mb-0" _content-c6ac626c=""><code _content-c6ac626c="">&lt;section ngb-scroll-spy-fragment="overview"&gt;</code></dd><dt class="col-sm-3 fw-semibold" _content-c6ac626c="">Requires</dt><dd class="col-sm-9 mb-0" _content-c6ac626c="">An ancestor <code _content-c6ac626c="">ngb-scroll-spy</code>.</dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Inputs</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle mb-0" _content-c6ac626c=""><thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Input</th><th _content-c6ac626c="">Binding</th><th _content-c6ac626c="">Type</th><th _content-c6ac626c="">Default</th></tr></thead><tbody _content-c6ac626c="">
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">ngb-scroll-spy-fragment</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">string</code></td><td _content-c6ac626c="">Required</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-scrollspy-menu" _content-c6ac626c="">
+    <header class="mb-3" _content-c6ac626c=""><p class="small fw-semibold text-primary mb-1" _content-c6ac626c="">Directive</p><h2 class="h3 mb-2" _content-c6ac626c=""><code class="text-body" _content-c6ac626c="">NgbScrollSpyMenu</code></h2><p class="text-body-secondary mb-0" _content-c6ac626c="">Coordinates nested menu items and applies their active state.</p></header>
+    <dl class="row gy-2 mb-0" _content-c6ac626c=""><dt class="col-sm-3 fw-semibold" _content-c6ac626c="">Markup</dt><dd class="col-sm-9 mb-0" _content-c6ac626c=""><code _content-c6ac626c="">&lt;nav ngb-scroll-spy-menu&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Inputs</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle mb-0" _content-c6ac626c=""><thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Input</th><th _content-c6ac626c="">Binding</th><th _content-c6ac626c="">Description</th></tr></thead><tbody _content-c6ac626c="">
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">ngb-scroll-spy-menu</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">&lt;?</code></td><td _content-c6ac626c="">Optional explicit <code _content-c6ac626c="">NgbScrollSpy</code>; otherwise uses an ancestor or injected service.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-scrollspy-item" _content-c6ac626c="">
+    <header class="mb-3" _content-c6ac626c=""><p class="small fw-semibold text-primary mb-1" _content-c6ac626c="">Directive</p><h2 class="h3 mb-2" _content-c6ac626c=""><code class="text-body" _content-c6ac626c="">NgbScrollSpyItem</code></h2><p class="text-body-secondary mb-0" _content-c6ac626c="">Links a menu entry to a fragment, applies <code _content-c6ac626c="">active</code> and scrolls on click.</p></header>
+    <dl class="row gy-2 mb-0" _content-c6ac626c=""><dt class="col-sm-3 fw-semibold" _content-c6ac626c="">Markup</dt><dd class="col-sm-9 mb-0" _content-c6ac626c=""><code _content-c6ac626c="">&lt;a ngb-scroll-spy-item="overview"&gt;</code></dd></dl>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Inputs</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle mb-0" _content-c6ac626c=""><thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Input</th><th _content-c6ac626c="">Binding</th><th _content-c6ac626c="">Description</th></tr></thead><tbody _content-c6ac626c="">
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">ngb-scroll-spy-item</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@?</code></td><td _content-c6ac626c="">Fragment id or shorthand item data.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">fragment</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@?</code></td><td _content-c6ac626c="">Explicit fragment id.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">parent</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">@?</code></td><td _content-c6ac626c="">Parent fragment id for nested menus.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">scroll-spy</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">&lt;?</code></td><td _content-c6ac626c="">Explicit <code _content-c6ac626c="">NgbScrollSpy</code> controller.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-scrollspy-service" _content-c6ac626c="">
+    <header class="mb-3" _content-c6ac626c=""><p class="small fw-semibold text-primary mb-1" _content-c6ac626c="">Service</p><h2 class="h3 mb-2" _content-c6ac626c=""><code class="text-body" _content-c6ac626c="">NgbScrollSpyService</code></h2><p class="text-body-secondary mb-0" _content-c6ac626c="">Provides programmatic scrollspy control without a directive host.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Members</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle mb-0" _content-c6ac626c=""><thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Member</th><th _content-c6ac626c="">Description</th></tr></thead><tbody _content-c6ac626c="">
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">active</code></td><td _content-c6ac626c="">Current fragment id.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">active$</code></td><td _content-c6ac626c="">Observable of distinct active fragment changes.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">start(options?)</code></td><td _content-c6ac626c="">Starts observation with optional root, fragments and IntersectionObserver settings.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">stop()</code></td><td _content-c6ac626c="">Stops observation and clears the active fragment.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">observe(fragment)</code></td><td _content-c6ac626c="">Adds a fragment to observation.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">unobserve(fragment)</code></td><td _content-c6ac626c="">Removes a fragment from observation.</td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">scrollTo(fragment, options?)</code></td><td _content-c6ac626c="">Scrolls to a registered id or element.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-scrollspy-config" _content-c6ac626c="">
+    <header class="mb-3" _content-c6ac626c=""><p class="small fw-semibold text-primary mb-1" _content-c6ac626c="">Service</p><h2 class="h3 mb-2" _content-c6ac626c=""><code class="text-body" _content-c6ac626c="">NgbScrollSpyConfig</code></h2><p class="text-body-secondary mb-0" _content-c6ac626c="">Provides application-wide scrollspy defaults.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-c6ac626c="">Properties</h3>
+    <div class="table-responsive" _content-c6ac626c=""><table class="table table-sm align-middle mb-0" _content-c6ac626c=""><thead _content-c6ac626c=""><tr _content-c6ac626c=""><th _content-c6ac626c="">Property</th><th _content-c6ac626c="">Default</th></tr></thead><tbody _content-c6ac626c="">
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">scrollBehavior</code></td><td _content-c6ac626c=""><code _content-c6ac626c="">"smooth"</code></td></tr>
+        <tr _content-c6ac626c=""><td _content-c6ac626c=""><code _content-c6ac626c="">processChanges</code></td><td _content-c6ac626c="">Built-in intersection processing function</td></tr>
+    </tbody></table></div>
+</section>

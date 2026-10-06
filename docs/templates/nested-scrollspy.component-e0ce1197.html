@@ -1,0 +1,33 @@
+<div class="row g-3" _content-fa991de9="">
+    <div class="col-md-8 order-2" _content-fa991de9="">
+        <div class="bg-body-tertiary border rounded p-3" style="height: 18rem" ngb-scroll-spy="" root-margin="0px 0px -45%" ng-ref="example.spy" ng-ref-read="ngbScrollSpy" _content-fa991de9="">
+            <section class="pb-4" ngb-scroll-spy-fragment="nested-guide" _content-fa991de9="">
+                <h3 class="h4" _content-fa991de9="">Guide</h3>
+                <p _content-fa991de9="">A parent item can represent a complete group of related sections.</p>
+            </section>
+            <section class="pb-5" ngb-scroll-spy-fragment="nested-install" _content-fa991de9="">
+                <h4 class="h5" _content-fa991de9="">Install</h4>
+                <p _content-fa991de9="">Child items use <code _content-fa991de9="">parent</code> to activate both their own entry and the group entry.</p>
+            </section>
+            <section class="pb-5" ngb-scroll-spy-fragment="nested-configure" _content-fa991de9="">
+                <h4 class="h5" _content-fa991de9="">Configure</h4>
+                <p _content-fa991de9="">The menu directive coordinates the active state across every descendant item.</p>
+            </section>
+            <section class="pb-5 mb-5" ngb-scroll-spy-fragment="nested-reference" _content-fa991de9="">
+                <h3 class="h4" _content-fa991de9="">Reference</h3>
+                <p class="mb-5" _content-fa991de9="">Top-level entries continue to work alongside nested groups.</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="col-md-4 order-1" _content-fa991de9="">
+        <nav class="nav nav-pills flex-column" ngb-scroll-spy-menu="example.spy" aria-label="Nested example navigation" _content-fa991de9="">
+            <button type="button" class="nav-link text-start" ngb-scroll-spy-item="nested-guide" _content-fa991de9="">Guide</button>
+            <nav class="nav nav-pills flex-column ms-3" _content-fa991de9="">
+                <button type="button" class="nav-link text-start my-1" ngb-scroll-spy-item="nested-install" parent="nested-guide" _content-fa991de9="">Install</button>
+                <button type="button" class="nav-link text-start my-1" ngb-scroll-spy-item="nested-configure" parent="nested-guide" _content-fa991de9="">Configure</button>
+            </nav>
+            <button type="button" class="nav-link text-start" ngb-scroll-spy-item="nested-reference" _content-fa991de9="">Reference</button>
+        </nav>
+    </div>
+</div>

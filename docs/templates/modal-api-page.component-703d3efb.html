@@ -1,0 +1,56 @@
+<div class="d-flex flex-wrap gap-2 mb-5" aria-label="Binding legend" _content-514af9a1="">
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-514af9a1=""><code _content-514af9a1="">&lt;?</code> input</span>
+    <span class="badge bg-body-tertiary border text-body fw-normal px-3 py-2" _content-514af9a1=""><code _content-514af9a1="">&amp;?</code> callback</span>
+</div>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-modal" _content-514af9a1="">
+    <header class="mb-3" _content-514af9a1=""><p class="small fw-semibold text-primary mb-1" _content-514af9a1="">Service</p><h2 class="h3 mb-2" _content-514af9a1=""><code class="text-body" _content-514af9a1="">NgbModal</code></h2><p class="text-body-secondary mb-0" _content-514af9a1="">Creates and coordinates modal instances from templates or components.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-514af9a1="">Members</h3>
+    <div class="table-responsive" _content-514af9a1=""><table class="table table-sm align-middle mb-0" _content-514af9a1=""><thead _content-514af9a1=""><tr _content-514af9a1=""><th _content-514af9a1="">Member</th><th _content-514af9a1="">Returns</th><th _content-514af9a1="">Description</th></tr></thead><tbody _content-514af9a1="">
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">open(content, options?)</code></td><td _content-514af9a1=""><code _content-514af9a1="">NgbModalRef</code></td><td _content-514af9a1="">Opens content with options merged over <code _content-514af9a1="">NgbModalConfig</code>.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">activeInstances</code></td><td _content-514af9a1="">Active modal collection</td><td _content-514af9a1="">Exposes the currently open modal instances.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">dismissAll(reason?)</code></td><td _content-514af9a1=""><code _content-514af9a1="">void</code></td><td _content-514af9a1="">Dismisses every open modal.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">hasOpenModals()</code></td><td _content-514af9a1=""><code _content-514af9a1="">boolean</code></td><td _content-514af9a1="">Reports whether a modal is open.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-modal-ref" _content-514af9a1="">
+    <header class="mb-3" _content-514af9a1=""><p class="small fw-semibold text-primary mb-1" _content-514af9a1="">Class</p><h2 class="h3 mb-2" _content-514af9a1=""><code class="text-body" _content-514af9a1="">NgbModalRef</code></h2><p class="text-body-secondary mb-0" _content-514af9a1="">Controls one modal and exposes its result and lifecycle streams.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-514af9a1="">Members</h3>
+    <div class="table-responsive" _content-514af9a1=""><table class="table table-sm align-middle mb-0" _content-514af9a1=""><thead _content-514af9a1=""><tr _content-514af9a1=""><th _content-514af9a1="">Member</th><th _content-514af9a1="">Description</th></tr></thead><tbody _content-514af9a1="">
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">close(result?)</code></td><td _content-514af9a1="">Resolves <code _content-514af9a1="">result</code> and closes the modal.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">dismiss(reason?)</code></td><td _content-514af9a1="">Rejects <code _content-514af9a1="">result</code> and dismisses the modal.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">update(options)</code></td><td _content-514af9a1="">Updates supported window and backdrop options.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">result</code></td><td _content-514af9a1="">AngularJS promise settled by close or dismiss.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">closed</code>, <code _content-514af9a1="">dismissed</code>, <code _content-514af9a1="">shown</code>, <code _content-514af9a1="">hidden</code></td><td _content-514af9a1="">Observable lifecycle streams.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">componentInstance</code></td><td _content-514af9a1="">Component controller instance when component content is used.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-active-modal" _content-514af9a1="">
+    <header class="mb-3" _content-514af9a1=""><p class="small fw-semibold text-primary mb-1" _content-514af9a1="">Service</p><h2 class="h3 mb-2" _content-514af9a1=""><code class="text-body" _content-514af9a1="">NgbActiveModal</code></h2><p class="text-body-secondary mb-0" _content-514af9a1="">Allows modal content to control the modal that contains it.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-514af9a1="">Methods</h3>
+    <div class="table-responsive" _content-514af9a1=""><table class="table table-sm align-middle mb-0" _content-514af9a1=""><thead _content-514af9a1=""><tr _content-514af9a1=""><th _content-514af9a1="">Method</th><th _content-514af9a1="">Description</th></tr></thead><tbody _content-514af9a1="">
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">close(result?)</code></td><td _content-514af9a1="">Closes with an optional result.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">dismiss(reason?)</code></td><td _content-514af9a1="">Dismisses with an optional reason.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">update(options)</code></td><td _content-514af9a1="">Updates supported modal options.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="pb-4 mb-4 border-bottom" ngb-scroll-spy-fragment="ngb-modal-config" _content-514af9a1="">
+    <header class="mb-3" _content-514af9a1=""><p class="small fw-semibold text-primary mb-1" _content-514af9a1="">Service</p><h2 class="h3 mb-2" _content-514af9a1=""><code class="text-body" _content-514af9a1="">NgbModalConfig</code></h2><p class="text-body-secondary mb-0" _content-514af9a1="">Provides defaults merged into every <code _content-514af9a1="">open()</code> call.</p></header>
+    <h3 class="h5 mt-4 mb-3" _content-514af9a1="">Options</h3>
+    <div class="table-responsive" _content-514af9a1=""><table class="table table-sm align-middle mb-0" _content-514af9a1=""><thead _content-514af9a1=""><tr _content-514af9a1=""><th _content-514af9a1="">Option</th><th _content-514af9a1="">Default</th><th _content-514af9a1="">Description</th></tr></thead><tbody _content-514af9a1="">
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">animation</code></td><td _content-514af9a1=""><code _content-514af9a1="">$config.animation</code></td><td _content-514af9a1="">Enables modal and backdrop transitions.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">backdrop</code></td><td _content-514af9a1=""><code _content-514af9a1="">true</code></td><td _content-514af9a1="">Accepts <code _content-514af9a1="">true</code>, <code _content-514af9a1="">false</code> or <code _content-514af9a1="">"static"</code>.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">keyboard</code></td><td _content-514af9a1=""><code _content-514af9a1="">true</code></td><td _content-514af9a1="">Allows Escape-key dismissal.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">centered</code>, <code _content-514af9a1="">scrollable</code></td><td _content-514af9a1=""><code _content-514af9a1="">undefined</code></td><td _content-514af9a1="">Controls dialog layout.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">fullscreen</code></td><td _content-514af9a1=""><code _content-514af9a1="">false</code></td><td _content-514af9a1="">Enables full-screen mode at an optional breakpoint.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">role</code></td><td _content-514af9a1=""><code _content-514af9a1="">"dialog"</code></td><td _content-514af9a1="">Sets the dialog ARIA role.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">size</code></td><td _content-514af9a1=""><code _content-514af9a1="">undefined</code></td><td _content-514af9a1="">Accepts <code _content-514af9a1="">"sm"</code>, <code _content-514af9a1="">"lg"</code> or <code _content-514af9a1="">"xl"</code>.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">ariaLabelledBy</code>, <code _content-514af9a1="">ariaDescribedBy</code></td><td _content-514af9a1=""><code _content-514af9a1="">undefined</code></td><td _content-514af9a1="">Connect accessible label and description elements.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">container</code>, <code _content-514af9a1="">injector</code>, <code _content-514af9a1="">bindings</code></td><td _content-514af9a1=""><code _content-514af9a1="">undefined</code></td><td _content-514af9a1="">Control content creation and placement.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">windowClass</code>, <code _content-514af9a1="">modalDialogClass</code>, <code _content-514af9a1="">backdropClass</code></td><td _content-514af9a1=""><code _content-514af9a1="">undefined</code></td><td _content-514af9a1="">Add custom classes.</td></tr>
+        <tr _content-514af9a1=""><td _content-514af9a1=""><code _content-514af9a1="">beforeDismiss</code></td><td _content-514af9a1=""><code _content-514af9a1="">undefined</code></td><td _content-514af9a1="">Can cancel dismissal synchronously or asynchronously.</td></tr>
+    </tbody></table></div>
+</section>
